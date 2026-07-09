@@ -10,20 +10,11 @@
 
 > Phase 1 · Agent / Harness Foundation
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-• 一个 Coding Agent 最少需要什么？<br />
-• Agent Core 与 Harness 的边界在哪里？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **一个 Coding Agent 最少需要什么？**
+>
+> **Agent Core 与 Harness 的边界在哪里？**
 
 ### 主线研究对象
 
@@ -58,13 +49,17 @@
 
 ### 学习后的实践：最小 Agent：Instruction 与 Interception 对照实验
 
-6.  先运行最小 Agent，理解完整 loop。
+> **Experiment ID:** `EXP-W01-01`  
+> **Experiment Type:** `COMPARATIVE`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-7.  Experiment A：增加“修改代码前必须先读取目标文件”Instruction，执行 3 个简单任务。
+1. 先运行最小 Agent，理解完整 loop。
 
-8.  Experiment B：把同一要求改成简单的 action interception；只做实验，不实现生产级 Hook。
+2. Experiment A：增加“修改代码前必须先读取目标文件”Instruction，执行 3 个简单任务。
 
-9.  比较 Instruction 与 Interception 的遵循率、行为变化、阻塞方式、上下文成本和实现复杂度。
+3. Experiment B：把同一要求改成简单的 action interception；只做实验，不实现生产级 Hook。
+
+4. 比较 Instruction 与 Interception 的遵循率、行为变化、阻塞方式、上下文成本和实现复杂度。
 
 ### 建议保留的证据
 
@@ -97,19 +92,9 @@
 
 > Phase 1 · Agent / Harness Foundation
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-Agent Loop 已经能工作，为什么还需要 Hook、Skill、Task、Permission 和 Subagent？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **Agent Loop 已经能工作，为什么还需要 Hook、Skill、Task、Permission 和 Subagent？**
 
 ### 主线研究对象
 
@@ -147,11 +132,15 @@ Agent Loop 已经能工作，为什么还需要 Hook、Skill、Task、Permission
 
 ### 学习后的实践：为最小 Agent 分别增加 Instruction、Externalized Task 与 Subagent Context Boundary
 
-10. 实验 1：延续 Week 1 的 Instruction vs Interception。
+> **Experiment ID:** `EXP-W02-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-11. 实验 2：同一 4–5 步任务，比较直接执行与显式维护 Task 状态；记录漏步骤、重复操作、顺序漂移和完成声明。
+1. 实验 1：延续 Week 1 的 Instruction vs Interception。
 
-12. 实验 3：多文件扫描问题，比较主 Agent 自己读取全部文件与独立研究 Agent 只返回结构化结论。
+2. 实验 2：同一 4–5 步任务，比较直接执行与显式维护 Task 状态；记录漏步骤、重复操作、顺序漂移和完成声明。
+
+3. 实验 3：多文件扫描问题，比较主 Agent 自己读取全部文件与独立研究 Agent 只返回结构化结论。
 
 ### 建议保留的证据
 

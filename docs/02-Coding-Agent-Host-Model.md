@@ -10,19 +10,9 @@
 
 > Phase 2 · Claude Code Host Model
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-一个任务在 Claude Code 中，是怎么“活过”整个 Session 的？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **一个任务在 Claude Code 中，是怎么“活过”整个 Session 的？**
 
 ### 主线研究对象
 
@@ -60,13 +50,17 @@
 
 ### 学习后的实践：myharness 中等任务的 Context Trace Experiment
 
-13. 选一个中等规模且可逆的真实研究任务，例如调查 Codex Plugin 的一个迁移差异。
+> **Experiment ID:** `EXP-W03-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-14. 在 T0 Session 开始、T1 初步定位、T2 大量代码读取后、T3 大量日志后、T4 Compact 前、T5 Compact 后、T6 Resume 后记录状态。
+1. 选一个中等规模且可逆的真实研究任务，例如调查 Codex Plugin 的一个迁移差异。
 
-15. 记录 Claude 现在知道什么、哪些文件重复读取、哪些日志污染 Context、Compact / Resume 后什么需要重新发现。
+2. 在 T0 Session 开始、T1 初步定位、T2 大量代码读取后、T3 大量日志后、T4 Compact 前、T5 Compact 后、T6 Resume 后记录状态。
 
-16. 观察问题后再读 ACE，用理论解释，再回到实验验证。
+3. 记录 Claude 现在知道什么、哪些文件重复读取、哪些日志污染 Context、Compact / Resume 后什么需要重新发现。
+
+4. 观察问题后再读 ACE，用理论解释，再回到实验验证。
 
 ### 建议保留的证据
 
@@ -101,19 +95,9 @@
 
 > Phase 2 · Claude Code Host Model
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-同一个工程要求，应该放 CLAUDE.md、Rules、Skill、Hook、Subagent、MCP，还是 Plugin？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **同一个工程要求，应该放 CLAUDE.md、Rules、Skill、Hook、Subagent、MCP，还是 Plugin？**
 
 ### 主线研究对象
 
@@ -150,13 +134,19 @@
 
 ### 学习后的实践：“HTTP 调用必须 timeout 并考虑降级”的三种治理方式对照
 
-17. A：Instruction / Rule Only。
+> **Experiment ID:** `EXP-W04-01`  
+> **Experiment Type:** `COMPARATIVE`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-18. B：Skill Only，提供 HTTP Client Implementation 流程和检查。
+1. A：Rule Only，作为共同 baseline。
 
-19. C：Rule 解释原因 + Deterministic Check 发现明显违规。
+2. B：Rule + Skill；保留相同 Rule，仅增加 HTTP Client Implementation 流程与检查。
 
-20. 使用 3–5 个近似任务：新增 HTTP client、修改已有 request、增加 fallback；记录首次遵循、遗漏、Agent 自发现、Hook 发现、误报、修复轮数和 Context Cost。
+3. C：Rule + Deterministic Check；保留相同 Rule，仅增加可机器检查的违规检测。
+
+4. 可选 D：Rule + Skill + Deterministic Check。只有 A/B/C 仍无法解释机制差异时再增加，不为凑全组合而执行。
+
+5. 使用 3–5 个近似任务：新增 HTTP client、修改已有 request、增加 fallback；记录首次遵循、遗漏、Agent 自发现、Check 发现、误报、修复轮数和 Context Cost。
 
 ### 建议保留的证据
 
@@ -191,19 +181,9 @@
 
 > Phase 3 · Codex Host Model
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-Codex 如何组织 Agent 能力、项目指导和扩展机制？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **Codex 如何组织 Agent 能力、项目指导和扩展机制？**
 
 ### 主线研究对象
 
@@ -244,15 +224,19 @@ Codex 如何组织 Agent 能力、项目指导和扩展机制？</strong></th>
 
 ### 学习后的实践：Architecture V0 → Source → Behavior → Architecture V2
 
-21. 先画 Codex Architecture V0，标所有问号。
+> **Experiment ID:** `EXP-W05-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-22. 建立 Repository Map，针对问号定位对应 crate。
+1. 先画 Codex Architecture V0，标所有问号。
 
-23. AGENTS.md 层级实验：观察 scope 与覆盖。
+2. 建立 Repository Map，针对问号定位对应 crate。
 
-24. Skill Discovery 实验：description 明确 vs 模糊，观察发现与触发。
+3. AGENTS.md 层级实验：观察 scope 与覆盖。
 
-25. Plugin 实验：使用当前 Codex Plugin 移植中的一个真实 Capability，比较原认知、官方 Contract、源码 Boundary 与真实加载行为。
+4. Skill Discovery 实验：description 明确 vs 模糊，观察发现与触发。
+
+5. Plugin 实验：使用当前 Codex Plugin 移植中的一个真实 Capability，比较原认知、官方 Contract、源码 Boundary 与真实加载行为。
 
 ### 建议保留的证据
 
@@ -285,19 +269,9 @@ Codex 如何组织 Agent 能力、项目指导和扩展机制？</strong></th>
 
 > Phase 3 · Codex Host Model
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-什么安全责任属于 Host，什么工程治理责任属于 Harness？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **什么安全责任属于 Host，什么工程治理责任属于 Harness？**
 
 ### 主线研究对象
 
@@ -336,13 +310,17 @@ Codex 如何组织 Agent 能力、项目指导和扩展机制？</strong></th>
 
 ### 学习后的实践：无破坏性 Safety Responsibility Experiment
 
-26. 使用无破坏性模拟场景：访问测试文件、向临时目录写入、git status、普通网络请求、项目规则禁止但本身无害的测试命令。
+> **Experiment ID:** `EXP-W06-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-27. 记录谁阻止：Host、Approval、Sandbox、Harness Hook，还是 Rule 只提醒。
+1. 使用无破坏性模拟场景：访问测试文件、向临时目录写入、git status、普通网络请求、项目规则禁止但本身无害的测试命令。
 
-28. 检查 Double Block、无意义 Approval、误报和 Agent 对原因的理解。
+2. 记录谁阻止：Host、Approval、Sandbox、Harness Hook，还是 Rule 只提醒。
 
-29. 拿 myharness pre_bash_guard 重新分类。
+3. 检查 Double Block、无意义 Approval、误报和 Agent 对原因的理解。
+
+4. 拿 myharness pre_bash_guard 重新分类。
 
 ### 建议保留的证据
 

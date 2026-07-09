@@ -10,19 +10,9 @@
 
 > Phase 6 · myharness Integration Research
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-经过前 12 个研究循环，我现在看到的 myharness 与 12 周前有什么不同？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **经过前 12 个研究循环，我现在看到的 myharness 与 12 周前有什么不同？**
 
 ### 主线研究对象
 
@@ -62,11 +52,15 @@
 
 ### 学习后的实践：Observation 与 Solution 分离的 Read-only Audit
 
-58. 每个 Finding 使用：Observed Problem / Current Mental Model / Project Evidence / Reference Pattern / Contrary Evidence / Candidate Hypothesis / Open Question。
+> **Experiment ID:** `EXP-W13-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-59. 最多 8–12 个高质量 Finding。
+1. 每个 Finding 使用：Observed Problem / Current Mental Model / Project Evidence / Reference Pattern / Contrary Evidence / Candidate Hypothesis / Open Question。
 
-60. 允许结论为“不改”：当前设计与参考模式不同，但项目 Evidence 支持现有设计。
+2. 最多 8–12 个高质量 Finding。
+
+3. 允许结论为“不改”：当前设计与参考模式不同，但项目 Evidence 支持现有设计。
 
 ### 建议保留的证据
 
@@ -101,19 +95,9 @@
 
 > Phase 6 · myharness Integration Research
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-哪些架构变化真正值得进入实验？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **哪些架构变化真正值得进入实验？**
 
 ### 主线研究对象
 
@@ -153,13 +137,17 @@
 
 ### 学习后的实践：Finding → Hypothesis → Top 3 → ADR Candidate
 
-61. 将 Week 13 的 8–12 个 Finding 全部改写为可验证 Hypothesis。
+> **Experiment ID:** `EXP-W14-01`  
+> **Experiment Type:** `EXPLORATORY`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-62. 按八个维度评分。
+1. 将 Week 13 的 8–12 个 Finding 全部改写为可验证 Hypothesis。
 
-63. 只选择 Top 3。
+2. 按八个维度评分。
 
-64. 为 Top 3 写实验型 ADR Candidate。
+3. 只选择 Top 3。
+
+4. 为 Top 3 写实验型 ADR Candidate。
 
 ### 建议保留的证据
 
@@ -192,19 +180,9 @@
 
 > Phase 6 · myharness Integration Research
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-验证一个架构假设所需的最小实现是什么？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **验证一个架构假设所需的最小实现是什么？**
 
 ### 主线研究对象
 
@@ -244,13 +222,17 @@
 
 ### 学习后的实践：Top 3 Hypothesis 的最小实现与证据保留
 
-65. 示例 A：Evidence Contract 降低 Reviewer False Completion → 只修改 expert-reviewer Skill。
+> **Experiment ID:** `EXP-W15-01`  
+> **Experiment Type:** `COMPARATIVE`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-66. 示例 B：Change Convergence 减少 Artifact Drift → 只对一个 Change 建立半自动 checker。
+1. 示例 A：Evidence Contract 降低 Reviewer False Completion → 只修改 expert-reviewer Skill。
 
-67. 示例 C：Shared Portable Skill Contract 降低 Claude → Codex Migration Duplication → 只迁移一个 Skill。
+2. 示例 B：Change Convergence 减少 Artifact Drift → 只对一个 Change 建立半自动 checker。
 
-68. 保存 Prompt / Task、Config、Host、Model、Artifact、Trace / Session Evidence、Git Diff、Test Result、Human Intervention。
+3. 示例 C：Shared Portable Skill Contract 降低 Claude → Codex Migration Duplication → 只迁移一个 Skill。
+
+4. 保存 Prompt / Task、Config、Host、Model、Artifact、Trace / Session Evidence、Git Diff、Test Result、Human Intervention。
 
 ### 建议保留的证据
 
@@ -289,19 +271,9 @@
 
 > Phase 6 · myharness Integration Research
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>核心研究问题<br />
-16 个研究循环以后，我到底改变了哪些设计认知？</strong></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+### 核心研究问题
+
+> **16 个研究循环以后，我到底改变了哪些设计认知？**
 
 ### 主线研究对象
 
@@ -309,7 +281,7 @@
 |---------------------------------|--------------|--------------------------------------------------------------|
 | myharness experimental variants | 项目验收     | Native Host / Current Harness / Experimental Capability 对照 |
 | SWE-agent ACI                   | L1 理论对照  | Agent Interface Design 会影响行为与任务表现                  |
-| 过程评测资料                    | 按需         | 仅吸收“不要只看最终 pass/fail”的评测思想                     |
+| 前 15 周 Experiment / Evidence | 内部研究证据 | 复用已积累的 process evidence，不临时引入模糊的“过程评测资料” |
 
 ### 重点查看部分
 
@@ -343,17 +315,21 @@
 
 ### 学习后的实践：Acceptance / Ablation / Mental Model Update
 
-69. Outcome：Task Success、First-pass Rate、Tests。
+> **Experiment ID:** `EXP-W16-01`  
+> **Experiment Type:** `ABLATION`  
+> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
 
-70. Process：Rework Count、False Completion、Blind Retry、Missed Verification、Unrelated Change。
+1. Outcome：Task Success、First-pass Rate、Tests。
 
-71. Governance：Rule Violation、Human Intervention、Gate Trigger。
+2. Process：Rework Count、False Completion、Blind Retry、Missed Verification、Unrelated Change。
 
-72. Context：Context Consumption、Repeated Reads、Recovery Time。
+3. Governance：Rule Violation、Human Intervention、Gate Trigger。
 
-73. Cost：Harness Complexity、Maintenance Cost、Cross-host Duplication。
+4. Context：Context Consumption、Repeated Reads、Recovery Time。
 
-74. ADR 状态更新为 ACCEPTED / REJECTED / REVISE / MORE EVIDENCE REQUIRED。
+5. Cost：Harness Complexity、Maintenance Cost、Cross-host Duplication。
+
+6. ADR 状态更新为 ACCEPTED / REJECTED / REVISE / MORE EVIDENCE REQUIRED。
 
 ### 建议保留的证据
 

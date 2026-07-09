@@ -52,6 +52,19 @@ Next Question
 7. [PART VII · Research Infrastructure](docs/06-Research-Infrastructure.md)
 8. [PART VIII · Reference Project Atlas](docs/07-Reference-Project-Atlas.md)
 
+## Research Workspace
+
+研究开始后，Research Note、Experiment、Evidence、Open Questions 与 ADR Candidate 统一进入 [`research/`](research/README.md)。
+
+- [`research/open-questions.md`](research/open-questions.md)：旁支问题与 Research Backlog
+- [`research/cycles/`](research/cycles/README.md)：按真实研究循环创建 Week 工作区
+- [`research/route-reviews/`](research/route-reviews/README.md)：每 2–4 个循环做路线复盘
+- [`research/adr-candidates/`](research/adr-candidates/README.md)：Week 14 以后维护实验型 ADR
+- [`research/design-beliefs.md`](research/design-beliefs.md)：持续沉淀可被证据修订的设计信念
+- [`research/templates/`](research/templates/)：统一模板
+
+详见 [V4.1 Changelog](CHANGELOG.md)。
+
 ## 使用原则
 
 - “Week” 是研究单元，不是硬性日历门禁。
@@ -64,7 +77,7 @@ Next Question
 
 ## 当前版本
 
-- Program：V4
-- 文档形态：8-Part 分卷导航版
+- Program：V4.1
+- 文档形态：8-Part 分卷导航版 + Research Workspace
 - 基准日期：2026-07-09
 - 状态：Draft / 可随研究结果迭代
