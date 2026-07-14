@@ -1,6 +1,6 @@
-# EXP-WXX-YY
+# EXP-CXX-YY · <Title>
 
-## Research Question
+## Cycle and Research Question
 
 ## Hypothesis
 
@@ -8,25 +8,36 @@
 
 EXPLORATORY / COMPARATIVE / ABLATION
 
-## Host / Model
+## Stable Task
 
-## Task / Prompt
+- Task Suite ID: T01 / T02 / T03
+- Task Instance ID:
+- Repository Baseline:
 
-## Baseline
-
-## Experimental Variant
+## Baseline and Variant
 
 ## Controlled Variables
 
+## Known Confounders
+
+## Runs
+
+<!-- Link one run-metadata YAML record per execution. -->
+
 ## Observed Evidence
 
-## Unexpected Behavior
+- Evidence Claim IDs (`EVD-*`):
+- Supporting Source / Run / Artifact IDs:
 
-## Evidence Location
+## Unexpected or Contradictory Behavior
+
+## Human Intervention
 
 ## Result
 
 SUPPORT / REJECT / INCONCLUSIVE
+
+## Limitations
 
 ## Mental Model Update
 

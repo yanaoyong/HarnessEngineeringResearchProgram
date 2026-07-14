@@ -2,7 +2,7 @@
 
 这里维护实验型 ADR Candidate。
 
-Week 14 之前可以记录候选标题，但不要急于标记 `ACCEPTED`。
+Cycle 16 之前可以记录候选标题，但不要急于标记 `ACCEPTED`。
 
 建议状态：
 

@@ -1,5 +1,33 @@
 # Changelog
 
+## V4.2 Batch 0 · 2026-07-14
+
+V4.2 Batch 0 只冻结公共研究协议。Batch 1 与 Cycle 1–18 正文尚未生成。
+
+### Program Protocol
+
+- 将 Program 从 16 Week 调整为 18 Cycle，并冻结 Cycle 名称、顺序、8 个 Phase 与 Batch 1–8 边界。
+- 增加 ZCode 与 OpenCode 研究角色，将原 Week 7 之后内容顺延到 Cycle 9–18。
+- 保留 V4.1 内容文件和 `EXP-Wxx-yy` 作为后续内容 Batch 的迁移基线。
+
+### Evidence and Evaluation
+
+- 冻结公共术语以及 Contract、Source、Behavior、Project、Enterprise、Community 六类来源。
+- 增加 ZCode Source Authority Gate；未验证官方 Runtime source 时禁止源码架构结论。
+- 增加 `T01 · Engineering Constraint`、`T02 · Semantic Review`、`T03 · Medium Change`。
+- 新实验使用 `EXP-Cxx-yy`，Run Metadata 分离 Host、Provider、Model、配置、revision、confounder、Evidence 与人工干预。
+- 增加 S0–S4 Host Support Levels，且不预设任何 Host 已达到 S1–S4。
+
+### Research Workspace
+
+- 新研究工作区使用 `cycle-xx/`，但不预创建 Cycle 目录。
+- 增加 Source Registry、Host Profile、Provider Profile 与 Enterprise Readiness Fact Sheet 模板。
+
+### Non-goals
+
+- 不生成 Cycle 正文，不实现 Batch 1、myharness feature、OpenCode Adapter 或 ZCode Plugin。
+- 不创建法律合规结论，不提交或推送。
+
 ## V4.1 · 2026-07-09
 
 V4.1 是文档工程与研究基础设施修订，不改变 Week 1–16 的核心研究主题和顺序。
