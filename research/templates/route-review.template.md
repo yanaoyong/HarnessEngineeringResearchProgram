@@ -26,4 +26,10 @@ YES / PARTIAL / NO
 
 ## Why the Route Changed
 
+## Frozen Protocol Impact
+
+NONE / NEW PROGRAM VERSION REQUIRED
+
+> A Route Review cannot change frozen Cycle names, numbers, order, or Batch boundaries.
+
 ## Next Review Trigger

@@ -1,0 +1,78 @@
+schema_version: "v4.2-batch0"
+
+# Template convention:
+# null means not recorded yet.
+# false, 0, and [] may be used only after the field was explicitly assessed.
+
+experiment:
+  id: "<EXP-CXX-YY>"
+  cycle: "<CXX>"
+  task_suite_id: "<T01|T02|T03>"
+  task_instance_id: "<stable-instance-id>"
+  run_id: "<run-id>"
+  started_at: "<ISO-8601>"
+  completed_at: "<ISO-8601>"
+
+repository:
+  url_or_path: "<repository>"
+  commit: "<full-commit-sha>"
+  dirty: null
+  diff_evidence_id: null
+
+host:
+  name: "<host>"
+  version: "<host-version>"
+  profile_id: "<host-profile-id>"
+
+provider:
+  name: "<provider>"
+  endpoint_type: "<first-party|compatible-api|gateway|local|other>"
+  profile_id: "<provider-profile-id>"
+  endpoint_identifier: "<non-secret-endpoint-identifier>"
+
+model:
+  id: "<model-id>"
+  revision_or_alias: null
+
+configuration:
+  snapshot_id: "<configuration-snapshot-id>"
+  permission_profile: null
+  sandbox_profile: null
+  tool_profile: null
+  feature_flags: null
+  additional_settings: null
+
+revisions:
+  rule: "<rule-revision-or-none>"
+  skill: "<skill-revision-or-none>"
+  check: "<check-revision-or-none>"
+  adapter: "<adapter-revision-or-none>"
+
+comparison:
+  baseline_run_id: null
+  experimental_variant: "<variant>"
+  controlled_variables: null
+  known_confounders: null
+
+evidence:
+  source_artifact_ids: null
+  ids: null
+  trace_location: null
+  artifact_locations: null
+  acceptance_check_results: null
+
+human_intervention:
+  occurred: null
+  total_count: null
+  events: null
+  # When occurred is true, replace events with entries shaped as:
+  # - timestamp: "<ISO-8601>"
+  #   type: "<prompt|approval|correction|manual-action|other>"
+  #   reason: "<why intervention was needed>"
+  #   action: "<what the human changed or supplied>"
+  #   effect_on_result: "<known effect or unknown>"
+
+result:
+  status: "<SUPPORT|REJECT|INCONCLUSIVE>"
+  summary: "<directional-result-summary>"
+  limitations: null

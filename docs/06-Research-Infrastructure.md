@@ -1,368 +1,150 @@
-# PART VII · Research Infrastructure
+# PART VII · V4.2 Research Infrastructure
 
-> 贯穿全程使用的 Research Note、Evidence Model、Experiment Record、ADR Candidate、Open Questions、Route Review 与 Design Beliefs 模板。
+> Batch 0 冻结的 Research Note、Evidence、Experiment、Run Metadata、Source Registry、Support Level、Open Questions、Route Review 与 ADR 基础设施。
 
-[← 上一卷](05-myharness-Integration-Research.md) · [返回总览](../README.md) · [下一卷 →](07-Reference-Project-Atlas.md)
+[返回总览](../README.md) · [研究计划总纲](00-研究计划总纲.md) · [Batch 0 Protocol](08-V4.2-Batch0-Protocol.md)
 
 ---
 
-## 1. 统一 Research Note 模板
+## 1. Canonical Protocol Files
 
-每个 Week 建议使用同一结构。重点不是篇幅，而是必须能看见：
+- [Common Glossary](09-V4.2-Glossary.md)
+- [Stable Task Suite](../research/task-suite.md)
+- [Evidence Classification and Source Authority](../research/source-authority.md)
+- [Host Support Levels](../research/support-levels.md)
+- [Research Workspace](../research/README.md)
+
+本卷说明这些协议如何组合使用；术语和权限冲突时，以对应 canonical protocol file 为准，不在内容 Batch 中静默重定义。
+
+## 2. Research Note
+
+每个真实 Cycle 使用同一认知结构：
 
 ```text
+Research Question
+        ↓
 Mental Model V0
         ↓
-Source / Behavior / Project Evidence
+Contract / Source / Behavior / Project / Enterprise Evidence
+        ↓
+Community Claims as Open Questions
         ↓
 Hypothesis
         ↓
-Experiment
+Experiment / Observation
         ↓
 Mental Model V1
         ↓
 Design Judgment
 ```
 
-模板：
+使用 [research-note.template.md](../research/templates/research-note.template.md)。Mental Model、Hypothesis 和 Reference Pattern 不是 Evidence；推断必须明确标记。
 
-```markdown
-# Week XX Research Note
+## 3. Evidence and Source Registry
 
-## 1. Research Question
+V4.2 使用六类来源：
 
-我真正想回答什么？
+| Class | Primary use |
+|---|---|
+| Contract Evidence | 公开承诺的 surface 与边界 |
+| Source Evidence | 已验证 revision 的实现 |
+| Behavior Evidence | 绑定运行条件下的直接观察 |
+| Project Evidence | myharness 中问题的存在与影响 |
+| Enterprise Fact | 特定企业 profile 的部署事实 |
+| Community Claim | 调查线索与 Open Question |
 
-## 2. Why It Matters to myharness
+来源使用 [source-registry.template.md](../research/templates/source-registry.template.md) 登记。证据数量不等于证据强度；每条重要 Evidence 还应记录 Direct / Indirect、Repeatable / One-off、Current / Stale、Host-specific / Cross-host、Supports / Contradicts。
 
-为什么这个问题与我的项目有关？
+ZCode 的 Source Evidence 受独立 Source Authority Gate 约束。未验证官方 Runtime source 时，不允许形成源码架构或内部生命周期结论。
 
-## 3. Mental Model V0
+## 4. Experiment and Run Metadata
 
-学习前，我认为机制是什么？
-
-## 4. Source Evidence
-
-从官方资料、规范或源码看到了什么？
-
-## 5. Reference Pattern
-
-优秀项目怎么解决？它解决的是否真是同一个问题？
-
-## 6. Hypothesis
-
-我现在形成什么可验证判断？
-
-## 7. Experiment
-
-如何用最小实践验证？
-
-## 8. Observation
-
-实际发生了什么？
-
-## 9. Mental Model V1
-
-我的认知发生什么变化？
-
-## 10. Design Judgment
-
-对 myharness 当前有什么判断？
-
-## 11. Open Questions
-
-哪些问题暂时不研究？
-```
-
-## 2. Evidence Model
-
-| 证据类型 | 典型来源 | 它回答的问题 |
-|---|---|---|
-| Source Evidence | 官方文档、源码、公开规范、论文 | 系统被设计成什么？ |
-| Behavior Evidence | Claude / Codex 行为实验、Session、Trace、Tool behavior | 系统实际上表现成什么？ |
-| Project Evidence | myharness failure-record、A/B test、真实 Change、Review、CI | 这个问题在我的项目中真的存在吗？ |
-
-> **重要判断：** 一个优秀开源项目采用某种 Pattern，只能构成 Reference Evidence；它不等于 myharness 必须采用。只有 Source / Behavior / Project Evidence 逐渐闭环，才值得进入 Architecture Decision。
-
-### Evidence Strength 不是“引用数量”
-
-建议同时记录：
+新 Experiment ID：
 
 ```text
-Direct / Indirect
-Repeatable / One-off
-Current / Stale
-Host-specific / Cross-host
-Supports / Contradicts
+EXP-C01-01
+EXP-C08-02
+EXP-C18-01
 ```
 
-一个反例可以比十条同方向印象更有价值。
+Experiment 表示研究问题、Hypothesis、设计和结果；Run 表示一次具体执行。使用：
 
-## 3. Experiment Record
+- [experiment-record.template.md](../research/templates/experiment-record.template.md)
+- [run-metadata.template.yaml](../research/templates/run-metadata.template.yaml)
 
-建议 Experiment ID 使用：
+Run metadata 必须分离：
 
-```text
-EXP-W01-01
-EXP-W08-02
-EXP-W16-01
-```
+- repository commit
+- Host 与 Host version
+- Provider 与 endpoint type
+- Model ID
+- configuration snapshot
+- Rule、Skill、Check、Adapter revision
+- controlled variables
+- known confounders
+- evidence
+- human intervention
 
-模板：
+V4.1 正文中的 `EXP-Wxx-yy` 保持历史编号，直到对应内容 Batch 迁移。实际历史 Evidence 不重新编号。
 
-```markdown
-# EXP-WXX-YY
+### Experiment types
 
-## Research Question
+| Type | Purpose |
+|---|---|
+| EXPLORATORY | 观察现象、发现变量、形成下一步 Hypothesis |
+| COMPARATIVE | 在共同 baseline 下比较机制差异 |
+| ABLATION | 移除或逐层增加 capability，观察边际贡献 |
 
-## Hypothesis
+## 5. Stable Task Suite
 
-## Experiment Type
+T01–T03 冻结任务语义：
 
-EXPLORATORY / COMPARATIVE / ABLATION
+- `T01 · Engineering Constraint`
+- `T02 · Semantic Review`
+- `T03 · Medium Change`
 
-## Host / Model
+具体 task instance 在对应内容 Batch 中选择并登记。Task Suite 只用于方向性比较，不用于公开模型 benchmark。
 
-## Task / Prompt
+## 6. Host and Provider Profiles
 
-## Baseline
+- [host-profile.template.md](../research/templates/host-profile.template.md) 绑定 Host version、Contract surface、source authority、Provider boundary 与 capability assessment。
+- [provider-profile.template.md](../research/templates/provider-profile.template.md) 绑定 Provider、endpoint type、Model、路由和 behavior-affecting settings。
+- [enterprise-readiness-fact-sheet.template.md](../research/templates/enterprise-readiness-fact-sheet.template.md) 只记录特定部署事实，不创建普遍法律合规结论。
 
-## Experimental Variant
+任何 profile 都不得记录 secret、token 或私有凭据值。
 
-## Controlled Variables
+## 7. Support Levels
 
-## Observed Evidence
+| Level | Meaning |
+|---|---|
+| S0 | Not Assessed |
+| S1 | Contract Mapped |
+| S2 | Behavior Verified |
+| S3 | Operationally Verified |
+| S4 | Enterprise Profile Verified |
 
-## Unexpected Behavior
+S1 不表示 full support，S2 不表示 production ready，S4 不表示 universal legal compliance。Batch 0 不预设任何 Host 达到 S1–S4。
 
-## Evidence Location
+## 8. Open Questions and Route Review
 
-## Result
+旁支问题统一进入 [open-questions.md](../research/open-questions.md)。Community Claim 默认只能创建 Open Question。
 
-SUPPORT / REJECT / INCONCLUSIVE
+每 2–4 个 Cycle 使用 [route-review.template.md](../research/templates/route-review.template.md) 做 Route Review。允许调整项目、研究深度、执行节奏或提前借用后续方法，但不得改变 Batch 0 冻结的 Cycle 名称、编号、顺序或 Batch 边界。修改冻结协议需要新的 Program version，并必须记录 Why the Route Changed。
 
-## Mental Model Update
+## 9. ADR Candidate and Design Beliefs
 
-## Next Question
-```
+Cycle 16 的 ADR Candidate 是实验候选，不是已经接受的架构决策。使用 [adr-candidate.template.md](../research/templates/adr-candidate.template.md)。
 
-### 三类 Experiment Type
+Implementation 完成不等于 ADR 正确。只有结果回答原 Hypothesis，才可以更新 Decision。Design Beliefs 继续记录在 [design-beliefs.md](../research/design-beliefs.md)，并保留 Evidence、Counterexample、Boundary 与 Confidence。
 
-| Type | 目的 | 适合回答 |
-|---|---|---|
-| EXPLORATORY | 观察现象、发现变量、形成下一步假设 | “Context 到底怎么增长？” |
-| COMPARATIVE | 在共同 baseline 下比较机制差异 | “Rule + Skill 与 Rule + Check 有何差异？” |
-| ABLATION | 移除或逐层增加能力，观察某个 capability 的边际贡献 | “Changes 这一层真的增加价值吗？” |
-
-不要为了让实验“像论文”而强行做所有组合。分类的目的只是提醒自己：**当前证据究竟能支持多强的结论。**
-
-## 4. ADR Candidate Template
-
-Week 14 的 ADR 是实验候选，不是已经接受的架构决策。
-
-```markdown
-# ADR-CANDIDATE-XXX · <Title>
-
-## Status
-
-PROPOSED / EXPERIMENT
-
-## Context
-
-## Observed Problem
-
-## Current Evidence
-
-## Hypothesis
-
-## Experiment Design
-
-## Success Signal
-
-## Failure Signal
-
-## Boundary
-
-## Reversal Plan
-
-## Result
-
-SUPPORT / REJECT / INCONCLUSIVE
-
-## Decision Update
-
-ACCEPTED / REJECTED / REVISE / MORE EVIDENCE REQUIRED
-```
-
-核心原则：
-
-> Implementation 完成不等于 ADR 正确；只有结果回答了原 Hypothesis，才有资格更新 Decision。
-
-## 5. Open Questions / Research Backlog
-
-旁支问题不是“不重要”，只是**当前不研究**。
-
-建议统一记录在 `research/open-questions.md`。
-
-字段：
-
-```text
-Question ID
-Question
-Discovered In
-Why It Matters
-Current Evidence
-Blocks Current Research?
-Priority
-Candidate Phase
-Status
-```
-
-示例：
-
-```markdown
-### OQ-007 · Subagent 的主要收益来自 specialization 还是 context isolation？
-
-- Discovered In: Week 2
-- Why It Matters: 影响 myharness 对 subagent 的使用边界
-- Current Evidence: EXP-W02-01
-- Blocks Current Research?: NO
-- Priority: MEDIUM
-- Candidate Phase: Week 11
-- Status: BACKLOG
-```
-
-建议状态：
-
-```text
-BACKLOG
-ACTIVE
-ANSWERED
-DROPPED
-MERGED
-```
-
-## 6. Route Review
-
-每 2–4 个研究循环做一次 Route Review。它不是进度汇报，而是检查：
-
-> **当前路线是否仍然值得继续？**
-
-模板：
-
-```markdown
-# Route Review · RR-YYYYMMDD
-
-## Cycles Reviewed
-
-## Questions Answered
-
-## Mental Models Changed
-
-## Hypotheses Supported
-
-## Hypotheses Rejected
-
-## Inconclusive Results
-
-## New Open Questions
-
-## Current Route Still Valid?
-
-YES / PARTIAL / NO
-
-## Projects to Add
-
-## Projects to Remove
-
-## Plan Changes
-
-## Why the Route Changed
-
-## Next Review Trigger
-```
-
-Route Review 可以得到：
-
-```text
-继续原路线
-调整项目
-交换 Week 顺序
-延长当前循环
-提前借用后续方法
-删除一个研究问题
-```
-
-但必须记录“为什么改”。
-
-## 7. myharness Design Beliefs Template
-
-Design Beliefs 不是 Rules，也不是永久真理。
-
-```markdown
-# B-XXX · <Short Statement>
-
-## Statement
-
-当前相信的设计原则。
-
-## Why I Believe It
-
-为什么形成这个判断？
-
-## Evidence
-
-对应 Experiment / Failure / A-B Test / Source。
-
-## Counterexample
-
-什么现象反驳或限制它？
-
-## Boundary
-
-在哪些条件下适用？
-
-## Confidence
-
-HIGH / MEDIUM / LOW
-
-## Implication
-
-它对 myharness 设计意味着什么？
-```
-
-示例（仅示意，不是预设结论）：
-
-```text
-B-001
-
-Statement
-Deterministic engineering constraints should prefer enforcement over instruction.
-
-Evidence
-EXP-W04-01
-failure-record-002
-
-Counterexample
-Semantic architecture rules cannot be completely enforced deterministically.
-
-Boundary
-Applicable to machine-checkable constraints.
-
-Confidence
-HIGH
-
-Implication
-Rule explains why. Hook / Test verifies observable violation.
-```
-
-## 8. Research Workspace
-
-本仓库使用轻量工作区：
+## 10. Research Workspace
 
 ```text
 research/
 ├── README.md
+├── task-suite.md
+├── source-authority.md
+├── support-levels.md
 ├── open-questions.md
 ├── cycles/
 │   └── README.md
@@ -373,26 +155,27 @@ research/
 ├── templates/
 │   ├── research-note.template.md
 │   ├── experiment-record.template.md
+│   ├── run-metadata.template.yaml
+│   ├── source-registry.template.md
+│   ├── host-profile.template.md
+│   ├── provider-profile.template.md
+│   ├── enterprise-readiness-fact-sheet.template.md
 │   ├── adr-candidate.template.md
 │   └── route-review.template.md
 └── design-beliefs.md
 ```
 
-不要提前创建 `week-01` 到 `week-16` 的 16 个空目录。
-
-开始一个研究循环时再创建：
+开始真实 Cycle 时再创建：
 
 ```text
-research/cycles/week-01/
+research/cycles/cycle-01/
 ├── research-note.md
 ├── experiments/
 └── evidence/
 ```
 
-让研究工作区随着真实研究自然生长。
+Batch 0 不创建任何 `cycle-*` 目录。
 
----
+## 11. V4.1 Historical Boundary
 
-## 路线调整说明
-
-本卷是研究基础设施，不是额外流程负担。模板字段可以根据实际研究删减；如果记录成本开始高于证据价值，应在下一次 Route Review 中主动简化。
+V4.1 Research Infrastructure 是本卷的迁移来源，不作为并行协议继续演进。V4.1 正文中的 Week、旧实验编号和项目导航保持原状，直到对应内容 Batch 迁移；新产生的研究制品一律使用 V4.2 Cycle-based 协议。

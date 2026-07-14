@@ -1,23 +1,49 @@
-# Week XX Research Note
+# Cycle XX Research Note
 
 ## 1. Research Question
 
 ## 2. Why It Matters to myharness
 
-## 3. Mental Model V0
+## 3. Scope and Exit Criteria
 
-## 4. Source Evidence
+## 4. Mental Model V0
 
-## 5. Reference Pattern
+## 5. Evidence Registry
 
-## 6. Hypothesis
+> Record each reusable claim as `EVD-*` and link it to Source, Run, Experiment, Project Artifact, or Enterprise Fact IDs.
 
-## 7. Experiment
+### Contract Evidence
 
-## 8. Observation
+### Source Evidence
 
-## 9. Mental Model V1
+### Behavior Evidence
 
-## 10. Design Judgment
+### Project Evidence
 
-## 11. Open Questions
+### Enterprise Fact
+
+### Community Claims
+
+> Community Claims create Open Questions only.
+
+## 6. Reference Pattern
+
+## 7. Hypothesis
+
+## 8. Experiment
+
+- Experiment ID: EXP-CXX-YY
+- Task Suite ID: T01 / T02 / T03
+- Run Metadata:
+
+## 9. Observation
+
+## 10. Contradictory Evidence and Limitations
+
+## 11. Mental Model V1
+
+## 12. Design Judgment
+
+## 13. Open Questions
+
+## 14. Route Review Trigger
