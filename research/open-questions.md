@@ -55,6 +55,17 @@
 - Candidate Cycle: Cycle 4 follow-up / Cycle 10 Skill Behavior & Evaluation
 - Status: BACKLOG
 
+### OQ-005 · Codex CLI、IDE、desktop 与 cloud 是否共享同一 customization / execution 语义？
+
+- Discovered In: Batch 3 / Cycle 5–6 official Contract registration
+- Why It Matters: 当前官方导航覆盖多个 Codex surface；如果直接合并，可能把 AGENTS.md、Skill、Plugin、Hook、Sandbox 或 Approval 在一个 surface 的 Contract / Behavior 外推到另一个 surface
+- Current Evidence: 只有计划态官方文档锚点 `SRC-CODEX-001..004`、`SRC-CODEX-006..010`；尚未绑定 Host version、surface、platform 或 Behavior Run
+- Authority Boundary: 官方 overview 只能支持其明确声明的公开范围；未执行 Direct Behavior、未固定 Source revision 时，不能宣称 surface parity 或共同 Runtime implementation
+- Blocks Current Research?: NO；Cycle 5–6 可以先按实际实验 surface 建立 scoped map，其余 surface 保持 Unknown
+- Priority: HIGH
+- Candidate Cycle: Cycle 5 / Cycle 6 / Cycle 9 cross-host abstraction
+- Status: BACKLOG
+
 ## Template
 
 <!--

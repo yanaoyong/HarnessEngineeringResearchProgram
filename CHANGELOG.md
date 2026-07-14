@@ -1,5 +1,37 @@
 # Changelog
 
+## V4.2 Batch 3 · 2026-07-14
+
+Batch 3 生成 Codex Host 的 Cycle 5–6 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果、已验证 Runtime architecture 或 Support Assessment。
+
+### Codex Host 内容（Host Content）
+
+- 将 V4.1 Week 5–6 迁移为 Cycle 5「Codex Architecture & Customization」与 Cycle 6「Codex Execution、Safety & State」。
+- 为两个 Cycle 增加单一核心 Research Question、scope、Mental Model V0、可证伪 Hypothesis、Exit Criteria 与 Route Review trigger。
+- 将 `EXP-W05-01` 拆分为 `EXP-C05-01` Contract → Source → Behavior architecture trace、`EXP-C05-02` Skill description、`EXP-C05-03` AGENTS hierarchy 与 `EXP-C05-04` Plugin distribution / load 四项设计，完整保留 V4.1 Week 5 的迁移覆盖。
+- 将 `EXP-W06-01` 拆分为 `EXP-C06-01` 无破坏性 execution / state trace 与 `EXP-C06-02` Host hard-deny / Harness guard shadowing 配对对照。
+- 将实验分别对齐 `T03 · Medium Change`、`T02 · Semantic Review` 与 `T01 · Engineering Constraint`，要求每个 Run / variant 使用独立 Run Metadata。
+- 根据 Batch 3 审查，为 Cycle 6 固定真实的小型可逆 T01 修改、deterministic acceptance checks、隔离 marker effect、决策顺序分类、统一 recovery profile 与强制 fresh-run State checkpoint；只观察到一个 deny 时不得声称 Double Block。
+
+### 来源权限（Source Authority）
+
+- 登记当前 Codex Customization、AGENTS.md、Skills、Plugins、Rules、Hooks、Sandbox、Agent approvals & security 与 Config basics 的计划态官方 Contract 锚点。
+- 将所有官方页面标记为执行时绑定 Codex version / surface / platform 并重新核验的浮动锚点；文档存在不等于本地配置已加载或 Behavior 已验证。
+- 将 `openai/codex` 登记为官方 Source 仓库浮动锚点，但 commit 明确标记为 `NOT PINNED`；执行时固定完整 commit、重新定位 source path 与 claim scope 后才能派生 Source Evidence。
+- 明确 Contract、Source 与 Behavior 必须分开登记；源码存在不证明当前安装版本采用、启用或公开承诺该实现。
+
+### 研究工作区（Research Workspace）
+
+- 新增 `cycle-05` 与 `cycle-06` 的非空计划态 Research Note。
+- 为两个 Cycle 准备 `experiments/` 与 `evidence/`，只登记 Source artifact，不创建 Experiment Record、Run record 或 `EVD-*`。
+- 明确内容生成不满足 Exit Criteria，不创建 Route Review 结果，也不表示 Codex 已达到 S1–S4。
+
+### 非目标（Non-goals）
+
+- 不生成 Cycle 7–18 正文，不实现 Batch 4。
+- 不执行 Codex 实验，不形成未绑定 revision / version 的 architecture、Behavior 或安全结论。
+- 不修改 myharness guard / Plugin，不实现 Adapter，也不运行危险或破坏性安全场景；Plugin 实验只能复用无需修改的既有 capability，否则保持 `NOT EXECUTED`。
+
 ## V4.2 Batch 2 · 2026-07-14
 
 Batch 2 生成 Claude Code Host 的 Cycle 3–4 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果或 Support Assessment。

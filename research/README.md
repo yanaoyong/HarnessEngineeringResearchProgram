@@ -1,6 +1,6 @@
 # V4.2 研究工作区（Research Workspace）
 
-> Batch 0 已冻结公共协议；Batch 1–2 的 C01–C04 正文与计划态 Research Note 已生成，研究执行尚未开始。
+> Batch 0 已冻结公共协议；Batch 1–3 的 C01–C06 正文与计划态 Research Note 已生成，研究执行尚未开始。
 
 这里存放 Research Program 内容准备与执行产生的真实研究制品。计划态制品必须明确标记 `NOT EXECUTED`；工作区按内容 Batch 生长，不一次性预创建 18 个空目录。
 
@@ -38,7 +38,7 @@ research/
 └── design-beliefs.md
 ```
 
-Batch 1–2 已创建四个非空的计划态 Cycle workspace：
+Batch 1–3 已创建六个非空的计划态 Cycle workspace：
 
 ```text
 research/cycles/cycle-01/
@@ -68,10 +68,24 @@ research/cycles/cycle-04/
 │   └── README.md
 └── evidence/
     └── SRC-CLAUDE-007..010.md
+
+research/cycles/cycle-05/
+├── research-note.md
+├── experiments/
+│   └── README.md
+└── evidence/
+    └── SRC-CODEX-001..005.md
+
+research/cycles/cycle-06/
+├── research-note.md
+├── experiments/
+│   └── README.md
+└── evidence/
+    └── SRC-CODEX-006..010.md
 ```
 
 `experiments/` 已为后续实现准备，但只包含计划状态说明；`evidence/` 只包含已登记、尚未派生 `EVD-*` 的 Source Registry entries。实验尚未执行，因此没有 Experiment Record 或 Run record。执行真实研究时再按模板增加制品，不要为每个 Cycle 重新发明协议。
 
 ## V4.1 历史内容（Historical Content）
 
-V4.1 正文中的 `Week`、`week-xx/` 示例和 `EXP-Wxx-yy` 是迁移来源。Week 1–4 已迁移；其旧实验 ID 只作为 historical plan mapping 保留。Week 5–16 继续等待对应内容 Batch。旧 Evidence ID 不重新编号；新制品不得继续使用 Week 命名。
+V4.1 正文中的 `Week`、`week-xx/` 示例和 `EXP-Wxx-yy` 是迁移来源。Week 1–6 已迁移；其旧实验 ID 只作为 historical plan mapping 保留。Week 7–16 继续等待对应内容 Batch。旧 Evidence ID 不重新编号；新制品不得继续使用 Week 命名。
