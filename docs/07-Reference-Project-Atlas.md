@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。Batch 1–2 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。Batch 1–3 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -24,7 +24,7 @@ Stop at Do-Not-Study Boundary
 
 当项目默认分支、目录或术语发生变化时，优先追 Capability 与研究问题，不机械寻找旧路径。
 
-## Batch 1–2 当前图谱（Active Atlas）
+## Batch 1–3 当前图谱（Active Atlas）
 
 | 项目 / 来源 | 研究角色（Research Role） | 核心问题 | 深度 | 相关 Cycle | 当前锚点 | 权限 / 停止边界 |
 |---|---|---|---|---|---|---|
@@ -37,12 +37,17 @@ Stop at Do-Not-Study Boundary
 | HumanLayer Advanced Context Engineering | Context strategy 方法参考 | 如何解释 context trajectory 与 intentional compaction？ | L2 method | C03 | 浮动 `main`：`ace-fca.md` | Community Reference；先观察后解释，不能证明 Host Contract / Behavior |
 | Claude Code official docs · Extend Claude Code | Extension surface Contract | CLAUDE.md、Skill、Hook、Subagent、MCP、Plugin 的职责与加载边界是什么？ | L2 定向 | C04 | `features-overview` → Memory / Hooks / Subagents / Plugins 专项页 | 浮动官方页面；Contract 不等于配置已加载或 capability 有效 |
 | myharness Claude extension artifacts | 项目只读映射对象 | 现有 Rule、Skill、Hook、Check 与 Plugin distribution 是否职责重叠？ | Project mapping | C04 | 执行时按当前仓库 capability 重新定位 | 文件存在不等于 Project / Behavior Evidence；Batch 2 不修改实现 |
+| Codex official docs · Customization / AGENTS.md / Skills / Plugins | Codex customization Contract | 项目指导、Skill progressive disclosure 与 Plugin distribution 如何分工？ | L2 定向 | C05 | Customization overview → AGENTS.md / Build skills / Build plugins | 浮动官方页面；执行时绑定 Codex version / surface；不证明本地加载或内部实现 |
+| Codex official docs · MCP / Subagents / Hooks / Config | Codex extension boundary | external tool、delegation、lifecycle 与 configuration 如何进入 architecture map？ | L2 定向 | C05–C06 | 从当前官方导航按 capability 重新定位 | 页面与导航会变化；Contract 不等于 capability 已启用或 behavior 已验证 |
+| openai/codex | Codex verified Official Source 候选 | 特定 revision 如何实现 customization、execution、policy、sandbox、hook 与 state boundary？ | L3 targeted | C05–C06 | 浮动默认分支；执行时先固定 commit，再按 capability 建 Repository Map | 当前 `NOT PINNED`；不得沿用旧 crate / path，也不得把 Source 当成当前安装 Behavior |
+| Codex official docs · Rules / Sandbox / Agent approvals & security | Codex execution / safety Contract | technical boundary、approval 与 command policy 如何分工？ | L2 定向 | C06 | Rules、Sandbox、Agent approvals & security | 浮动官方页面；绑定 Host version / surface / platform；不形成安全保证或合规结论 |
+| myharness pre-execution artifacts | 项目只读映射对象 | guard 是否重复 Host policy，或提供 Host 无法表达的项目语义？ | Project mapping | C06 | 执行时按当前仓库 capability 重新定位 | 文件存在不等于已触发、有效或需要保留；Batch 3 不修改实现 |
 
 上述入口、官方页面和默认分支目录只是计划执行时核验的浮动锚点，Atlas 只提供定位，不证明当前 revision 的源码事实或实际 Host behavior。形成 Evidence 时必须重新核验并登记 Source ID、Host version / commit、scope、访问日期与限制。
 
 ## V4.1 Legacy Atlas · Pending Migration
 
-下表保持 V4.1 `Relevant Week` 语义，供 Batch 3–8 迁移及 historical mapping 复查。Batch 2 不借 Atlas 更新提前生成 Cycle 5–18 正文；其中 Week 3–4 rows 只保留迁移历史。
+下表保持 V4.1 `Relevant Week` 语义，供 Batch 4–8 迁移及 historical mapping 复查。Batch 3 不借 Atlas 更新提前生成 Cycle 7–18 正文；其中 Week 3–6 rows 只保留迁移历史。
 
 | Project / Source | Research Role | Primary Question | Depth | Relevant Week | Primary Anchor | Do Not Study |
 |---|---|---|---|---|---|---|
@@ -66,8 +71,15 @@ Stop at Do-Not-Study Boundary
 ## Primary Links
 
 - Agent Skills — https://agentskills.io/home
-- OpenAI Codex · Docs — https://developers.openai.com/codex
-- OpenAI Codex · Customization — https://developers.openai.com/codex/concepts/customization
+- OpenAI Codex · Docs — https://learn.chatgpt.com/docs
+- OpenAI Codex · Customization — https://learn.chatgpt.com/docs/customization/overview
+- OpenAI Codex · AGENTS.md — https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- OpenAI Codex · Build skills — https://learn.chatgpt.com/docs/build-skills
+- OpenAI Codex · Build plugins — https://learn.chatgpt.com/docs/build-plugins
+- OpenAI Codex · Rules — https://learn.chatgpt.com/docs/agent-configuration/rules
+- OpenAI Codex · Hooks — https://learn.chatgpt.com/docs/hooks
+- OpenAI Codex · Sandbox — https://learn.chatgpt.com/docs/sandboxing
+- OpenAI Codex · Agent approvals & security — https://learn.chatgpt.com/docs/agent-approvals-security
 - openai/codex — https://github.com/openai/codex
 - Claude Code · Context Window — https://code.claude.com/docs/en/context-window
 - Claude Code · How Claude Code Works — https://code.claude.com/docs/en/how-claude-code-works

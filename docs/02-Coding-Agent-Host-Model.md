@@ -1,6 +1,6 @@
 # PART III · V4.2 Coding Agent Host Model
 
-> Claude Code Host · Batch 2 · Cycle 3–4 正文已生成；研究执行与实验结果尚未开始。V4.1 Week 5–6 继续作为 Batch 3 的历史迁移源。
+> Claude Code Host / Codex Host · Batch 2–3 · Cycle 3–6 正文已生成；研究执行与实验结果尚未开始。
 
 [← 上一卷](01-Agent与Harness基础认知.md) · [返回总览](../README.md) · [下一卷 →](03-Cross-host-Harness-Abstraction.md)
 
@@ -264,187 +264,326 @@ Cycle 4 只有在以下条件均满足后才能结束：
 
 迁移只更新未来研究设计，不声称 V4.1 实验已发生，也不把旧 ID 重编号成 Evidence。
 
-## V4.1 Week 5–6 Historical Baseline · Pending Batch 3
+## Batch 3 边界（Boundary）
 
-以下内容继续保持 V4.1 Week-based 形态，供 Batch 3 迁移为 Cycle 5–6。它不是 V4.2 Cycle 5–6 正文，不表示相关实验已经执行。
+Batch 3 只生成 Codex Host 的两个 Cycle：
 
-## Week 5 · Codex Architecture & Customization Model
+1. Cycle 5 · Codex Architecture & Customization
+2. Cycle 6 · Codex Execution、Safety & State
 
-> Phase 3 · Codex Host Model
+本 Batch 将 V4.1 Week 5–6 迁移为计划态 V4.2 正文，并对齐官方 Contract、verified Official Source、Direct Behavior、T01–T03、`EXP-Cxx-yy` 与 Run Metadata。它不执行 Codex，不产生 `EVD-*`、Support Assessment 或已验证 architecture 结论，不实现 myharness feature，也不迁移 Cycle 7–18。
 
-### 核心研究问题
+V4.1 Week 5–6 原文可在基线提交 `f2b3961cbe125f846818d11a8892fe3c34f2751f` 中复查。旧 `EXP-W05-01` 与 `EXP-W06-01` 只作为历史计划 ID 保留。
 
-> **Codex 如何组织 Agent 能力、项目指导和扩展机制？**
+## Codex Host 工作模型（Working Model）
 
-### 主线研究对象
+```text
+公开 Contract Surface
+  AGENTS.md · Memories · Skills · MCP · Subagents · Plugins · Hooks · Config
+        ↓
+绑定 revision 的 Official Source Boundary
+        ↓
+绑定 Host / Provider / Model / Configuration 的 Observed Behavior
 
-| **研究对象**             | **阅读深度** | **本周只关注**                                                                     |
-|--------------------------|--------------|------------------------------------------------------------------------------------|
-| Codex 官方 Customization | L2 定向      | 先读稳定 Contract：AGENTS.md、Memories、Skills、MCP、Subagents、Plugins / Hooks 等 |
-| openai/codex             | L3 定向源码  | 只跟 Harness 接口相关 crate；建立 Repository Map 后按问题读源码                    |
+执行治理候选层：
+Sandbox Boundary → Approval / Trust Decision → Command Rule / Hook → Project Rule → CI / Acceptance
+```
 
-### 重点查看部分
-
-- 官方资料先读 Customization；先画 Codex Architecture V0，不看源码。
-
-- 仓库根：AGENTS.md、.codex/、codex-cli/、codex-rs/、docs/、sdk/、tools/。
-
-- codex-rs 定位：core、context-fragments、message-history、state、memories、skills、core-skills、plugin、core-plugins、hooks、tools。
-
-- 单 crate 阅读顺序：README → Cargo.toml → lib.rs / entry → 搜索核心概念 → 跟 1–2 层调用 → 停止。
-
-### 阅读时只追这些问题
-
-- Capability 在 Architecture 中扮演什么角色？
-
-- Docs 定义 Contract、Source 定义 Implementation、Behavior 定义什么？
-
-- AGENTS.md、Skill、Plugin、Hook、Memory、State 的边界怎样组织？
-
-- myharness 应依赖 Implementation Detail，还是 Stable Surface？
-
-### 本周不要陷进去
-
-- 从第一行顺序读完整仓库
-
-- 遇到 Rust trait 就全部补课
-
-- 顺着依赖无限展开
-
-- 研究 TUI、网络客户端和无关基础设施
-
-### 学习后的实践：Architecture V0 → Source → Behavior → Architecture V2
-
-> **Experiment ID:** `EXP-W05-01`
-> **Experiment Type:** `EXPLORATORY`
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 先画 Codex Architecture V0，标所有问号。
-
-2. 建立 Repository Map，针对问号定位对应 crate。
-
-3. AGENTS.md 层级实验：观察 scope 与覆盖。
-
-4. Skill Discovery 实验：description 明确 vs 模糊，观察发现与触发。
-
-5. Plugin 实验：使用当前 Codex Plugin 移植中的一个真实 Capability，比较原认知、官方 Contract、源码 Boundary 与真实加载行为。
-
-### 建议保留的证据
-
-- V0 / V1 / V2 架构图变化
-
-- 源码定位路径与停止点
-
-- 行为实验与源码假设一致 / 不一致之处
-
-- 是否依赖不稳定 Implementation Detail
-
-### 预期成长
-
-| **源码方法** | 掌握 Question-driven Source Reading。                    |
-|--------------|----------------------------------------------------------|
-| **三层真相** | 开始区分 Contract、Implementation 与 Observed Behavior。 |
-
-### 实践完成后，重新理解
-
-- 开源源码是否一定比行为实验更“真实”？
-
-- 文档、源码和行为各能证明什么？
-
-- myharness 应依赖 Codex Implementation Detail，还是 Stable Surface？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-## Week 6 · Codex Execution、Safety 与 State
-
-> Phase 3 · Codex Host Model
-
-### 核心研究问题
-
-> **什么安全责任属于 Host，什么工程治理责任属于 Harness？**
-
-### 主线研究对象
-
-| **研究对象**              | **阅读深度** | **本周只关注**                                                                                          |
-|---------------------------|--------------|---------------------------------------------------------------------------------------------------------|
-| Codex 官方安全 / 权限资料 | L2 定向      | Permissions、Rules、Hooks、Sandboxing、Approvals & Security                                             |
-| openai/codex codex-rs     | L3 定向源码  | exec、execpolicy、shell-command、shell-escalation、sandboxing、process-hardening、secrets、hooks、state |
-
-### 重点查看部分
-
-- 先建立四层模型：Host Safety Boundary / Harness Engineering Policy / Project Rule / CI & Acceptance Gate。
-
-- 对“读取敏感范围、rm -rf、HTTP 缺 timeout、pytest 失败”等场景先自行分类，再实验。
-
-- 源码只跟 execution / policy / sandbox / state Boundary。
-
-### 阅读时只追这些问题
-
-- Host 权限边界与 Harness 工程策略如何区分？
-
-- Approval、Sandbox、Rule、Hook、CI 是否存在重复拦截？
-
-- Double Block 是否有成本？
-
-- Agent 是否需要理解阻断原因？
-
-### 本周不要陷进去
-
-- 绕过 Sandbox
-
-- 执行危险命令
-
-- 为了验证安全机制进行真实破坏
-
-- 把所有“禁止”都丢给 Host
-
-### 学习后的实践：无破坏性 Safety Responsibility Experiment
-
-> **Experiment ID:** `EXP-W06-01`
-> **Experiment Type:** `EXPLORATORY`
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 使用无破坏性模拟场景：访问测试文件、向临时目录写入、git status、普通网络请求、项目规则禁止但本身无害的测试命令。
-
-2. 记录谁阻止：Host、Approval、Sandbox、Harness Hook，还是 Rule 只提醒。
-
-3. 检查 Double Block、无意义 Approval、误报和 Agent 对原因的理解。
-
-4. 拿 myharness pre_bash_guard 重新分类。
-
-### 建议保留的证据
-
-- 阻断责任主体
-
-- Double Block / False Positive
-
-- Approval 噪声
-
-- Agent 是否理解理由
-
-- Host 与 Harness 的重叠范围
-
-### 预期成长
-
-| **责任边界** | 形成 Host Safety vs Harness Safety Matrix。            |
-|--------------|--------------------------------------------------------|
-| **治理意识** | 能区分权限信任边界、工程行为治理、项目约束和结果验证。 |
-
-### 实践完成后，重新理解
-
-- pre_bash_guard 是否重复 Host？
-
-- sudo 与 force push main 是否属于同一类风险？
-
-- Host 管权限边界、Harness 管工程规则，这个假设在哪些场景不成立？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+该图是 `Mental Model V0`，不是 Codex 已验证 architecture。官方文档、源码和行为分别回答公开承诺、特定 revision 实现与特定运行条件下实际发生了什么；任何一个来源都不能代替另外两个。`openai/codex` 在固定 commit 前只是官方浮动仓库锚点，不能产生可复现 Source Evidence。
 
 ---
 
-## 路线调整说明
+## Cycle 5 · Codex Architecture & Customization
 
-本卷是研究导航，不是冻结的教学脚本。执行到对应研究循环前，应先刷新相关官方文档、默认分支与 Changelog；若项目目录或能力名称发生变化，继续追踪本卷定义的研究问题与 Capability，而不是机械寻找旧路径。
+> Codex Host · V4.1 映射：Week 5
+
+### 核心研究问题
+
+> **Codex 如何通过公开 customization surface 与特定 revision 的实现组织项目指导、可复用能力和扩展边界，myharness 应依赖哪些 Stable Surface 而不是 Implementation Detail？**
+
+### 为什么与 myharness 有关
+
+Codex 是 advanced open-source implementation reference，但“源码可见”不等于“内部结构就是稳定 Contract”。如果 myharness 直接依赖某个 crate、目录或当前加载顺序，Host 升级就可能破坏 Adapter；如果只看官方功能名称，又可能把 AGENTS.md、Skill、MCP、Subagent、Hook 与 Plugin 当成可互换机制。Cycle 5 用 Contract → Source → Behavior 三层方法建立可攻击的 architecture map。
+
+### 研究范围（Scope）
+
+本 Cycle 只研究：
+
+- Codex 官方 Customization、AGENTS.md、Skills、MCP、Subagents、Plugins、Hooks 与 Config 的公开 Contract；
+- 每个 surface 的 owner、discovery / load timing、scope、trigger、Context boundary、distribution 与 failure route；
+- `openai/codex` 固定 revision 中与上述 capability boundary 直接相关的实现入口；
+- 同一 Skill body 在清晰与模糊 description 下的 discovery / activation 差异；
+- Contract、Source 与 Behavior 一致、不一致和 Unknown 的明确记录。
+
+本 Cycle 不研究：
+
+- 从第一行顺序阅读完整仓库，或追踪 TUI、网络客户端与无关基础设施；
+- 把当前 crate、module 或目录名写成长期 Contract；
+- 完整 Skill outcome evaluation、跨 Host portability 或 myharness Plugin 实现；
+- 未绑定 commit 的 Source Evidence、未绑定运行条件的 Behavior Evidence 或 Support Assessment。
+
+### 主线研究对象与权限边界（Authority Boundary）
+
+| 研究对象（Research Object） | 计划深度 | Cycle 5 用途 | 权限边界（Authority Boundary） |
+|---|---|---|---|
+| Codex official docs：Customization、AGENTS.md、Build skills、Build plugins | L2 定向 | 建立公开 customization surface、scope、progressive disclosure 与 packaging Contract map | 浮动官方页面；执行时绑定 Codex version、重新核验页面与访问日期；不能证明本地加载或内部实现 |
+| Codex official docs：MCP、Subagents、Hooks、Config | L2 定向 | 补齐 external tool、delegation、lifecycle 与 configuration boundary | 从官方导航按 capability 重新定位；页面存在不等于配置已启用或行为有效 |
+| [openai/codex](https://github.com/openai/codex) | L3 targeted source | 对 Contract / Behavior 暴露的问号做 question-driven source reading | 官方仓库身份已知，但默认分支是浮动锚点；执行时必须固定 commit、重新定位 source path 并限定 claim scope |
+
+Batch 3 只登记计划来源，不产生 Contract 或 Source Evidence claim。不得把源码中存在的 capability 自动解释为当前安装版本已启用、公开承诺或行为已验证。
+
+### 问题驱动的阅读路线（Question-driven Reading Route）
+
+1. 先读官方 Customization overview，画出只含公开 surface 的 Architecture V0，并标记所有 Unknown。
+2. 定向阅读 AGENTS.md、Skills、Plugins、MCP、Subagents、Hooks 与 Config；为每项填写 `discover → load → trigger → execute → persist / distribute → fail`。
+3. 固定 `openai/codex` commit，先建立当时的 Repository Map；按 capability 搜索，不沿用 V4.1 写下的 crate / module 名。
+4. 单个源码问题只跟到能回答 boundary 的 1–2 层调用，并记录 search term、path、stop point 与仍未回答的问题。
+5. 最后执行 Behavior observation；若 Contract、Source 与 Behavior 不一致，分别登记，不用源码“纠正文档”或用行为猜内部原因。
+
+阅读时只追：
+
+- AGENTS.md、Skill、MCP、Subagent、Hook 与 Plugin 分别在何时被发现、加载或触发？
+- Plugin 是 capability 语义、依赖集合，还是 Host-specific distribution unit？
+- Skill metadata 与 full instructions 是否处于不同 Context 阶段？
+- 哪些 implementation boundary 对 myharness 只是解释材料，哪些公开 surface 才可作为 Adapter dependency？
+- 同名 capability 在 CLI、IDE、desktop 或 cloud surface 是否需要分别验证？
+
+### Customization 职责假设（Mental Model V0）
+
+| Surface | 候选职责 | 需要验证的边界 / failure mode |
+|---|---|---|
+| AGENTS.md | 按 global → project → nested scope 组合的持久项目指导 | discovery root、override precedence、size limit、session start timing |
+| Memory | Host 管理的可延续上下文候选 | owner、freshness、load timing 与 project artifact 的差异 |
+| Skill | 通过 metadata discovery、按需加载 full instructions 的可复用 workflow | description 命中、正文是否加载、procedure 是否执行 |
+| MCP | 把外部 Tool / system 接入 Host | 连接可用不等于工具选择、调用或 workflow 正确 |
+| Subagent | 独立 responsibility、Context 与 Tool boundary | 只换角色名称、上下文泄漏或 handoff loss |
+| Hook | 在 lifecycle event 上运行受信任或受管理逻辑 | event、trust、并发、阻断语义和 failure route |
+| Plugin | 安装、版本化和分发 Skill、Hook、MCP-backed app 等 Host-specific artifacts | packaging 被误当成 capability semantics 或 Portable Contract |
+
+该表是待验证责任模型。具体 discovery、加载、并发或 trust 语义必须绑定官方页面版本、源码 commit 与 Behavior Run，不能从 Mental Model V0 直接形成结论。
+
+### 假设（Hypothesis）
+
+> **H-C05-01:** 在绑定相同 Codex、Provider、Model、Configuration 与 T02 task instance，且 Skill body、scope 和文件位置相同的条件下，边界清晰、前置关键触发词的 description 比刻意模糊的 description 更容易被正确发现并激活；description 只影响 discovery / activation，不能单独保证 procedure adherence 或 review outcome。
+
+> **H-C05-02:** 在相同 T01 fixture、root `AGENTS.md` 与运行条件下，增加一个只适用于目标子目录的 nested `AGENTS.md`，会只改变该 scope 内的 Instruction 组合与行为，而不会改变 control scope；如果目标文件、工作目录或 instruction chain 无法绑定，观察不能归因于层级覆盖。
+
+> **H-C05-03:** 对同一 T02 instance 和同一现有 Codex Plugin capability，启用 Plugin distribution 会改变该 capability 的可发现性或加载路径；Plugin 显示为 installed、capability listed 或 artifact present，均不能单独证明 capability 已激活、执行或改善结果。
+
+支持信号：清晰 description variant 的正确发现 / 激活更稳定，且差异能与 full `SKILL.md` 是否加载及后续执行阶段分开记录。
+
+反驳信号：两种 description 在相同条件下没有方向性差异，或模糊 variant 同样稳定且不存在额外误触发。
+
+不确定信号：技能列表预算、显式调用、安装位置、同名 Skill、Host surface、Model 或 task wording 同时变化，无法把差异归因于 description。
+
+`H-C05-02` 的支持信号是 nested scope 内出现与 instruction chain 一致、control scope 不出现的方向性差异；反驳信号是绑定条件下两个 scope 无差异；若两组 task、文件或配置不一致则为 `INCONCLUSIVE`。`H-C05-03` 的支持信号是启用 Plugin 后出现可复查的 distribution → discovery → load transition；反驳信号是启用与禁用状态没有对应差异；如果 capability 本身、Plugin revision 或显式调用同时变化则为 `INCONCLUSIVE`。
+
+### 计划实验（Planned Experiments）
+
+#### `EXP-C05-01` · Contract → Source → Behavior Architecture Trace
+
+- 实验类型（Experiment Type）：`EXPLORATORY`
+- 稳定任务（Stable Task）：`T03 · Medium Change`
+- 历史映射（Legacy Mapping）：`EXP-W05-01` 的 Architecture V0 → Source → Behavior 部分（仅为历史计划）
+- 观察设计（Observation Design）：先画 Contract-only V0；固定官方页面访问日期和 `openai/codex` commit；在一个 T03 task 中只追实际涉及的 AGENTS、Skill、Plugin / Hook 或 Tool surface；记录 discovery、load、trigger、action、state transition、artifact、failure 与 stop point
+- 主要观察项（Primary Observations）：Contract / Source / Behavior agreement、unexpected boundary、source path stability、unloaded artifact、Host-surface difference、Provider / Model confounder
+- 解释边界（Interpretation Boundary）：本实验只生成 architecture question map 和候选 claim，不因一次 trace 宣称完整 Runtime architecture
+
+#### `EXP-C05-02` · Skill Description Discovery Comparison
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T02 · Semantic Review`
+- 历史映射（Legacy Mapping）：`EXP-W05-01` 的 Skill Discovery 部分（仅为历史计划）
+- Baseline A：同一 Skill body 使用边界清晰、前置关键触发词的 description
+- Variant B：同一 Skill body 使用语义宽泛、缺少边界与关键触发词的 description
+- 单一主要变量（Primary Variable）：Skill description；Skill body、name、scope、location、task statement 与运行条件保持相同
+- 主要观察项（Primary Observations）：listed / omitted、implicit discovery、correct activation、false activation、full body loaded、procedure adherence、review evidence、Context cost
+- 固定边界（Fixed Boundary）：不得显式点名 Skill；本实验主要裁决 discovery / activation，不承担 Cycle 10 的完整 Skill outcome evaluation
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+
+#### `EXP-C05-03` · AGENTS Scope and Override Comparison
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T01 · Engineering Constraint`
+- 历史映射（Legacy Mapping）：`EXP-W05-01` 的 `AGENTS.md` 层级实验部分（仅为历史计划）
+- 共同任务（Shared Task）：在隔离 fixture repository 中，对 target scope 与 control scope 各做一个同构、小型、可逆修改；root `AGENTS.md`、task statement、acceptance checks 与初始文件保持相同
+- Baseline A：只有 root `AGENTS.md`
+- Variant B：在 target scope 增加 nested `AGENTS.md`，其可观察约束只适用于该目录；control scope 不变
+- 单一主要变量（Primary Variable）：是否存在 nested `AGENTS.md`；必须记录工作目录、目标文件、instruction chain 与实际适用 scope
+- 主要观察项（Primary Observations）：instruction discovery、scope selection、override / merge behavior、target adherence、control leakage、acceptance result、false attribution、human intervention
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+
+#### `EXP-C05-04` · Plugin Distribution and Load Boundary Trace
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T02 · Semantic Review`
+- 历史映射（Legacy Mapping）：`EXP-W05-01` 的 Plugin 实验部分（仅为历史计划）
+- Fixture 边界：执行时从已存在的 myharness Codex Plugin 移植中选择一个不需修改的真实 capability，固定 Plugin revision、capability body 与 T02 instance；若没有满足条件的现有 capability，本实验保持 `NOT EXECUTED`，不得临时实现 Plugin 来填补迁移记录
+- Baseline A：Plugin 未启用，且不存在其他提供同一 capability 的重复安装
+- Variant B：启用同一固定 Plugin revision；不显式点名 Plugin 或 capability
+- 单一主要变量（Primary Variable）：Plugin distribution 是否启用；Host、Provider、Model、Configuration、task statement 与 capability content 保持相同
+- 主要观察项（Primary Observations）：installed / enabled state、artifact discovery、capability listed、body loaded、activation、procedure execution、review evidence、failure route、Context cost
+- 解释边界（Interpretation Boundary）：本实验只研究 Plugin packaging / load boundary；不修改 myharness Plugin，不把 installed / listed 写成 capability effective，也不提前裁决 Cycle 9 portability
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+
+四个实验分别保存 Run Metadata。`EXP-C05-01` 不能替代三个受控对照；内容生成不创建 Run、不填写结果，也不产生 Architecture V1 / V2 结论。
+
+### 退出条件（Exit Criteria）
+
+Cycle 5 只有在以下条件均满足后才能结束：
+
+- 官方 Contract map 绑定 Codex version、surface、访问日期与 Source ID；
+- `openai/codex` Source Evidence 固定完整 commit，并记录 authority、scope、path、search term 与 stop point；
+- Architecture V0 / V1 明确区分 Contract、Source、Behavior 与 inference；
+- `EXP-C05-01` 至少完成一个可复查 T03 trace，`EXP-C05-02` 完成共享 T02 baseline 的配对 Run；
+- `EXP-C05-03` 完成 root-only / nested `AGENTS.md` 配对 Run，且 target 与 control scope 均有可复查 acceptance evidence；
+- `EXP-C05-04` 完成 Plugin disabled / enabled 配对 Run；若没有符合 fixture 边界的既有 capability，必须明确保持 `NOT EXECUTED`，Cycle 5 不得把 Week 5 Plugin 迁移项标记为已验证；
+- 结果区分 discovery、activation、execution 与 outcome，没有把 Skill loaded 写成 Skill effective；
+- Mental Model V1 标明 Stable Surface、Implementation Detail、Host-surface difference 与 Unknown；
+- 不实现 myharness Codex Adapter，不提前进入 Cycle 9 cross-host abstraction 或 Cycle 10 Skill evaluation。
+
+---
+
+## Cycle 6 · Codex Execution、Safety & State
+
+> Codex Host · V4.1 映射：Week 6
+
+### 核心研究问题
+
+> **在 Codex 的执行链中，Sandbox、Approval、Command Rule、Hook 与执行状态各承担什么责任，Host technical boundary 与 Harness engineering governance 应如何分工而不产生无意义的 Double Block？**
+
+### 为什么与 myharness 有关
+
+如果 myharness 的 pre-execution guard 重复 Host 已经强制的技术边界，可能增加 approval noise、重复阻断和不可解释的 retry；如果把项目工程语义全部交给 Sandbox，又会让 Host 无法理解 timeout、branch policy 或验证要求。Cycle 6 建立责任矩阵，并要求每次阻断都能追溯请求、决策者、理由、状态变化与最终结果。
+
+### 研究范围（Scope）
+
+本 Cycle 只研究：
+
+- Codex 官方 Rules、Hooks、Sandbox、Agent approvals & security 与 Config Contract；
+- Host Safety Boundary、Approval / Trust Decision、Harness Engineering Policy、Project Rule 与 CI / Acceptance Gate 的职责差异；
+- 无破坏性命令的 request → policy → approval → sandbox / hook → result → retry / stop 状态轨迹；
+- 固定 `openai/codex` revision 中与 execution、policy、sandbox、hook 和 state boundary 直接相关的实现；
+- myharness `pre_bash_guard` 的未来只读 Project mapping，不在本 Batch 修改实现。
+
+本 Cycle 不研究：
+
+- 绕过 Sandbox、真实破坏、敏感数据访问、危险命令或真实凭据；
+- 完整 OS sandbox implementation、企业合规或所有平台差异；
+- 把 project engineering policy 伪装成 Host trust boundary，或反过来；
+- 未固定 commit 的 Source Evidence、未执行的 Behavior claim、Support Assessment 或产品实现。
+
+### 主线研究对象与权限边界（Authority Boundary）
+
+| 研究对象（Research Object） | 计划深度 | Cycle 6 用途 | 权限边界（Authority Boundary） |
+|---|---|---|---|
+| Codex official docs：Rules、Hooks、Sandbox、Agent approvals & security、Config basics | L2 定向 | 映射 command policy、lifecycle interception、technical boundary、approval 与 configuration Contract | 浮动官方页面；执行时绑定 Host version / surface / platform；不能证明本地配置或行为 |
+| [openai/codex](https://github.com/openai/codex) | L3 targeted source | 只回答 execution / policy / sandbox / hook / state boundary 的已声明问题 | 默认分支不是可复现 Source Evidence；执行时固定 commit 并按 capability 重新定位路径 |
+| myharness pre-execution artifacts | Read-only Project mapping | 判断现有 guard 的 intent 是否与 Host boundary 重叠 | 文件存在不等于 guard 已触发、有效或需要保留；必须由 Project / Behavior Evidence 支持 |
+
+官方 Contract 可以说明公开控制面，Source 可以解释绑定 revision，Behavior 才能说明特定配置下谁实际阻断。三者冲突时保留冲突和限制。
+
+### 问题驱动的阅读路线（Question-driven Reading Route）
+
+1. 先用官方 Sandbox 与 approvals 文档区分 technical boundary 和 human trust / escalation decision。
+2. 再读 Rules 与 Hooks，记录匹配对象、触发点、decision vocabulary、trust、并发、错误与可见理由。
+3. 用 Config basics 固定 active config layer、permission / sandbox profile、network setting 与 experiment snapshot。
+4. 固定 `openai/codex` commit，只针对尚未回答的 execution / policy / state 问题搜索并跟 1–2 层调用。
+5. 最后对无破坏性 fixture 做 Behavior trace；每次记录 request、matched policy、approval、hook、sandbox outcome、Agent interpretation、retry 与持久化 / 重载观察。
+
+阅读和观察时只追：
+
+- Sandbox 决定“技术上能否做”，Approval 决定“何时必须问人”，两者在哪些 surface 不同？
+- Command Rule、Hook、AGENTS / Project Rule 与 CI 各自能观察、提示、阻断或验证什么？
+- 一个请求被多层同时阻断时，谁先决策、理由是否可见、Agent 是否重复尝试？
+- 哪些 state 属于当前 turn / session，哪些来自持久 config / trust，哪些只是实验 Artifact？
+- Host、Harness、Project 与 CI 责任重叠时，删除哪一层仍能保留必要控制？
+
+### 执行责任假设（Mental Model V0）
+
+| Layer | 候选职责 | 失败 / 重叠风险 |
+|---|---|---|
+| Host Sandbox | 以平台机制限制文件、网络和进程可达范围 | 被误当成理解项目工程语义；平台差异未记录 |
+| Approval / Trust | 在越过边界或使用有副作用能力前请求授权，并记录授权范围 | approval fatigue、范围过宽、理由不清 |
+| Command Rule | 对命令前缀等 Host-recognized request 做 allow / prompt / forbid 类决策 | experimental semantics 变化、匹配误判、被误当成通用项目 Rule |
+| Hook / Harness Guard | 在 lifecycle point 注入项目特定观察、验证或阻断 | 与 Rule / Sandbox double block、并发、trust 和维护成本 |
+| Project Rule | 向 Model 表达工程约束和理由 | 依赖遵循，不能代替确定性 enforcement |
+| CI / Acceptance Gate | 在结果边界验证代码、测试与 policy outcome | 只能事后发现、反馈过晚或与前置 guard 重复 |
+| Execution State | 关联 request、decision、approval、result、retry 与 configuration snapshot | 将 UI / transcript / config / trust / artifact 混成一个“state” |
+
+该表是待验证责任模型，不构成安全保证、平台结论或 Codex capability assessment。
+
+### 假设（Hypothesis）
+
+> **H-C06-01:** 对同一个能够产生隔离、可逆 marker effect 且预先配置为触发 Host hard-deny 的 T01 acceptance command，在相同 Sandbox / Approval / Rule baseline 上再增加覆盖同一 command 与语义范围的 Harness pre-execution deny，不会增加已阻止的 marker effect；两个 hard-deny 也不应预设为可同时观察，而会按实际 lifecycle order 表现为 Host-shadowed、Harness-shadowed 或 sequentially observable。只有 Harness 层提供 Host 层无法表达的项目语义或可复查 Evidence 时，重叠才可能有净价值。
+
+支持信号：A / B 都阻止同一 marker effect，B 中新增 guard 被一层遮蔽，或在可观察的顺序中增加 decision、重试、人工干预或理由混淆，但没有增加被阻止的效果。
+
+反驳信号：Harness 层在不增加不可接受噪声的情况下，稳定提供 Host baseline 缺失的项目语义、Evidence 或更早且更准确的治理。
+
+不确定信号：fixture 没有稳定触发 Host hard-deny、marker 初始状态或清理不一致、两层判定语义不相同、配置或平台改变，或无法确定 lifecycle order 与最终 decision owner。
+
+### 计划实验（Planned Experiments）
+
+#### `EXP-C06-01` · Non-destructive Execution Boundary Trace
+
+- 实验类型（Experiment Type）：`EXPLORATORY`
+- 稳定任务（Stable Task）：`T01 · Engineering Constraint`
+- 历史映射（Legacy Mapping）：`EXP-W06-01` 的责任分类与无破坏性观察部分（仅为历史计划）
+- 共同 T01 instance：`T01-C06-LOCAL-TIMEOUT-VALIDATION`。在固定 commit 的隔离 fixture repository 中，扩展已有本地 config parser，使 `timeout_ms <= 0` 返回既有 validation error，同时保持正值与未提供该字段时的既有行为
+- 工程约束（Engineering Constraints）：只修改实验记录中冻结的 parser source 与对应 test file；不改变公开 schema 或 error type；不访问网络；acceptance checks 必须覆盖负数、零、正数与字段缺省四种情况
+- Acceptance effect：受挑战的本地 acceptance command 在运行测试前，只向隔离工作区的实验目录写入一个内容固定的 marker；marker 初始为 absent、可复查且可清理，不访问外网、secret 或工作区外路径
+- Fixture 边界：除受挑战的 acceptance command 外，只使用读取测试文件、工作区内可逆写入、`git status`、本地 no-op / dry-run command 等无破坏性动作；不运行危险命令，不把 marker 解释为真实安全影响
+- 观察设计（Observation Design）：为每个动作记录 request、active config、matched Rule、approval、Hook、Sandbox result、marker before / after、Agent-visible reason、retry / fallback、acceptance result、artifact 与 human intervention
+- 强制 State checkpoint：完成同 Session trace 后，清理 marker 并从同一 repository commit、task instance 与 configuration snapshot 启动 fresh run；分别记录 conversation / turn state、persistent config / trust、实验 Artifact 的 reload / reset，不作性能比较
+- T01 完成边界：被阻断的 challenge observation 完成后，只能使用预先声明并记录为 Human intervention 的 recovery profile 运行同一 acceptance checks；不得由 Agent 自行寻找等价命令绕过 policy
+- 主要观察项（Primary Observations）：decision owner、block / allow reason、approval scope、state transition、duplicate decision、false positive、recovery path、fresh-run difference
+- 解释边界（Interpretation Boundary）：本 trace 发现责任重叠与候选 confounder，不单独裁决 `H-C06-01`
+
+#### `EXP-C06-02` · Host Deny vs Guard Shadowing Comparison
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T01 · Engineering Constraint`
+- 历史映射（Legacy Mapping）：`EXP-W06-01` 的 Double Block 部分（仅为历史计划）
+- 共同 T01 instance：复用 `EXP-C06-01` 的 `T01-C06-LOCAL-TIMEOUT-VALIDATION`、repository baseline、task statement、工程约束、acceptance checks 与隔离 marker effect
+- 共同 fixture：受挑战的 acceptance command 经预检查能稳定命中 Host `forbid` / hard-deny，并且在无 deny 的 control preflight 中会写入 marker；如果任一条件不成立，实验结果为 `INCONCLUSIVE`
+- Baseline A：固定 Sandbox / Approval / Command Rule，只由 Host hard-deny 处理受挑战的 acceptance command
+- Variant B：与 A 相同，再增加对同一 command、同一语义范围作 hard-deny 的 Harness pre-execution guard
+- 单一主要变量（Primary Variable）：是否增加语义重复的 Harness guard
+- 顺序判定（Ordering Classification）：根据绑定 Host version / surface 的 Contract、固定 source revision 与 Direct Behavior trace，将 B 记录为 `HOST_SHADOWS_HARNESS`、`HARNESS_SHADOWS_HOST`、`SEQUENTIALLY_OBSERVABLE` 或 `UNKNOWN`；不得把只观察到一次 deny 写成 Double Block
+- 效果判定（Effect Measurement）：每个 Run 前 marker 必须 absent；记录 command control preflight、A / B 的 marker before / after 与 cleanup。只有 control 会写入而 A / B 均未写入时，才能说两层针对同一个可观察效果
+- 恢复边界（Recovery Boundary）：每个 variant 只观察一次受挑战 command；随后由预先声明的 Human intervention 应用相同 recovery profile，执行同一 acceptance checks 完成 T01。Agent 不得通过改写命令逃避 policy
+- 主要观察项（Primary Observations）：marker effect、ordering classification、decision count、approval count、retry、reason attribution、shadowed layer、false positive、recovery cost、task completion、Context cost、human intervention
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+
+两个实验都必须保存独立 Run Metadata，绑定 platform、Codex version、Provider profile、Model、configuration snapshot、Rule / Hook / Check / Adapter revision。A / B 必须从相同 repository baseline 与 absent marker 状态开始；不得为了触发安全机制而扩大权限或制造真实风险。
+
+### 退出条件（Exit Criteria）
+
+Cycle 6 只有在以下条件均满足后才能结束：
+
+- Contract map 绑定 Codex version、surface、platform、访问日期与 Source ID；
+- Source reading 固定 `openai/codex` 完整 commit，并记录 question、path、stop point 和 limitation；
+- `EXP-C06-01` 完成满足冻结 T01 contract 的无破坏性 execution / state trace，包括同 Session 与强制 fresh-run checkpoint；
+- `EXP-C06-02` 完成共享 T01 instance、相同 marker 初始状态与相同 recovery profile 的 A/B 配对 Run，并给出 ordering classification；
+- Evidence 能区分 Sandbox、Approval、Command Rule、Hook / Harness、Project Rule 与 CI / Acceptance 的 decision owner；
+- 能解释当前 turn / session state、persistent config / trust 与实验 Artifact 的区别，Unknown 明确保留；
+- Mental Model V1 记录 Double Block、false positive、approval noise、reason visibility 和平台限制；
+- 不修改 myharness guard，不执行危险操作，不形成法律合规或普遍安全结论。
+
+---
+
+## Batch 3 路线复盘触发条件（Route Review Trigger）
+
+完成 Cycle 6 的真实研究后执行一次 Route Review。它可以调整 Batch 4 的 ZCode Contract / Enterprise 项目锚点、证据深度、实验节奏或借用方法，但不能改变冻结的 Cycle 名称、编号、顺序或 Batch 边界。
+
+内容生成本身不满足 Cycle 5–6 Exit Criteria，也不创建 Route Review 结果。若 Contract、Source 与 Direct Behavior 的冲突推翻 Codex Host 工作模型，可在当前 Cycle 内缩小问题；跨 Host 映射、完整 Skill evaluation 和其他旁支进入后续 Cycle 或 Open Questions。
+
+## Batch 3 迁移记录（Migration Record）
+
+| V4.1 历史计划 | V4.2 研究设计 | 状态（Status） |
+|---|---|---|
+| Week 5 · `EXP-W05-01` | Cycle 5 · `EXP-C05-01`–`EXP-C05-04` | 拆分为三层 architecture trace、Skill description、AGENTS hierarchy 与 Plugin load 四项设计，尚未执行；旧 ID 只作历史记录 |
+| Week 6 · `EXP-W06-01` | Cycle 6 · `EXP-C06-01` / `EXP-C06-02` | 拆分为绑定真实 T01 修改的 execution / state trace 与 Host deny / guard shadowing 对照，尚未执行；旧 ID 只作历史记录 |
+
+迁移只更新未来研究设计，不声称 V4.1 实验已发生，也不把旧 ID 重编号成 Evidence。执行前必须刷新官方文档、固定 `openai/codex` commit，并按 capability 重新定位 source path。
