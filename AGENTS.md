@@ -7,11 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Current task: Generate Batch 1 only, covering Cycle 1–2
+* Completed content baseline: Batch 1, covering Cycle 1–2
+* Current task: Generate Batch 2 only, covering Cycle 3–4
 
-This task starts from the merged V4.2 Batch 0 baseline. V4.1 Week 1–2 content remains the historical migration source for Batch 1.
+This task starts from the merged V4.2 Batch 1 baseline. V4.1 Week 3–4 content remains the historical migration source for Batch 2.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 1 by reading the repository, preserving the frozen Batch 0 protocol decisions except where the repository owner explicitly changes them, and migrating the V4.1 Foundation content directly.
+Do not apply or reproduce an existing external ZIP or patch. Generate Batch 2 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Claude Code Host content directly.
 
 ## Required reading
 
@@ -110,21 +111,21 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 1 scope
+## Current Batch 2 scope
 
-Batch 1 generates the Foundation content only:
+Batch 2 generates the Claude Code Host content only:
 
-1. Cycle 1 · Coding Agent 最小模型
-2. Cycle 2 · Harness Primitive
-3. Cycle 1–2 Research Notes in planned, not-executed state
+1. Cycle 3 · Claude Code Context Lifecycle
+2. Cycle 4 · Claude Code Extension & Control Surface
+3. Cycle 3–4 Research Notes in planned, not-executed state
 4. Planned Source Registry entries with explicit authority boundaries
 5. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
-6. Cycle 1–2 workspace directories required for later implementation
-7. V4.1 Week 1–2 historical migration mappings
+6. Cycle 3–4 workspace directories required for later implementation
+7. V4.1 Week 3–4 historical migration mappings
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 1, create only `cycle-01` and `cycle-02` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 3–18 directories.
+Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 2, add only `cycle-03` and `cycle-04` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 5–18 directories.
 
-Batch 1 content generation does not mean that experiments were run, Evidence Claims were established, or Support Levels were achieved.
+Batch 2 content generation does not mean that experiments were run, Contract or Behavior Evidence Claims were established, or Support Levels were achieved.
 
 ## Batch 0 required terminology
 
@@ -257,12 +258,12 @@ The final file list may vary only when justified by the existing repository stru
 
 Do not:
 
-* generate Cycle 3–18正文;
-* implement Batch 2;
-* claim that planned Batch 1 experiments have been executed;
+* generate Cycle 5–18正文;
+* implement Batch 3;
+* claim that planned Batch 1 or Batch 2 experiments have been executed;
 * create Run records, `EVD-*` conclusions, or Support Assessments before real execution;
 * rewrite all V4.1 content files;
-* create Cycle 3–18 directories;
+* create Cycle 5–18 directories;
 * implement myharness features;
 * implement an OpenCode Adapter;
 * promise a complete ZCode Plugin;
@@ -305,12 +306,12 @@ Also validate:
 
 * all internal relative links;
 * all 18 Cycle names appear in the V4.2 overview;
-* Cycle 1–2正文 exists and Cycle 3–18正文 has not been generated;
-* only `research/cycles/cycle-01` and `research/cycles/cycle-02` exist;
-* Cycle 1–2 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
+* Cycle 1–4正文 exists and Cycle 5–18正文 has not been generated;
+* only `research/cycles/cycle-01` through `research/cycles/cycle-04` exist;
+* Cycle 3–4 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
 * ZCode source conclusions were not invented;
-* Batch 1 files do not claim that any Host has already achieved S1–S4;
+* Batch 2 files do not claim that Claude Code or any other Host has already achieved S1–S4;
 * all changed Markdown files have no trailing whitespace.
 
 Do not commit or push.

@@ -1,5 +1,37 @@
 # Changelog
 
+## V4.2 Batch 2 · 2026-07-14
+
+Batch 2 生成 Claude Code Host 的 Cycle 3–4 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果或 Support Assessment。
+
+### Claude Code Host 内容（Host Content）
+
+- 将 V4.1 Week 3–4 迁移为 Cycle 3「Claude Code Context Lifecycle」与 Cycle 4「Claude Code Extension & Control Surface」。
+- 为两个 Cycle 增加单一核心 Research Question、scope、Mental Model V0、可证伪 Hypothesis、Exit Criteria 与 Route Review trigger。
+- 将 `EXP-W03-01`、`EXP-W04-01` 保留为 historical plan mapping；新设计使用 `EXP-C03-01`、`EXP-C03-02` 与 `EXP-C04-01`。
+- 将 Context trace 对齐 `T03 · Medium Change`，将 Rule / Skill / Check 对照对齐 `T01 · Engineering Constraint`，并要求所有 variant 使用独立 Run Metadata。
+- 根据 Batch 2 审查，将 Cycle 3 拆分为探索性 lifecycle trace 与必做的受控 `/compact` 对照；将 Cycle 4 收敛为各 variant 共用的 timeout-only acceptance contract，把 fallback / degradation 保留为 Open Question。
+- 在 `docs/02` 中继续保留 V4.1 Week 5–6，明确标记为 Batch 3 待迁移 historical baseline，未生成 Cycle 5–6 正文。
+
+### 来源权限（Source Authority）
+
+- 登记 Claude Code Context、Sessions、Memory、How Claude Code Works、Extension Overview、Hooks、Subagents 与 Plugins 的计划态官方 Contract 锚点。
+- 将所有官方页面标记为执行时绑定 Host version 并重新核验的浮动锚点；文档存在不等于本地 Behavior 已验证。
+- 更新 `learn-claude-code` 的 current / legacy track 风险，要求按 capability 重新定位并在执行时固定 commit；教学实现不能证明 Claude Code Runtime architecture。
+- 将 HumanLayer ACE 限定为 Community Reference，只能形成 Reference Pattern / Open Question，不能证明 Claude Code Contract 或 Behavior。
+
+### 研究工作区（Research Workspace）
+
+- 新增 `cycle-03` 与 `cycle-04` 的非空计划态 Research Note。
+- 为两个 Cycle 准备 `experiments/` 与 `evidence/`，只登记 Source artifact，不创建 Experiment Record、Run record 或 `EVD-*`。
+- 明确内容生成不满足 Exit Criteria，不创建 Route Review 结果，也不表示 Claude Code 已达到 S1–S4。
+
+### 非目标（Non-goals）
+
+- 不生成 Cycle 5–18 正文，不实现 Batch 3。
+- 不执行 Claude Code 实验，不形成未公开 Runtime architecture 或 Behavior 结论。
+- 不修改 myharness feature，不实现 Adapter、OpenCode Adapter 或 ZCode Plugin。
+
 ## V4.2 Batch 1 · 2026-07-14
 
 Batch 1 生成 Foundation 的 Cycle 1–2 正文与计划态 Research Note。研究执行尚未开始；没有 Run、Evidence claim、实验结果或 Support Assessment。

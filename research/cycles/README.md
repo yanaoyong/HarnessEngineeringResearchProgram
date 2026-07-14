@@ -6,8 +6,10 @@
 
 - [cycle-01 · Coding Agent 最小模型](cycle-01/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-02 · Harness Primitive](cycle-02/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-03 · Claude Code Context Lifecycle](cycle-03/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-04 · Claude Code Extension & Control Surface](cycle-04/research-note.md) — `PLANNED · NOT EXECUTED`
 
-Cycle 3–18 目录尚未创建。
+Cycle 5–18 目录尚未创建。
 
 推荐结构：
 
@@ -19,7 +21,7 @@ cycle-01/
 └── evidence/
 ```
 
-Batch 1 不创建 `cycle-03` 到 `cycle-18` 的目录。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象。
+Batch 1–2 只创建 `cycle-01` 到 `cycle-04`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-05` 到 `cycle-18` 在对应内容 Batch 前不创建。
 
 如果路线发生变化，仍以当前核心 Research Question 所属 Cycle 记录，并在 Research Note 与 Route Review 中说明路线变化。
 

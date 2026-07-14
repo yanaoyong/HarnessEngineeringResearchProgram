@@ -44,6 +44,17 @@
 - Candidate Cycle: Cycle 1 Route Review / next protocol revision if taxonomy changes
 - Status: BACKLOG
 
+### OQ-004 · HTTP fallback / degradation 语义应由哪类任务和治理机制验证？
+
+- Discovered In: Batch 2 / Cycle 4 experiment review
+- Why It Matters: “显式 timeout”可由 deterministic fixture 判断，而“考虑 fallback / degradation”依赖调用语境、失败模型与产品语义；合并实验会让 Skill 与 Check 实际治理不同约束
+- Current Evidence: None registered；`EXP-C04-01` 已收敛为 timeout-only T01 contract
+- Authority Boundary: 不能因 Rule、Skill 或 Check 文件存在就断言 fallback 语义已被正确处理；需要独立 task statement、acceptance reference 与 Behavior Evidence
+- Blocks Current Research?: NO；Cycle 4 可先完成 timeout responsibility comparison
+- Priority: MEDIUM
+- Candidate Cycle: Cycle 4 follow-up / Cycle 10 Skill Behavior & Evaluation
+- Status: BACKLOG
+
 ## Template
 
 <!--
