@@ -165,7 +165,7 @@ research/
 └── design-beliefs.md
 ```
 
-开始真实 Cycle 时再创建：
+进入对应内容 Batch 时，可以先准备该 Batch 覆盖的 Cycle 工作区：
 
 ```text
 research/cycles/cycle-01/
@@ -174,7 +174,7 @@ research/cycles/cycle-01/
 └── evidence/
 ```
 
-Batch 0 不创建任何 `cycle-*` 目录。
+工作区准备不表示实验已经执行或证据已经成立。Batch 0 没有创建任何 `cycle-*` 目录；Batch 1 准备 `cycle-01` 与 `cycle-02`，Batch 2 增加 `cycle-03` 与 `cycle-04`。Cycle 5–18 目录尚未创建。
 
 ## 11. V4.1 Historical Boundary
 

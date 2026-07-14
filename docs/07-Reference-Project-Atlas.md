@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。Batch 1–2 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -24,7 +24,25 @@ Stop at Do-Not-Study Boundary
 
 当项目默认分支、目录或术语发生变化时，优先追 Capability 与研究问题，不机械寻找旧路径。
 
-## Project Atlas
+## Batch 1–2 当前图谱（Active Atlas）
+
+| 项目 / 来源 | 研究角色（Research Role） | 核心问题 | 深度 | 相关 Cycle | 当前锚点 | 权限 / 停止边界 |
+|---|---|---|---|---|---|---|
+| SWE-agent/minimal-agent-tutorial | 最小 Agent 教学基线 | Coding Agent 最少需要什么？ | L3 | C01 | `docs/index.md` + 完整最小实现 | 只证明绑定 revision 的教学实现；不研究 benchmark infrastructure |
+| SWE-agent/mini-swe-agent | 最小脚手架对照（Minimal Scaffold Contrast） | Agent Core 扩大后增加哪些结构？ | L3 定向 | C01 | 浮动 `main`：`src/minisweagent/{agents,environments,models,run}` | 计划执行时重新核验并固定 commit；不研究 deployment 与 benchmark ranking |
+| SWE-agent ACI paper | 接口理论（Interface Theory） | 接口设计如何影响 Agent 行为？ | L1 理论 | C01 | arXiv:2405.15793v3 | 不证明任何商业 Host 的当前实现或 Support Level |
+| shareAI-lab/learn-claude-code | Harness Primitive 教学重实现 | Primitive 为什么存在，职责是否可互换？ | L3 | C02 | `s01`、`s03`–`s07`；`s02`、`s08` 快读 | 不是 Claude Code 官方源码；不得推导官方 Runtime architecture、event 或 Contract |
+| Claude Code official docs · Context / Sessions / Memory | Claude Code Host Contract | Context 如何装载、增长、压缩和恢复？ | L2 定向 | C03 | `context-window`、`sessions`、`memory`、`how-claude-code-works` | 浮动官方页面；执行时绑定 Host version；不证明本地 Behavior 或未公开 Runtime architecture |
+| shareAI-lab/learn-claude-code | Context lifecycle 教学模型 | compact、memory、system prompt 与 task state 如何在教学实现中协作？ | L3 定向 | C03 | 按 capability 定位 current track；执行时固定 commit | current / legacy track 会变化；只证明绑定 revision 的教学实现，不证明 Claude Code Runtime |
+| HumanLayer Advanced Context Engineering | Context strategy 方法参考 | 如何解释 context trajectory 与 intentional compaction？ | L2 method | C03 | 浮动 `main`：`ace-fca.md` | Community Reference；先观察后解释，不能证明 Host Contract / Behavior |
+| Claude Code official docs · Extend Claude Code | Extension surface Contract | CLAUDE.md、Skill、Hook、Subagent、MCP、Plugin 的职责与加载边界是什么？ | L2 定向 | C04 | `features-overview` → Memory / Hooks / Subagents / Plugins 专项页 | 浮动官方页面；Contract 不等于配置已加载或 capability 有效 |
+| myharness Claude extension artifacts | 项目只读映射对象 | 现有 Rule、Skill、Hook、Check 与 Plugin distribution 是否职责重叠？ | Project mapping | C04 | 执行时按当前仓库 capability 重新定位 | 文件存在不等于 Project / Behavior Evidence；Batch 2 不修改实现 |
+
+上述入口、官方页面和默认分支目录只是计划执行时核验的浮动锚点，Atlas 只提供定位，不证明当前 revision 的源码事实或实际 Host behavior。形成 Evidence 时必须重新核验并登记 Source ID、Host version / commit、scope、访问日期与限制。
+
+## V4.1 Legacy Atlas · Pending Migration
+
+下表保持 V4.1 `Relevant Week` 语义，供 Batch 3–8 迁移及 historical mapping 复查。Batch 2 不借 Atlas 更新提前生成 Cycle 5–18 正文；其中 Week 3–4 rows 只保留迁移历史。
 
 | Project / Source | Research Role | Primary Question | Depth | Relevant Week | Primary Anchor | Do Not Study |
 |---|---|---|---|---|---|---|
@@ -52,7 +70,13 @@ Stop at Do-Not-Study Boundary
 - OpenAI Codex · Customization — https://developers.openai.com/codex/concepts/customization
 - openai/codex — https://github.com/openai/codex
 - Claude Code · Context Window — https://code.claude.com/docs/en/context-window
+- Claude Code · How Claude Code Works — https://code.claude.com/docs/en/how-claude-code-works
+- Claude Code · Sessions — https://code.claude.com/docs/en/sessions
 - Claude Code · Memory / CLAUDE.md — https://code.claude.com/docs/en/memory
+- Claude Code · Extend Claude Code — https://code.claude.com/docs/en/features-overview
+- Claude Code · Hooks — https://code.claude.com/docs/en/hooks
+- Claude Code · Subagents — https://code.claude.com/docs/en/sub-agents
+- Claude Code · Plugins — https://code.claude.com/docs/en/plugins
 - SWE-agent/minimal-agent-tutorial — https://github.com/SWE-agent/minimal-agent-tutorial
 - SWE-agent/mini-swe-agent — https://github.com/SWE-agent/mini-swe-agent
 - shareAI-lab/learn-claude-code — https://github.com/shareAI-lab/learn-claude-code
