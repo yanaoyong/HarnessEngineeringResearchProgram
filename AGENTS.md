@@ -7,12 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Completed content baseline: Batch 1–2, covering Cycle 1–4
-* Current task: Generate Batch 3 only, covering Cycle 5–6
+* Completed content baseline: Batch 1–3, covering Cycle 1–6
+* Current task: Generate Batch 4 only, covering Cycle 7
 
-This task starts from the merged V4.2 Batch 2 baseline. V4.1 Week 5–6 content remains the historical migration source for Batch 3.
+This task starts from the merged V4.2 Batch 3 baseline. Cycle 7 is new in V4.2 and has no V4.1 Week migration source.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 3 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–2 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Codex Host content directly.
+Do not apply or reproduce an existing external ZIP or patch. Generate Batch 4 by reading the repository and preserving the frozen Batch 0 protocol and completed Batch 1–3 decisions except where the repository owner explicitly changes them.
 
 ## Required reading
 
@@ -111,21 +111,21 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 3 scope
+## Current Batch 4 scope
 
-Batch 3 generates the Codex Host content only:
+Batch 4 generates the ZCode Host content only:
 
-1. Cycle 5 · Codex Architecture & Customization
-2. Cycle 6 · Codex Execution、Safety & State
-3. Cycle 5–6 Research Notes in planned, not-executed state
-4. Planned Source Registry entries with explicit authority boundaries
+1. Cycle 7 · ZCode Host Contract & Enterprise Reality
+2. Cycle 7 Research Note in planned, not-executed state
+3. Planned official Source Registry entries with explicit authority boundaries
+4. A recorded ZCode Runtime Source Authority Gate status
 5. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
-6. Cycle 5–6 workspace directories required for later implementation
-7. V4.1 Week 5–6 historical migration mappings
+6. Cycle 7 workspace directories required for later implementation
+7. An explicit record that Cycle 7 is new in V4.2 and has no V4.1 historical experiment mapping
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 3, add only `cycle-05` and `cycle-06` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 7–18 directories.
+Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 4, add only `cycle-07` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 8–18 directories.
 
-Batch 3 content generation does not mean that experiments were run, Contract, Source or Behavior Evidence Claims were established, or Support Levels were achieved.
+Batch 4 content generation does not mean that experiments were run, Contract, Source, Behavior or Enterprise Evidence Claims were established, or Support Levels were achieved.
 
 ## Batch 0 required terminology
 
@@ -218,7 +218,7 @@ Required distinctions:
 
 ## Frozen Batch 0 outputs
 
-The following files are the existing Batch 0 baseline, not the current Batch 3 generation target.
+The following files are the existing Batch 0 baseline, not the current Batch 4 generation target.
 
 Expected new files:
 
@@ -258,12 +258,12 @@ The final file list may vary only when justified by the existing repository stru
 
 Do not:
 
-* generate Cycle 7–18正文;
-* implement Batch 4;
-* claim that planned Batch 1, Batch 2 or Batch 3 experiments have been executed;
-* create Run records, `EVD-*` conclusions, or Support Assessments before real execution;
+* generate Cycle 8–18正文;
+* implement Batch 5;
+* claim that planned Batch 1, Batch 2, Batch 3 or Batch 4 experiments have been executed;
+* create Run records, `EVD-*` conclusions, `ENT-*` facts, or Support Assessments before real execution;
 * rewrite all V4.1 content files;
-* create Cycle 7–18 directories;
+* create Cycle 8–18 directories;
 * implement myharness features;
 * implement an OpenCode Adapter;
 * promise a complete ZCode Plugin;
@@ -306,12 +306,12 @@ Also validate:
 
 * all internal relative links;
 * all 18 Cycle names appear in the V4.2 overview;
-* Cycle 1–6正文 exists and Cycle 7–18正文 has not been generated;
-* only `research/cycles/cycle-01` through `research/cycles/cycle-06` exist;
-* Cycle 5–6 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
+* Cycle 1–7正文 exists and Cycle 8–18正文 has not been generated;
+* only `research/cycles/cycle-01` through `research/cycles/cycle-07` exist;
+* Cycle 7 workspace directory contains `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
 * ZCode source conclusions were not invented;
-* Batch 3 files do not claim that Codex or any other Host has already achieved S1–S4;
+* Batch 4 files do not claim that ZCode or any other Host has already achieved S1–S4;
 * all changed Markdown files have no trailing whitespace.
 
 Do not commit or push.
