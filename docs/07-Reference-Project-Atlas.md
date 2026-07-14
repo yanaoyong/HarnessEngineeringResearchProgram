@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。Batch 1–4 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。Batch 1–5 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -24,7 +24,7 @@ Stop at Do-Not-Study Boundary
 
 当项目默认分支、目录或术语发生变化时，优先追 Capability 与研究问题，不机械寻找旧路径。
 
-## Batch 1–4 当前图谱（Active Atlas）
+## Batch 1–5 当前图谱（Active Atlas）
 
 | 项目 / 来源 | 研究角色（Research Role） | 核心问题 | 深度 | 相关 Cycle | 当前锚点 | 权限 / 停止边界 |
 |---|---|---|---|---|---|---|
@@ -45,12 +45,15 @@ Stop at Do-Not-Study Boundary
 | ZCode 用户协议、Agent 与安全操作确认官方文档 | ZCode product / Host Contract | 产品身份、Agent / workspace、permission 与 Review 的公开责任边界是什么？ | L1–L2 定向 | C07 | `terms`、`agent-framework`、`safety-confirm` | 浮动官方页面；绑定 Host version / platform；不证明 Behavior、Runtime source 或 enterprise readiness |
 | ZCode 连接模型与远程开发官方文档 | Provider / Model / execution boundary Contract | Provider、endpoint、Model、authentication 与 execution location 如何同 Host surface 分离？ | L2 定向 | C07 | `configuration`、`remote-development` | 协议兼容不等于 Model portability；remote surface 不等于私有化、隔离或组织批准 |
 | ZCode 隐私政策、Changelog 与反馈支持文档 | Enterprise fact question anchors | 数据、版本、日志、支持与运维需要验证哪些 deployment fact？ | L1 定向 | C07 | `privacy`、`changelog`、`feedback` | policy / release / support 页面不能替代 `ENT-*`、SLA、审计、数据驻留或法律审查 |
+| OpenCode official docs · Config / Rules / Agents / Tools / Permissions | OpenCode Host Contract | config、instruction、agent、tool、permission 与 extension surface 如何分工？ | L2 定向 | C08 | `config`、`rules`、`agents`、`tools`、`permissions`、`skills`、`plugins`、`mcp-servers` | 浮动官方页面；绑定 Host version / surface / platform；Contract 不等于配置已加载或 Behavior 已验证 |
+| OpenCode official docs · Providers / Models | Provider / Model boundary Contract | Provider adapter、endpoint / protocol、Model identity / option 与 Host semantic 如何分离？ | L2 定向 | C08 | `providers`、`models` | Provider / Model 可配置、可选或协议兼容不等于 portability；列表与推荐会变化 |
+| anomalyco/opencode | OpenCode verified Official Source 候选 | 特定 revision 如何实现 config、session / agent、tool / permission、provider / model 与 extension boundary？ | L3 targeted | C08 | 浮动默认开发分支；执行时先固定完整 commit，再按 capability 建 Repository Map | 当前 `NOT PINNED`；不沿用当前 package / path，不把 Source 当成安装 Behavior 或 portability 结论 |
 
 上述入口、官方页面和默认分支目录只是计划执行时核验的浮动锚点，Atlas 只提供定位，不证明当前 revision 的源码事实或实际 Host behavior。形成 Evidence 时必须重新核验并登记 Source ID、Host version / commit、scope、访问日期与限制。
 
 ## V4.1 Legacy Atlas · Pending Migration
 
-下表保持 V4.1 `Relevant Week` 语义，供 Batch 5–8 迁移及 historical mapping 复查。Batch 4 不借 Atlas 更新提前生成 Cycle 8–18 正文；其中 Week 3–6 rows 只保留迁移历史，Cycle 7 没有 V4.1 row。
+下表保持 V4.1 `Relevant Week` 语义，供 Batch 6–8 迁移及 historical mapping 复查。Batch 5 不借 Atlas 更新提前生成 Cycle 9–18 正文；其中 Week 3–6 rows 只保留迁移历史，Cycle 7–8 没有 V4.1 row。
 
 | Project / Source | Research Role | Primary Question | Depth | Relevant Week | Primary Anchor | Do Not Study |
 |---|---|---|---|---|---|---|
@@ -93,6 +96,18 @@ Stop at Do-Not-Study Boundary
 - ZCode · 隐私政策 — https://zcode.z.ai/cn/privacy
 - ZCode · 版本发布与更新 — https://zcode.z.ai/cn/changelog
 - ZCode · 用户反馈与支持 — https://zcode.z.ai/cn/docs/feedback
+- OpenCode · Intro — https://opencode.ai/docs/
+- OpenCode · Config — https://opencode.ai/docs/config/
+- OpenCode · Providers — https://opencode.ai/docs/providers/
+- OpenCode · Models — https://opencode.ai/docs/models/
+- OpenCode · Rules — https://opencode.ai/docs/rules/
+- OpenCode · Agents — https://opencode.ai/docs/agents/
+- OpenCode · Tools — https://opencode.ai/docs/tools/
+- OpenCode · Permissions — https://opencode.ai/docs/permissions/
+- OpenCode · Agent Skills — https://opencode.ai/docs/skills/
+- OpenCode · Plugins — https://opencode.ai/docs/plugins/
+- OpenCode · MCP servers — https://opencode.ai/docs/mcp-servers/
+- anomalyco/opencode — https://github.com/anomalyco/opencode
 - Claude Code · Context Window — https://code.claude.com/docs/en/context-window
 - Claude Code · How Claude Code Works — https://code.claude.com/docs/en/how-claude-code-works
 - Claude Code · Sessions — https://code.claude.com/docs/en/sessions

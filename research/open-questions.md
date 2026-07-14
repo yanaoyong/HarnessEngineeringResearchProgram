@@ -66,6 +66,39 @@
 - Candidate Cycle: Cycle 5 / Cycle 6 / Cycle 9 cross-host abstraction
 - Status: BACKLOG
 
+### OQ-006 · 安装的 OpenCode release 应如何与官方源码 commit 建立可复查映射？
+
+- Discovered In: Batch 5 / Cycle 8 official Source registration
+- Why It Matters: Cycle 8 需要同时绑定 Host version 与 `anomalyco/opencode` revision；若 release、binary、package 与 commit 无法对应，Source 只能解释候选实现，不能解释安装 Behavior
+- Current Evidence: `SRC-OPENCODE-001` 与 `SRC-OPENCODE-011` 只登记官方安装入口和浮动源码仓库；commit 为 `NOT PINNED`，尚无 `EVD-*`
+- Authority Boundary: tag 名、默认分支 HEAD、package version 或目录相似不能单独证明安装 artifact 对应某个 commit；需要官方 release / provenance 与本地版本记录
+- Blocks Current Research?: YES；不阻塞独立 Contract map 或 Behavior trace，但阻塞 Source / Behavior agreement claim 与 Cycle 8 Exit Criteria
+- Priority: HIGH
+- Candidate Cycle: Cycle 8
+- Status: BACKLOG
+
+### OQ-007 · 哪些 OpenCode Provider / Model 组合能通过单变量 portability comparability gate？
+
+- Discovered In: Batch 5 / Cycle 8 experiment design
+- Why It Matters: Provider contrast 需要尽量固定同一 Model ID / revision，Model contrast 需要固定同一 Provider profile；如果只能取得 Provider 与 Model 同时变化的组合，就不能裁决任一 portability hypothesis
+- Current Evidence: `SRC-OPENCODE-003..004` 只证明官方存在 Provider / Model configuration surface；没有已授权 Provider Profile、Model revision mapping、capability preflight 或 Run
+- Authority Boundary: 模型显示名相同、协议标称兼容、配置解析成功或模型可选择都不能证明 revision、tool protocol、routing、quota 与 capability 可比
+- Blocks Current Research?: YES；不满足 gate 的 `EXP-C08-02` 或 `EXP-C08-03` 保持 `PLANNED · NOT EXECUTED`，另一实验可以独立执行，但不能替代前者或满足 Cycle 8 Exit Criteria
+- Priority: HIGH
+- Candidate Cycle: Cycle 8 / Cycle 9
+- Status: BACKLOG
+
+### OQ-008 · OpenCode CLI / TUI、desktop 与 IDE extension 是否共享同一 Host semantic？
+
+- Discovered In: Batch 5 / Cycle 8 official Contract registration
+- Why It Matters: OpenCode Intro 同时列出 terminal、desktop 与 IDE surface；如果直接合并，可能把 config、instruction、agent、tool、permission、session 或 extension 在一个 surface 的 Contract / Behavior 外推到其他 surface
+- Current Evidence: 只有计划态 `SRC-OPENCODE-001..012`；尚未绑定各 surface 的 OpenCode version、platform、installation artifact、source revision 或 Behavior Run
+- Authority Boundary: 官方 Intro 只能证明公开列出的 surface；共享产品名、repository 或配置格式不能证明 surface parity、共同 Runtime path 或相同行为
+- Blocks Current Research?: NO；Cycle 8 先限定实际实验 surface，其余 surface 保持 `Unknown`
+- Priority: HIGH
+- Candidate Cycle: Cycle 8 / Cycle 9 cross-host abstraction
+- Status: BACKLOG
+
 ## Template
 
 <!--

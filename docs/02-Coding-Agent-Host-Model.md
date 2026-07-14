@@ -1,6 +1,6 @@
 # PART III · V4.2 Coding Agent Host Model
 
-> Claude Code Host / Codex Host · Batch 2–3 · Cycle 3–6 正文已生成；研究执行与实验结果尚未开始。
+> Claude Code / Codex / ZCode / OpenCode Host · Batch 2–5 · Cycle 3–8 正文已生成；研究执行与实验结果尚未开始。
 
 [← 上一卷](01-Agent与Harness基础认知.md) · [返回总览](../README.md) · [下一卷 →](03-Cross-host-Harness-Abstraction.md)
 
@@ -784,3 +784,190 @@ Cycle 7 只有在以下条件均满足后才能结束：
 | 无 | Cycle 7 · `EXP-C07-01` / `EXP-C07-02` | V4.2 新增 ZCode Cycle；计划态 Contract / configuration / Behavior trace 与 Provider profile 对照，尚未执行 |
 
 Cycle 7 没有旧 Week 正文或 `EXP-Wxx-yy` 可重编号。本记录只说明新增研究边界，不声称实验、Enterprise Fact、Support Assessment 或迁移 Evidence 已产生。
+
+---
+
+## Batch 5 边界（Boundary）
+
+Batch 5 只生成 Cycle 8 · OpenCode Host Architecture & Model Portability。
+
+Cycle 8 是 V4.2 新增研究单元，没有 V4.1 Week 或 `EXP-Wxx-yy` 历史迁移对象。本 Batch 只建立计划态 Contract / Source / Behavior 研究边界、官方来源登记与 `EXP-C08-yy` 实验设计。它不运行 OpenCode，不产生 `EVD-*`、Support Assessment、已固定 Source Evidence 或 Model portability conclusion，不实现 OpenCode Adapter / Plugin，也不迁移 Cycle 9–18。
+
+## OpenCode Host 工作模型（Working Model）
+
+```text
+Official Contract + Bound OpenCode Version / Surface
+        ↓
+Pinned Official Source Revision + Capability Map
+        ↓
+Host Runtime：Config · Session · Agent · Tool · Permission · Extension
+        ↓
+Provider Adapter + Endpoint / Protocol + Authentication + Routing
+        ↓
+Model ID / Revision + Capability + Model Options
+        ↓
+Direct Behavior + Project Artifact + Run Metadata
+```
+
+该图是 `Mental Model V0`，不是已经验证的 OpenCode architecture 或 Model portability 结论。官方文档说明公开 Contract；固定 revision 的官方源码只能说明该 revision 的实现；Direct Behavior 才能说明绑定 Host、Provider、endpoint、Model 与 Configuration 条件下实际发生了什么。配置文件形状相同、模型可被选中、协议标称兼容或单次工具调用成功，都不能单独证明语义或行为可移植。
+
+---
+
+## Cycle 8 · OpenCode Host Architecture & Model Portability
+
+> OpenCode Host · V4.2 新增 Cycle · 无 V4.1 Week 映射
+
+### 核心研究问题
+
+> **在绑定 OpenCode 版本与官方源码 revision 后，哪些 Agent、Context、Tool、Permission 与 extension 语义由 Host 保持，哪些行为依赖 Provider adapter、endpoint / protocol、Model 与 Configuration，从而使“Model portability”成立、失败或保持 Unknown？**
+
+### 为什么与 myharness 有关
+
+OpenCode 的研究角色是 open-source、multi-provider、vendor-neutral Host reference。myharness 若把“同一个 `provider/model` 字符串可配置”“相同 Tool 名出现在 UI”“相同任务最终完成”当成 portability，就会掩盖 provider transform、tool schema、permission、reasoning、context limit 与 output behavior 的差异。Cycle 8 通过 Contract → pinned Source → Direct Behavior 三层证据，把可依赖的 Host semantic boundary 与 Provider / Model variation 分开，为 Cycle 9 的 Four-host abstraction 提供受限而可复查的输入。
+
+### 研究范围（Scope）
+
+本 Cycle 只研究：
+
+- OpenCode 官方 Intro、Config、Providers、Models、Rules、Agents、Tools / Permissions、Skills、Plugins 与 MCP Contract；
+- `anomalyco/opencode` 固定 revision 中与 config resolution、session / agent loop、tool registry / permission、provider / model selection 和 extension loading 直接相关的实现入口；
+- CLI / TUI 中绑定版本的无破坏性 Direct Behavior；其他 surface 必须单独验证；
+- Host-owned config / instruction / tool / permission / artifact route 与 Provider adapter、endpoint / protocol、Model capability / option 的分层；
+- 同一 T02 task 上用独立 Experiment Record 分别隔离 Provider contrast 与 Model contrast；
+- Contract、Source、Behavior 与 Project artifact 的一致、不一致和 Unknown。
+
+本 Cycle 不研究：
+
+- 按仓库目录从头通读，或把当前 package、module、function 与默认分支写成稳定 Contract；
+- 把 provider 列表、协议兼容、模型推荐、配置可解析或模型可选自动提升为 Model portability；
+- 同时改变 Provider 与 Model 后把差异归因给任一单独变量；
+- 公开模型 benchmark、统计排名、企业部署结论或未绑定版本的安全保证；
+- OpenCode Adapter / Plugin 实现、Cycle 9 Four-host abstraction 或 myharness feature 修改。
+
+### 官方来源路线与权限边界（Authority Boundary）
+
+| 来源组 | 计划深度 | Cycle 8 用途 | 权限 / 停止边界 |
+|---|---|---|---|
+| OpenCode Intro、Config、Rules、Agents、Tools、Permissions | L2 定向 | 建立 Host surface、config precedence、instruction、agent、tool 与 permission Contract map | 浮动官方页面；执行时绑定 OpenCode version / surface / platform；不能证明本地配置已生效或内部实现 |
+| OpenCode Providers、Models | L2 定向 | 建立 Provider、endpoint、authentication、Model ID、option 与 capability 问题清单 | provider / model 可配置不等于行为可移植；页面列表与推荐会变化 |
+| OpenCode Skills、Plugins、MCP | L2 定向 | 建立 discovery、load、tool extension 与 distribution boundary | artifact present / plugin loaded / MCP connected 不等于 workflow effective |
+| [`anomalyco/opencode`](https://github.com/anomalyco/opencode) | L3 targeted source | 对 Contract / Behavior 暴露的架构问题做 question-driven source reading | 官方仓库已核验，但默认开发分支是浮动锚点；执行时必须固定完整 commit 并重新定位 path |
+| local Direct Behavior 与 project fixture | L3 受控观察 | 追踪 Host / Provider / Model boundary 与 portability failure | 必须脱敏、可逆并保存 Run Metadata；单次或不可比 Run 不得外推 |
+
+Batch 5 只登记 `SRC-OPENCODE-001..012` 计划来源，不从来源条目直接派生 `EVD-*`。官方页面与源码默认分支都是浮动锚点；源码只有在执行时固定完整 commit、记录 authority、scope、path、search term 与 stop point 后，才能派生 scoped Source Evidence。
+
+### 问题驱动的研究路线（Question-driven Research Route）
+
+1. 绑定 OpenCode version、surface、platform、installation channel 与官方页面访问日期，建立 Contract-only Architecture V0。
+2. 为 Config、Rule / Instruction、Agent、Tool、Permission、Skill、Plugin、MCP、Session、Provider 与 Model 分别记录 owner、discover / load / select / execute timing、scope、observable artifact、failure route 与 Unknown。
+3. 固定 `anomalyco/opencode` 完整 commit，并通过官方 release / tag provenance、package / binary build metadata 或其他可复查官方映射证明该 commit 对应实际执行的 OpenCode artifact。若只能固定源码而无法建立安装映射，Source 与 Behavior 保持独立，Source / Behavior agreement 为 `UNKNOWN`，且不满足 Cycle 8 的相关退出条件。
+4. 创建脱敏 Host Profile、Provider Profile 与 configuration snapshot；分别记录 endpoint type、authentication category、routing、Model ID / revision、tool-calling capability、context / output limit 与 model options。
+5. 执行 `EXP-C08-01`，把 T03 中实际使用的 config、instruction、tool、permission、provider / model selection、session state 与 artifact route 连接到 Contract / Source / Behavior。
+6. 分别执行 `EXP-C08-02` 与 `EXP-C08-03`：Provider experiment 只改变 Provider profile，Model experiment 只改变 Model ID / revision。任一实验无法取得满足 comparability gate 的 profile 时，该实验保持 `NOT EXECUTED`，不借另一实验的结果替代。
+7. Contract、Source 与 Behavior 不一致时分别登记；Provider transform、endpoint policy、Model capability、quota 或 routing 无法分离时保留 Unknown，不以源码猜测未观察行为。
+
+### Architecture 与 Portability 分层表
+
+| 层（Layer） | 必须绑定 | 可以回答 | 不能自动回答 |
+|---|---|---|---|
+| Host Contract | OpenCode version、surface、platform、Source ID、access date | 官方公开了什么 config / agent / tool / permission / extension surface | 当前环境是否启用、内部如何实现、跨 surface 是否一致 |
+| Official Source | repository、完整 commit、path、question、stop point | 特定 revision 如何实现限定 boundary | 安装版本是否采用、未来 Contract、所有运行分支 |
+| Provider Profile | Provider、endpoint type、authentication、routing、protocol / adapter、quota | 请求通过什么通道，哪些变化属于 Provider / endpoint | Model behavior、Host semantic invariance |
+| Model Profile | Model ID / revision、capability、context / output limit、options | 本 Run 使用什么 Model 条件 | 跨 Provider identity、普遍质量或 portability |
+| Direct Behavior | Run、Host / Provider / Model / Configuration、request、decision、result、artifact | 特定条件下实际观察到什么 | 未执行组合、内部原因、普遍可移植性 |
+
+### 可移植性判断门禁（Portability Comparability Gate）
+
+Provider contrast 必须尽量固定：OpenCode version / surface / platform、repository baseline、task statement、instruction、tool / permission profile、Model ID / revision、model options、context / output limit 与 acceptance / review procedure，只改变 Provider profile / endpoint route。若同一 Model identity 或等价 capability 无法核验，该 contrast 不得启动。
+
+Model contrast 必须固定：OpenCode version / surface / platform、Provider profile、endpoint type、authentication category、repository baseline、task statement、instruction、tool / permission profile 与 review procedure，只改变 Model ID / revision；两个 Model 都必须满足实验所需 tool calling、context 与 output preflight。
+
+`Provider A + Model A` 与 `Provider B + Model B` 的两格比较同时改变两个主要变量，只能产生探索性问题，不能支持或反驳 Provider portability、Model portability 或 Host invariant。配置解析成功、模型出现在 selector、请求被 Provider 接受、工具 schema 被发送、工具调用成功和最终任务完成必须分别记录，不能合并成一个 portability outcome。
+
+### 假设（Hypothesis）
+
+`H-C08-01 · Provider Portability`：在绑定相同 OpenCode version / surface、repository baseline、instruction、tool / permission profile、Model ID / revision、model options 与 T02 instance 的条件下，只切换通过 comparability gate 的 Provider profile / endpoint route，应保持 Host-owned config resolution、instruction source、permission decision owner、Review / artifact route 与 task contract；provider transform、protocol acceptance、tool request / arguments、retry 与 completion path 可以不同。
+
+`H-C08-02 · Model Portability`：在绑定相同 OpenCode version / surface、Provider profile / endpoint / routing、repository baseline、instruction、tool / permission profile 与 T02 instance 的条件下，只切换通过 capability preflight 的 Model ID / revision，应保持相同 Host-owned route 与 task contract；tool use、reasoning、issue detection、evidence quality、false positive、retry 与 completion path 可以不同。
+
+支持信号：对应 Experiment 的单变量 contrast 中，Host-owned instruction、permission、Review 与 artifact route 可复查地保持一致，差异能够限定为 Provider adapter / endpoint 或 Model capability / option，并且两边都完成预先声明的 observation contract。
+
+反驳信号：只改变该 Experiment 声明的一个 profile 变量后，Host-owned config / instruction / permission / artifact semantics 稳定变化，或某个满足 preflight 的 profile 无法表达同一必要 task semantic，且重复 Run 排除 configuration drift。
+
+不确定信号：Model revision、Provider routing、tool protocol、context / output limit、quota、feature flag、workspace state 或 evaluator procedure 未固定，或 trace 不能判断 decision owner。comparability gate 未通过时，对应 Experiment 保持 `NOT EXECUTED`；只有配对 Run 已完成但关键 confounder 仍无法分离时才使用 `INCONCLUSIVE`。
+
+### 计划实验（Planned Experiments）
+
+#### `EXP-C08-01` · Contract → Source → Behavior Architecture Trace
+
+- 实验类型（Experiment Type）：`EXPLORATORY`
+- 稳定任务（Stable Task）：`T03 · Medium Change`
+- 历史映射（Legacy Mapping）：无；Cycle 8 是 V4.2 新增 Cycle
+- T03 instance：`T03-C08-LOCAL-RETRY-BUDGET`。在固定 commit 的隔离 fixture repository 中，为已有本地 job runner 增加可配置 retry budget，修改 config type / parser、validation、runtime use、tests 与用户文档；不访问网络或真实服务
+- Acceptance checks：覆盖字段缺省、合法边界、非法边界、runtime 停止条件与文档示例；保存本地命令、exit code、diff 与 artifact convergence check
+- Trace：记录 OpenCode version / surface / platform、官方页面版本、固定 source commit、configuration precedence、instruction source、agent、tool registry、permission decision、Skill / Plugin / MCP state、Provider profile、Model、session / task state、request / result、Review、artifact 与 human intervention
+- Provenance gate：在解释 Source / Behavior agreement 前，必须用官方 release / tag provenance、package / binary build metadata 或其他可复查官方材料，把实际执行的 OpenCode artifact 映射到固定 source commit；只有 commit pinned 但映射缺失时，分别保留 Source observation 与 Behavior observation，agreement 为 `UNKNOWN`
+- Source boundary：只追本 Run 真实触及的 capability；记录 search term、source path、1–2 层调用、stop point 与 Unknown，不生成完整 Runtime architecture 图
+- 主要观察项（Primary Observations）：Contract / Source / Behavior agreement、config owner、tool / permission owner、provider / model boundary、state transition、unloaded extension、source path stability、artifact drift 与 confounder
+- 解释边界（Interpretation Boundary）：单次 trace 只建立 scoped architecture question map，不裁决跨 Provider / Model portability
+
+#### `EXP-C08-02` · Provider Portability Comparison
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T02 · Semantic Review`
+- 历史映射（Legacy Mapping）：无；Cycle 8 是 V4.2 新增 Cycle
+- T02 instance：对固定 commit 中一个含 acceptance reference 的有限 patch 作语义审查。Evaluator-only oracle 记录一个需要推理的缺陷“重试预算在成功后仍被后续任务复用”，以及一个可由 schema / test 检出的缺陷“新增配置字段未加入边界验证”；oracle 与缺陷名称不得进入 Agent-visible task statement、Rule、context、acceptance reference 或 output schema
+- 强制 Evidence procedure：Agent-visible task 要求先用 read tool 检查预先登记的 implementation、schema 与 test 文件，再运行 fixture 内固定的本地 `./scripts/check-review-fixture`；该 exact command 在共同 permission profile 中设置为 `ask`，每个 Run 由 Human intervention 以相同 `approve once` procedure 处理。命令不访问网络、secret 或工作区外路径
+- Baseline A / Variant B：相同 Model ID / revision、model options 与 capability preflight，使用两个已授权 Provider profile；只改变 Provider / endpoint route
+- 单一主要变量（Primary Variable）：Provider profile / endpoint route；Host、Model、task、instruction、tool / permission profile 与 evidence procedure 保持相同
+- 重复与顺序（Replication and Order）：A / B 各至少两个 fresh task Run，顺序交错；每次从相同 repository commit、clean workspace 与 Agent-visible input 开始
+- 主要观察项（Primary Observations）：config resolution、instruction source、Host-side tool / permission route、actual tool set、provider transform / protocol error、tool request / arguments / success、issue detection、evidence quality、false positive、retry、Review / artifact route、human intervention
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+- 解释边界（Interpretation Boundary）：Provider comparability gate 未通过时，本 Experiment 保持 `PLANNED · NOT EXECUTED`，不填写 Result；只有 A / B 配对 Run 完成但已登记 Provider confounder 仍无法分离时才填写 `INCONCLUSIVE`
+
+#### `EXP-C08-03` · Model Portability Comparison
+
+- 实验类型（Experiment Type）：`COMPARATIVE`
+- 稳定任务（Stable Task）：`T02 · Semantic Review`
+- 历史映射（Legacy Mapping）：无；Cycle 8 是 V4.2 新增 Cycle
+- T02 instance 与 Evidence procedure：完全复用 `EXP-C08-02` 的 fixed patch、Agent-visible input、evaluator-only oracle、read file set、`./scripts/check-review-fixture` 与相同 `ask` → `approve once` permission procedure
+- Baseline A / Variant B：相同 Provider profile、endpoint type、authentication category 与 routing，使用两个通过 tool calling、context / output 与 task compatibility preflight 的 Model ID / revision；只改变 Model
+- 单一主要变量（Primary Variable）：Model ID / revision；Host、Provider、task、instruction、tool / permission profile 与 evidence procedure 保持相同
+- 重复与顺序（Replication and Order）：A / B 各至少两个 fresh task Run，顺序交错；每次从相同 repository commit、clean workspace 与 Agent-visible input 开始
+- 主要观察项（Primary Observations）：config resolution、instruction source、Host-side tool / permission route、actual tool set、tool request / arguments / success、reasoning、issue detection、evidence quality、false positive、retry、Review / artifact route、human intervention
+- 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
+- 解释边界（Interpretation Boundary）：Model comparability gate 未通过时，本 Experiment 保持 `PLANNED · NOT EXECUTED`，不填写 Result；只有 A / B 配对 Run 完成但已登记 Model confounder 仍无法分离时才填写 `INCONCLUSIVE`
+
+三个实验都必须使用独立 Experiment Record，并为每次执行保存独立 Run Metadata，绑定 repository commit、OpenCode version / surface / platform、`anomalyco/opencode` source commit、Provider / endpoint type、Model ID / revision、脱敏 Configuration、Rule / Skill / Check / Adapter revision、controlled variables、known confounders、evidence 与 human intervention。`EXP-C08-02` 与 `EXP-C08-03` 分别填写 Result 和派生 scoped `EVD-*`；一个 Experiment 的结果不能替代另一个。内容生成阶段不创建 Experiment Record、Run record 或结果。
+
+### 退出条件（Exit Criteria）
+
+Cycle 8 只有在以下条件均满足后才能结束：
+
+- 官方 Contract map 绑定 OpenCode version、surface、platform、access date 与 `SRC-OPENCODE-*`；
+- 实际执行的 OpenCode artifact 已通过可复查官方 provenance 映射到 `anomalyco/opencode` 完整 commit，并记录 authority、release / artifact identity、mapping basis、scope、path、search term、stop point 与 limitation；
+- Architecture V0 / V1 明确区分 Contract、Source、Behavior、Project artifact 与 inference；
+- `EXP-C08-01` 完成可复查 T03 trace，Contract / Source / Behavior checkpoint 与 Run Metadata 完整；
+- `EXP-C08-02` 完成通过 Provider comparability gate 的 A / B 配对 Run，并形成独立 Result；
+- `EXP-C08-03` 完成通过 Model comparability gate 的 A / B 配对 Run，并形成独立 Result；任一实验未通过 gate 时保持 `NOT EXECUTED`，Cycle 8 退出条件未满足；
+- 结果能区分 config / model selection、tool schema exposure、provider acceptance、tool request / success、review artifact 与 task outcome；
+- Host effect、Provider adapter / endpoint effect、Model effect 与 Configuration effect 分开记录；
+- 所有 `EVD-*` 绑定 claim scope、supporting artifact、limitation 与 verification date；Support Assessment 仍按 capability scope 单独评定；
+- Mental Model V1 与 Design Judgment 明确 Stable Host Semantic、Provider / Model-dependent Behavior、unsupported combination 与 Unknown；
+- 不实现 OpenCode Adapter / Plugin，不形成公开 Model benchmark、普遍 portability 或 enterprise conclusion。
+
+---
+
+## Batch 5 路线复盘触发条件（Route Review Trigger）
+
+完成 Cycle 8 的真实研究后执行一次 Route Review。它可以调整 Batch 6 的 Four-host abstraction source anchor、capability matrix、degradation vocabulary、实验节奏或借用方法，但不能改变冻结的 Cycle 名称、编号、顺序或 Batch 边界。
+
+内容生成本身不满足 Cycle 8 Exit Criteria，也不创建 Route Review 结果。若固定 Source revision 与官方 Contract 明显冲突，或 Direct Behavior 推翻 Host / Provider / Model 分层，应提前触发 Route Review；浮动默认分支变化只触发重新定位，不自动改变结论。
+
+## Batch 5 迁移记录（Migration Record）
+
+| V4.1 历史计划 | V4.2 研究设计 | 状态（Status） |
+|---|---|---|
+| 无 | Cycle 8 · `EXP-C08-01` / `EXP-C08-02` / `EXP-C08-03` | V4.2 新增 OpenCode Cycle；计划态 architecture trace、Provider portability 与 Model portability 独立对照，尚未执行 |
+
+Cycle 8 没有旧 Week 正文或 `EXP-Wxx-yy` 可重编号。本记录只说明新增研究边界，不声称实验、Source Evidence、Model portability、Support Assessment 或迁移 Evidence 已产生。

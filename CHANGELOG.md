@@ -1,5 +1,30 @@
 # Changelog
 
+## V4.2 Batch 5 · 2026-07-14
+
+Batch 5 生成 OpenCode Host 的 Cycle 8 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果、已固定 Source Evidence、Model portability conclusion 或 Support Assessment。
+
+### Added
+
+- 新增 Cycle 8「OpenCode Host Architecture & Model Portability」；该 Cycle 是 V4.2 新内容，没有 V4.1 Week / `EXP-Wxx-yy` 迁移对象。
+- 建立 Official Contract → pinned Official Source → Host Runtime → Provider Adapter / endpoint protocol → Model → Direct Behavior 工作模型，要求 Host、Provider、endpoint / protocol、Model 与 Configuration effects 分开记录。
+- 设计 `EXP-C08-01` T03 Contract → Source → Behavior architecture trace；执行时必须固定 `anomalyco/opencode` 完整 commit，并通过官方 provenance 或可复查 build metadata 将实际执行 artifact 映射到该 commit，再按 capability 重新定位 source path。
+- 分别设计 `EXP-C08-02` T02 Provider Portability Comparison 与 `EXP-C08-03` T02 Model Portability Comparison；两者使用独立 Experiment Record、Result 与 scoped Evidence，缺少可比 profile 时保持 `NOT EXECUTED`，不得用不同 Provider 与不同 Model 同时变化的两格比较声称 portability。
+- 为 T02 对照加入受控 tool / permission observation：固定 read file set 与本地检查命令，将 exact command 设为 `ask`，各 Run 使用相同 `approve once` Human intervention。
+- 新增 `cycle-08` 计划工作区、实验说明与 `SRC-OPENCODE-001..012`，登记 Intro、Config、Providers、Models、Rules、Agents、Tools、Permissions、Skills、Plugins、MCP 与官方源码仓库浮动锚点。
+
+### Changed
+
+- 更新总览、研究计划、Research Infrastructure、Workspace、Cycle index 与 Atlas，使内容基线推进到 Batch 1–5 / Cycle 1–8。
+- 更新仓库级任务说明，使当前生成范围收敛为 Batch 5 / Cycle 8，禁止创建 Cycle 9–18 目录与正文。
+- 新增 OpenCode artifact-to-source provenance、surface parity 与 Provider / Model 可比性 Open Questions；官方文档和浮动默认分支不被当成已执行 Evidence。
+
+### Validation Boundary
+
+- 内容生成不满足 Cycle 8 Exit Criteria，不创建 Route Review 结果，也不表示 OpenCode 已达到 S1–S4。
+- 不实现 OpenCode Adapter / Plugin，不运行 OpenCode，不记录 credential，不形成跨 Provider / Model 普遍可移植性、性能排名、安全保证或企业结论。
+- 不生成 Cycle 9–18 正文，不实现 Batch 6。
+
 ## V4.2 Batch 4 · 2026-07-14
 
 Batch 4 生成 ZCode Host 的 Cycle 7 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、`ENT-*`、实验结果、Runtime Source Evidence、Support Assessment 或法律合规结论。
