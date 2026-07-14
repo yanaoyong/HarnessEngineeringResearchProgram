@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。Batch 1–3 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。Batch 1–4 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -24,7 +24,7 @@ Stop at Do-Not-Study Boundary
 
 当项目默认分支、目录或术语发生变化时，优先追 Capability 与研究问题，不机械寻找旧路径。
 
-## Batch 1–3 当前图谱（Active Atlas）
+## Batch 1–4 当前图谱（Active Atlas）
 
 | 项目 / 来源 | 研究角色（Research Role） | 核心问题 | 深度 | 相关 Cycle | 当前锚点 | 权限 / 停止边界 |
 |---|---|---|---|---|---|---|
@@ -42,12 +42,15 @@ Stop at Do-Not-Study Boundary
 | openai/codex | Codex verified Official Source 候选 | 特定 revision 如何实现 customization、execution、policy、sandbox、hook 与 state boundary？ | L3 targeted | C05–C06 | 浮动默认分支；执行时先固定 commit，再按 capability 建 Repository Map | 当前 `NOT PINNED`；不得沿用旧 crate / path，也不得把 Source 当成当前安装 Behavior |
 | Codex official docs · Rules / Sandbox / Agent approvals & security | Codex execution / safety Contract | technical boundary、approval 与 command policy 如何分工？ | L2 定向 | C06 | Rules、Sandbox、Agent approvals & security | 浮动官方页面；绑定 Host version / surface / platform；不形成安全保证或合规结论 |
 | myharness pre-execution artifacts | 项目只读映射对象 | guard 是否重复 Host policy，或提供 Host 无法表达的项目语义？ | Project mapping | C06 | 执行时按当前仓库 capability 重新定位 | 文件存在不等于已触发、有效或需要保留；Batch 3 不修改实现 |
+| ZCode 用户协议、Agent 与安全操作确认官方文档 | ZCode product / Host Contract | 产品身份、Agent / workspace、permission 与 Review 的公开责任边界是什么？ | L1–L2 定向 | C07 | `terms`、`agent-framework`、`safety-confirm` | 浮动官方页面；绑定 Host version / platform；不证明 Behavior、Runtime source 或 enterprise readiness |
+| ZCode 连接模型与远程开发官方文档 | Provider / Model / execution boundary Contract | Provider、endpoint、Model、authentication 与 execution location 如何同 Host surface 分离？ | L2 定向 | C07 | `configuration`、`remote-development` | 协议兼容不等于 Model portability；remote surface 不等于私有化、隔离或组织批准 |
+| ZCode 隐私政策、Changelog 与反馈支持文档 | Enterprise fact question anchors | 数据、版本、日志、支持与运维需要验证哪些 deployment fact？ | L1 定向 | C07 | `privacy`、`changelog`、`feedback` | policy / release / support 页面不能替代 `ENT-*`、SLA、审计、数据驻留或法律审查 |
 
 上述入口、官方页面和默认分支目录只是计划执行时核验的浮动锚点，Atlas 只提供定位，不证明当前 revision 的源码事实或实际 Host behavior。形成 Evidence 时必须重新核验并登记 Source ID、Host version / commit、scope、访问日期与限制。
 
 ## V4.1 Legacy Atlas · Pending Migration
 
-下表保持 V4.1 `Relevant Week` 语义，供 Batch 4–8 迁移及 historical mapping 复查。Batch 3 不借 Atlas 更新提前生成 Cycle 7–18 正文；其中 Week 3–6 rows 只保留迁移历史。
+下表保持 V4.1 `Relevant Week` 语义，供 Batch 5–8 迁移及 historical mapping 复查。Batch 4 不借 Atlas 更新提前生成 Cycle 8–18 正文；其中 Week 3–6 rows 只保留迁移历史，Cycle 7 没有 V4.1 row。
 
 | Project / Source | Research Role | Primary Question | Depth | Relevant Week | Primary Anchor | Do Not Study |
 |---|---|---|---|---|---|---|
@@ -81,6 +84,15 @@ Stop at Do-Not-Study Boundary
 - OpenAI Codex · Sandbox — https://learn.chatgpt.com/docs/sandboxing
 - OpenAI Codex · Agent approvals & security — https://learn.chatgpt.com/docs/agent-approvals-security
 - openai/codex — https://github.com/openai/codex
+- ZCode · 用户协议 — https://zcode.z.ai/cn/terms
+- ZCode · Agent — https://zcode.z.ai/cn/docs/agent-framework
+- ZCode · Agent interaction / AGENTS.md — https://zcode.z.ai/cn/docs/agents
+- ZCode · 连接模型与套餐 — https://zcode.z.ai/cn/docs/configuration
+- ZCode · 安全操作确认 — https://zcode.z.ai/cn/docs/safety-confirm
+- ZCode · 远程开发 — https://zcode.z.ai/cn/docs/remote-development
+- ZCode · 隐私政策 — https://zcode.z.ai/cn/privacy
+- ZCode · 版本发布与更新 — https://zcode.z.ai/cn/changelog
+- ZCode · 用户反馈与支持 — https://zcode.z.ai/cn/docs/feedback
 - Claude Code · Context Window — https://code.claude.com/docs/en/context-window
 - Claude Code · How Claude Code Works — https://code.claude.com/docs/en/how-claude-code-works
 - Claude Code · Sessions — https://code.claude.com/docs/en/sessions

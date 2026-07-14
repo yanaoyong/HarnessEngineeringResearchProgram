@@ -1,5 +1,32 @@
 # Changelog
 
+## V4.2 Batch 4 · 2026-07-14
+
+Batch 4 生成 ZCode Host 的 Cycle 7 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、`ENT-*`、实验结果、Runtime Source Evidence、Support Assessment 或法律合规结论。
+
+### Added
+
+- 新增 Cycle 7「ZCode Host Contract & Enterprise Reality」；该 Cycle 是 V4.2 新内容，没有 V4.1 Week / `EXP-Wxx-yy` 迁移对象。
+- 建立 Product identity → Contract → Provider Profile → Local Configuration → Direct Behavior → Enterprise Fact 工作模型，要求 Host、Provider、endpoint、Model、Configuration 与 deployment effect 分开记录。
+- 明确记录 ZCode Agent / desktop and remote Runtime Source Authority Gate 为 `NOT VERIFIED`，repository / revision 保持 `Unknown`；官方产品文档不被升级为 Runtime Source Evidence。
+- 设计 `EXP-C07-01` T01 Contract → Configuration → Behavior trace，使用本地、可逆的 `retry_limit` parser fixture 和脱敏配置快照。
+- 设计 `EXP-C07-02` T02 Provider Profile comparison，固定 patch、task、Host、permission 与 Review procedure，要求两个 profile 的 fresh-task 重复 Run；只有已执行的配对 Run 仍无法分离 Model / endpoint policy / quota confounder 时才使用 `INCONCLUSIVE`，无法取得授权 profile 时保持 `NOT EXECUTED`。
+- 新增 `cycle-07` 计划工作区、实验说明与 `SRC-ZCODE-001..009`，登记用户协议、Agent、`AGENTS.md` 项目指令、模型连接、安全确认、远程开发、隐私、Changelog 与反馈支持官方浮动锚点。
+- 定义 installation、identity、Provider / network、data、logging、upgrade、remote execution、support 与 procurement 的 Enterprise Reality 检查面；没有组织证据时保持 `Unknown`。
+
+### Changed
+
+- 更新总览、研究计划、Research Infrastructure、Workspace、Cycle index 与 Atlas，使内容基线推进到 Batch 1–4 / Cycle 1–7。
+- 更新 OQ-001：已登记官方产品与 Contract 入口，但仍未发现由官方入口指认且满足五项 Gate criteria 的 Runtime source repository。
+- 更新仓库级任务说明，使当前生成范围收敛为 Batch 4 / Cycle 7，禁止创建 Cycle 8–18 目录与正文。
+- 根据 Batch 4 审查，将 Tool 观察拆成 Host-side exposure / filtering policy、actual exposed tool set、Provider / Model tool-calling capability 与实际 request / success，并把 T02 缺陷答案隔离为 evaluator-only oracle。
+
+### Validation Boundary
+
+- 内容生成不满足 Cycle 7 Exit Criteria，不创建 Route Review 结果，也不表示 ZCode 已达到 S1–S4。
+- 不实现 ZCode Plugin / Adapter，不运行 ZCode，不测试权限绕过，不记录 credential，不形成 private deployment、SLA、数据驻留、安全保证或通用法律合规结论。
+- 不生成 Cycle 8–18 正文，不实现 Batch 5。
+
 ## V4.2 Batch 3 · 2026-07-14
 
 Batch 3 生成 Codex Host 的 Cycle 5–6 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果、已验证 Runtime architecture 或 Support Assessment。

@@ -16,7 +16,7 @@
 
 - Discovered In: Batch 0
 - Why It Matters: 决定 Cycle 7 是否允许形成 ZCode Runtime Source Evidence 与 source architecture conclusion
-- Current Evidence: None registered
+- Current Evidence: `SRC-ZCODE-001..009` 已登记官方产品、Contract、release 与 support 浮动锚点；这些入口均未指认满足五项 Gate criteria 的 ZCode Runtime source repository，尚无 `EVD-*`
 - Authority Boundary: 非官方仓库、社区逆向、客户端指纹和第三方 patch 不能回答本问题
 - Blocks Current Research?: NO；Contract、Behavior、local configuration 与 Enterprise Fact 研究仍可进行
 - Priority: HIGH
