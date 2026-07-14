@@ -33,6 +33,17 @@
 - Candidate Cycle: Corresponding content Batch
 - Status: BACKLOG
 
+### OQ-003 · 学术论文在六类 Evidence taxonomy 中应如何登记？
+
+- Discovered In: Batch 1 / Cycle 1 source registration
+- Why It Matters: SWE-agent ACI paper 可提供 interface theory 与实验背景，但它既不是 Host Contract / Runtime Source，也不是 myharness Project Evidence；强行归类可能赋予错误 authority
+- Current Evidence: `SRC-FOUNDATION-003` 暂以 `OTHER` source role 登记，并保守限制为 Reference Pattern / Community Claim authority，不派生 `EVD-*`
+- Authority Boundary: 在 taxonomy 决策前，论文不能证明商业 Host 当前实现、Program Behavior、Support Level 或公开模型排名
+- Blocks Current Research?: NO；可作为问题形成和 Reference Pattern，Cycle 1 机制结论仍需固定 revision Source 与 Direct Behavior Evidence
+- Priority: MEDIUM
+- Candidate Cycle: Cycle 1 Route Review / next protocol revision if taxonomy changes
+- Status: BACKLOG
+
 ## Template
 
 <!--

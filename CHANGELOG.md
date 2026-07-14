@@ -1,5 +1,35 @@
 # Changelog
 
+## V4.2 Batch 1 · 2026-07-14
+
+Batch 1 生成 Foundation 的 Cycle 1–2 正文与计划态 Research Note。研究执行尚未开始；没有 Run、Evidence claim、实验结果或 Support Assessment。
+
+### 基础内容（Foundation Content）
+
+- 将 V4.1 Week 1–2 迁移为 Cycle 1「Coding Agent 最小模型」与 Cycle 2「Harness Primitive」。
+- 为每个 Cycle 增加单一核心 Research Question、scope、Mental Model V0、可证伪 Hypothesis、Exit Criteria 与 Route Review trigger。
+- 将 V4.1 `EXP-W01-01`、`EXP-W02-01` 保留为 historical plan mapping；新设计使用 `EXP-C01-01`、`EXP-C02-01`、`EXP-C02-02`。
+- 将实验映射到 T01–T03，并拆分 V4.1 Cycle 2 多变量设计，避免 Task State 与 Subagent Boundary 同时变化。
+
+### 来源权限（Source Authority）
+
+- 登记 SWE-agent minimal tutorial、mini-swe-agent、SWE-agent ACI paper 与 learn-claude-code 的计划态浮动锚点；执行时重新核验并固定 commit。
+- 要求真正执行时固定 repository commit，不把浮动默认分支当成可复现 Source Evidence。
+- 明确 learn-claude-code 是教学重实现，不能证明 Claude Code 官方 Runtime architecture、lifecycle event 或 Contract。
+
+### 研究工作区（Research Workspace）
+
+- 新增 `cycle-01` 与 `cycle-02` 的非空计划态 Research Note。
+- 为 `cycle-01` 与 `cycle-02` 预先准备 `experiments/` 与 `evidence/` 工作区，供后续实现；不创建 Cycle 3–18 workspace。
+- 根据 repository owner 决定澄清工作区规则：当前内容 Batch 可以在实验执行前准备对应 Cycle 目录，但目录存在不表示实验已执行。
+- 明确区分内容生成与研究执行；所有 Evidence、结果和 Design Judgment 保持 pending。
+
+### 非目标（Non-goals）
+
+- 不生成 Cycle 3–18 正文，不实现 Batch 2。
+- 不执行 T01–T03，不伪造 Run、`EVD-*` 或 S1–S4。
+- 不实现 myharness feature、OpenCode Adapter、ZCode Plugin 或其他 Host Adapter。
+
 ## V4.2 Batch 0 · 2026-07-14
 
 V4.2 Batch 0 只冻结公共研究协议。Batch 1 与 Cycle 1–18 正文尚未生成。
