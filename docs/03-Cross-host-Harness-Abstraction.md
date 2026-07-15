@@ -180,6 +180,7 @@ Batch 6 不填写以上单元格。真实执行时每个非 Unknown 单元格必
 #### `EXP-C09-01` · Four-host Semantic Capability Trace
 
 - 实验类型（Experiment Type）：`EXPLORATORY`
+- Outcome Mode：`OBSERVATION_ONLY`
 - 稳定任务（Stable Task）：`T01 · Engineering Constraint`
 - 历史映射（Legacy Mapping）：V4.1 Week 7 无对应独立实验；这是 `EXP-W07-01` 前新增的 readiness prerequisite
 - T01 instance：`T01-C09-LOCAL-HTTP-TIMEOUT`。在同一固定 commit 的隔离 fixture repository 中，为已有本地 HTTP client 增加显式、非默认、可配置 timeout，并保持既有 error / response semantics；不访问网络或真实服务
@@ -187,7 +188,7 @@ Batch 6 不填写以上单元格。真实执行时每个非 Unknown 单元格必
 - Host strata：Claude Code、Codex、ZCode、OpenCode 各自独立执行；每个 stratum 只绑定一个明确 surface，并使用独立 Run Metadata
 - Trace：记录 instruction source、Skill state、actual tool set、read / edit / command request、permission owner / decision、Hook / lifecycle observation、task / session state、acceptance、artifact 与 human intervention
 - Comparability boundary：尽量固定 repository、task、acceptance、instruction semantic 与 tool / permission intent；Provider / Model 不能相同时只比较 semantic route 是否可观察，不比较 outcome quality 或归因 Host performance
-- Result boundary：本实验只形成 capability question map 与 scoped observations，不单独裁决 `H-C09-01`；未通过 Gate 的 Host 保持 `NOT EXECUTED / UNKNOWN`
+- Observation Outcome boundary：本实验只形成 capability question map 与 scoped observations，不单独裁决 `H-C09-01`；完成记录使用 `COMPLETE / PARTIAL / INVALIDATED`，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；未通过 Gate 的 Host 保持 `NOT EXECUTED / UNKNOWN`
 
 #### `EXP-C09-02` · Naive Artifact Port vs Portable Semantic Contract
 
@@ -200,11 +201,13 @@ Batch 6 不填写以上单元格。真实执行时每个非 Unknown 单元格必
 - Variant B · Contract + Adapter：Capability body 的 Intent / Procedure 保持相同；先写 Portable Semantic Contract，再用目标 Host Adapter 映射 discovery / bootstrap、action、permission、lifecycle、distribution、state、evidence 与 degradation
 - 单一主要变量（Primary Variable）：porting method；在同一目标 Host 内固定 task、Host version / surface、Provider profile、Model、configuration、permission、source capability revision 与 acceptance procedure
 - Source / target derivation：先从 `Claude Code / Codex / ZCode / OpenCode` 四宿主集合中绑定一个拥有可复查 Behavior baseline 的 `source_host`，再定义 `target_hosts = four_hosts - {source_host}`。默认 Claude 为 source 时，目标才是 Codex、ZCode、OpenCode；若 Route Review 更改 source，必须同时失效旧 target plan 并重算三个 target，不得让 source Host 与 target Host 重合或遗漏其他主要 Host。source artifact 若不属于四宿主，本实验保持 `NOT EXECUTED` 并进入 Route Review，不得引入第五个 Host
-- Target strata：对重算后的每个 target Host 单独建立 A / B Run group、Result 与 scoped `EVD-*`，不得把一个目标的结果替代另一个
+- Target strata：Result Unit 为 `HOST`，Stratum Key 为 `target_host`；在同一个 `EXP-C09-02` Experiment Record 中，对重算后的每个 target Host 单独建立 stratum、A / B Run group、Result、限制与 scoped `EVD-*`，不得把一个目标的结果替代另一个
 - 重复与顺序（Replication and Order）：每个可执行目标的 A / B 各至少两个 fresh task Run，顺序交错，从相同 clean baseline 与 Agent-visible input 开始
 - 主要观察项（Primary Observations）：format load、discovery、activation、required context、procedure checkpoint、action / permission mapping、evidence citation、deterministic verification、completion、silent degradation、Host leakage、false positive / completion、Context / maintenance cost、human intervention
 - 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
 - 解释边界（Interpretation Boundary）：每个 Result 只适用于绑定目标 Host 与 capability slice；至少两个目标 strata 完成前，不形成 cross-host Hypothesis Result；缺少访问或 Gate 未通过使用 `NOT EXECUTED / UNKNOWN`，不是 `UNSUPPORTED`
+
+cross-host Experiment Result 的预注册聚合规则为：至少两个 target strata 已完成后，两个或以上 `SUPPORT` 且没有 `REJECT` 才为 `SUPPORT`；两个或以上 `REJECT` 且没有 `SUPPORT` 才为 `REJECT`；其余达到最小完成数的组合为 `INCONCLUSIVE`。不足两个已完成 strata 时不创建 Experiment-level Result，不能用 `INCONCLUSIVE` 代替未执行。
 
 ##### `EXP-C09-02` 预注册裁决规则（Pre-registered Decision Rule）
 

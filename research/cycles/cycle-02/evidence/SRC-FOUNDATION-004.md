@@ -44,4 +44,4 @@
 
 - 证据 ID（Evidence IDs）：无
 - 证据判断位置（Evidence Claim Locations）：无
-- 备注（Notes）：为 Cycle 2 计划阅读登记；不授权形成 Claude Code 架构结论。
+- 备注（Notes）：为 Cycle 2 登记，并由 Cycle 3 与 Cycle 10 复用；不授权形成 Claude Code 架构结论。跨 Cycle 复用不创建新的 Source ID 或 Evidence Claim。

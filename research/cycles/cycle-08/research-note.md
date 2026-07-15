@@ -99,7 +99,7 @@ Direct Behavior + Project Artifact
 
 ## 8. 实验（Experiment）
 
-- `EXP-C08-01`：`EXPLORATORY` · `T03 · Medium Change` · Contract → Source → Behavior Architecture Trace。
+- `EXP-C08-01`：`EXPLORATORY` · `OBSERVATION_ONLY` · `T03 · Medium Change` · Contract → Source → Behavior Architecture Trace。
 - T03 instance：`T03-C08-LOCAL-RETRY-BUDGET`。在固定 commit 的隔离 fixture repository 中，为已有本地 job runner 增加可配置 retry budget，修改 config type / parser、validation、runtime use、tests 与用户文档；不访问网络或真实服务。
 - T03 acceptance：覆盖字段缺省、合法边界、非法边界、runtime 停止条件与文档示例；保存本地命令、exit code、diff 与 artifact convergence check。
 - T03 trace：绑定 OpenCode version / surface / platform、官方页面版本、固定 source commit、configuration precedence、instruction source、agent、tool / permission、extension state、Provider profile、Model、session / task state、Review、artifact 与 human intervention。
@@ -114,7 +114,7 @@ Direct Behavior + Project Artifact
 - 禁止比较：Provider 与 Model 同时变化的任意两格不能形成 portability conclusion；`EXP-C08-02` 与 `EXP-C08-03` 分别填写 Result 与 scoped `EVD-*`，不得互相替代。
 - 安全边界（Safety Boundary）：不记录 API Key / token，不访问真实业务服务或工作区外路径，不运行破坏性操作。
 - 运行元数据（Run Metadata）：尚未创建。
-- 结果（Result）：尚未运行。
+- Outcome / Result：均尚未运行；`EXP-C08-01` 执行后记录 Observation Outcome，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C08-02/03` 才填写 Hypothesis Result。
 - 历史映射（Legacy Mapping）：无；Cycle 8 是 V4.2 新增 Cycle。
 
 ## 9. 观察（Observation）

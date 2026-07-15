@@ -32,8 +32,8 @@ myharness 现有 Skill 可能同时承担触发说明、SOP、证据要求和完
 
 - [`SRC-HARNESS-001`](evidence/SRC-HARNESS-001.md)：Agent Skills · Optimizing skill descriptions。
 - [`SRC-HARNESS-002`](evidence/SRC-HARNESS-002.md)：Agent Skills · Evaluating skill output quality。
-- [`SRC-HARNESS-003`](evidence/SRC-HARNESS-003.md)：obra/superpowers 浮动源码锚点。
-- [`SRC-HARNESS-004`](evidence/SRC-HARNESS-004.md)：learn-claude-code 浮动源码锚点。
+- 复用 Cycle 9 [`SRC-CROSSHOST-004`](../cycle-09/evidence/SRC-CROSSHOST-004.md)：obra/superpowers 浮动源码锚点。
+- 复用 Cycle 2 [`SRC-FOUNDATION-004`](../cycle-02/evidence/SRC-FOUNDATION-004.md)：learn-claude-code 浮动源码锚点。
 
 Source artifact 不等于 Evidence Claim；默认分支执行时必须固定 commit。Contract、Source、Behavior、Project、Enterprise 各栏均尚无证据。
 

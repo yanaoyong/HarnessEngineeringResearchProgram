@@ -52,6 +52,8 @@ SRC-CROSSHOST-001
 
 `SRC-*` 只标识外部或登记来源，不直接充当 Support Assessment 的 Evidence ID。Behavior run 使用 run metadata 中的 Run ID；Project Artifact 和 Enterprise Fact 使用其稳定记录 ID。
 
+同一个 canonical source artifact 跨 Cycle 使用时必须复用最早登记的 Source ID，不得因为研究角色、Cycle 或引用位置变化而重新编号。只有来源是不同的可独立固定 artifact、revision 或官方页面，且 Registry 明确记录 parent / related Source ID 与 scope 差异时，才可分配新 ID。URL 拼写、版本后缀或链接到同仓库具体路径的差异本身不足以创建新 Source ID。
+
 ### Evidence IDs
 
 每个将被 Research Note、ADR 或 Support Assessment 引用的证据判断使用 Evidence ID：

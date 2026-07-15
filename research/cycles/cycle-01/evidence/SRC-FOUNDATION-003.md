@@ -44,4 +44,4 @@
 
 - 证据 ID（Evidence IDs）：无
 - 证据判断位置（Evidence Claim Locations）：无
-- 备注（Notes）：Batch 1 内容生成阶段不派生证据判断。
+- 备注（Notes）：由 Cycle 1、Cycle 14 与 Cycle 18 复用；内容生成阶段不派生证据判断，跨 Cycle 复用不创建新的 Source ID。

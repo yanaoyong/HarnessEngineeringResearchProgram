@@ -5,6 +5,7 @@
 ## `EXP-C16-01` · Traceable Hypothesis and ADR Candidate Portfolio
 
 - 类型：`EXPLORATORY`
+- Outcome Mode：`HYPOTHESIS_RESULT`
 - Stable Task：`T03 · Medium Change`
 - 历史映射：`EXP-W14-01`
 

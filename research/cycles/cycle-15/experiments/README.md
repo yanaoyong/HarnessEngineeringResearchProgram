@@ -5,6 +5,7 @@
 ## `EXP-C15-01` · Evidence-first Read-only Architecture Audit
 
 - 类型：`EXPLORATORY`
+- Outcome Mode：`HYPOTHESIS_RESULT`
 - Stable Task：`T02 · Semantic Review`
 - 历史映射：`EXP-W13-01`
 

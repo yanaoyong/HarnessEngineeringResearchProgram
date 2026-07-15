@@ -30,7 +30,7 @@ Handoff 是从 live context 中 ratify durable task state，再由下一 Session
 
 尚无 `EVD-*`。计划来源：
 
-- [`SRC-HARNESS-008`](evidence/SRC-HARNESS-008.md)：HumanLayer Advanced Context Engineering。
+- 复用 Cycle 3 [`SRC-CLAUDE-006`](../cycle-03/evidence/SRC-CLAUDE-006.md)：HumanLayer Advanced Context Engineering。
 - [`SRC-HARNESS-009`](evidence/SRC-HARNESS-009.md)：snarktank/ralph。
 - 复用 Cycle 3–6 Host sources；复用 `SRC-*` 不形成新的 Contract / Behavior claim。
 
@@ -46,10 +46,12 @@ ACE 提供 intentional compaction 方法问题，Ralph 提供 fresh-context + pe
 
 - 实验 ID：`EXP-C13-01`
 - 类型：`EXPLORATORY`
+- Outcome Mode：`OBSERVATION_ONLY`
 - Stable Task：`T03 · Medium Change`
 - 历史映射：`EXP-W11-01` → `EXP-C13-01`
 - Run Metadata：尚未创建
-- 结果：尚未运行
+- Observation Outcome：尚未运行；执行后使用 `COMPLETE / PARTIAL / INVALIDATED`
+- Experiment Result：`NOT APPLICABLE · OBSERVATION ONLY`
 
 ## 9. 观察
 

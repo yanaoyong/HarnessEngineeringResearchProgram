@@ -5,6 +5,7 @@
 ## `EXP-C13-01` · Multi-session Handoff Trace
 
 - 类型：`EXPLORATORY`
+- Outcome Mode：`OBSERVATION_ONLY`
 - Stable Task：`T03 · Medium Change`
 - 历史映射：`EXP-W11-01`
 
@@ -37,8 +38,8 @@ Changes artifact 保持其固定 project schema，不为了与 structured handof
 
 记录 missing critical fact、contradiction、stale fact、unsupported assumption、recovery time、duplicate work、evidence trace break、Human correction、Context input size 与 acceptance state。速度不能在缺少 completeness / correctness 时单独算改善。
 
-## Result boundary
+## Observation Outcome boundary
 
-Result 只回答“在哪些 transition 观察到哪些信息损失或恢复机制”，不比较四个 mode 的优劣。任何 phase / mode 归因、episode trace 或 hydration input 不完整时，Result 为 `INCONCLUSIVE`。后续比较必须另建 matched-task、balanced-order experiment。
+Observation Outcome 只回答“在哪些 transition 观察到哪些信息损失或恢复机制”，不比较四个 mode 的优劣。完整执行且 observation contract 满足时为 `COMPLETE`；存在缺失但剩余 observation 仍可复查时为 `PARTIAL`；phase / mode 归因、episode trace 或 hydration input 无法可靠识别时为 `INVALIDATED`。Experiment Result 固定为 `NOT APPLICABLE · OBSERVATION ONLY`；后续比较必须另建 matched-task、balanced-order experiment。
 
 执行时另建 Experiment Record 和每个 execution episode 的 Run Metadata；本阶段不创建结果、`EVD-*` 或实现。

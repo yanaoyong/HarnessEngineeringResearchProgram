@@ -25,6 +25,7 @@
 - Provider Profile:
 - Model:
 - Runtime / Component Scope:
+- Related Source IDs and Relationship: <!-- NONE, or parent / supersedes / separately versioned artifact -->
 
 ## Authority Assessment
 

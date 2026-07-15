@@ -44,4 +44,4 @@
 
 - 证据 ID（Evidence IDs）：无
 - 证据判断位置（Evidence Claim Locations）：无
-- 备注（Notes）：计划态浮动 Official Source anchor；固定 commit 前不派生可复现 Source Evidence，只作为 Reference Pattern / research question source。
+- 备注（Notes）：计划态浮动 Official Source anchor，由 Cycle 9 与 Cycle 10 复用；固定 commit 前不派生可复现 Source Evidence，只作为 Reference Pattern / research question source。跨 Cycle 复用不创建新的 Source ID。
