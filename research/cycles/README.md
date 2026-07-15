@@ -13,8 +13,13 @@
 - [cycle-07 · ZCode Host Contract & Enterprise Reality](cycle-07/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-08 · OpenCode Host Architecture & Model Portability](cycle-08/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-09 · Four-host Harness Abstraction](cycle-09/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-10 · Skill Behavior & Evaluation](cycle-10/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-11 · Change Contract & Convergence](cycle-11/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-12 · Adaptive Workflow](cycle-12/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-13 · Context Lifecycle & Session Handoff](cycle-13/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-14 · Knowledge Ratification & Harness Minimalism](cycle-14/research-note.md) — `PLANNED · NOT EXECUTED`
 
-Cycle 10–18 目录尚未创建。
+Cycle 15–18 目录尚未创建。
 
 推荐结构：
 
@@ -26,7 +31,7 @@ cycle-01/
 └── evidence/
 ```
 
-Batch 1–6 只创建 `cycle-01` 到 `cycle-09`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-10` 到 `cycle-18` 在对应内容 Batch 前不创建。
+Batch 1–7 只创建 `cycle-01` 到 `cycle-14`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-15` 到 `cycle-18` 在 Batch 8 前不创建。
 
 如果路线发生变化，仍以当前核心 Research Question 所属 Cycle 记录，并在 Research Note 与 Route Review 中说明路线变化。
 

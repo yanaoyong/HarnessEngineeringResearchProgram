@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。Batch 1–6 active overlay 已刷新；其余 V4.1 rows 等待对应内容 Batch 迁移。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。Batch 1–7 active overlay 已刷新；V4.1 Week 13–16 rows 等待 Batch 8 迁移。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -24,7 +24,7 @@ Stop at Do-Not-Study Boundary
 
 当项目默认分支、目录或术语发生变化时，优先追 Capability 与研究问题，不机械寻找旧路径。
 
-## Batch 1–6 当前图谱（Active Atlas）
+## Batch 1–7 当前图谱（Active Atlas）
 
 | 项目 / 来源 | 研究角色（Research Role） | 核心问题 | 深度 | 相关 Cycle | 当前锚点 | 权限 / 停止边界 |
 |---|---|---|---|---|---|---|
@@ -51,12 +51,22 @@ Stop at Do-Not-Study Boundary
 | Agent Skills official docs | Cross-product Skill format / lifecycle Contract | `SKILL.md` format、progressive disclosure 与 client integration 能提供哪些公共语义，哪些仍由 Host 决定？ | L2 定向 | C09 | Overview、Specification、Adding skills support | 格式和 guidance 不证明任一 Host 当前版本兼容、已加载或行为等价；normative format 与 implementor recommendation 分开 |
 | obra/superpowers porting guide | Cross-harness porting Reference Pattern | shared skill body、tool mapping、bootstrap、capability gate、degradation 与 definition of done 如何分层？ | L3 定向 | C09 | 浮动 `main`：`docs/porting-to-a-new-harness.md` + 相关 live integration | 项目自身方法不是四个 Host 的官方 Contract；执行时固定 commit，文档与 code 冲突时分别记录，不复制完整 implementation |
 | mifunedev/openharness | Reference role drift contrast | V4.1 shared primitive anchor 是否仍回答 Cycle 9 portability 问题？ | L1 范围核验 | C09 | 浮动 `main`：current README / canonical repository | 当前公开定位主要是 Docker sandbox / long-lived workspace；旧 `.oh` path 只作历史线索，不作为 portability Evidence 或第五 Host |
+| Agent Skills · Skill creation guidance | Skill discovery / output evaluation Contract | description、trigger eval 与 output eval 如何分开？ | L2 定向 | C10 | `optimizing-descriptions`、`evaluating-skills` | 浮动官方页面；guidance 不证明任一 Host 的 actual Discovery、Activation 或 Skill outcome |
+| obra/superpowers | Skill behavior-contract Reference Pattern | procedure、verification、failure route 与 Skill test 如何组合？ | L3 定向 | C10 | 浮动 `main`：`skills/writing-skills/`、`skills/verification-before-completion/` | 执行时固定 commit；项目自身规范不证明 myharness 或四宿主 behavior |
+| shareAI-lab/learn-claude-code | Skill loading 教学对照 | 教学 Harness 如何表达 loading / progressive capability？ | L2 定向 | C10 | 浮动默认分支：按 current track 重新定位 | 不是 Claude Code 官方 Runtime；不得形成官方 Contract / Architecture claim |
+| GitHub Spec Kit | Change artifact convergence reference | Spec、Plan、Task、Implementation 与 cross-artifact analysis 如何关联？ | L2 定向 | C11 | 浮动官方 docs + `github/spec-kit` 默认分支 | Contract docs 与 Source repository 分开登记；源码执行时固定 commit，不沿用未核验旧命令名 |
+| Fission-AI/OpenSpec | Evolvable Change artifact reference | Change schema / artifact 如何随实现演进？ | L2 定向 | C11–C12 | 浮动默认分支：docs、schemas、instructions / templates | 不证明 myharness Change truth，也不把 flexible workflow 等同于无 Gate |
+| BMAD Method | Adaptive workflow reference | planning depth / track 如何随 project need 变化？ | L2 定向 | C12 | 浮动官方 docs + `bmad-code-org/BMAD-METHOD` 默认分支 | Contract docs 与 Source repository 分开登记；不直接复制 track / story-count taxonomy |
+| HumanLayer Advanced Context Engineering | Intentional compaction method reference | trajectory 如何压缩为可继续工作的 artifact？ | L2 method | C13 | 浮动 `main`：`ace-fca.md` | Community Reference；作者案例不证明 Host Contract、普遍 productivity 或最佳 handoff |
+| snarktank/ralph | Fresh-context persistent-artifact contrast | PRD、progress 与 fresh iteration 如何交接任务状态？ | L2 定向 | C13 | 浮动 `main`：README、prompt / CLAUDE、PRD / progress artifacts | 固定 revision 后只解释该项目；不能证明 fresh context 优于 resume |
+| buildermethods/agent-os | Knowledge-to-standard reference | standards 如何被发现、部署与索引？ | L2 定向 | C14 | 浮动默认分支：Discover / Deploy / Shape / Index capabilities | 不证明发现准确、值得永久化或维护成本可接受；不研究安装脚本 |
+| SWE-agent/mini-swe-agent + ACI paper | Minimal scaffold / interface theory contrast | interface value、scaffold size 与 permanent Harness 如何区分？ | L1–L2 定向 | C14 | mini-swe-agent 浮动 `main` + arXiv:2405.15793v3 | 不使用 benchmark 排名裁决 minimalism；论文受 OQ-003 taxonomy boundary 约束 |
 
 上述入口、官方页面和默认分支目录只是计划执行时核验的浮动锚点，Atlas 只提供定位，不证明当前 revision 的源码事实或实际 Host behavior。形成 Evidence 时必须重新核验并登记 Source ID、Host version / commit、scope、访问日期与限制。
 
-## V4.1 Legacy Atlas · Pending Migration
+## V4.1 Legacy Atlas · Historical Mapping / Batch 8 Pending
 
-下表保持 V4.1 `Relevant Week` 语义，供 Batch 7–8 迁移及 historical mapping 复查。Week 3–7 rows 只保留迁移历史，Cycle 7–8 没有 V4.1 row；Batch 6 已在 active overlay 中刷新 Week 7 主锚点，不修改此历史表。
+下表保持 V4.1 `Relevant Week` 语义，供 historical mapping 与 Batch 8 迁移复查。Week 1–12 rows 只保留迁移历史，Cycle 7–8 没有 V4.1 row；Batch 7 已在 active overlay 中刷新 Week 8–12 主锚点，不修改此历史表。只有 Week 13–16 相关语义仍待 Batch 8 迁移。
 
 | Project / Source | Research Role | Primary Question | Depth | Relevant Week | Primary Anchor | Do Not Study |
 |---|---|---|---|---|---|---|
@@ -82,6 +92,8 @@ Stop at Do-Not-Study Boundary
 - Agent Skills — https://agentskills.io/home
 - Agent Skills · Specification — https://agentskills.io/specification
 - Agent Skills · Adding skills support — https://agentskills.io/client-implementation/adding-skills-support
+- Agent Skills · Optimizing skill descriptions — https://agentskills.io/skill-creation/optimizing-descriptions
+- Agent Skills · Evaluating skill output quality — https://agentskills.io/skill-creation/evaluating-skills
 - OpenAI Codex · Docs — https://learn.chatgpt.com/docs
 - OpenAI Codex · Customization — https://learn.chatgpt.com/docs/customization/overview
 - OpenAI Codex · AGENTS.md — https://learn.chatgpt.com/docs/agent-configuration/agents-md
@@ -128,8 +140,10 @@ Stop at Do-Not-Study Boundary
 - obra/superpowers — https://github.com/obra/superpowers
 - obra/superpowers · Porting to a new harness — https://github.com/obra/superpowers/blob/main/docs/porting-to-a-new-harness.md
 - github/spec-kit — https://github.com/github/spec-kit
+- GitHub Spec Kit · Documentation — https://github.github.com/spec-kit/index.html
 - Fission-AI/OpenSpec — https://github.com/Fission-AI/OpenSpec
 - BMAD Method — https://github.com/bmad-code-org/BMAD-METHOD
+- BMAD Method · Getting Started — https://docs.bmad-method.org/tutorials/getting-started/
 - buildermethods/agent-os — https://github.com/buildermethods/agent-os
 - mifunedev/openharness — https://github.com/mifunedev/openharness
 - snarktank/ralph — https://github.com/snarktank/ralph

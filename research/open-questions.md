@@ -110,6 +110,61 @@
 - Candidate Cycle: Cycle 9
 - Status: BACKLOG
 
+### OQ-010 · 如何在不同 Host 中可靠区分 Skill Discovery 与 Activation？
+
+- Discovered In: Batch 7 / Cycle 10 experiment design
+- Why It Matters: `EXP-C10-01` 与 `EXP-C10-02` 需要把 description effect 与正文 procedure effect 分开；若 Host 只暴露最终调用或结果，就无法知道 Skill 是未发现、未激活还是已加载但未遵循
+- Current Evidence: 只有 `SRC-HARNESS-001..004` 的计划态来源；没有绑定 Host / surface 的 discovery trace 或 `EVD-*`
+- Authority Boundary: Skill 文件存在、最终输出提到 Skill、用户显式命名 Skill 或任务成功都不能单独证明自动 Discovery / Activation
+- Blocks Current Research?: YES；不阻塞 query / oracle 设计，但阻塞不可观察 Host stratum 的 Discovery Result
+- Priority: HIGH
+- Candidate Cycle: Cycle 10
+- Status: BACKLOG
+
+### OQ-011 · 历史 Change 的 evaluator-only truth map 需要什么最低 Project Evidence？
+
+- Discovered In: Batch 7 / Cycle 11 experiment design
+- Why It Matters: 如果 Spec、CI、外部 issue 或关闭时状态缺失，人工 oracle 可能把 retention gap 误判为 drift，进而污染 checklist recall / false-positive 裁决
+- Current Evidence: 尚未选择历史 Change；`SRC-HARNESS-005..006` 与 `SRC-HARNESS-013` 只提供 reference workflow，不证明 myharness artifact truth
+- Authority Boundary: 当前分支状态、目录存在、Agent summary 或单一评审者记忆不能补写历史事实
+- Blocks Current Research?: YES；最低 packet gate 未满足时 `EXP-C11-01` 保持 `NOT EXECUTED`
+- Priority: HIGH
+- Candidate Cycle: Cycle 11
+- Status: BACKLOG
+
+### OQ-012 · Adaptive Workflow 的 risk classifier 如何在不看结果的情况下校准？
+
+- Discovered In: Batch 7 / Cycle 12 experiment design
+- Why It Matters: 若 risk label 在 escaped failure 或 rework 出现后才确定，route 选择存在 outcome leakage，完整 workflow 与 risk-routed workflow 不可比较
+- Current Evidence: `SRC-HARNESS-006..007` 与 `SRC-HARNESS-014` 只登记 OpenSpec / BMAD 浮动来源；尚无 myharness task set、risk rubric、inter-rater result 或 `EVD-*`
+- Authority Boundary: artifact 数量、story count、Agent 自报复杂度或 historical severity 不能单独定义 delivery risk
+- Blocks Current Research?: YES；不阻塞 rubric 草拟，但阻塞 `EXP-C12-01` 与 `EXP-C12-02` Run
+- Priority: HIGH
+- Candidate Cycle: Cycle 12
+- Status: BACKLOG
+
+### OQ-013 · Session Handoff mode 如何在不混入 phase 与 trajectory 差异时比较？
+
+- Discovered In: Batch 7 / Cycle 13 experiment design
+- Why It Matters: 单个任务的 Research、Plan、Implement、Review transition 天然不同；轮换 Resume、自由摘要与结构化 artifact 只能探索遗漏位置，不能裁决 mode 优劣
+- Current Evidence: `SRC-HARNESS-008..009` 与 Cycle 3–6 Host sources 只有计划态锚点；没有 matched tasks、balanced order 或 Behavior Run
+- Authority Boundary: 恢复速度、Context token 数、任务完成或作者案例不能单独证明 handoff completeness / correctness
+- Blocks Current Research?: NO；`EXP-C13-01` 可保持 exploratory，但 comparative claim 被阻塞
+- Priority: MEDIUM
+- Candidate Cycle: Cycle 13 follow-up
+- Status: BACKLOG
+
+### OQ-014 · 什么 recurrence / authority threshold 足以把观察固化为永久 Harness？
+
+- Discovered In: Batch 7 / Cycle 14 experiment design
+- Why It Matters: 阈值过低会制造 Rule / Skill / Hook 债务，过高会重复失败；严重性、复发概率、可确定验证性与维护成本需要独立处理
+- Current Evidence: `SRC-HARNESS-010..012` 只提供项目 / 论文参考；尚未选择十个 myharness packets，没有 reviewer agreement 或 future recurrence Evidence
+- Authority Boundary: 单次事故、Agent 总结、社区 pattern、论文结论或高 severity 不能自动批准 ratification
+- Blocks Current Research?: NO；可先做 exploratory classification，但不能直接修改 Harness 或声称 future reliability 改善
+- Priority: HIGH
+- Candidate Cycle: Cycle 14 / Cycle 15 audit / Cycle 16 hypothesis
+- Status: BACKLOG
+
 ## Template
 
 <!--

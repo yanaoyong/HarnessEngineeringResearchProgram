@@ -7,12 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Completed content baseline: Batch 1–5, covering Cycle 1–8
-* Current task: Generate Batch 6 only, covering Cycle 9
+* Completed content baseline: Batch 1–6, covering Cycle 1–9
+* Current task: Generate Batch 7 only, covering Cycle 10–14
 
-This task starts from the merged V4.2 Batch 5 baseline. V4.1 Week 7 remains the historical migration source for Cycle 9.
+This task starts from the merged V4.2 Batch 6 baseline. V4.1 Week 8–12 remain the historical migration source for Cycle 10–14.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 6 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–5 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Cross-host Harness Abstraction content directly.
+Do not apply or reproduce an existing external ZIP or patch. Generate Batch 7 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–6 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Harness Engineering Research Themes content directly.
 
 ## Required reading
 
@@ -111,23 +111,25 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 6 scope
+## Current Batch 7 scope
 
-Batch 6 generates the Four-host Harness Abstraction content only:
+Batch 7 generates the Harness Engineering Research Themes content only:
 
-1. Cycle 9 · Four-host Harness Abstraction
-2. Cycle 9 Research Note in planned, not-executed state
-3. Portable Semantic Contract、Host Adapter、Host-specific Capability and explicit degradation research boundaries
-4. Planned Cross-host Source Registry entries with explicit authority and floating-anchor boundaries
-5. Reuse of Cycle 3–8 Host sources without upgrading Source IDs into Evidence Claims
-6. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
-7. Cycle 9 workspace directories required for later implementation
-8. V4.1 Week 7 / `EXP-W07-01` historical migration mapping
-9. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
+1. Cycle 10 · Skill Behavior & Evaluation
+2. Cycle 11 · Change Contract & Convergence
+3. Cycle 12 · Adaptive Workflow
+4. Cycle 13 · Context Lifecycle & Session Handoff
+5. Cycle 14 · Knowledge Ratification & Harness Minimalism
+6. Cycle 10–14 Research Notes in planned, not-executed state
+7. Planned Source Registry entries with explicit authority and floating-anchor boundaries
+8. Reuse of earlier Cycle sources without upgrading Source IDs into Evidence Claims
+9. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
+10. V4.1 Week 8–12 / `EXP-W08-01` through `EXP-W12-01` historical migration mappings
+11. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 6, add only `cycle-09` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 10–18 directories.
+Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 7, add only `cycle-10` through `cycle-14` with planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 15–18 directories.
 
-Batch 6 content generation does not mean that experiments were run, Portable Semantic Contracts or Host Adapters were validated, Evidence Claims were established, four-host portability was proven, or Support Levels were achieved.
+Batch 7 content generation does not mean that experiments were run, Skill behavior improved, Change convergence or Adaptive Workflow was validated, a handoff mode was proven superior, knowledge was ratified, Evidence Claims were established, or Support Levels were achieved.
 
 ## Batch 0 required terminology
 
@@ -220,7 +222,7 @@ Required distinctions:
 
 ## Frozen Batch 0 outputs
 
-The following files are the existing Batch 0 baseline, not the current Batch 6 generation target.
+The following files are the existing Batch 0 baseline, not the current Batch 7 generation target.
 
 Expected new files:
 
@@ -260,12 +262,12 @@ The final file list may vary only when justified by the existing repository stru
 
 Do not:
 
-* generate Cycle 10–18正文;
-* implement Batch 7;
-* claim that planned Batch 1, Batch 2, Batch 3, Batch 4, Batch 5 or Batch 6 experiments have been executed;
+* generate Cycle 15–18正文;
+* implement Batch 8;
+* claim that planned Batch 1, Batch 2, Batch 3, Batch 4, Batch 5, Batch 6 or Batch 7 experiments have been executed;
 * create Run records, `EVD-*` conclusions, `ENT-*` facts, or Support Assessments before real execution;
 * rewrite all V4.1 content files;
-* create Cycle 10–18 directories;
+* create Cycle 15–18 directories;
 * implement myharness features;
 * implement or merge a complete myharness Host Adapter;
 * implement an OpenCode Adapter or Plugin;
@@ -309,13 +311,13 @@ Also validate:
 
 * all internal relative links;
 * all 18 Cycle names appear in the V4.2 overview;
-* Cycle 1–9正文 exists and Cycle 10–18正文 has not been generated;
-* only `research/cycles/cycle-01` through `research/cycles/cycle-09` exist;
-* Cycle 9 workspace directory contains `research-note.md`, `experiments/`, and `evidence/` preparation;
+* Cycle 1–14正文 exists and Cycle 15–18正文 has not been generated;
+* only `research/cycles/cycle-01` through `research/cycles/cycle-14` exist;
+* Cycle 10–14 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
 * ZCode source conclusions were not invented;
 * Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
-* Batch 6 files do not claim that a Portable Semantic Contract, Host Adapter, four-host portability or any S1–S4 result has been validated;
+* Batch 7 files do not claim that Skill behavior, Change convergence, Adaptive Workflow, handoff superiority, knowledge ratification or any S1–S4 result has been validated;
 * all changed Markdown files have no trailing whitespace.
 
 Do not commit or push.

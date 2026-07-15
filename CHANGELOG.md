@@ -1,5 +1,36 @@
 # Changelog
 
+## V4.2 Batch 7 · 2026-07-15
+
+Batch 7 将 V4.1 Week 8–12 迁移为 Cycle 10–14「Harness Engineering Research Themes」正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、Design Judgment、ADR、实现或 Support Assessment。
+
+### Added
+
+- 新增 Cycle 10–14：Skill Behavior & Evaluation、Change Contract & Convergence、Adaptive Workflow、Context Lifecycle & Session Handoff、Knowledge Ratification & Harness Minimalism。
+- 新增 `cycle-10` 至 `cycle-14` 的计划工作区，以及 `SRC-HARNESS-001..014` 来源登记。
+- 新增 `EXP-C10-01/02`、`EXP-C11-01`、`EXP-C12-01/02`、`EXP-C13-01` 与 `EXP-C14-01` 计划设计，使用 T01–T03，并保留 `EXP-W08-01` 至 `EXP-W12-01` historical mapping。
+- 新增 `OQ-010..014`，跟踪 Skill observability、Change oracle、risk classifier、handoff comparability 与 ratification threshold。
+
+### Changed
+
+- 把 Skill Discovery、Activation、Execution、Evidence 与 Outcome 分开，V1→V2 与 V2→V3 分别解释 description bundle 与 behavior-contract bundle。
+- 把人工 Change truth map 定位为 evaluator-only oracle，不作为 Agent variant；CodeGraph 只允许独立 exploratory stratum。
+- 把 Adaptive Workflow 定义为预注册 risk route、mandatory gate 与 escalation，而不是 Agent 自由跳阶段。
+- 将单任务 handoff 设计收敛为 exploratory trace，明确禁止 mode superiority claim。
+- 将 knowledge ratification 与 future reliability 分开，允许 `Nothing`，并要求 owner、revalidation trigger 与 removal condition。
+- 将 Cycle 10 拆成 Discovery / Activation 与显式激活后的 Behavior 两个实验，并冻结 query split、最低 Run 数与 Result threshold。
+- 将 Cycle 12 的低风险 README task 恢复为 T01，Hook / Plugin medium changes 保持 T03；所有 A / B 使用同一 task instance。
+- 恢复 Cycle 13 的 Resume、prose summary、structured handoff 与 Changes artifact 四种独立 mode，并区分 Host session identity 与 execution episode。
+- 使 Cycle 14 的十个正式 packet 全部满足 T02 Contract，明确 Agent reviewer 与人工 evaluator-only reference 的责任。
+- 将 Spec Kit、BMAD 的官方文档 Contract 与源码 Source 分成独立 Source Registry entries；ACI 论文固定到 arXiv v3 URL。
+- 刷新 Reference Project Atlas 的 Batch 7 active overlay；所有默认分支保持浮动、执行时固定 commit。
+
+### Boundaries
+
+- 不生成 Cycle 15–18 正文或目录，不实现 Batch 8。
+- 不修改 myharness Skill、Change、workflow、handoff、memory 或 standards 实现。
+- 内容生成不满足 Cycle 10–14 Exit Criteria，不产生 Route Review、ADR Candidate 或 S1–S4。
+
 ## V4.2 Batch 6 · 2026-07-15
 
 Batch 6 将 V4.1 Week 7 迁移为 Cycle 9「Four-host Harness Abstraction」正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、Adapter implementation、portability result 或 Support Assessment。
