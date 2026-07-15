@@ -44,4 +44,4 @@
 
 - 证据 ID（Evidence IDs）：无
 - 证据判断位置（Evidence Claim Locations）：无
-- 备注（Notes）：为 Cycle 1 计划阅读登记；尚未派生行为或源码证据判断。
+- 备注（Notes）：为 Cycle 1 登记，并由 Cycle 14 复用；尚未派生行为或源码证据判断。跨 Cycle 复用不创建新的 Source ID。

@@ -8,6 +8,8 @@
 - `EXP-C08-02` · Provider Portability Comparison
 - `EXP-C08-03` · Model Portability Comparison
 
+`EXP-C08-01` 使用 `OBSERVATION_ONLY`，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C08-02` 与 `EXP-C08-03` 使用 `HYPOTHESIS_RESULT`。
+
 `EXP-C08-01` 使用 `T03-C08-LOCAL-RETRY-BUDGET`：在固定 commit 的隔离 fixture repository 中为已有本地 job runner 增加可配置 retry budget，修改 config type / parser、validation、runtime use、tests 与用户文档；acceptance checks 覆盖字段缺省、合法 / 非法边界、runtime 停止条件与文档示例。Trace 必须绑定 OpenCode version / surface / platform、官方页面版本、固定 `anomalyco/opencode` source commit、configuration precedence、instruction source、agent、tool / permission、extension state、Provider profile、Model、session / task state、Review、artifact 与 human intervention。源码只追真实触及的 capability，并记录 path、search term、stop point 与 Unknown。
 
 在解释 `EXP-C08-01` 的 Source / Behavior agreement 前，必须通过官方 release / tag provenance、package / binary build metadata 或其他可复查官方材料，把实际执行的 OpenCode artifact 映射到固定 source commit。只有 commit pinned 但映射缺失时，Source 与 Behavior 分开记录，agreement 保持 `UNKNOWN`，且 Cycle 8 相关 Exit Criteria 未满足。

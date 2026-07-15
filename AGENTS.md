@@ -7,12 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Completed content baseline: Batch 1–7, covering Cycle 1–14
-* Current task: Generate Batch 8 only, covering Cycle 15–18
+* Completed content baseline: Batch 1–8, covering Cycle 1–18
+* Current task: Post-generation review and research-execution preparation; no content Batch is active
 
-This task starts from the merged V4.2 Batch 7 baseline. V4.1 Week 13–16 remain the historical migration source for Cycle 15–18.
+The repository is based on the merged V4.2 Batch 8 baseline. V4.1 Week 1–16 have been migrated and remain historical mapping sources only.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 8 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–7 decisions except where the repository owner explicitly changes them, and migrating the V4.1 myharness Integration Research content directly.
+Do not regenerate a completed content Batch or apply an external ZIP or patch as a substitute for repository review. Preserve the frozen Batch 0 protocol and completed Batch 1–8 decisions except where the repository owner explicitly authorizes a recorded correction or a later research-execution artifact.
 
 ## Required reading
 
@@ -111,9 +111,9 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 8 scope
+## Completed Batch 8 scope
 
-Batch 8 generates the myharness Integration Research content only:
+Batch 8 generated the myharness Integration Research content only:
 
 1. Cycle 15 · Read-only Architecture Audit
 2. Cycle 16 · Hypothesis & ADR Candidate
@@ -127,7 +127,7 @@ Batch 8 generates the myharness Integration Research content only:
 10. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
 11. Explicit separation of Finding、Hypothesis、ADR Candidate、implementation、acceptance result and Design Belief
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 8, add only `cycle-15` through `cycle-18` with planned `research-note.md`, `experiments/`, and `evidence/` structure.
+Batch 8 prepared only `cycle-15` through `cycle-18` with planned `research-note.md`, `experiments/`, and `evidence/` structure. All Cycle 1–18 workspaces now exist; do not create Cycle 19 or later directories without a new program decision.
 
 Batch 8 content generation does not mean that an audit was run, Findings or ADR Candidates were created, an implementation was built or merged, experiments or ablations were executed, Design Beliefs were ratified, Evidence Claims were established, or Support Levels were achieved.
 
@@ -188,6 +188,8 @@ Experiment records must separate:
 * Skill revision
 * Check revision
 * Adapter revision
+* Harness-under-test cell and revision, when separate from the task fixture
+* implementation artifact IDs, when applicable
 * controlled variables
 * known confounders
 * evidence

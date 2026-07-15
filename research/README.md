@@ -60,7 +60,7 @@ research/cycles/cycle-03/
 ├── experiments/
 │   └── README.md
 └── evidence/
-    └── SRC-CLAUDE-001..006.md
+    └── SRC-CLAUDE-001..004.md + SRC-CLAUDE-006.md；复用 Cycle 2 SRC-FOUNDATION-004
 
 research/cycles/cycle-04/
 ├── research-note.md
@@ -109,7 +109,7 @@ research/cycles/cycle-10/
 ├── experiments/
 │   └── README.md
 └── evidence/
-    └── SRC-HARNESS-001..004.md
+    └── SRC-HARNESS-001..002.md；复用 Cycle 2 / 9 来源
 
 research/cycles/cycle-11/
 ├── research-note.md
@@ -130,14 +130,14 @@ research/cycles/cycle-13/
 ├── experiments/
 │   └── README.md
 └── evidence/
-    └── SRC-HARNESS-008..009.md
+    └── SRC-HARNESS-009.md；复用 Cycle 3 SRC-CLAUDE-006
 
 research/cycles/cycle-14/
 ├── research-note.md
 ├── experiments/
 │   └── README.md
 └── evidence/
-    └── SRC-HARNESS-010..012.md
+    └── SRC-HARNESS-010.md；复用 Cycle 1 SRC-FOUNDATION-002..003
 
 research/cycles/cycle-15..18/
 ├── research-note.md

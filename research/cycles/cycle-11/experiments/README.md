@@ -22,7 +22,7 @@
 - Round C：使用冻结 checklist 的 convergence review。
 - B / C 使用同一个 T02 task instance、repository baseline、Agent-visible packet、output schema、Host / surface、Provider、Model、Configuration、tools、permission 与 budget；fresh session、禁止跨 Run 记忆。
 - B / C 各执行 3 个 Run，组成 3 个 paired blocks。每个 block 从相同 clean baseline 开始；顺序在首个 Run 前冻结并平衡，例如 `B→C / C→B / B→C`，共 6 个 Agent Run。
-- 可选 CodeGraph 为独立 `EXPLORATORY` stratum，不进入 B / C 主裁决。
+- 可选 CodeGraph 为独立 `EXPLORATORY` / `OBSERVATION_ONLY` stratum，使用 `COMPLETE / PARTIAL / INVALIDATED` Observation Outcome，不进入 B / C 主裁决，也不填写独立 Hypothesis Result。
 
 ### Metrics and result
 

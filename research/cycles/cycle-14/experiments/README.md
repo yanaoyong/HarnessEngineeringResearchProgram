@@ -5,6 +5,7 @@
 ## `EXP-C14-01` · Historical Knowledge Ratification Review
 
 - 类型：`EXPLORATORY`
+- Outcome Mode：`HYPOTHESIS_RESULT`
 - Stable Task：`T02 · Semantic Review`
 - 历史映射：`EXP-W12-01`
 
@@ -49,4 +50,4 @@
 - `REJECT`：至多 4/10 packets ratification-complete，或至少 3 个 packets 出现 unsupported permanent ratification critical failure。
 - `INCONCLUSIVE`：其余结果、evaluator reference 未决、Run 缺失或 confounder 未分离。
 
-后续时间窗中的复发只能作 exploratory cross-check，不证明所选治理位置能防止未来失败。任何实现建议都进入 Cycle 15 audit / Cycle 16 Hypothesis candidate；本 Cycle 不修改 Harness，不创建 `EVD-*`、ADR 或 Support Level。
+后续时间窗中的复发只能作 exploratory cross-check，不证明所选治理位置能防止未来失败。任何实现建议都进入 Cycle 15 audit / Cycle 16 Hypothesis candidate；本 Cycle 不修改 Harness，不创建 ADR 或 Support Level。Batch 7 内容生成阶段不创建 `EVD-*`；真实执行后，任何进入后续 Cycle 并被复用的 ratification claim 必须派生 scoped `EVD-*`，绑定 packet、evaluator reference、Run、Host / Provider / Model / Configuration 与限制。

@@ -7,6 +7,8 @@
 - `EXP-C07-01` · Contract → Configuration → Behavior Trace
 - `EXP-C07-02` · Provider Profile Boundary Comparison
 
+`EXP-C07-01` 使用 `OBSERVATION_ONLY`，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C07-02` 使用 `HYPOTHESIS_RESULT`。
+
 `EXP-C07-01` 使用 `T01-C07-LOCAL-RETRY-LIMIT-VALIDATION`：在固定 commit 的隔离 fixture repository 中为已有本地 configuration parser 补充 `retry_limit` 上界验证，只修改冻结的 parser source 与 test file，不改变公开 schema / error type，不访问网络；deterministic acceptance checks 覆盖负数、零、允许上界、超过上界与字段缺省。
 
 `EXP-C07-02` 使用固定 T02 patch 与 acceptance reference。Evaluator-only oracle 记录需要推理的“重试状态在成功后未清零”与可由 schema check 确定检出的“新增配置字段未同步到 schema”两个预植入缺陷；oracle 及缺陷名称不得进入 Agent-visible task statement、Rule、context、acceptance reference 或 output schema。两个已授权 Provider profile 必须复用相同 ZCode version、platform、repository baseline、Agent-visible input、permission mode 与 Review procedure；优先固定相同 Model ID，每个 profile 至少执行两个顺序交错的 fresh task Run。观察必须分开记录 Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、Provider / Model tool-calling capability 与实际 tool request / success；actual exposed tool set 变化不能单独反驳 Host boundary。若配对 Run 已完成但 Model ID、endpoint policy、quota、tool policy 或 configuration drift 仍无法分离，登记 confounder 并填写 `INCONCLUSIVE`，不得写成 Host invariant；若无法合规取得两个 profile，实验保持 `PLANNED · NOT EXECUTED`，不填写 Result。

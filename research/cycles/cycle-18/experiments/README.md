@@ -56,7 +56,7 @@ Applicability Matrix 为每个 task 记录 task-fixture commit、candidate appli
 eligible cells × 3 tasks × 3 repetitions
 ```
 
-每个 Run 有独立 metadata；顺序、cache / session policy 与 task reset procedure 在运行前冻结。
+每个 Run 有独立 metadata；`repository.commit` 绑定 task fixture，`harness_under_test` 分别绑定 B0 / A0 / A1 cell、native-host / H0 / H1 revision 与 implementation artifact IDs。顺序、cache / session policy 与 task reset procedure 在运行前冻结。
 
 ## Metrics and critical failures
 

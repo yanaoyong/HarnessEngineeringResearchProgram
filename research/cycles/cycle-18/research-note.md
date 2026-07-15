@@ -28,7 +28,7 @@ Acceptance 是 evidence gate，不是 feature vote；Ablation 解释边际贡献
 
 ## 5. 证据登记
 
-尚无 `EVD-*`。可复用 Cycle 14 的 `SRC-HARNESS-012` 作为 interface theory 背景，但不升级为 myharness Result。当前 `research/design-beliefs.md` 仍只有模板；没有真实 Run 前不得新增 belief 或更新 ADR Decision。
+尚无 `EVD-*`。可复用 Cycle 1 的 [`SRC-FOUNDATION-003`](../cycle-01/evidence/SRC-FOUNDATION-003.md) 作为 interface theory 背景，但不升级为 myharness Result。当前 `research/design-beliefs.md` 仍只有模板；没有真实 Run 前不得新增 belief 或更新 ADR Decision。
 
 ## 6. 参考模式
 

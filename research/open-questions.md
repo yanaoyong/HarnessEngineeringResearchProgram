@@ -114,7 +114,7 @@
 
 - Discovered In: Batch 7 / Cycle 10 experiment design
 - Why It Matters: `EXP-C10-01` 与 `EXP-C10-02` 需要把 description effect 与正文 procedure effect 分开；若 Host 只暴露最终调用或结果，就无法知道 Skill 是未发现、未激活还是已加载但未遵循
-- Current Evidence: 只有 `SRC-HARNESS-001..004` 的计划态来源；没有绑定 Host / surface 的 discovery trace 或 `EVD-*`
+- Current Evidence: 只有 `SRC-HARNESS-001..002` 与复用的 `SRC-CROSSHOST-004`、`SRC-FOUNDATION-004` 计划态来源；没有绑定 Host / surface 的 discovery trace 或 `EVD-*`
 - Authority Boundary: Skill 文件存在、最终输出提到 Skill、用户显式命名 Skill 或任务成功都不能单独证明自动 Discovery / Activation
 - Blocks Current Research?: YES；不阻塞 query / oracle 设计，但阻塞不可观察 Host stratum 的 Discovery Result
 - Priority: HIGH
@@ -147,7 +147,7 @@
 
 - Discovered In: Batch 7 / Cycle 13 experiment design
 - Why It Matters: 单个任务的 Research、Plan、Implement、Review transition 天然不同；轮换 Resume、自由摘要与结构化 artifact 只能探索遗漏位置，不能裁决 mode 优劣
-- Current Evidence: `SRC-HARNESS-008..009` 与 Cycle 3–6 Host sources 只有计划态锚点；没有 matched tasks、balanced order 或 Behavior Run
+- Current Evidence: `SRC-HARNESS-009`、复用的 `SRC-CLAUDE-006` 与 Cycle 3–6 Host sources 只有计划态锚点；没有 matched tasks、balanced order 或 Behavior Run
 - Authority Boundary: 恢复速度、Context token 数、任务完成或作者案例不能单独证明 handoff completeness / correctness
 - Blocks Current Research?: NO；`EXP-C13-01` 可保持 exploratory，但 comparative claim 被阻塞
 - Priority: MEDIUM
@@ -158,7 +158,7 @@
 
 - Discovered In: Batch 7 / Cycle 14 experiment design
 - Why It Matters: 阈值过低会制造 Rule / Skill / Hook 债务，过高会重复失败；严重性、复发概率、可确定验证性与维护成本需要独立处理
-- Current Evidence: `SRC-HARNESS-010..012` 只提供项目 / 论文参考；尚未选择十个 myharness packets，没有 reviewer agreement 或 future recurrence Evidence
+- Current Evidence: `SRC-HARNESS-010` 与复用的 `SRC-FOUNDATION-002..003` 只提供项目 / 论文参考；尚未选择十个 myharness packets，没有 reviewer agreement 或 future recurrence Evidence
 - Authority Boundary: 单次事故、Agent 总结、社区 pattern、论文结论或高 severity 不能自动批准 ratification
 - Blocks Current Research?: NO；可先做 exploratory classification，但不能直接修改 Harness 或声称 future reliability 改善
 - Priority: HIGH

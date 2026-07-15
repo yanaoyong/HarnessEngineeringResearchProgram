@@ -31,10 +31,10 @@ Ratification 是证据与成本门禁：`recurring value - context - maintenance
 尚无 `EVD-*`。计划来源：
 
 - [`SRC-HARNESS-010`](evidence/SRC-HARNESS-010.md)：buildermethods/agent-os。
-- [`SRC-HARNESS-011`](evidence/SRC-HARNESS-011.md)：SWE-agent/mini-swe-agent。
-- [`SRC-HARNESS-012`](evidence/SRC-HARNESS-012.md)：SWE-agent ACI paper；受 `OQ-003` 限制。
+- 复用 Cycle 1 [`SRC-FOUNDATION-002`](../cycle-01/evidence/SRC-FOUNDATION-002.md)：SWE-agent/mini-swe-agent。
+- 复用 Cycle 1 [`SRC-FOUNDATION-003`](../cycle-01/evidence/SRC-FOUNDATION-003.md)：SWE-agent ACI paper；受 `OQ-003` 限制。
 
-myharness failure / improvement record 只有在固定 artifact 与 authority 后才可能产生 Project Evidence。
+myharness failure / improvement record 只有在固定 artifact 与 authority 后才可能产生 Project Evidence。真实执行后，任何进入 Cycle 15/16 的可复用 ratification claim 都必须派生 scoped `EVD-*`；候选列表本身不能替代 Evidence Claim。
 
 ## 6. 参考模式
 

@@ -67,7 +67,7 @@ EXP-C08-02
 EXP-C18-01
 ```
 
-Experiment 表示研究问题、Hypothesis、设计和结果；Run 表示一次具体执行。使用：
+Experiment 表示研究问题、Hypothesis、设计和结果；Run 表示一次具体执行。`SUPPORT / REJECT / INCONCLUSIVE` 只属于 Experiment 或预注册 stratum Result；Run 只记录 execution / acceptance outcome，不能独立裁决 Hypothesis。使用：
 
 - [experiment-record.template.md](../research/templates/experiment-record.template.md)
 - [run-metadata.template.yaml](../research/templates/run-metadata.template.yaml)
@@ -84,6 +84,9 @@ Run metadata 必须分离：
 - known confounders
 - evidence
 - human intervention
+- Harness-under-test cell、Harness revision 与 implementation artifact IDs（与 task-fixture commit 分开）
+
+Experiment Record 还必须声明 Result cardinality。若 Host、task instance 或其他 strata 的 Result 不可互相替代，记录 Result unit、stratum key 与预注册 aggregation rule；没有合理聚合规则时只保留 stratum Result，不创建统一 Experiment Result。
 
 V4.1 正文中的 `EXP-Wxx-yy` 保持历史编号，直到对应内容 Batch 迁移。实际历史 Evidence 不重新编号。
 
@@ -94,6 +97,8 @@ V4.1 正文中的 `EXP-Wxx-yy` 保持历史编号，直到对应内容 Batch 迁
 | EXPLORATORY | 观察现象、发现变量、形成下一步 Hypothesis |
 | COMPARATIVE | 在共同 baseline 下比较机制差异 |
 | ABLATION | 移除或逐层增加 capability，观察边际贡献 |
+
+Experiment Type 与 Outcome Mode 分开。`EXPLORATORY` 可以使用 `OBSERVATION_ONLY`，也可以在已有预注册 Hypothesis 与裁决规则时使用 `HYPOTHESIS_RESULT`；`COMPARATIVE` / `ABLATION` 通常使用 `HYPOTHESIS_RESULT`。Observation-only record 不把“未裁决 Hypothesis”写成 `INCONCLUSIVE`。
 
 ## 5. Stable Task Suite
 

@@ -18,7 +18,7 @@
 
 - 范围：一个低风险 T01 documentation task、两个 T03 medium-change tasks、完整 workflow 与 risk-routed variant；V4.1 Week 10 迁移。
 - 范围外：修改 10 Stage、引入 BMAD / OpenSpec、生产任务自动路由。
-- 退出条件：固定 risk rubric、route table、task parity、primary / secondary metrics；独立报告各 stratum。
+- 退出条件：固定 risk rubric、route table、task parity、primary / secondary metrics；`EXP-C12-02` 以 `TASK_INSTANCE` 为 Result Unit、`task_instance_id` 为 Stratum Key 独立报告各 stratum，不生成统一 Experiment Result。
 
 当前退出条件未满足。
 

@@ -44,4 +44,4 @@
 
 - 证据 ID（Evidence IDs）：无
 - 证据判断位置（Evidence Claim Locations）：无
-- 备注（Notes）：Community Claim 只能进入 Open Questions；当前未派生 claim。
+- 备注（Notes）：由 Cycle 3 与 Cycle 13 复用。Community Claim 只能进入 Open Questions；当前未派生 claim，跨 Cycle 复用不创建新的 Source ID。

@@ -42,7 +42,7 @@
 - [`SRC-CLAUDE-002`](evidence/SRC-CLAUDE-002.md)：Claude Code official docs · Manage sessions。
 - [`SRC-CLAUDE-003`](evidence/SRC-CLAUDE-003.md)：Claude Code official docs · How Claude remembers your project。
 - [`SRC-CLAUDE-004`](evidence/SRC-CLAUDE-004.md)：Claude Code official docs · How Claude Code works。
-- [`SRC-CLAUDE-005`](evidence/SRC-CLAUDE-005.md)：shareAI-lab/learn-claude-code 教学重实现；执行前固定 commit。
+- 复用 Cycle 2 [`SRC-FOUNDATION-004`](../cycle-02/evidence/SRC-FOUNDATION-004.md)：shareAI-lab/learn-claude-code 教学重实现；执行前固定 commit。
 - [`SRC-CLAUDE-006`](evidence/SRC-CLAUDE-006.md)：HumanLayer Advanced Context Engineering；只作为 Community Reference。
 
 这些 Source artifact ID 不是 `EVD-*`，不能直接支持 S1–S4。官方页面与默认分支都是执行时重新核验的浮动锚点。
@@ -81,13 +81,13 @@
 
 ## 8. 实验（Experiment）
 
-- `EXP-C03-01`：`EXPLORATORY` · `T03 · Medium Change` · Context Lifecycle Trace；只定位 transition 与 confounder，不单独裁决 Hypothesis。
+- `EXP-C03-01`：`EXPLORATORY` · `OBSERVATION_ONLY` · `T03 · Medium Change` · Context Lifecycle Trace；只定位 transition 与 confounder，不单独裁决 Hypothesis。
 - `EXP-C03-02`：`COMPARATIVE` · `T03 · Medium Change` · conversation-only 与临时 Artifact 的受控 `/compact` recovery comparison。
 - 单一主要变量（Primary Variable）：关键决策在 `/compact` 后是否可从受控 Artifact 重载。
 - 固定边界（Fixed Boundary）：`EXP-C03-02` 不同时改变 resume、新 Session、输出量或 Handoff schema。
 - 历史映射（Legacy Mapping）：`EXP-W03-01`（拆分为两个新设计，仅为历史计划）
 - 运行元数据（Run Metadata）：尚未创建
-- 结果（Result）：尚未运行
+- Outcome / Result：均尚未运行；`EXP-C03-01` 执行后记录 Observation Outcome，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C03-02` 才填写 Hypothesis Result
 
 `EXP-C03-02` 是结束 Cycle 3 前的必做对照，不因首个 trace 是否暴露明显断裂而省略。临时 Artifact 只隔离信息位置变量，不构成 Cycle 13 Handoff design proposal。
 

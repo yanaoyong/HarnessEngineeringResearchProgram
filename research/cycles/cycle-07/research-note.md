@@ -102,7 +102,7 @@ Limitations: 官方产品与 Contract 页面未指认满足门禁条件的 Runti
 
 ## 8. 实验（Experiment）
 
-- `EXP-C07-01`：`EXPLORATORY` · `T01 · Engineering Constraint` · Contract → Configuration → Behavior Trace。
+- `EXP-C07-01`：`EXPLORATORY` · `OBSERVATION_ONLY` · `T01 · Engineering Constraint` · Contract → Configuration → Behavior Trace。
 - T01 instance：`T01-C07-LOCAL-RETRY-LIMIT-VALIDATION`。在固定 commit 的隔离 fixture repository 中，为已有本地 configuration parser 补充 `retry_limit` 上界验证；只修改冻结的 parser source 与 test file，不改变公开 schema / error type，不访问网络。
 - T01 acceptance：覆盖负数、零、允许上界、超过上界与字段缺省；保存本地命令、exit code 与 diff。
 - T01 trace：绑定 product / Host version、platform、installation channel、workspace、project instruction、permission mode、Provider profile、Model ID、脱敏 configuration、Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、Provider / Model tool-calling capability、实际 tool request / success、confirmation、execution location、Review、artifact 与 human intervention。
@@ -112,7 +112,7 @@ Limitations: 官方产品与 Contract 页面未指认满足门禁条件的 Runti
 - 单一主要变量（Primary Variable）：Provider profile。Model ID、endpoint policy、quota 或 tool policy 不一致时登记 confounder，不得声称 Host invariant；只有配对 Run 已完成时才可据此填写 `INCONCLUSIVE`。
 - 安全边界（Safety Boundary）：不记录 API Key / token，不测试 bypass，不访问真实业务服务或工作区外路径。
 - 运行元数据（Run Metadata）：尚未创建。
-- 结果（Result）：尚未运行。
+- Outcome / Result：均尚未运行；`EXP-C07-01` 执行后记录 Observation Outcome，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C07-02` 才填写 Hypothesis Result。
 - 历史映射（Legacy Mapping）：无；Cycle 7 是 V4.2 新增 Cycle。
 
 ## 9. 观察（Observation）

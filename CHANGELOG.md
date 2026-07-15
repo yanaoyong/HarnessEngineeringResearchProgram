@@ -1,5 +1,24 @@
 # Changelog
 
+## V4.2 Post-Batch 8 content review corrections · 2026-07-15
+
+本轮只修复 Batch 0–8 内容审查发现的协议与溯源问题，不执行研究、不创建 Result、`EVD-*`、实现或 Support Assessment。
+
+### Changed
+
+- 将仓库级任务说明从“生成 Batch 8”更新为 Batch 1–8 / Cycle 1–18 内容已完成，避免后续重复迁移。
+- 以 Batch 0 审查后澄清的方式分离 Run outcome 与 Experiment Result：Run 不再填写 `SUPPORT / REJECT / INCONCLUSIVE`。
+- 为 Experiment Record 增加 Result cardinality、stratum result 与 aggregation rule；Cycle 9 使用 `HOST` / `target_host`，Cycle 12 使用 `TASK_INSTANCE` / `task_instance_id`。
+- 为 `EXPLORATORY` 增加独立 Outcome Mode；observation-only trace 使用 `COMPLETE / PARTIAL / INVALIDATED`，不再被迫填写 Hypothesis Result。
+- 为 Run Metadata 增加 Harness-under-test cell、H0 / H1 revision、implementation artifact 与 task-fixture relationship，支持 Cycle 17/18 的 B0 / A0 / A1 溯源。
+- 明确 Cycle 14 内容生成阶段不创建 `EVD-*`，但真实执行后任何进入后续 Cycle 的可复用 claim 都必须派生 scoped `EVD-*`。
+- 将重复登记的 learn-claude-code、Superpowers、ACE、mini-swe-agent 与 SWE-agent ACI paper 归一到最早稳定 Source ID，并移除六个未派生 Evidence 的重复条目。
+
+### Boundaries
+
+- 不改变 18 个 Cycle 的冻结名称、顺序、Batch 边界或历史实验映射。
+- 不声称任何计划实验已经执行，也不改变任何 Host 的 Support Level。
+
 ## V4.2 Batch 8 · 2026-07-15
 
 Batch 8 将 V4.1 Week 13–16 迁移为 Cycle 15–18「myharness Integration Research」正文与计划态 Research Note。18 个 Cycle 的内容生成已经完成，但研究执行尚未开始；没有 Run、`EVD-*`、架构 Finding、ADR Candidate、实现、Design Belief、Route Review 结果或 Support Assessment。

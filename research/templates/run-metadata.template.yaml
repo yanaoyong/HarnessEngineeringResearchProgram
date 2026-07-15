@@ -1,4 +1,4 @@
-schema_version: "v4.2-batch0"
+schema_version: "v4.2-batch0-r2"
 
 # Template convention:
 # null means not recorded yet.
@@ -18,6 +18,16 @@ repository:
   commit: "<full-commit-sha>"
   dirty: null
   diff_evidence_id: null
+
+harness_under_test:
+  cell_id: "<B0|A0|A1|other|NOT_APPLICABLE>"
+  harness_revision_id: "<H0|H1|native-host|other|NOT_APPLICABLE>"
+  repository_url_or_path: null
+  commit_or_revision: null
+  implementation_artifact_ids: null
+  package_or_distribution_revision: null
+  component_scope: null
+  relationship_to_task_fixture: "<SEPARATE|SAME_REPOSITORY|NOT_APPLICABLE>"
 
 host:
   name: "<host>"
@@ -70,9 +80,15 @@ human_intervention:
   #   type: "<prompt|approval|correction|manual-action|other>"
   #   reason: "<why intervention was needed>"
   #   action: "<what the human changed or supplied>"
-  #   effect_on_result: "<known effect or unknown>"
+  #   effect_on_run_outcome_or_experiment_eligibility: "<known effect or unknown>"
 
-result:
-  status: "<SUPPORT|REJECT|INCONCLUSIVE>"
-  summary: "<directional-result-summary>"
+run_outcome:
+  execution_status: "<COMPLETED|PARTIAL|BLOCKED|ABORTED>"
+  acceptance_status: "<PASS|FAIL|UNKNOWN|NOT_APPLICABLE>"
+  observation_summary: "<run-scoped-observation-summary>"
+  included_in_experiment_result: null
+  exclusion_reason: null
   limitations: null
+
+# SUPPORT / REJECT / INCONCLUSIVE is an Experiment or pre-registered
+# stratum Result. Never assign that Hypothesis Result in Run Metadata.

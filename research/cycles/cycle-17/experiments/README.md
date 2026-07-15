@@ -39,7 +39,7 @@
 - `A1 · Minimal candidate variant`：绑定冻结 H1；paired Run 内不再实现 candidate；
 - A0 / A1 的 task fixture 在每次 Run 前重置到同一完整 commit，并执行同一 T03 instance；
 - A0 / A1 各 3 个 fresh-session Run，组成 3 个 paired blocks；顺序在执行前冻结或随机化；
-- Run Metadata 的 `repository.commit` 记录 task-fixture baseline；H0 / H1 通过相关 revisions、Configuration snapshot 与 implementation artifact ID 记录。每个 Run 保存 prompt、task、Host、Provider、Model、trace、diff、test、acceptance、Human intervention 与 known confounders。
+- Run Metadata 的 `repository.commit` 记录 task-fixture baseline；独立 `harness_under_test` block 记录 A0 / A1 cell、H0 / H1 Harness revision、Harness repository / distribution revision、implementation artifact IDs、component scope 与其和 task fixture 的关系。Rule / Skill / Check / Adapter revisions 与 Configuration snapshot 继续分项记录，不能替代完整 Harness-under-test 身份。每个 Run 保存 prompt、task、Host、Provider、Model、trace、diff、test、acceptance、Human intervention 与 known confounders。
 
 Deterministic acceptance、task outcome、process trace、implementation completeness 与 Hypothesis Result 分别记录。候选间 task / metric 不同，禁止汇总成总体胜率。
 
