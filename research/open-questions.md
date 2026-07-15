@@ -165,6 +165,50 @@
 - Candidate Cycle: Cycle 14 / Cycle 15 audit / Cycle 16 hypothesis
 - Status: BACKLOG
 
+### OQ-015 · 哪些 historical Change packets 足以支持只读架构 Finding？
+
+- Discovered In: Batch 8 / Cycle 15 experiment design
+- Why It Matters: 缺失 Spec、issue、CI、outcome 或固定 revision 时，审计者可能把 retention gap、路径迁移或个人偏好误写成架构问题
+- Current Evidence: Batch 8 已规划 Coverage Matrix 与 8 个 dimension packets，但尚未固定 myharness commit 或选择 artifacts；Cycle 11 / 14 只有计划态 dataset gate，没有 Project Evidence 或 `EVD-*`
+- Authority Boundary: 当前目录、旧 V4.1 路径、Agent 推断、单一 summary 或 Reference Pattern 都不能补写历史项目事实
+- Blocks Current Research?: YES；不阻塞 audit rubric 草拟，但阻塞 `EXP-C15-01` Run
+- Priority: HIGH
+- Candidate Cycle: Cycle 15
+- Status: BACKLOG
+
+### OQ-016 · 八维评分在 reviewer 与权重变化下是否足够稳定？
+
+- Discovered In: Batch 8 / Cycle 16 experiment design
+- Why It Matters: relevance、value、portability 与成本可能采用不同方向和尺度；若轻微权重变化就改变 Top3，单一总分会制造伪精确决策
+- Current Evidence: 没有 Cycle 15 Finding、评分 rubric、sensitivity analysis 或 independent portfolio Run
+- Authority Boundary: Agent agreement、总分高低或 owner preference 不能提升 Evidence Strength；Reversibility 与 evidence gate 不得被加权平均覆盖
+- Blocks Current Research?: YES；Cycle 16 可准备模板，但没有真实 finding packet 时 `EXP-C16-01` 保持 `NOT EXECUTED`
+- Priority: HIGH
+- Candidate Cycle: Cycle 16
+- Status: BACKLOG
+
+### OQ-017 · 候选最小实现如何证明只改变了一个机制？
+
+- Discovered In: Batch 8 / Cycle 17 experiment design
+- Why It Matters: shared refactor、依赖升级、configuration drift、Agent 自由修改或不对称 Human intervention 都会让 A0 / A1 comparison 失去解释力
+- Current Evidence: Batch 8 已把 one-time H1 build、H0 / H1 revisions 与共同 task-fixture baseline 分开，但没有实际 ADR Candidate、implementation diff、paired Run 或 rollback artifact
+- Authority Boundary: 小 diff、测试通过、branch 隔离或实现者声明都不能单独证明 single-variable isolation
+- Blocks Current Research?: YES；任一 candidate readiness gate 未满足时，对应 `EXP-C17-0x` 保持 `NOT EXECUTED`
+- Priority: HIGH
+- Candidate Cycle: Cycle 17
+- Status: BACKLOG
+
+### OQ-018 · Native Host、Current myharness 与 experimental variant 如何通过 matrix parity gate？
+
+- Discovered In: Batch 8 / Cycle 18 experiment design
+- Why It Matters: B0 / A0 / A1 的可用 surface、Tool、permission、Context 与 task path 可能天然不同；若无法固定同一任务和 Host stratum，所谓边际贡献会混入 capability availability
+- Current Evidence: Batch 8 已规划 candidate × Host 独立 records 与 Applicability Matrix，但没有 eligible Cycle 17 variant、固定 T03 tasks、Host / Provider profiles、activation trace、matrix cell 或 Run
+- Authority Boundary: 任务成功、相同 Model 显示名、相近 prompt、工具名称相同、文件已加载或单次成本下降都不能证明 matrix parity / actual activation
+- Blocks Current Research?: YES；不满足 parity 的 Host stratum 保持 `NOT EXECUTED / INCONCLUSIVE`
+- Priority: HIGH
+- Candidate Cycle: Cycle 18
+- Status: BACKLOG
+
 ## Template
 
 <!--

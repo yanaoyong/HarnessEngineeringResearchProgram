@@ -1,5 +1,32 @@
 # Changelog
 
+## V4.2 Batch 8 · 2026-07-15
+
+Batch 8 将 V4.1 Week 13–16 迁移为 Cycle 15–18「myharness Integration Research」正文与计划态 Research Note。18 个 Cycle 的内容生成已经完成，但研究执行尚未开始；没有 Run、`EVD-*`、架构 Finding、ADR Candidate、实现、Design Belief、Route Review 结果或 Support Assessment。
+
+### Added
+
+- 新增 Cycle 15–18：Read-only Architecture Audit、Hypothesis & ADR Candidate、Minimal Implementation Experiment、Acceptance、Ablation & Design Beliefs。
+- 新增 `cycle-15` 至 `cycle-18` 的计划工作区；evidence 目录只包含准备边界，不创建新的 `SRC-*` 或 `EVD-*`。
+- 新增 `EXP-C15-01`、`EXP-C16-01`、`EXP-C17-01..03` candidate family 与 `EXP-C18-01..12` candidate × Host family 计划设计，并保留 `EXP-W13-01` 至 `EXP-W16-01` historical mapping。
+- 新增 `OQ-015..018`，跟踪 audit packet authority、candidate score stability、minimal implementation isolation 与 ablation matrix parity。
+
+### Changed
+
+- 将只读审计收敛为覆盖八个维度和全部 artifact families 的 Coverage Matrix、8 个 T02 packets / 16 个 Agent Run；`No Finding` 必须通过 evaluator critical-issue gate，禁止从旧路径缺失直接推导 capability 缺失。
+- 将 Cycle 16 的 Top3 改为“至多三个”合格候选；评分只暴露取舍，Evidence / Reversibility gate 优先，候选状态保持 `PROPOSED`。
+- 将 Cycle 17 拆成 one-time H1 build 与候选级独立 A0 / A1 T03 task Runs；Run 使用共同 task-fixture baseline，H0 / H1 Harness revisions 单独绑定，并保留隔离 worktree 与实际 rollback verification。
+- 将 Cycle 18 拆成 candidate × Host 独立 Experiment Records，每个记录只有一个 Hypothesis / Result；加入 2 个 activation-positive tasks、1 个 non-trigger control 与 Applicability Matrix。
+- 明确 Batch 8 内容生成不创建 `EVD-*`，但 Cycle 15 真实执行后必须为复用 Finding / No Finding claim 派生 scoped `EVD-*`，供 Cycle 16 使用。
+- 收紧 ADR Candidate、Route Review 与 Design Beliefs 目录门禁，明确内容生成阶段没有实际条目。
+- 刷新总览、Research Infrastructure、Workspace、Cycle index 与 Atlas，使计划态内容基线推进到 Batch 1–8 / Cycle 1–18。
+
+### Boundaries
+
+- 不执行 myharness 审计，不创建实际 Finding、ADR Candidate、implementation diff、Run、Decision Update 或 Design Belief。
+- 不实现或合并 myharness feature / Host Adapter，不把实现完成、测试通过或小样本结果写成普遍架构结论。
+- 内容生成不满足 Cycle 15–18 Exit Criteria，也不表示 V4.2 研究执行完成或任一 Host 达到 S1–S4。
+
 ## V4.2 Batch 7 · 2026-07-15
 
 Batch 7 将 V4.1 Week 8–12 迁移为 Cycle 10–14「Harness Engineering Research Themes」正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、Design Judgment、ADR、实现或 Support Assessment。

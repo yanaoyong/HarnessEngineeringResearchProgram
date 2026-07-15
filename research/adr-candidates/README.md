@@ -1,8 +1,8 @@
 # ADR Candidates
 
-这里维护实验型 ADR Candidate。
+这里维护真实 Cycle 16 执行后产生的实验型 ADR Candidate。Batch 8 内容生成阶段没有实际候选；不得仅因计划正文、评分或示例存在就创建 `ADR-*`。
 
-Cycle 16 之前可以记录候选标题，但不要急于标记 `ACCEPTED`。
+候选首次创建时只能标记 `PROPOSED`，进入 Cycle 17 实验时才可标记 `EXPERIMENT`。Cycle 18 引用有效 `EVD-*` 后，才能更新最终 Decision。
 
 建议状态：
 

@@ -174,8 +174,8 @@ research/cycles/cycle-01/
 └── evidence/
 ```
 
-工作区准备不表示实验已经执行或证据已经成立。Batch 0 没有创建任何 `cycle-*` 目录；Batch 1 准备 `cycle-01` 与 `cycle-02`，Batch 2 增加 `cycle-03` 与 `cycle-04`，Batch 3 增加 `cycle-05` 与 `cycle-06`，Batch 4 增加 `cycle-07`，Batch 5 增加 `cycle-08`，Batch 6 增加 `cycle-09`，Batch 7 增加 `cycle-10` 至 `cycle-14`。Cycle 15–18 目录尚未创建。
+工作区准备不表示实验已经执行或证据已经成立。Batch 0 没有创建任何 `cycle-*` 目录；Batch 1 准备 `cycle-01` 与 `cycle-02`，Batch 2 增加 `cycle-03` 与 `cycle-04`，Batch 3 增加 `cycle-05` 与 `cycle-06`，Batch 4 增加 `cycle-07`，Batch 5 增加 `cycle-08`，Batch 6 增加 `cycle-09`，Batch 7 增加 `cycle-10` 至 `cycle-14`，Batch 8 增加 `cycle-15` 至 `cycle-18`。其中 evidence preparation README 只说明未来证据门禁，不是 `SRC-*` 或 `EVD-*`。
 
 ## 11. V4.1 Historical Boundary
 
-V4.1 Research Infrastructure 是本卷的迁移来源，不作为并行协议继续演进。V4.1 正文中的 Week、旧实验编号和项目导航保持原状，直到对应内容 Batch 迁移；新产生的研究制品一律使用 V4.2 Cycle-based 协议。
+V4.1 Research Infrastructure 是本卷的历史迁移来源，不作为并行协议继续演进。Week 1–16 已全部迁移到 V4.2 内容 Batch；旧 Week、实验编号和项目导航只在 migration record / historical Atlas 中保留。新产生的研究制品一律使用 V4.2 Cycle-based 协议。

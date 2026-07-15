@@ -18,8 +18,10 @@
 - [cycle-12 · Adaptive Workflow](cycle-12/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-13 · Context Lifecycle & Session Handoff](cycle-13/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-14 · Knowledge Ratification & Harness Minimalism](cycle-14/research-note.md) — `PLANNED · NOT EXECUTED`
-
-Cycle 15–18 目录尚未创建。
+- [cycle-15 · Read-only Architecture Audit](cycle-15/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-16 · Hypothesis & ADR Candidate](cycle-16/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-17 · Minimal Implementation Experiment](cycle-17/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-18 · Acceptance、Ablation & Design Beliefs](cycle-18/research-note.md) — `PLANNED · NOT EXECUTED`
 
 推荐结构：
 
@@ -31,7 +33,7 @@ cycle-01/
 └── evidence/
 ```
 
-Batch 1–7 只创建 `cycle-01` 到 `cycle-14`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-15` 到 `cycle-18` 在 Batch 8 前不创建。
+Batch 1–8 已创建 `cycle-01` 到 `cycle-18` 的非空计划态工作区。所有计划态目录必须明确标记 `NOT EXECUTED`，不得制造审计、候选选择、实现或实验已经开始的印象。
 
 如果路线发生变化，仍以当前核心 Research Question 所属 Cycle 记录，并在 Research Note 与 Route Review 中说明路线变化。
 
