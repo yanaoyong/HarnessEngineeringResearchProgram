@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：页面同时包含规范前提、实现建议、可选路径与经验性 recommendation；派生 claim 必须区分 mandatory format 与 non-normative guidance
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：discovery scope、catalog、activation、trust、permission、context management 或 subagent guidance 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：本来源不是 ZCode Runtime Source
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

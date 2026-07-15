@@ -12,13 +12,13 @@
 
 ## Questions
 
-### OQ-001 · 是否存在可通过 Source Authority Gate 的 ZCode 官方 Runtime source repository？
+### OQ-001 · Qwen Code 安装 artifact 如何与官方 source commit 建立可复查映射？
 
-- Discovered In: Batch 0
-- Why It Matters: 决定 Cycle 7 是否允许形成 ZCode Runtime Source Evidence 与 source architecture conclusion
-- Current Evidence: `SRC-ZCODE-001..009` 已登记官方产品、Contract、release 与 support 浮动锚点；这些入口均未指认满足五项 Gate criteria 的 ZCode Runtime source repository，尚无 `EVD-*`
-- Authority Boundary: 非官方仓库、社区逆向、客户端指纹和第三方 patch 不能回答本问题
-- Blocks Current Research?: NO；Contract、Behavior、local configuration 与 Enterprise Fact 研究仍可进行
+- Discovered In: V4.3 Qwen Code Host-set Amendment
+- Why It Matters: Cycle 7 可以使用 `QwenLM/qwen-code` Official Source，但只有把实际执行 package / binary / release 映射到固定 commit，Source 才能解释绑定版本的 Direct Behavior
+- Current Evidence: `SRC-QWENCODE-001..013` 已登记官方 Contract、repository 与 release 浮动锚点；repository identity 已核验，commit 为 `NOT PINNED`，没有 execution-artifact provenance 或 `EVD-*`
+- Authority Boundary: 默认分支 HEAD、package version、tag 名、目录相似或官方 architecture overview 不能单独证明安装 artifact 对应某个 commit
+- Blocks Current Research?: YES；不阻塞独立 Contract map 或 Behavior trace，但阻塞 Source / Behavior agreement claim 与 Cycle 7 Exit Criteria
 - Priority: HIGH
 - Candidate Cycle: Cycle 7
 - Status: BACKLOG
@@ -207,6 +207,17 @@
 - Blocks Current Research?: YES；不满足 parity 的 Host stratum 保持 `NOT EXECUTED / INCONCLUSIVE`
 - Priority: HIGH
 - Candidate Cycle: Cycle 18
+- Status: BACKLOG
+
+### OQ-019 · 哪些 Qwen Code Provider profiles 能通过单变量 comparability gate？
+
+- Discovered In: V4.3 Cycle 7 migration
+- Why It Matters: `EXP-C07-02` 只有在相同 Model identity / revision、tool protocol、context / output limit 与 task capability 下，才能把主要变量限定为 Provider / endpoint route
+- Current Evidence: `SRC-QWENCODE-003` 只登记官方 Model Providers Contract；没有已授权 Provider Profile、Model revision mapping、capability preflight 或 Run
+- Authority Boundary: 相同模型显示名、多协议支持、配置解析成功、请求被接受或单次工具调用成功都不能证明 Model identity 与 Behavior 可比
+- Blocks Current Research?: YES；gate 未通过时 `EXP-C07-02` 保持 `PLANNED · NOT EXECUTED`，不能用 `INCONCLUSIVE` 代替未执行
+- Priority: HIGH
+- Candidate Cycle: Cycle 7 / Cycle 9
 - Status: BACKLOG
 
 ## Template

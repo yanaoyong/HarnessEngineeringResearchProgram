@@ -4,15 +4,15 @@
 
 This repository is currently at:
 
-* Program version: V4.2
+* Program version: V4.3
 * Current structure: 18 Cycle-based research cycles
-* Frozen baseline: Batch 0 common protocol
+* Frozen baseline: V4.2 Batch 0 common protocol plus the V4.3 Qwen Code Host-set Amendment
 * Completed content baseline: Batch 1–8, covering Cycle 1–18
-* Current task: Post-generation review and research-execution preparation; no content Batch is active
+* Current task: Maintain the owner-approved V4.3 Qwen Code Host-set migration; no research execution is active
 
-The repository is based on the merged V4.2 Batch 8 baseline. V4.1 Week 1–16 have been migrated and remain historical mapping sources only.
+The repository is based on the merged V4.2 Batch 8 baseline plus the owner-approved V4.3 replacement of ZCode with Qwen Code. V4.1 Week 1–16 have been migrated and remain historical mapping sources only.
 
-Do not regenerate a completed content Batch or apply an external ZIP or patch as a substitute for repository review. Preserve the frozen Batch 0 protocol and completed Batch 1–8 decisions except where the repository owner explicitly authorizes a recorded correction or a later research-execution artifact.
+Do not regenerate a completed content Batch or apply an external ZIP or patch as a substitute for repository review. Preserve the V4.2 Batch 0 protocol as amended by `docs/10-V4.3-Qwen-Code-Host-Amendment.md` and the completed Batch 1–8 decisions except where the repository owner explicitly authorizes a recorded correction or a later research-execution artifact.
 
 ## Required reading
 
@@ -30,15 +30,16 @@ Before proposing or making changes, read:
 10. `docs/07-Reference-Project-Atlas.md`
 11. `docs/08-V4.2-Batch0-Protocol.md`
 12. `docs/09-V4.2-Glossary.md`
-13. `research/README.md`
-14. `research/task-suite.md`
-15. `research/source-authority.md`
-16. `research/support-levels.md`
-17. all existing files under `research/templates/`
+13. `docs/10-V4.3-Qwen-Code-Host-Amendment.md`
+14. `research/README.md`
+15. `research/task-suite.md`
+16. `research/source-authority.md`
+17. `research/support-levels.md`
+18. all existing files under `research/templates/`
 
-## V4.2 program decision
+## V4.3 program decision
 
-V4.2 contains 18 research Cycles rather than 16 Weeks.
+V4.3 retains the 18 research Cycles introduced by V4.2 and replaces only the ZCode primary Host with Qwen Code.
 
 The Cycle names and order are frozen:
 
@@ -48,7 +49,7 @@ The Cycle names and order are frozen:
 4. Claude Code Extension & Control Surface
 5. Codex Architecture & Customization
 6. Codex Execution、Safety & State
-7. ZCode Host Contract & Enterprise Reality
+7. Qwen Code Host Architecture & Enterprise Reality
 8. OpenCode Host Architecture & Model Portability
 9. Four-host Harness Abstraction
 10. Skill Behavior & Evaluation
@@ -65,23 +66,22 @@ The Cycle names and order are frozen:
 
 * Claude Code: mature Harness best-practice reference
 * Codex: advanced open-source implementation reference
-* ZCode: domestic model ecosystem and enterprise reality reference
+* Qwen Code: domestic open-source coding-agent, Qwen ecosystem, and enterprise deployment reality reference
 * OpenCode: open-source, multi-provider, vendor-neutral Host reference
 
-## ZCode evidence boundary
+## Qwen Code evidence boundary
 
-ZCode must be studied through:
+Qwen Code may be studied through:
 
 * Official Contract
 * Official product documentation
+* Verified Official Source
 * Official release information
 * Direct Behavior Evidence
 * Local configuration
 * Enterprise deployment facts
 
-Do not create ZCode source-code architecture conclusions unless an official and verified Runtime source repository is identified.
-
-Community reverse engineering, unofficial repositories, client fingerprints, and third-party patches may only create Open Questions. They cannot prove an official Contract or Architecture.
+`QwenLM/qwen-code` is the verified official source repository, but Source Evidence still requires a pinned full commit, bounded source paths, and artifact-to-source provenance for any Behavior agreement claim. A floating default branch, package version, compatible protocol, or selectable Model cannot by itself prove deployed architecture or portability.
 
 ## OpenCode evidence boundary
 
@@ -104,12 +104,12 @@ It must define:
 2. Batch 1–8 boundaries
 3. Common terminology
 4. Evidence classification
-5. ZCode Source Authority Gate
+5. Qwen Code Official Source Verification and artifact-to-source provenance
 6. Stable task suite T01–T03
 7. Experiment run metadata
 8. Host support levels S0–S4
 9. Research workspace naming based on Cycle rather than Week
-10. Migration boundary from V4.1 to V4.2
+10. Migration boundary from V4.1 to V4.2 and the V4.3 Host-set amendment
 
 ## Completed Batch 8 scope
 
@@ -260,6 +260,8 @@ research/templates/experiment-record.template.md
 
 The final file list may vary only when justified by the existing repository structure.
 
+V4.3 later added `docs/10-V4.3-Qwen-Code-Host-Amendment.md`; it is not a Batch 0 output.
+
 ## Explicit non-goals
 
 Do not:
@@ -273,7 +275,7 @@ Do not:
 * implement myharness features;
 * implement or merge a complete myharness Host Adapter;
 * implement an OpenCode Adapter or Plugin;
-* promise a complete ZCode Plugin;
+* promise or implement a complete Qwen Code Adapter;
 * add a fifth primary Host;
 * create legal compliance conclusions;
 * invent official project facts or source paths;
@@ -312,12 +314,12 @@ git status --short
 Also validate:
 
 * all internal relative links;
-* all 18 Cycle names appear in the V4.2 overview;
+* all 18 Cycle names appear in the V4.3 overview;
 * Cycle 1–18正文 exists and remains planned, not executed;
 * only `research/cycles/cycle-01` through `research/cycles/cycle-18` exist;
 * Cycle 15–18 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
-* ZCode source conclusions were not invented;
+* Qwen Code Source claims are pinned to a verified official revision and do not exceed artifact provenance;
 * Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
 * Batch 8 files do not claim that an audit, Finding, ADR Candidate, implementation, acceptance result, Design Belief, Route Review or any S1–S4 result has been completed or validated;
 * all changed Markdown files have no trailing whitespace.

@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：permission key、default、pattern、auto mode、approval option 与 agent merge semantics 可随版本 / surface 变化；Contract 不证明本地 decision 已发生
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：action vocabulary、rule order、pattern、default、approval persistence、auto mode、external directory 或 per-agent precedence 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：本来源只涉及 OpenCode
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

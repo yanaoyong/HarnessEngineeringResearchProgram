@@ -32,11 +32,12 @@
 - 已知限制：当前 `NOT PINNED`；项目版本、术语、path 与 track boundary 会变化；不研究 Party Mode 与全部 Persona
 - 过期 / 重新验证触发条件：release、default branch、track、workflow 或 source path 变化
 
-## ZCode 来源权限门禁
+## Host-specific Source Authority
 
-- 是否适用：`NO`
-- 门禁状态：`NOT APPLICABLE`
-- 验证依据：不是 ZCode Runtime Source
+- 是否适用（Applies?）：`NO`
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据
 

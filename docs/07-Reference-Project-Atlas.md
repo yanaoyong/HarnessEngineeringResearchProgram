@@ -1,6 +1,6 @@
 # PART VIII · Reference Project Atlas
 
-> 按研究问题使用的项目与官方资料图谱。Batch 1–8 active overlay 已刷新；V4.1 rows 只保留 historical mapping。项目是 Reference，不是课程主线。
+> 按研究问题使用的项目与官方资料图谱。V4.3 active overlay 已将 Cycle 7 更新为 Qwen Code；V4.1 rows 与 V4.2 ZCode 路线只保留 historical mapping。项目是 Reference，不是课程主线。
 
 [← 上一卷](06-Research-Infrastructure.md) · [返回总览](../README.md)
 
@@ -42,9 +42,10 @@ Stop at Do-Not-Study Boundary
 | openai/codex | Codex verified Official Source 候选 | 特定 revision 如何实现 customization、execution、policy、sandbox、hook 与 state boundary？ | L3 targeted | C05–C06 | 浮动默认分支；执行时先固定 commit，再按 capability 建 Repository Map | 当前 `NOT PINNED`；不得沿用旧 crate / path，也不得把 Source 当成当前安装 Behavior |
 | Codex official docs · Rules / Sandbox / Agent approvals & security | Codex execution / safety Contract | technical boundary、approval 与 command policy 如何分工？ | L2 定向 | C06 | Rules、Sandbox、Agent approvals & security | 浮动官方页面；绑定 Host version / surface / platform；不形成安全保证或合规结论 |
 | myharness pre-execution artifacts | 项目只读映射对象 | guard 是否重复 Host policy，或提供 Host 无法表达的项目语义？ | Project mapping | C06 | 执行时按当前仓库 capability 重新定位 | 文件存在不等于已触发、有效或需要保留；Batch 3 不修改实现 |
-| ZCode 用户协议、Agent 与安全操作确认官方文档 | ZCode product / Host Contract | 产品身份、Agent / workspace、permission 与 Review 的公开责任边界是什么？ | L1–L2 定向 | C07 | `terms`、`agent-framework`、`safety-confirm` | 浮动官方页面；绑定 Host version / platform；不证明 Behavior、Runtime source 或 enterprise readiness |
-| ZCode 连接模型与远程开发官方文档 | Provider / Model / execution boundary Contract | Provider、endpoint、Model、authentication 与 execution location 如何同 Host surface 分离？ | L2 定向 | C07 | `configuration`、`remote-development` | 协议兼容不等于 Model portability；remote surface 不等于私有化、隔离或组织批准 |
-| ZCode 隐私政策、Changelog 与反馈支持文档 | Enterprise fact question anchors | 数据、版本、日志、支持与运维需要验证哪些 deployment fact？ | L1 定向 | C07 | `privacy`、`changelog`、`feedback` | policy / release / support 页面不能替代 `ENT-*`、SLA、审计、数据驻留或法律审查 |
+| Qwen Code official docs · Overview / Settings / Memory | Qwen Code Host Contract | installation、configuration precedence、`QWEN.md` / memory 与 session surface 如何分工？ | L2 定向 | C07 | Overview、Settings、Memory | 浮动官方页面；绑定 Host version / surface；不证明本地配置、Behavior 或 enterprise readiness |
+| Qwen Code official docs · Approval / Sandbox / Hooks / Skills / Subagents / Extensions | Qwen Code control / extension Contract | tool decision、isolation、lifecycle、discovery、delegation 与 distribution 如何分工？ | L2 定向 | C07 | Approval Mode、Sandbox、Hooks、Skills、Subagents、Extensions | surface 存在不等于已启用、已触发、有效或跨版本一致 |
+| Qwen Code official docs · Model Providers | Qwen / domestic-model ecosystem boundary | Provider、endpoint / protocol、authentication、routing、Model 与 Host semantic 如何分离？ | L2 定向 | C07 | Model Providers | 多协议、Model 可选或相同显示名不等于 Provider / Model portability |
+| QwenLM/qwen-code + official releases | Qwen Code verified Official Source candidate | 特定 revision 如何实现绑定 capability，执行 artifact 如何映射到 source commit？ | L3 targeted | C07 | 浮动默认分支与 release channel；执行时固定完整 commit | repository identity 已核验；默认分支 / latest release 不是可复现 Source Evidence，Source 不替代 Behavior |
 | OpenCode official docs · Config / Rules / Agents / Tools / Permissions | OpenCode Host Contract | config、instruction、agent、tool、permission 与 extension surface 如何分工？ | L2 定向 | C08 | `config`、`rules`、`agents`、`tools`、`permissions`、`skills`、`plugins`、`mcp-servers` | 浮动官方页面；绑定 Host version / surface / platform；Contract 不等于配置已加载或 Behavior 已验证 |
 | OpenCode official docs · Providers / Models | Provider / Model boundary Contract | Provider adapter、endpoint / protocol、Model identity / option 与 Host semantic 如何分离？ | L2 定向 | C08 | `providers`、`models` | Provider / Model 可配置、可选或协议兼容不等于 portability；列表与推荐会变化 |
 | anomalyco/opencode | OpenCode verified Official Source 候选 | 特定 revision 如何实现 config、session / agent、tool / permission、provider / model 与 extension boundary？ | L3 targeted | C08 | 浮动默认开发分支；执行时先固定完整 commit，再按 capability 建 Repository Map | 当前 `NOT PINNED`；不沿用当前 package / path，不把 Source 当成安装 Behavior 或 portability 结论 |
@@ -108,15 +109,19 @@ Stop at Do-Not-Study Boundary
 - OpenAI Codex · Sandbox — https://learn.chatgpt.com/docs/sandboxing
 - OpenAI Codex · Agent approvals & security — https://learn.chatgpt.com/docs/agent-approvals-security
 - openai/codex — https://github.com/openai/codex
-- ZCode · 用户协议 — https://zcode.z.ai/cn/terms
-- ZCode · Agent — https://zcode.z.ai/cn/docs/agent-framework
-- ZCode · Agent interaction / AGENTS.md — https://zcode.z.ai/cn/docs/agents
-- ZCode · 连接模型与套餐 — https://zcode.z.ai/cn/docs/configuration
-- ZCode · 安全操作确认 — https://zcode.z.ai/cn/docs/safety-confirm
-- ZCode · 远程开发 — https://zcode.z.ai/cn/docs/remote-development
-- ZCode · 隐私政策 — https://zcode.z.ai/cn/privacy
-- ZCode · 版本发布与更新 — https://zcode.z.ai/cn/changelog
-- ZCode · 用户反馈与支持 — https://zcode.z.ai/cn/docs/feedback
+- Qwen Code · Overview — https://qwenlm.github.io/qwen-code-docs/en/
+- Qwen Code · Settings — https://qwenlm.github.io/qwen-code-docs/en/users/configuration/settings/
+- Qwen Code · Model Providers — https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/
+- Qwen Code · Memory / QWEN.md — https://qwenlm.github.io/qwen-code-docs/en/users/features/memory/
+- Qwen Code · Approval Mode — https://qwenlm.github.io/qwen-code-docs/en/users/features/approval-mode/
+- Qwen Code · Sandbox — https://qwenlm.github.io/qwen-code-docs/en/users/features/sandbox/
+- Qwen Code · Hooks — https://qwenlm.github.io/qwen-code-docs/en/users/features/hooks/
+- Qwen Code · Agent Skills — https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/
+- Qwen Code · Subagents — https://qwenlm.github.io/qwen-code-docs/en/users/features/sub-agents/
+- Qwen Code · Extensions — https://qwenlm.github.io/qwen-code-docs/en/users/extension/introduction/
+- Qwen Code · Architecture Overview — https://qwenlm.github.io/qwen-code-docs/en/developers/architecture/
+- QwenLM/qwen-code — https://github.com/QwenLM/qwen-code
+- Qwen Code · Releases — https://github.com/QwenLM/qwen-code/releases
 - OpenCode · Intro — https://opencode.ai/docs/
 - OpenCode · Config — https://opencode.ai/docs/config/
 - OpenCode · Providers — https://opencode.ai/docs/providers/

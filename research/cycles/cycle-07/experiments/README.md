@@ -2,17 +2,36 @@
 
 > 状态（Status）：PREPARED · NOT EXECUTED
 
-本目录为后续实现预先准备。计划实验：
+本目录为 Qwen Code Host 的两个计划实验准备空间，不包含 Run、Result 或 `EVD-*`。
 
-- `EXP-C07-01` · Contract → Configuration → Behavior Trace
-- `EXP-C07-02` · Provider Profile Boundary Comparison
+## `EXP-C07-01` · Contract → Source → Configuration → Behavior Trace
 
-`EXP-C07-01` 使用 `OBSERVATION_ONLY`，Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`；`EXP-C07-02` 使用 `HYPOTHESIS_RESULT`。
+- 类型：`EXPLORATORY`
+- Outcome Mode：`OBSERVATION_ONLY`
+- Stable Task：`T01 · Engineering Constraint`
+- Task Instance：`T01-C07-LOCAL-RETRY-LIMIT-VALIDATION`
+- Fixture：在固定 commit 的隔离 repository 中，为已有 local configuration parser 补充 `retry_limit` 上界验证；只修改冻结的 parser / test，不访问网络或工作区外路径。
+- Acceptance：覆盖负数、零、允许上界、超过上界与字段缺省；保存命令、exit code、diff 与 deterministic result。
+- Source gate：固定 `QwenLM/qwen-code` 完整 commit，记录 capability question、path、search term、stop point；通过 official release / package / build metadata 将执行 artifact 映射到 source revision。映射缺失时 Source / Behavior agreement 为 `UNKNOWN`。
+- Trace：Qwen Code version / surface、platform、installation channel、`QWEN.md` / memory、approval / sandbox、Hook / Skill / Subagent / Extension state、Provider / endpoint / protocol、Model、脱敏 Configuration、actual tool set / request / result、Review、artifact 与 Human intervention。
+- Result boundary：执行后只记录 `COMPLETE / PARTIAL / INVALIDATED` Observation Outcome；Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`。
 
-`EXP-C07-01` 使用 `T01-C07-LOCAL-RETRY-LIMIT-VALIDATION`：在固定 commit 的隔离 fixture repository 中为已有本地 configuration parser 补充 `retry_limit` 上界验证，只修改冻结的 parser source 与 test file，不改变公开 schema / error type，不访问网络；deterministic acceptance checks 覆盖负数、零、允许上界、超过上界与字段缺省。
+## `EXP-C07-02` · Provider Profile Boundary Comparison
 
-`EXP-C07-02` 使用固定 T02 patch 与 acceptance reference。Evaluator-only oracle 记录需要推理的“重试状态在成功后未清零”与可由 schema check 确定检出的“新增配置字段未同步到 schema”两个预植入缺陷；oracle 及缺陷名称不得进入 Agent-visible task statement、Rule、context、acceptance reference 或 output schema。两个已授权 Provider profile 必须复用相同 ZCode version、platform、repository baseline、Agent-visible input、permission mode 与 Review procedure；优先固定相同 Model ID，每个 profile 至少执行两个顺序交错的 fresh task Run。观察必须分开记录 Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、Provider / Model tool-calling capability 与实际 tool request / success；actual exposed tool set 变化不能单独反驳 Host boundary。若配对 Run 已完成但 Model ID、endpoint policy、quota、tool policy 或 configuration drift 仍无法分离，登记 confounder 并填写 `INCONCLUSIVE`，不得写成 Host invariant；若无法合规取得两个 profile，实验保持 `PLANNED · NOT EXECUTED`，不填写 Result。
+- 类型：`COMPARATIVE`
+- Outcome Mode：`HYPOTHESIS_RESULT`
+- Stable Task：`T02 · Semantic Review`
+- T02：固定 patch、Agent-visible task、acceptance reference、evaluator-only oracle 与 output schema；oracle 至少含一个 semantic defect 和一个 deterministic defect，答案不得泄漏。
+- Baseline A / Variant B：两个已授权 Provider profile；必须核验相同 Model identity / revision、tool-calling、context / output 与 task compatibility，只改变 Provider / endpoint route。
+- Controlled Variables：Qwen Code version / surface、platform、source commit / artifact provenance、repository baseline、task、instruction / memory、tool / permission / sandbox、review procedure 与 Human intervention。
+- Replication：A / B 各至少两个 fresh-task Run，顺序交错，从相同 clean baseline 与输入开始。
+- Comparability gate：Model identity、protocol、limit、quota、routing 或 policy 不能保持可比时保持 `PLANNED · NOT EXECUTED`；不得用 Provider A + Model A 对 Provider B + Model B 裁决 Host invariant。
+- Observations：configuration resolution、Host-owned tool / approval / sandbox route、provider transform / protocol error、actual tool request / result、issue detection、evidence quality、false positive、retry、Review / artifact route 与 Human intervention。
+- Result vocabulary：`SUPPORT / REJECT / INCONCLUSIVE`。只有配对 Run 已完成但已登记 confounder 仍不可分时才使用 `INCONCLUSIVE`。
 
-真实执行开始后，使用 [实验记录模板](../../../templates/experiment-record.template.md) 创建独立 Experiment Record，并为每次执行保存独立 Run Metadata。每个 Run 必须绑定 product / Host version、platform、installation channel、Provider / endpoint type、Model ID、脱敏 configuration snapshot、Rule / Skill / Check / Adapter revision、controlled variables、known confounders、evidence 与 human intervention。
+## 共同边界
 
-不得记录 API Key / token，不测试权限绕过，不访问真实业务服务或工作区外路径。内容生成阶段不得填写结果、创建 `EVD-*`、`ENT-*` 或 Support Assessment。
+- 每次执行使用独立 Run Metadata，绑定 task-fixture commit、Qwen Code version / surface、official source commit、artifact provenance、Provider、endpoint / protocol、Model、Configuration 与 revision fields。
+- 不记录 secret、token、private endpoint value 或真实业务数据。
+- 不测试 bypass，不把任务完成、工具调用成功、协议兼容或 Model 可选写成 portability / enterprise readiness。
+- 内容准备阶段不创建 Experiment Record、Run、Result、`ENT-*`、`EVD-*` 或 Support Assessment。

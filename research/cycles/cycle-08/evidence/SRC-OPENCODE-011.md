@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：默认开发分支、package / module / function 与 docs 会变化；源码存在不表示发行版启用或 behavior 已观察
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：官方归属、repository relocation、license / provenance、default branch、release mapping 或目标 capability path 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：本来源只涉及 OpenCode；OpenCode 仍需遵守通用 Source authority 与 revision binding 规则
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

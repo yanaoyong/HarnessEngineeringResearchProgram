@@ -1,6 +1,6 @@
-# PART III · V4.2 Coding Agent Host Model
+# PART III · V4.3 Coding Agent Host Model
 
-> Claude Code / Codex / ZCode / OpenCode Host · Batch 2–5 · Cycle 3–8 正文已生成；研究执行与实验结果尚未开始。
+> Claude Code / Codex / Qwen Code / OpenCode Host · Batch 2–5 · Cycle 3–8 正文已生成；研究执行与实验结果尚未开始。
 
 [← 上一卷](01-Agent与Harness基础认知.md) · [返回总览](../README.md) · [下一卷 →](03-Cross-host-Harness-Abstraction.md)
 
@@ -578,7 +578,7 @@ Cycle 6 只有在以下条件均满足后才能结束：
 
 ## Batch 3 路线复盘触发条件（Route Review Trigger）
 
-完成 Cycle 6 的真实研究后执行一次 Route Review。它可以调整 Batch 4 的 ZCode Contract / Enterprise 项目锚点、证据深度、实验节奏或借用方法，但不能改变冻结的 Cycle 名称、编号、顺序或 Batch 边界。
+完成 Cycle 6 的真实研究后执行一次 Route Review。它可以调整 Batch 4 的 Qwen Code Contract / Enterprise 项目锚点、证据深度、实验节奏或借用方法，但不能改变冻结的 Cycle 名称、编号、顺序或 Batch 边界。
 
 内容生成本身不满足 Cycle 5–6 Exit Criteria，也不创建 Route Review 结果。若 Contract、Source 与 Direct Behavior 的冲突推翻 Codex Host 工作模型，可在当前 Cycle 内缩小问题；跨 Host 映射、完整 Skill evaluation 和其他旁支进入后续 Cycle 或 Open Questions。
 
@@ -595,108 +595,112 @@ Cycle 6 只有在以下条件均满足后才能结束：
 
 ## Batch 4 边界（Boundary）
 
-Batch 4 只生成 Cycle 7 · ZCode Host Contract & Enterprise Reality。
+Batch 4 当前生成 Cycle 7 · Qwen Code Host Architecture & Enterprise Reality；该 V4.3 owner decision 取代 V4.2 的 ZCode 研究对象，但保留 Cycle / Batch / Experiment 编号。
 
-Cycle 7 是 V4.2 新增研究单元，没有 V4.1 Week 或 `EXP-Wxx-yy` 历史迁移对象。本 Batch 只建立计划态 Contract / Behavior / local configuration / Enterprise Fact 研究边界、官方来源登记与 `EXP-C07-yy` 实验设计。它不运行 ZCode，不产生 `EVD-*`、Enterprise Fact、Support Assessment 或法律合规结论，不实现 ZCode Plugin / Adapter，也不迁移 Cycle 8–18。
+Cycle 7 是 V4.2 新增、在 V4.3 替换主要 Host 的研究单元，没有 V4.1 Week 或 `EXP-Wxx-yy` 历史迁移对象。本 Batch 只建立计划态 Contract / pinned Official Source / Behavior / local configuration / Enterprise Fact 研究边界、官方来源登记与 `EXP-C07-yy` 实验设计。它不运行 Qwen Code，不产生 `EVD-*`、Enterprise Fact、Support Assessment 或法律合规结论，不实现 Qwen Code Adapter，也不迁移 Cycle 8–18。
 
-## ZCode Host 工作模型（Working Model）
+## Qwen Code Host 工作模型（Working Model）
 
 ```text
-Official Product Identity + Bound Host Version
+Official Contract + Bound Qwen Code Version / Surface
         ↓
-Host-owned Contract Surface
-Workspace · Agent · Context · Tool · Permission · Review · Remote Execution
+Pinned QwenLM/qwen-code Revision + Capability Map
         ↓
-Provider Profile + Model + Endpoint Type + Authentication
+Host Runtime
+QWEN.md / Memory · Session · Tool · Approval · Sandbox
+Hook · Skill · Subagent · Extension
         ↓
-Local Configuration + Direct Behavior + Run Metadata
+Provider Adapter + Endpoint / Protocol + Authentication + Routing
         ↓
-Deployment-specific Enterprise Fact Sheet
-
-Runtime Source Architecture ── Source Authority Gate: NOT VERIFIED ──→ Unknown
+Model ID / Revision + Capability + Options
+        ↓
+Direct Behavior + Project Artifact + Enterprise Fact + Run Metadata
 ```
 
-该图是 `Mental Model V0`，不是 ZCode 已验证 architecture、Behavior 或企业就绪结论。官方产品文档只能支持其明确声明的 Contract scope；本地配置只能证明特定环境的配置事实；Enterprise Fact 必须绑定组织环境、部署方式、Provider profile、Model、证据与日期。当前没有经官方产品文档或 release channel 指认并满足门禁条件的 ZCode Runtime source repository，因此 Source 路径与内部 lifecycle 保持 `Unknown`。
+该图是 `Mental Model V0`，不是 Qwen Code 已验证 architecture、Behavior 或企业就绪结论。官方文档说明公开 Contract；固定 `QwenLM/qwen-code` revision 只能说明该 revision 的实现；Direct Behavior 才能说明绑定 Host、surface、Provider、Model 与 Configuration 条件下实际发生了什么。Enterprise Fact 必须绑定组织环境、部署方式、证据与日期。
 
 ---
 
-## Cycle 7 · ZCode Host Contract & Enterprise Reality
+## Cycle 7 · Qwen Code Host Architecture & Enterprise Reality
 
-> ZCode Host · V4.2 新增 Cycle · 无 V4.1 Week 映射
+> Qwen Code Host · V4.3 Host-set replacement · 无 V4.1 Week 映射
 
 ### 核心研究问题
 
-> **在不借助未验证 Runtime source 的前提下，ZCode 的公开 Contract、绑定版本的 Direct Behavior、local configuration 与部署事实能够分别证明哪些 Host capability 和 enterprise reality，哪些判断必须保持 Unsupported / Unknown？**
+> **在绑定 Qwen Code 版本、surface 与官方源码 revision 后，哪些 Harness 语义由 Host 保持，哪些依赖 Provider、endpoint / protocol、Model 或 Configuration；哪些部署事实足以支持 enterprise reality，哪些仍必须保持 Unsupported / Unknown？**
 
 ### 为什么与 myharness 有关
 
-ZCode 的研究角色是 domestic model ecosystem and enterprise reality reference。myharness 不能把“桌面产品提供某个入口”“某个 Provider / Model 可以连接”“某个企业环境允许部署”混成一个支持结论。Cycle 7 通过 Product identity → Contract → Configuration → Behavior → Enterprise Fact 的证据链，识别哪些语义可进入 Portable Semantic Contract，哪些只能留在 ZCode Host Adapter、Provider Profile 或特定部署 fact sheet。
+Qwen Code 的研究角色是 domestic open-source coding-agent、Qwen ecosystem 与 enterprise deployment reality reference。myharness 不能把“使用 Qwen 系列模型”“兼容某种 API”“官方源码存在”“某个企业环境允许部署”混成一个 Host 支持结论。Cycle 7 通过 Contract → pinned Source → Provider / Model Profile → Behavior → Project / Enterprise Fact 的证据链，识别哪些语义可进入 Portable Semantic Contract，哪些只能留在 Qwen Code Host Adapter、Provider Profile 或特定 deployment fact sheet。
 
 ### 研究范围（Scope）
 
 本 Cycle 只研究：
 
-- ZCode 官方身份、产品定位、版本 / release channel 与公开 Agent / ADE Contract；
-- 工作区、项目指令、工具、权限确认、Review、远程开发与任务状态的 Host-owned surface；
-- BigModel、Z.ai、第三方或企业模型通道中的 Provider、endpoint type、authentication、Model ID 与 Configuration 分离；
+- Qwen Code 官方 overview、configuration、model providers、memory / `QWEN.md`、tools、approval、sandbox、hooks、skills、subagents、extensions 与 session Contract；
+- `QwenLM/qwen-code` 固定 revision 中与本次 capability slice 直接相关的 bounded implementation path；
+- Qwen / Alibaba Cloud、OpenAI-compatible、Anthropic-compatible、Gemini-compatible 或其他已授权通道中的 Provider、endpoint / protocol、authentication、Model ID 与 Configuration 分离；
 - 绑定 Host version / platform / deployment profile 的无破坏性 Direct Behavior；
 - 安装分发、身份访问、数据处理、日志审计、代理 / 证书、升级回退、远程执行、支持路径与采购等 deployment-specific Enterprise Fact；
-- ZCode Runtime Source Authority Gate 的状态、验证依据与 Unknown 边界。
+- 实际执行 artifact 到 official release / tag / commit 的 provenance，以及 Contract / Source / Behavior 的一致、冲突与 Unknown。
 
 本 Cycle 不研究：
 
-- 社区逆向、客户端指纹、第三方 patch 或非官方仓库所推测的内部架构；
+- 把浮动默认分支、官方 architecture overview 或当前 package path 写成所有版本的稳定 Contract；
 - 没有真实组织记录支撑的私有化、数据驻留、SLA、审计、采购或合规结论；
-- 把 GLM、其他 Model 或 Provider 的输出效果自动归因给 ZCode Host；
+- 把 Qwen 系列 Model、其他 Model 或 Provider 的输出效果自动归因给 Qwen Code Host；
 - 以兼容 OpenAI / Anthropic 协议推导 Provider 或 Model behavior 等价；
-- ZCode Plugin / Adapter 实现、跨 Host abstraction、公开模型 benchmark 或危险权限测试。
+- Qwen Code Adapter 实现、跨 Host abstraction、公开模型 benchmark 或危险权限测试。
 
 ### 官方来源路线与权限边界（Authority Boundary）
 
 | 来源组 | 计划深度 | Cycle 7 用途 | 权限 / 停止边界 |
 |---|---|---|---|
-| ZCode 用户协议、隐私政策 | L1 定向 | 核验产品 / 服务提供者身份，建立数据处理与责任边界待验证清单 | 法律文本不是特定组织的合规结论；条款可更新，执行时重新核验版本与日期 |
-| ZCode Agent、模型连接、安全操作确认、远程开发官方文档 | L2 定向 | 建立 Host / Provider / Model / Configuration、execution location 与 permission surface 的 Contract questions | 浮动官方页面；不能证明当前安装版本行为或内部实现 |
-| ZCode 官方 Changelog、反馈与支持文档 | L1 定向 | 绑定 release、识别变更风险与 operational support route | Changelog 不能证明未列行为、SLA、长期支持或本地升级成功 |
+| Qwen Code Overview、Settings、Model Providers、Memory | L2 定向 | 建立 installation、configuration precedence、`QWEN.md` / memory、Provider / protocol / Model Contract map | 浮动官方页面；不能证明本地配置已生效、Provider / Model behavior 等价或企业批准 |
+| Qwen Code Approval、Sandbox、Hooks、Skills、Subagents、Extensions | L2 定向 | 建立 tool decision、isolation、lifecycle、discovery / activation、delegation 与 distribution boundary | surface 存在不等于配置已启用、机制已触发、任务有效或跨版本一致 |
+| [`QwenLM/qwen-code`](https://github.com/QwenLM/qwen-code) + official releases | L3 targeted source | 对绑定 capability question 做 revision-bound source reading，并建立 release / artifact provenance | 官方仓库身份已核验；默认分支与 latest release 浮动，执行时固定完整 commit；Source 不替代 Behavior |
 | local configuration 与 Direct Behavior | L3 受控观察 | 验证特定版本、平台、Provider profile 与权限模式下的 observable behavior | 必须脱敏、可逆并保存 Run Metadata；单次行为不得外推到其他 profile |
 | organization-specific records | L2 fact verification | 填写 Enterprise Readiness Fact Sheet | 没有 `ENT-*` 与 Enterprise Evidence 时保持 Unknown；不得形成普遍法律结论 |
 
-Batch 4 只登记 `SRC-ZCODE-001..009` 计划来源，不从来源条目直接派生 `EVD-*`。所有网页都是浮动锚点，执行时必须记录访问日期、Host version、页面版本或 release，并检查内容是否变化。
+Batch 4 只登记 `SRC-QWENCODE-001..013` 计划来源，不从来源条目直接派生 `EVD-*`。所有官方页面、release 列表与默认分支都是执行时重新核验的浮动锚点；源码必须固定完整 commit 后才能派生 revision-bound Source Evidence。
 
-### ZCode Source Authority Gate
+### Qwen Code Official Source Verification
 
 ```text
-Host: ZCode
-Scope: ZCode Agent / desktop and remote Runtime internal architecture
-Status: NOT VERIFIED
-Authority Evidence IDs: None
-Repository and Revision: Unknown
-Verified On: Not applicable
-Limitations: 官方产品与 Contract 页面未指认满足门禁条件的 Runtime source repository
+Host: Qwen Code
+Scope: CLI Runtime and explicitly bound surfaces
+Repository Identity: VERIFIED
+Repository: https://github.com/QwenLM/qwen-code
+Pinned Revision: NOT PINNED
+Execution Artifact Provenance: NOT VERIFIED
+Authority Basis: official QwenLM organization, official docs link, releases and repository license
+Limitations: 当前只确认仓库身份；没有固定 commit、source path、安装 artifact mapping 或 EVD claim
 ```
 
-Gate 未通过时：
+在 revision / provenance gate 未通过时：
 
-- 不创建 ZCode Runtime `SOURCE` Evidence；
-- 不描述内部 module、call path、context lifecycle、permission order 或 remote Runtime implementation；
-- 社区仓库、逆向、客户端 fingerprint 与 patch 只能进入 Open Questions；
-- Contract、Behavior、local configuration 与 Enterprise Fact 研究继续进行，但不能用它们猜源码原因。
+- 不创建 revision-bound Qwen Code Runtime `SOURCE` Evidence；
+- 不用默认分支解释当前安装版本的内部 module、call path、context lifecycle 或 permission order；
+- 固定源码但无法映射安装 artifact 时，Source observation 与 Behavior observation 分开，agreement 保持 `UNKNOWN`；
+- Contract、Behavior、local configuration 与 Enterprise Fact 研究可以继续，但不能互相替代。
 
 ### 问题驱动的研究路线（Question-driven Research Route）
 
-1. 从用户协议、官方文档与 release channel 核验产品身份，冻结本次研究的 Host version、platform、installation channel 与访问日期。
-2. 建立 Contract matrix：为 Workspace、Agent、Instruction、Tool、Permission、Review、Remote Execution、Provider / Model configuration 分别记录 owner、scope、trigger、persistence、observable state 与 Unknown。
+1. 从官方 overview、repository 与 release channel 核验产品 / artifact identity，冻结本次研究的 Host version、surface、platform、installation channel 与访问日期。
+2. 建立 Contract matrix：为 `QWEN.md` / memory、Session、Tool、Approval、Sandbox、Hook、Skill、Subagent、Extension 与 Provider / Model configuration 分别记录 owner、scope、trigger、persistence、observable state 与 Unknown。
 3. 建立 Provider Profile 与 deployment profile；分别记录 authentication、endpoint type、base URL category、Model ID、credential owner、network boundary 与 secret redaction，禁止把 Provider / Model 写进 Host 固有能力。
-4. 执行 `EXP-C07-01`，用安全、确定、可逆的 T01 实例追踪 Contract → local configuration → observable behavior；不读取 secret，不访问工作区外路径。
-5. 在能固定相同 Host / platform / repository / task / configuration 且尽量固定同一 Model ID 时执行 `EXP-C07-02`；只有完成两个 Provider profile 的配对 Run 后，才可因 Model、endpoint、quota 或 policy 无法分离而输出 `INCONCLUSIVE`。无法合规取得两个 profile 时保持 `NOT EXECUTED`，不填写 Result。
-6. 只在取得真实组织 / 环境记录后创建 `ENT-ZCODE-*`，逐项验证安装、访问、数据、日志、升级、支持和采购事实；缺失项保持 Unknown。
-7. 将 Contract / Behavior / Enterprise contradictions 分开登记；若发现 Runtime repository 候选，只更新 OQ-001，直至五项 Gate criteria 全部满足。
+4. 固定 `QwenLM/qwen-code` 完整 commit，只追本次实验实际触及的 capability path，并通过 official release / package / build metadata 建立执行 artifact provenance；无法映射时保留 `UNKNOWN`。
+5. 执行 `EXP-C07-01`，用安全、确定、可逆的 T01 实例追踪 Contract → Source → Configuration → Behavior；不读取 secret，不访问工作区外路径。
+6. 在能固定相同 Host / surface / repository / task / configuration 且核验同一 Model identity 时执行 `EXP-C07-02`；只有完成两个 Provider profile 的配对 Run 后，才可因 endpoint、routing、quota 或 policy 无法分离而输出 `INCONCLUSIVE`。无法通过 comparability gate 时保持 `NOT EXECUTED`，不填写 Result。
+7. 只在取得真实组织 / 环境记录后创建 `ENT-QWENCODE-*`，逐项验证安装、访问、credential、network、telemetry / logging、升级、支持和采购事实；缺失项保持 Unknown。
+8. 将 Contract / Source / Behavior / Project / Enterprise contradictions 分开登记；默认分支、release 或文档变化触发重新验证，不静默改写结论。
 
 ### Host / Provider / Enterprise 分层表
 
 | 层（Layer） | 需要绑定的最小字段 | 可以回答 | 不能自动回答 |
 |---|---|---|---|
 | Host Contract | product identity、Host version、platform、surface、Source ID、access date | 官方公开了什么 capability / configuration surface | 本地是否启用、内部如何实现、企业是否允许 |
+| Official Source | repository、完整 commit、path、question、stop point、artifact provenance | 特定 revision 如何实现限定 capability | 安装版本是否采用、未来 Contract、其他 surface / branch behavior |
 | Provider Profile | provider、endpoint type、authentication、Model ID、quota / policy context | 模型请求通过什么通道、哪些变量属于 Provider / Model | Host control surface 是否等价、输出质量是否可移植 |
 | Local Configuration | redacted snapshot、workspace、permission mode、remote / local execution location | 特定环境配置了什么 | 配置是否生效、其他机器是否相同 |
 | Direct Behavior | Experiment / Run、request、decision、result、artifact、human intervention | 特定条件下实际观察到什么 | 内部源码原因、其他版本 / profile behavior |
@@ -716,11 +720,11 @@ Gate 未通过时：
 | Incident / Support | support channel、ticket / evidence route、响应承诺、责任 owner | `Unknown` |
 | Procurement / Compliance | 合同、SLA、许可、法务与区域审查 | `Unknown`；必须由具体组织验证 |
 
-该表是未来事实采集 schema，不是 ZCode enterprise capability 清单。官方文档中的可见入口只形成待验证问题；只有 deployment-specific record 才能进入 `ENT-*`。
+该表是未来事实采集 schema，不是 Qwen Code enterprise capability 清单。官方文档中的可见入口只形成待验证问题；只有 deployment-specific record 才能进入 `ENT-*`。
 
 ### 假设（Hypothesis）
 
-`H-C07-01`：如果将 ZCode 的 Host-owned control surface 与 Provider / Model / endpoint profile 分开记录，那么在相同 Host version、platform、repository baseline、Stable Task、project instruction、permission mode 与 acceptance checks 下，仅切换已授权的模型通道时，Workspace、Host-side tool exposure / filtering policy 与 decision owner、configured permission / approval route、Review 与 artifact route 的可观察责任边界应保持一致；实际 exposed tool set、Provider / Model 的 tool-calling capability、实际 tool request、输出内容和完成路径可以不同。若 Host-owned control points 随模型通道变化，或已完成配对 Run 但仍无法控制 Model / policy confounder，则该边界模型被反驳或结果为 `INCONCLUSIVE`。无论结果如何，没有 deployment-specific Enterprise Fact 都不能把 Contract / Behavior 提升为 enterprise readiness 或 S1–S4。
+`H-C07-01`：如果将 Qwen Code 的 Host-owned control surface 与 Provider / Model / endpoint profile 分开记录，那么在相同 Host version、platform、repository baseline、Stable Task、project instruction、permission mode 与 acceptance checks 下，仅切换已授权的模型通道时，Workspace、Host-side tool exposure / filtering policy 与 decision owner、configured permission / approval route、Review 与 artifact route 的可观察责任边界应保持一致；实际 exposed tool set、Provider / Model 的 tool-calling capability、实际 tool request、输出内容和完成路径可以不同。若 Host-owned control points 随模型通道变化，或已完成配对 Run 但仍无法控制 Model / policy confounder，则该边界模型被反驳或结果为 `INCONCLUSIVE`。无论结果如何，没有 deployment-specific Enterprise Fact 都不能把 Contract / Behavior 提升为 enterprise readiness 或 S1–S4。
 
 支持信号：两个 profile 中 Host-side tool exposure / filtering policy 与 decision owner、permission / approval owner、execution location、Review 与 artifact route 一致，而 actual exposed tool set、实际 tool request、tool-call success 或输出差异可以被限定在 Configuration、Provider / Model response、protocol capability 或已记录的 policy / quota。
 
@@ -730,7 +734,7 @@ Gate 未通过时：
 
 ### 计划实验（Planned Experiments）
 
-#### `EXP-C07-01` · Contract → Configuration → Behavior Trace
+#### `EXP-C07-01` · Contract → Source → Configuration → Behavior Trace
 
 - 实验类型（Experiment Type）：`EXPLORATORY`
 - Outcome Mode：`OBSERVATION_ONLY`；Experiment Result 为 `NOT APPLICABLE · OBSERVATION ONLY`
@@ -738,9 +742,9 @@ Gate 未通过时：
 - 历史映射（Legacy Mapping）：无；Cycle 7 是 V4.2 新增 Cycle
 - T01 instance：`T01-C07-LOCAL-RETRY-LIMIT-VALIDATION`。在固定 commit 的隔离 fixture repository 中，为已有本地 configuration parser 补充 `retry_limit` 上界验证；只修改冻结的 parser source 与对应 test file，不改变公开 schema / error type，不访问网络
 - Deterministic acceptance checks：覆盖负数、零、允许上界、超过上界与字段缺省；全部使用本地测试并保存命令、exit code 与 diff
-- Trace：记录 product / Host version、platform、installation channel、workspace、project instruction、permission mode、Provider profile、Model ID、redacted configuration snapshot、Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、Provider / Model tool-calling capability、实际 tool request / success、confirmation、execution location、result、Review、artifact 与 human intervention
+- Trace：记录 Host version / surface、platform、installation channel、official source commit、artifact provenance、`QWEN.md` / memory、approval / sandbox、Hook / Skill / Subagent / Extension state、Provider profile、Model ID、redacted configuration snapshot、Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、实际 tool request / success、result、Review、artifact 与 human intervention
 - Security boundary：不读取或复制 API Key / token，不调用真实业务服务，不测试权限绕过，不访问工作区外路径；配置快照只保留字段名、端点类别和脱敏值
-- 主要观察项（Primary Observations）：Contract surface 是否可定位、local config 是否可观测、Host / Provider / Model owner 是否可分、Host-side tool exposure / filtering policy、actual exposed tool set、Provider / Model tool-calling capability、实际 tool request / success、permission / Review route、state persistence 与 Unknown
+- 主要观察项（Primary Observations）：Contract / Source / Behavior agreement、source path stability、local config observability、Host / Provider / Model owner、tool / approval / sandbox route、extension activation、state persistence、artifact provenance 与 Unknown
 - 解释边界（Interpretation Boundary）：单个 profile trace 只能发现责任边界与下一步问题，不单独裁决跨 profile invariant 或 enterprise readiness
 
 #### `EXP-C07-02` · Provider Profile Boundary Comparison
@@ -749,29 +753,29 @@ Gate 未通过时：
 - 稳定任务（Stable Task）：`T02 · Semantic Review`
 - 历史映射（Legacy Mapping）：无；Cycle 7 是 V4.2 新增 Cycle
 - 共同 T02 instance：对同一固定 commit 中一个含明确 acceptance reference 的有限 patch 做语义审查。Evaluator-only oracle 记录一个需要推理的缺陷“重试状态在成功后未清零”，以及一个可由 schema check 确定检出的缺陷“新增配置字段未同步到 schema”；oracle 及缺陷名称不得进入 Agent-visible task statement、Rule、context files、acceptance reference 或 output schema。两个 profile 的 Agent-visible 输入、permission mode 与 Review procedure 完全相同
-- Baseline A / Variant B：使用两个已授权 Provider profile；优先选择相同 Model ID、不同 authentication / endpoint profile。除模型通道外，Host version、platform、workspace baseline 与 configuration snapshot 保持一致
-- 单一主要变量（Primary Variable）：Provider profile；如果 Model ID、endpoint policy、quota 或 tool policy 不能保持一致，必须登记为 known confounder，结果不得写成 Host invariant
+- Baseline A / Variant B：使用两个已授权 Provider profile；必须核验相同 Model identity / revision 与 capability preflight，只改变 Provider / endpoint route。除模型通道外，Host version / surface、platform、workspace baseline、configuration semantics 与 permission procedure 保持一致
+- 单一主要变量（Primary Variable）：Provider profile / endpoint route；如果 Model identity、tool protocol、context / output limit、quota 或 policy 不能保持一致，comparability gate 不通过，本实验保持 `NOT EXECUTED`
 - 重复与顺序（Replication and Order）：每个 profile 至少两个 fresh task Run，顺序交错；每次从相同 repository commit、clean workspace 与相同 task statement 开始
 - 主要观察项（Primary Observations）：Host-side tool exposure / filtering policy 与 decision owner、actual exposed tool set、configured permission / confirmation route、Provider / Model tool-calling capability、实际 tool request / success、execution location、Review / artifact route、issue detection、reasoning / output difference、retry、human intervention、quota / provider error
 - 结果词汇（Result Vocabulary）：`SUPPORT / REJECT / INCONCLUSIVE`
 - 解释边界（Interpretation Boundary）：只判断绑定版本与两个 profile 下的责任边界；不做公开 Model benchmark，不声称协议兼容等于 Model portability，不形成企业或合规结论
 
-两个实验都必须保存独立 Run Metadata，绑定 repository commit、ZCode version、platform、installation channel、Provider / endpoint type、Model ID、redacted configuration、Rule / Skill / Check / Adapter revision、controlled variables、known confounders、evidence 与 human intervention。内容生成阶段不创建 Experiment Record、Run record 或结果。
+两个实验都必须保存独立 Run Metadata，绑定 repository commit、Qwen Code version / surface、platform、installation channel、`QwenLM/qwen-code` source commit、execution artifact provenance、Provider / endpoint type、Model ID、redacted configuration、Rule / Skill / Check / Adapter revision、controlled variables、known confounders、evidence 与 human intervention。内容生成阶段不创建 Experiment Record、Run record 或结果。
 
 ### 退出条件（Exit Criteria）
 
 Cycle 7 只有在以下条件均满足后才能结束：
 
 - 官方 product identity、Host version、platform、installation / release channel 与访问日期已绑定；
-- Contract matrix 覆盖 Workspace、Agent、Instruction、Tool、Permission、Review、Remote Execution 与 Provider / Model configuration，并为每项标明 owner 与 Unknown；
-- ZCode Runtime Source Authority Gate 有明确状态记录；若仍为 `NOT VERIFIED`，没有任何 Runtime Source Evidence 或 source architecture conclusion；
-- `EXP-C07-01` 完成无破坏性的 T01 Contract → Configuration → Behavior trace，并保存脱敏 Run Metadata；
+- Contract matrix 覆盖 `QWEN.md` / memory、Session、Tool、Approval、Sandbox、Hook、Skill、Subagent、Extension 与 Provider / Model configuration，并为每项标明 owner 与 Unknown；
+- `QwenLM/qwen-code` Source Evidence 固定完整 commit，记录 scope / path / question / stop point，并以可复查材料建立 execution artifact provenance；无法映射时 Cycle 退出条件未满足；
+- `EXP-C07-01` 完成无破坏性的 T01 Contract → Source → Configuration → Behavior trace，并保存脱敏 Run Metadata；
 - `EXP-C07-02` 完成相同 T02 instance 的配对 fresh-task Run；只有 Run 已真实执行且 Evidence 仍无法分离 Provider / Model / endpoint confounder 时，结果才可为 `INCONCLUSIVE`。无法合规取得两个 Provider profile 时，实验保持 `PLANNED · NOT EXECUTED`、不填写 Result，且 Cycle 退出条件未满足；
 - Host effect、Provider effect、Model effect、Configuration effect 与 deployment effect 分开记录；
-- 至少为一个真实部署 profile 创建 `ENT-ZCODE-*`，逐项填入 verified / unknown / unsupported；如果没有可用企业记录，Cycle 保持未完成；
+- 至少为一个真实部署 profile 创建 `ENT-QWENCODE-*`，逐项填入 verified / unknown / unsupported；如果没有可用企业记录，Cycle 保持未完成；
 - 所有 Evidence claim 绑定 Evidence ID、scope、limitation 与 verification date；Support Assessment 仍按 capability scope 单独评定；
 - Mental Model V1 与 Design Judgment 明确哪些语义可移植、哪些属于 Host Adapter / Provider Profile、哪些仍是 Unknown；
-- 不实现 ZCode Plugin / Adapter，不形成普遍 enterprise readiness、安全保证或法律合规结论。
+- 不实现 Qwen Code Adapter，不形成普遍 enterprise readiness、安全保证或法律合规结论。
 
 ---
 
@@ -779,13 +783,13 @@ Cycle 7 只有在以下条件均满足后才能结束：
 
 完成 Cycle 7 的真实研究后执行一次 Route Review。它可以调整 Batch 5 的 OpenCode source anchor、Provider / Model 分离方法、实验节奏或借用方法，但不能改变冻结的 Cycle 名称、编号、顺序或 Batch 边界。
 
-内容生成本身不满足 Cycle 7 Exit Criteria，也不创建 Route Review 结果。若 Direct Behavior 推翻 ZCode Host / Provider 分层，或新的官方材料满足 / 撤销 Source Authority Gate，应提前触发 Route Review；未经验证的 Runtime repository 候选只进入 Open Questions。
+内容生成本身不满足 Cycle 7 Exit Criteria，也不创建 Route Review 结果。若 Direct Behavior 推翻 Qwen Code Host / Provider 分层，官方 repository identity / license 被撤销，或 release artifact 无法映射到 source revision，应提前触发 Route Review 并保留 Unknown。
 
 ## Batch 4 迁移记录（Migration Record）
 
-| V4.1 历史计划 | V4.2 研究设计 | 状态（Status） |
+| V4.1 历史计划 | V4.3 研究设计 | 状态（Status） |
 |---|---|---|
-| 无 | Cycle 7 · `EXP-C07-01` / `EXP-C07-02` | V4.2 新增 ZCode Cycle；计划态 Contract / configuration / Behavior trace 与 Provider profile 对照，尚未执行 |
+| 无 | Cycle 7 · `EXP-C07-01` / `EXP-C07-02` | V4.2 新增编号、V4.3 替换为 Qwen Code；计划态 Contract / Source / Behavior trace 与 Provider profile 对照，尚未执行 |
 
 Cycle 7 没有旧 Week 正文或 `EXP-Wxx-yy` 可重编号。本记录只说明新增研究边界，不声称实验、Enterprise Fact、Support Assessment 或迁移 Evidence 已产生。
 

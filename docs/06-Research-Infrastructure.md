@@ -9,6 +9,7 @@
 ## 1. Canonical Protocol Files
 
 - [Common Glossary](09-V4.2-Glossary.md)
+- [V4.3 Qwen Code Host-set Amendment](10-V4.3-Qwen-Code-Host-Amendment.md)
 - [Stable Task Suite](../research/task-suite.md)
 - [Evidence Classification and Source Authority](../research/source-authority.md)
 - [Host Support Levels](../research/support-levels.md)
@@ -55,7 +56,7 @@ V4.2 使用六类来源：
 
 来源使用 [source-registry.template.md](../research/templates/source-registry.template.md) 登记。证据数量不等于证据强度；每条重要 Evidence 还应记录 Direct / Indirect、Repeatable / One-off、Current / Stale、Host-specific / Cross-host、Supports / Contradicts。
 
-ZCode 的 Source Evidence 受独立 Source Authority Gate 约束。未验证官方 Runtime source 时，不允许形成源码架构或内部生命周期结论。
+Qwen Code 的官方源码仓库身份已核验，但 Source Evidence 仍必须固定完整 commit，并在连接 Direct Behavior 时建立安装 artifact → release / commit 的可复查 provenance。默认分支或官方 architecture overview 不能替代 revision-bound Source Evidence。
 
 ## 4. Experiment and Run Metadata
 

@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：V4.1 Atlas 将其作为 `.oh` primitive / provider surface 参考；当前 README 主要定位已转向 Docker sandbox / long-lived workspace，旧路径和角色不能沿用。该变化只说明 reference anchor drift，不证明旧 revision 或当前 implementation 的完整事实
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：project positioning、README、`.oh` structure、supported agent、configuration、sandbox 或 distribution mechanism 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：Open Harness 不是 ZCode Runtime Source；其支持启动某 Agent 也不能证明该 Agent 内部架构
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 
