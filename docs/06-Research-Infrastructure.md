@@ -174,7 +174,7 @@ research/cycles/cycle-01/
 └── evidence/
 ```
 
-工作区准备不表示实验已经执行或证据已经成立。Batch 0 没有创建任何 `cycle-*` 目录；Batch 1 准备 `cycle-01` 与 `cycle-02`，Batch 2 增加 `cycle-03` 与 `cycle-04`，Batch 3 增加 `cycle-05` 与 `cycle-06`，Batch 4 增加 `cycle-07`，Batch 5 增加 `cycle-08`，Batch 6 增加 `cycle-09`。Cycle 10–18 目录尚未创建。
+工作区准备不表示实验已经执行或证据已经成立。Batch 0 没有创建任何 `cycle-*` 目录；Batch 1 准备 `cycle-01` 与 `cycle-02`，Batch 2 增加 `cycle-03` 与 `cycle-04`，Batch 3 增加 `cycle-05` 与 `cycle-06`，Batch 4 增加 `cycle-07`，Batch 5 增加 `cycle-08`，Batch 6 增加 `cycle-09`，Batch 7 增加 `cycle-10` 至 `cycle-14`。Cycle 15–18 目录尚未创建。
 
 ## 11. V4.1 Historical Boundary
 

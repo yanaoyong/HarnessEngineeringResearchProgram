@@ -1,467 +1,268 @@
 # PART V · Harness Engineering Research Themes
 
-> Phase 5 · Week 8–12：按问题研究 Skill、Change、Workflow、Context、Knowledge 与 Minimalism。
+> V4.2 Batch 7 · Cycle 10–14 正文迁移。状态：`PLANNED · NOT EXECUTED`。
 
 [← 上一卷](03-Cross-host-Harness-Abstraction.md) · [返回总览](../README.md) · [下一卷 →](05-myharness-Integration-Research.md)
 
 ---
 
-## Week 8 · Skill Behavior & Evaluation
+## Batch 7 研究边界
 
-> Phase 5 · Harness Engineering Research
+Batch 7 把 V4.1 Week 8–12 迁移为五个 Cycle，研究 Skill 行为、Change 收敛、自适应工作流、上下文交接与知识固化。生成正文和工作区不表示实验已经执行，也不表示任何设计已经进入 myharness。
 
-### 核心研究问题
+共同边界：
 
-> **什么样的 Skill 真正改变 Agent 行为，而不只是写得很好？**
+- 新实验使用 `EXP-Cxx-yy` 与稳定任务套件 T01–T03；V4.1 `EXP-Wxx-yy` 只保留历史映射。
+- Source Registry 只登记计划来源；`SRC-*` 不是 `EVD-*`，默认分支锚点必须在执行时固定完整 commit。
+- Host、surface、Provider、endpoint / protocol、Model 与 Configuration 效应分别记录；不同条件的结果不得汇总成 Host 或 Model 排名。
+- Skill 被发现、被激活、步骤被执行、产出通过验收与任务成功是不同事件。
+- Artifact 存在、流程完成、事实一致与结果正确是不同命题。
+- 本 Batch 不创建 Run、`EVD-*`、`ENT-*`、Support Assessment、ADR 或 Route Review，不实现 Cycle 15–18。
 
-### 主线研究对象
+## Cycle 10 · Skill Behavior & Evaluation
 
-| **研究对象**      | **阅读深度** | **本周只关注**                                                        |
-|-------------------|--------------|-----------------------------------------------------------------------|
-| Agent Skills      | L2 定向      | Discovery、Activation、Execution；name / description 在发现阶段的作用 |
-| Superpowers       | L3 深拆      | Skill 触发、流程、Evidence、Verification、Skill behavior eval         |
-| learn-claude-code | L3 对照      | Skill loading 的教学机制模型                                          |
-
-### 重点查看部分
-
-- Superpowers：README 的 How It Works、Basic Workflow、Philosophy、Contributing。
-
-- 深读 skills/using-superpowers/SKILL.md、skills/writing-skills/SKILL.md、skills/verification-before-completion/SKILL.md、skills/systematic-debugging/SKILL.md；可选 TDD Skill。
-
-- 观察结构而非只看内容：名称、description、trigger、反例、procedure、evidence、completion、failure、next skill。
-
-### 阅读时只追这些问题
-
-- Skill Discovery Quality、Execution Quality、Outcome Quality 是否是三个不同问题？
-
-- Description 决定什么？Trigger 与正文 Procedure 如何配合？
-
-- Evidence 写在 Skill 里，还是由 Hook/Test 验证？
-
-- 一个 Skill 能否证明自己被正确执行？
-
-### 本周不要陷进去
-
-- 一次升级全部 myharness Skills
-
-- 只比较文档长度和写作风格
-
-- 把“Skill 被加载”当成“Skill 有效”
-
-### 学习后的实践：myharness 单 Skill 三版本行为实验
-
-> **Experiment ID:** `EXP-W08-01`  
-> **Experiment Type:** `COMPARATIVE`  
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 从 code-review 或 expert-reviewer 中只选一个。
-
-2. V1：当前版本。
-
-3. V2：只强化 name / description / 适用场景，测试 Discovery / Trigger。
-
-4. V3：Behavior Contract 实验，增加 Trigger、Preconditions、Required Context、Procedure、Evidence Required、Completion Criteria、Failure Route。
-
-5. 3–5 个相近任务，尽量同模型、同 Host、相似复杂度。
-
-### 建议保留的证据
-
-- 主动调用率、漏调用、误调用
-
-- 步骤遵循
-
-- Evidence Quality
-
-- False Completion
-
-- Context Cost
-
-### 预期成长
-
-| **行为评测** | 能区分 Skill Discovery、Execution、Outcome 三类失败。                |
-|--------------|----------------------------------------------------------------------|
-| **契约意识** | 形成 Skill Contract V2 Hypothesis，而不是因 Superpowers 好用就照抄。 |
-
-### 实践完成后，重新理解
-
-- myharness Skill 是 SOP，还是 Behavior Contract？
-
-- Evidence 应该写在 Skill 里，还是外部验证？
-
-- Semantic Review Skill 与 Deterministic CI Skill 是否需要同一 Schema？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-## Week 9 · Change Contract & Convergence
-
-> Phase 5 · Harness Engineering Research
+> 历史来源：V4.1 Week 8 · `EXP-W08-01`
 
 ### 核心研究问题
 
-> **Change Artifact 怎么避免与真实代码状态漂移？**
->
-> **Change 怎么避免“撒谎”？**
+> 什么样的 Skill 能在绑定 Host、Model 与任务条件下改变可观察行为，而不只是改善描述或写作质量？
 
-### 主线研究对象
+### 责任模型
 
-| **研究对象**      | **阅读深度** | **本周只关注**                                                                    |
-|-------------------|--------------|-----------------------------------------------------------------------------------|
-| GitHub Spec Kit   | L2 定向      | constitution → specify → plan → tasks → implement；converge / analyze / checklist |
-| OpenSpec          | L1 对照      | Change artifact 演进与非 rigid phase gates                                        |
-| myharness Changes | 项目证据     | 历史 Change 状态与 artifact drift                                                 |
+```text
+Discovery → Activation → Execution → Evidence → Outcome
+    │           │            │           │          │
+description   Host route   procedure   verifier   acceptance
+```
 
-### 重点查看部分
+五个阶段必须分别观测。Description 只直接控制候选发现信号；Skill 正文不能独立证明自身已被遵循，确定性约束仍需要外部 Check / Test。
 
-- Spec Kit：README 主流程；重点定位 speckit.converge、speckit.analyze、speckit.checklist；定向查看 templates/、workflows/、.specify/memory/。
+### 计划来源
 
-- 仓库搜索 converge / analyze / checklist，只跟相关 template / workflow；除非问题变成 CLI Integration，不通读 src/specify_cli。
+| 来源 | 研究角色 | 当前边界 |
+|---|---|---|
+| Agent Skills · Optimizing skill descriptions | Discovery / trigger 评测 Contract | 官方浮动页面；不证明任一 Host 的实际触发行为 |
+| Agent Skills · Evaluating skill output quality | testcase、grader、baseline / variant 方法 | 官方 guidance；不产生本项目结果 |
+| obra/superpowers | Behavior-contract 与 verification 参考实现 | 默认分支浮动；只解释固定 revision 的项目设计 |
+| learn-claude-code | Skill loading 教学对照 | 不是 Claude Code 官方源码 |
 
-- OpenSpec：README 的 See it in action、Why OpenSpec、Usage Notes；schemas/spec-driven/ 与 openspec/。
+来源条目见 [Cycle 10 Research Note](../research/cycles/cycle-10/research-note.md)。
 
-### 阅读时只追这些问题
+### 假设与实验
 
-- Spec、Task、Code、Test、CI、Summary 如何建立一致性？
+`H-C10-01 · Description Discovery`：在同一 Host / surface、Provider、Model、Configuration 和 T02-shaped query corpus 下，V1→V2 只改变 name / description / applicability，可以方向性改变 Discovery / Activation 的正确路由。
 
-- 哪些判断可以 deterministic，哪些需要语义判断？
+`H-C10-02 · Activated Behavior Contract`：在 Skill 已显式加载、name / description 相同的条件下，V2→V3 只改变 Trigger、Preconditions、Required Context、Procedure、Evidence Required、Completion Criteria 与 Failure Route bundle，可以方向性改变 Execution / Evidence。
 
-- Change 在执行中、关闭后、审计时是否扮演不同角色？
+V4.1 `EXP-W08-01` 拆分为两个独立 `T02 · Semantic Review` 实验：
 
-- CodeGraph 对 Convergence 是否真的增加价值？
+1. `EXP-C10-01` · Skill Discovery and Activation：24 个 T02-shaped packets 按 label 分层为 train / validation；V1 / V2 在 12 个 validation packets 上各做 3 次 fresh-session Run，只解释 description bundle。
+2. `EXP-C10-02` · Activated Skill Behavior Contract：显式加载相同 Skill identity，对 3 个固定 T02 instances 的 V2 / V3 各做 3 次 Run，只解释 behavior-contract bundle。
 
-### 本周不要陷进去
+主要观测为漏触发、误触发、步骤遵循、证据可追溯性、确定性缺陷检出、语义缺陷检出、false completion、Context cost 与 Human intervention。小样本只形成绑定条件下的方向性结果。
 
-- 直接开发 harness converge
+### 退出条件
 
-- 默认更多 Artifact 等于更真实
+- 冻结 Skill revisions、query split、T02 oracle、grader 与裁决阈值。
+- 分开报告 Discovery、Activation、Execution、Evidence 与 Outcome。
+- 完成 `EXP-C10-01` 的 72 个 validation Run 与 `EXP-C10-02` 的 18 个 activated Run，且结果绑定完整 Run Metadata；Run 缺失时保持 `INCONCLUSIVE`。
+- 形成 Mental Model V1；不因 Skill 有效就推导跨 Host portability 或 S1–S4。
 
-- 把目录存在当成流程完成
+完整计划见 [Cycle 10 实验工作区](../research/cycles/cycle-10/experiments/README.md)。
 
-### 学习后的实践：历史 Change 的三轮 Convergence Experiment
+## Cycle 11 · Change Contract & Convergence
 
-> **Experiment ID:** `EXP-W09-01`  
-> **Experiment Type:** `COMPARATIVE`  
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 选择一个曾经状态不一致或怀疑存在 artifact drift 的历史 Change。
-
-2. 建立 Spec Requirement ↔ Task ↔ Git Diff / File / Symbol ↔ Test ↔ CI ↔ Summary Status 的人工表。
-
-3. Round A：人工检查。
-
-4. Round B：让 Claude / Codex 直接检查，不给额外结构。
-
-5. Round C：给明确 Convergence Checklist；可选加入 CodeGraph。
-
-6. 比较发现漂移数、漏报、误报、语义判断、确定性判断和 CodeGraph 增益。
-
-### 建议保留的证据
-
-- 发现的漂移类型与数量
-
-- 漏报 / 误报
-
-- Agent 无结构 vs Checklist
-
-- CodeGraph 增益 / 噪声
-
-- Artifact 与真实结果不一致之处
-
-### 预期成长
-
-| **Change Truth Model** | 能区分 Artifact 存在、完整、一致、与 Code 一致、与结果一致。                        |
-|------------------------|-------------------------------------------------------------------------------------|
-| **角色重构**           | 重新理解 Changes 在执行中可能是 Active Contract，关闭后可能是 Historical Evidence。 |
-
-### 实践完成后，重新理解
-
-- .harness/changes/ 是日志吗？
-
-- Convergence 是 Skill、Hook、CLI 还是 Acceptance？
-
-- 哪些一致性检查必须 deterministic？
-
-- harness converge 值得进入 Candidate 吗？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-## Week 10 · Adaptive Workflow
-
-> Phase 5 · Harness Engineering Research
+> 历史来源：V4.1 Week 9 · `EXP-W09-01`
 
 ### 核心研究问题
 
-> **README 修改、普通 Bug 和架构变更，真的应该走同一套十阶段吗？**
+> Change Artifact 如何在执行中保持约束，并在关闭后可复查地反映 Spec、Task、Code、Test、CI 与 Summary 的真实关系？
 
-### 主线研究对象
+### Change Truth Model V0
 
-| **研究对象**       | **阅读深度** | **本周只关注**                                                                           |
-|--------------------|--------------|------------------------------------------------------------------------------------------|
-| BMAD Method        | L2 定向      | Scale-Domain-Adaptive、planning depth、quick flow / project complexity / workflow status |
-| OpenSpec           | L1 对照      | small fix vs larger change；无 rigid phase gates                                         |
-| myharness 10 Stage | 项目证据     | 真实任务的 ceremony、gate 与风险控制                                                     |
+```text
+Requirement ↔ Task ↔ Diff / File / Symbol ↔ Test ↔ CI ↔ Summary
+       semantic edges                deterministic edges
+```
 
-### 重点查看部分
+Artifact 存在不等于完整，完整不等于内部一致，内部一致不等于与代码或结果一致。确定性关系和语义判断必须分开，人工 truth map 是 evaluator reference，不是一个可与 Agent 回合并列的实验 variant。
 
-- BMAD：先看当前 README 与官方 Docs 中 `Scale-Domain-Adaptive`、planning depth、quick / dev flow、workflow guidance 等能力说明。
+### 计划来源
 
-- 源码定位采用 Capability-first：执行 Week 10 时，在当前默认分支搜索 `quick-dev`、`planning depth`、`workflow status`、`workflow help` 等当前术语，再跟 1–2 层实现；不要把 `src/bmm-skills/` 视为永久路径 Contract。
+| 来源 | 研究角色 | 当前边界 |
+|---|---|---|
+| GitHub Spec Kit | Spec → Plan → Tasks → Implement 与 cross-artifact analysis 参考 | 官方文档 Contract 与源码仓库分开登记；旧命令名不作 Contract，源码执行时固定 commit |
+| Fission-AI/OpenSpec | 可演进 Change artifacts 与 schema 参考 | 默认分支浮动；不证明 myharness Change truth |
+| myharness historical Changes | Project Evidence 候选 | 执行时固定 commit；目录存在不等于状态真实 |
 
-- 不研究 Party Mode 和所有 Persona / Agent Role。
+### 假设与实验
 
-- OpenSpec：small fix、larger change、proposal、no rigid phase gates。
+`H-C11-01 · Explicit Convergence Contract`：对一个冻结的历史 Change 与同一 T02 oracle，相比不给结构的 Agent review，显式 Convergence Checklist 会提高已知 drift edge 的召回和引用可追溯性，同时可能增加误报、Context 与审查时间。
 
-### 阅读时只追这些问题
+`EXP-C11-01` 使用 `T02 · Semantic Review`：
 
-- Gate 的价值是流程完整，还是风险控制？
+- Round A：两名人工评审者先建立并裁决 truth map，只作为 evaluator-only oracle。
+- Round B：Agent 在不知道 oracle 的情况下做无结构收敛检查。
+- Round C：同一绑定条件下，Agent 使用冻结的 Convergence Checklist；fresh session、相同可见输入、顺序交错。
+- 可选 CodeGraph 只能作为独立 exploratory stratum，不能混入 B / C 主裁决。
 
-- Task Complexity 与 Delivery Risk 是否是一回事？
+主要指标按 drift taxonomy 分层报告 recall、false positive、evidence citation、semantic / deterministic classification、false completion 与 Human intervention。不得因 Checklist 文件存在就宣称 Change 已收敛。
 
-- Adaptive Workflow 是否等于 Agent 自己随便跳阶段？
+### 退出条件
 
-- Flow Classification、Mandatory Gate、Escalation 由谁决定？
+- 固定历史 Change commit、artifact packet、oracle、drift taxonomy 与评分规则。
+- 把确定性 defect 与语义 defect 分开裁决。
+- 完成 3 个 B / C paired blocks（共 6 个 Agent Run）并保存 Run Metadata；人工 Round A 不计 Agent run。
+- 明确 Convergence 应由 Skill、Check、Hook、CLI 还是 Acceptance 承担；不在本 Cycle 实现功能。
 
-### 本周不要陷进去
+完整计划见 [Cycle 11 实验工作区](../research/cycles/cycle-11/experiments/README.md)。
 
-- 看到 BMAD 就直接引入 Light / Standard / Full
+## Cycle 12 · Adaptive Workflow
 
-- 按 Artifact 数量衡量流程质量
-
-- 把所有任务复杂度判断交给模型
-
-### 学习后的实践：三类真实任务的 Workflow Risk Experiment
-
-> **Experiment ID:** `EXP-W10-01`  
-> **Experiment Type:** `COMPARATIVE`  
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 选择 README / 文档措辞修改、普通 Hook Bug、Plugin / Architecture Change 三类历史或安全任务。
-
-2. 回顾完整 10 Stage：哪些 Artifact 真有价值，哪些步骤近乎形式，哪一个 Gate 真正发现问题？
-
-3. 提出临时实验模型（例如 Light / Standard / Full），但不写入 myharness。
-
-4. 模拟或在安全任务上实践，记录流程时间、Artifact 数量、Context、Human Checkpoints、漏掉风险、返工、False Completion。
-
-### 建议保留的证据
-
-- 流程时间与 Context 成本
-
-- 真正发现问题的 Gate
-
-- 无效 Artifact / ceremony
-
-- 返工与 escaped risk
-
-- Human Checkpoint 价值
-
-### 预期成长
-
-| **风险模型** | 形成 Workflow Risk Model V1：Requirement Ambiguity、Architecture Risk、Code Risk、Regression Risk、Deployment Risk。 |
-|--------------|----------------------------------------------------------------------------------------------------------------------|
-| **流程判断** | 开始用“控制什么风险”评价 Gate，而不是用“流程是否完整”。                                                              |
-
-### 实践完成后，重新理解
-
-- Adaptive Workflow 是否等于自由跳阶段？
-
-- 哪些 Gate 绝不能跳？
-
-- 什么条件触发 Escalation？
-
-- Flow Classification 应由规则、Agent 还是人工决定？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-## Week 11 · Context Lifecycle & Session Handoff
-
-> Phase 5 · Harness Engineering Research
+> 历史来源：V4.1 Week 10 · `EXP-W10-01`
 
 ### 核心研究问题
 
-> **一个长任务如何跨多个 Session 保持认知连续，同时避免携带所有历史噪声？**
+> 如何让 workflow depth 随任务风险变化，同时避免把“自适应”退化为 Agent 自行省略 Gate？
 
-### 主线研究对象
+### Risk-routing Model V0
 
-| **研究对象**                | **阅读深度** | **本周只关注**                                                                                        |
-|-----------------------------|--------------|-------------------------------------------------------------------------------------------------------|
-| HumanLayer ACE              | L2 定向      | Context trajectory、intentional compaction、Research → Plan → Implement、Subagents as context control |
-| Ralph                       | L1 对照      | Fresh context + git / progress / PRD artifact persistence                                             |
-| Claude / Codex Context      | Host 对照    | Week 3–6 已建立的 Host Mechanism                                                                      |
-| myharness summary / changes | 项目证据     | 当前 Session handoff 与持久化制品                                                                     |
+```text
+Task facts → deterministic preflight → risk classification
+                                      ↓
+                    required artifacts / gates / escalation
+                                      ↓
+                              acceptance + audit
+```
 
-### 重点查看部分
+Task complexity、delivery risk 与 ceremony cost 分开。Workflow route 由冻结 rubric 选择；Mandatory Gate、未知项升级与 Human checkpoint 不能由执行中的 Agent 静默取消。
 
-- ACE：完整研究 ace-fca.md；重点 Why obsess over context、What Exactly Are We Compacting、Using Sub-Agents、Frequent Intentional Compaction、Research、Plan、Implement。
+### 计划来源
 
-- Ralph：README 的 Workflow、Critical Concepts；ralph.sh、prompt.md、CLAUDE.md、prd.json.example。
+| 来源 | 研究角色 | 当前边界 |
+|---|---|---|
+| BMAD Method | 多 planning track 与阶段化 workflow 参考 | 官方文档 Contract 与源码仓库分开登记；不直接复制 track 名或 story count |
+| OpenSpec | artifact-driven、可演进 workflow 对照 | 复用 Cycle 11 来源；不等于无 Gate |
+| myharness 10 Stage | Project Evidence 候选 | 执行时固定 revision；流程存在不证明每一步有价值 |
 
-- 本周关注 Harness Strategy，不重复研究 Claude 如何 compact。
+### 假设与实验
 
-### 阅读时只追这些问题
+`H-C12-01 · Risk-routed Workflow`：对一个低风险 T01 documentation task 与两个 T03 medium-change tasks，相比完整十阶段 baseline，由执行前冻结的 risk rubric 选择 required artifacts、mandatory gates 与 escalation 的 variant，能减少 ceremony / Context cost，而不增加 escaped risk、rework 或 false completion。
 
-- Raw History、Resume、Compaction、Summary、Handoff Artifact、Persistent Knowledge 有什么差异？
+- `EXP-C12-01`：`T01 · Engineering Constraint`，使用同一个小型 README / documentation task instance 比较完整 workflow 与 risk route。
+- `EXP-C12-02`：`T03 · Medium Change`，分别使用同一个 Hook bug instance 与同一个受控 Plugin / architecture instance 做 A / B 比较。
+- 每个 instance 的 A / B 各执行 3 个 fresh-session Run、组成 3 个 paired blocks；禁止用“acceptance-equivalent matched task”替代同一 task instance。
 
-- 保存更多历史是否一定恢复更好？
+主要指标是 escaped critical risk、acceptance failure、rework 与 false completion；流程时间、artifact 数量、Context 与 Human checkpoints 是 secondary trade-off。若 task parity、risk label 或 Host / Model 条件无法固定，结果必须为 `INCONCLUSIVE`。
 
-- Summary 应记录“发生了什么”，还是“下一 Agent 最少需要知道什么”？
+### 退出条件
 
-- Change Artifact 与 Session Handoff 应否完全相同？
+- 冻结 risk dimensions、route table、mandatory gates、escalation、task instance 与 baseline。
+- 在看到结果前指定 primary risk 与 secondary cost 指标。
+- 每个 task stratum 独立报告，不能把不同难度汇总为统一 workflow 胜率。
+- 形成是否值得进入 Cycle 16 Hypothesis / ADR Candidate 的问题；不在本 Cycle 修改 myharness 10 Stage。
 
-### 本周不要陷进去
+完整计划见 [Cycle 12 实验工作区](../research/cycles/cycle-12/experiments/README.md)。
 
-- 把 Week 3 重新学一遍
+## Cycle 13 · Context Lifecycle & Session Handoff
 
-- 用长篇 prose summary 代替实验
-
-- 默认所有决策都应永久进入 Wiki
-
-### 学习后的实践：跨 Session 真实任务的 Handoff Modes Experiment
-
-> **Experiment ID:** `EXP-W11-01`  
-> **Experiment Type:** `EXPLORATORY`  
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
-
-1. 设计一个不能单 Session 完成的真实独立子问题，例如 Codex Plugin 移植中的一项。
-
-2. 分为 Session A Research、B Plan、C Implementation、D Review。
-
-3. 比较 Mode 1 Resume、Mode 2 普通 prose summary、Mode 3 结构化 Handoff（Goal / Current State / Decisions / Evidence / Files & Symbols / Completed / Next Step / Open Risks / Rejected Approaches）、Mode 4 现有 Changes Artifact。
-
-4. 可在一个连续任务中分段采用不同方式，不要求重复四个完整项目。
-
-> **Interpretation Rule:** 本周证据属于 exploratory qualitative evidence。若在同一连续任务中分段使用不同 Handoff Mode，只能用于发现问题与形成假设，不能直接宣称某个 Mode 性能优于其他 Mode。
-
-### 建议保留的证据
-
-- 重复读取与重新定位
-
-- 错误假设、决策遗失
-
-- 过期信息
-
-- 恢复工作所需 Context / 时间
-
-- trajectory 是否连续
-
-### 预期成长
-
-| **Handoff 模型** | 形成 Session Handoff Mental Model。                         |
-|------------------|-------------------------------------------------------------|
-| **上下文策略**   | 能区分 Host Context Mechanism 与 Harness Handoff Strategy。 |
-
-### 实践完成后，重新理解
-
-- 保存更多历史真的恢复更好吗？
-
-- summary.md 是历史摘要，还是 next-agent briefing？
-
-- Change 与 Handoff 是否应共用结构？
-
-- 哪些信息只服务 trajectory，不应该进入 Wiki？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-## Week 12 · Knowledge Ratification & Harness Minimalism
-
-> Phase 5 · Harness Engineering Research
+> 历史来源：V4.1 Week 11 · `EXP-W11-01`
 
 ### 核心研究问题
 
-> **Agent 发现的一个事实，什么时候值得永久进入 Harness？**
+> 多 Session 的任务如何保留目标、决定、证据、未完成状态与失败路线，而不携带全部历史噪声？
 
-### 主线研究对象
+### Handoff Model V0
 
-| **研究对象**                    | **阅读深度** | **本周只关注**                                                    |
-|---------------------------------|--------------|-------------------------------------------------------------------|
-| Agent OS                        | L2 定向      | Discover Standards、Deploy Standards、Shape Spec、Index Standards |
-| mini-swe-agent                  | L3 回看      | 用极简 scaffold 反问“为什么不增加更多 Harness”                    |
-| SWE-agent ACI                   | L1 理论对照  | Interface Design 与 Scaffold Expansion 的差异                     |
-| myharness failure / improvement | 项目证据     | 历史失败与能力沉淀是否有重复价值证据                              |
+```text
+live context ──ratify──> durable handoff artifact ──hydrate──> next session
+     │                         │                         │
+trajectory noise       goal / decisions / evidence    verify freshness
+```
 
-### 重点查看部分
+Host 的 resume / compaction 是 session capability；结构化 handoff 是 Project artifact；Changes 是 task-state artifact。三者可以组合，但不能因都“保存上下文”就视为等价。
 
-- Agent OS：先以当前 README / 官方 Docs 的四个 Capability 为导航：Discover Standards、Deploy Standards、Shape Spec、Index Standards。
+### 计划来源
 
-- 源码定位采用 Capability-first：执行 Week 12 时刷新当前默认分支和 docs，再搜索 discover / deploy / index / shape spec 对应实现；目录只作为当时的导航锚点，不预设 `commands/agent-os/`、`profiles/default/global/` 永久存在。
+| 来源 | 研究角色 | 当前边界 |
+|---|---|---|
+| HumanLayer Advanced Context Engineering | intentional compaction 与 research / plan / implement 方法参考 | Community Reference；不证明 Host Contract 或普遍效果 |
+| snarktank/ralph | fresh-context + persistent PRD / progress artifact 对照 | 固定 revision 后只解释该项目 |
+| Cycle 3–6 Host sources | Claude Code / Codex session Contract 候选 | 复用 Source ID，不提升为 Evidence；不假设 surface parity |
 
-- 不研究安装脚本。
+### 假设与实验
 
-- 回看 mini-swe-agent 的 Agent、Environment、Model、run 轻量结构。
+`H-C13-01 · Structured Handoff Observability`：对一个连续 T03 task，结构化交接字段能暴露目标、已作决定、证据、当前状态、未完成项、风险与恢复动作的遗漏位置；但单个任务在不同 transition 使用不同 mode 时，只能形成 exploratory observation，不能裁决哪种 handoff mode 更优。
 
-- 可选 SWE-agent ACI，用于思考有效 Interface Design 与无意义 Scaffold Expansion。
+`EXP-C13-01` 使用 `T03 · Medium Change`，将同一任务分为 Intake / Scope → Research → Plan → Implement → Review 五个 phase。四个 transition 预先分别绑定 Host Resume、fresh-session prose summary、fresh-session structured handoff 与 fresh-session Changes artifact，并记录 hydration 时的遗漏、冲突、过期信息、恢复时间、重复工作、Human correction 与 evidence trace。Resume 恢复同一 Host session identity；其余 mode 创建新 session。分配顺序在运行前冻结。
 
-### 阅读时只追这些问题
+该设计不做 mode superiority claim；若后续需要比较，必须另建匹配任务、平衡顺序和 fresh-session 的 comparative experiment。
 
-- Agent 学到一个东西，为什么不能直接写入 Memory / Rule？
+### 退出条件
 
-- One-off 与 Recurring 如何判断？
+- 固定 phase boundary、handoff schema、transition assignment 与 observation rubric。
+- 每个 transition 绑定 Host / surface / Provider / Model / Configuration 与 session capability。
+- 区分 Host resume、summary artifact、Change state 与永久 Project Knowledge。
+- 只形成 exploratory Mental Model V1；不将单一任务结果写成普遍最佳实践。
 
-- Host Issue、Model Behavior、Project Knowledge、Process Problem、Deterministic Constraint 如何分类？
+完整计划见 [Cycle 13 实验工作区](../research/cycles/cycle-13/experiments/README.md)。
 
-- 一个 Capability 的收益是否值得 Context、Maintenance、Portability 和 Behavior Complexity 成本？
+## Cycle 14 · Knowledge Ratification & Harness Minimalism
 
-### 本周不要陷进去
+> 历史来源：V4.1 Week 12 · `EXP-W12-01`
 
-- 每个 Failure 都新增 Rule / Hook
+### 核心研究问题
 
-- 把一次严重错误自动当成长期重复价值
+> Agent 发现的事实何时值得固化为 Rule、Skill、Hook、Test、Wiki 或 Change template，何时应选择 Nothing？
 
-- 只做“新增什么”，不允许“Nothing”
+### Ratification Model V0
 
-### 学习后的实践：10 个历史 Failure / Improvement 的 Ratification Exercise
+```text
+observation → authority / recurrence / scope / determinism check
+            → value − context cost − maintenance − portability risk
+            → Rule | Skill | Hook | Test | Wiki | Change Template | Nothing
+```
 
-> **Experiment ID:** `EXP-W12-01`  
-> **Experiment Type:** `EXPLORATORY`  
-> **Evidence Scope:** 个人研究中的方向性证据；小样本用于发现现象、比较机制或形成下一步假设，不包装为统计学结论。
+严重但一次性的事件不自动成为永久 Rule；可确定验证的约束优先进入 Test / Check；复杂行为指导才可能进入 Skill。“Nothing”是有效结论，不是遗漏。
 
-1. 从 myharness 抽取 10 个 Failure Record、Improvement、真实 Bug、Review 问题或 Agent 误行为。
+### 计划来源
 
-2. 第一层：One-off / Recurring。
+| 来源 | 研究角色 | 当前边界 |
+|---|---|---|
+| buildermethods/agent-os | Discover / deploy / index standards 的项目参考 | 默认分支浮动；不证明标准准确或维护成本可接受 |
+| SWE-agent/mini-swe-agent | minimal scaffold 对照 | 只解释固定 revision；不以 benchmark 排名裁决 minimalism |
+| SWE-agent ACI paper | interface-design 理论背景 | 按 OQ-003 保守登记；不证明 Host implementation 或 myharness 决策 |
+| myharness failure / improvement records | Project Evidence 候选 | 只有固定 artifact、revision 与 authority 后才能用于实验 |
 
-3. 第二层：Host Issue / Model Behavior / Project Knowledge / Process Problem / Deterministic Engineering Constraint。
+### 假设与实验
 
-4. 第三层决定：Rule / Skill / Hook / Wiki / Test / Change Template / Nothing。
+`H-C14-01 · Evidence-gated Ratification`：对冻结的十个历史 failure / improvement packets，显式 authority、recurrence、scope、determinism、expected value、Context cost、maintenance 与 portability rubric，能使候选治理位置及 `Nothing` 决策更可复查；它不能仅凭 retrospective classification 证明未来缺陷会减少。
 
-5. 对 3 个准备新增能力的案例估算 Recurring Value、Context Cost、Maintenance Cost、Cross-host Portability、Behavior Complexity。
+`EXP-C14-01` 使用 `T02 · Semantic Review`。十个正式 packet 必须各自包含有限 Change / diff、一个语义问题和一个 deterministic check；不满足 T02 Contract 的历史记录进入 exclusion log。每个 packet 执行两个相同绑定条件下的 independent Agent reviewer Run；两名人工 evaluator 预先建立允许 disagreement 的 evaluator-only reference，不计 Agent Run。Agent reviewer 分类 One-off / Recurring、Host / Model / Project Knowledge / Process / Deterministic Constraint，再选择目标治理位置并给出引用。
 
-### 建议保留的证据
+主要观察为 authority gap、分类一致性、unsupported ratification、deterministic-to-semantic mismatch、重复 / 冲突规则、Context / maintenance cost 与 `Nothing` 的理由质量。
 
-- 分类依据
+### 退出条件
 
-- 重复出现证据
+- 固定十个 packet、采样时间窗、ratification rubric 与 evaluator-only reference。
+- 每个候选都记录 authority、scope、owner、revalidation trigger 与 removal condition。
+- 不把一次 retrospective review 写成 future reliability 或 Harness minimality 证明。
+- 只形成进入 Cycle 15 audit / Cycle 16 Hypothesis 的候选，不直接修改 myharness。
 
-- 新增能力预计成本
+完整计划见 [Cycle 14 实验工作区](../research/cycles/cycle-14/experiments/README.md)。
 
-- Nothing 的理由
+## V4.1 历史迁移映射
 
-- 历史能力是否真的解决过同类问题
+| V4.1 | V4.2 | 新实验 | 状态 |
+|---|---|---|---|
+| Week 8 · Skill Behavior & Evaluation | Cycle 10 | `EXP-W08-01` → `EXP-C10-01` + `EXP-C10-02` | `PLANNED · NOT EXECUTED` |
+| Week 9 · Change Contract & Convergence | Cycle 11 | `EXP-W09-01` → `EXP-C11-01` | `PLANNED · NOT EXECUTED` |
+| Week 10 · Adaptive Workflow | Cycle 12 | `EXP-W10-01` → `EXP-C12-01` + `EXP-C12-02` | `PLANNED · NOT EXECUTED` |
+| Week 11 · Context Lifecycle & Session Handoff | Cycle 13 | `EXP-W11-01` → `EXP-C13-01` | `PLANNED · NOT EXECUTED` |
+| Week 12 · Knowledge Ratification & Harness Minimalism | Cycle 14 | `EXP-W12-01` → `EXP-C14-01` | `PLANNED · NOT EXECUTED` |
 
-### 预期成长
+历史 ID 只表示研究意图的迁移关系，不表示旧实验已执行，也不能与新 ID 同时创建两份结果。
 
-| **Knowledge Ratification** | 形成 Discovery → Evidence → Recurring? → Candidate → Classification → Ratification → Artifact / Discard 模型。 |
-|----------------------------|----------------------------------------------------------------------------------------------------------------|
-| **最小主义**               | 训练“Nothing”判断，开始接受删除 / 不新增也可能是最佳 Harness 设计。                                            |
+## Batch 7 完成边界
 
-### 实践完成后，重新理解
-
-- 三次重复错误和一次严重错误，哪个更值得进入 Harness？
-
-- Rule 越完整，Agent 就越可靠吗？
-
-- No capability without evidence of recurring value 是否成立？
-
-- 哪些例外足以推翻这条假设？
-
-| **弹性规则：** 如果本周实验直接暴露了一个会推翻当前 Mental Model 的问题，可以暂停原计划并追加一个短研究循环；如果只是有趣的旁支问题，记录到 Open Questions，继续主线。 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
----
-
-## 路线调整说明
-
-本卷是研究导航，不是冻结的教学脚本。执行到对应研究循环前，应先刷新相关官方文档、默认分支与 Changelog；若项目目录或能力名称发生变化，继续追踪本卷定义的研究问题与 Capability，而不是机械寻找旧路径。
+Batch 7 完成仅表示 Cycle 10–14 的正文、计划实验、来源登记与工作区已准备。Cycle 15–18 正文、目录、实验与结论属于 Batch 8；任何 Route Review、ADR Candidate、实现、Run、Evidence Claim 或 Support Level 都需要后续真实研究。
