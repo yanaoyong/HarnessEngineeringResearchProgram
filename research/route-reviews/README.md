@@ -2,6 +2,8 @@
 
 建议每 2–4 个研究循环做一次 Route Review。
 
+当前没有真实 Route Review 结果。Batch 8 内容生成完成不触发最终复盘；只有 Cycle 15–18 真实执行并满足 Exit Criteria 后才创建记录。
+
 命名示例：
 
 ```text

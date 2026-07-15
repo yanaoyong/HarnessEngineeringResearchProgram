@@ -7,12 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Completed content baseline: Batch 1–6, covering Cycle 1–9
-* Current task: Generate Batch 7 only, covering Cycle 10–14
+* Completed content baseline: Batch 1–7, covering Cycle 1–14
+* Current task: Generate Batch 8 only, covering Cycle 15–18
 
-This task starts from the merged V4.2 Batch 6 baseline. V4.1 Week 8–12 remain the historical migration source for Cycle 10–14.
+This task starts from the merged V4.2 Batch 7 baseline. V4.1 Week 13–16 remain the historical migration source for Cycle 15–18.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 7 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–6 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Harness Engineering Research Themes content directly.
+Do not apply or reproduce an existing external ZIP or patch. Generate Batch 8 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–7 decisions except where the repository owner explicitly changes them, and migrating the V4.1 myharness Integration Research content directly.
 
 ## Required reading
 
@@ -111,25 +111,25 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 7 scope
+## Current Batch 8 scope
 
-Batch 7 generates the Harness Engineering Research Themes content only:
+Batch 8 generates the myharness Integration Research content only:
 
-1. Cycle 10 · Skill Behavior & Evaluation
-2. Cycle 11 · Change Contract & Convergence
-3. Cycle 12 · Adaptive Workflow
-4. Cycle 13 · Context Lifecycle & Session Handoff
-5. Cycle 14 · Knowledge Ratification & Harness Minimalism
-6. Cycle 10–14 Research Notes in planned, not-executed state
-7. Planned Source Registry entries with explicit authority and floating-anchor boundaries
-8. Reuse of earlier Cycle sources without upgrading Source IDs into Evidence Claims
-9. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
-10. V4.1 Week 8–12 / `EXP-W08-01` through `EXP-W12-01` historical migration mappings
-11. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
+1. Cycle 15 · Read-only Architecture Audit
+2. Cycle 16 · Hypothesis & ADR Candidate
+3. Cycle 17 · Minimal Implementation Experiment
+4. Cycle 18 · Acceptance、Ablation & Design Beliefs
+5. Cycle 15–18 Research Notes in planned, not-executed state
+6. Evidence preparation boundaries without creating new Source or Evidence Claims
+7. Reuse of earlier Cycle sources without upgrading Source IDs into Evidence Claims
+8. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
+9. V4.1 Week 13–16 / `EXP-W13-01` through `EXP-W16-01` historical migration mappings
+10. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
+11. Explicit separation of Finding、Hypothesis、ADR Candidate、implementation、acceptance result and Design Belief
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 7, add only `cycle-10` through `cycle-14` with planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 15–18 directories.
+Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 8, add only `cycle-15` through `cycle-18` with planned `research-note.md`, `experiments/`, and `evidence/` structure.
 
-Batch 7 content generation does not mean that experiments were run, Skill behavior improved, Change convergence or Adaptive Workflow was validated, a handoff mode was proven superior, knowledge was ratified, Evidence Claims were established, or Support Levels were achieved.
+Batch 8 content generation does not mean that an audit was run, Findings or ADR Candidates were created, an implementation was built or merged, experiments or ablations were executed, Design Beliefs were ratified, Evidence Claims were established, or Support Levels were achieved.
 
 ## Batch 0 required terminology
 
@@ -222,7 +222,7 @@ Required distinctions:
 
 ## Frozen Batch 0 outputs
 
-The following files are the existing Batch 0 baseline, not the current Batch 7 generation target.
+The following files are the existing Batch 0 baseline, not the current Batch 8 generation target.
 
 Expected new files:
 
@@ -262,12 +262,12 @@ The final file list may vary only when justified by the existing repository stru
 
 Do not:
 
-* generate Cycle 15–18正文;
-* implement Batch 8;
-* claim that planned Batch 1, Batch 2, Batch 3, Batch 4, Batch 5, Batch 6 or Batch 7 experiments have been executed;
+* change the frozen Cycle 1–18 names, order or Batch boundaries;
+* claim that planned Batch 1 through Batch 8 experiments have been executed;
 * create Run records, `EVD-*` conclusions, `ENT-*` facts, or Support Assessments before real execution;
-* rewrite all V4.1 content files;
-* create Cycle 15–18 directories;
+* create actual architecture Findings, ADR Candidates, implementation artifacts, Decision Updates, Design Beliefs or Route Review results during content generation;
+* create Cycle 19 or later directories;
+* rewrite all V4.1 historical material outside its Batch 8 migration scope;
 * implement myharness features;
 * implement or merge a complete myharness Host Adapter;
 * implement an OpenCode Adapter or Plugin;
@@ -311,13 +311,13 @@ Also validate:
 
 * all internal relative links;
 * all 18 Cycle names appear in the V4.2 overview;
-* Cycle 1–14正文 exists and Cycle 15–18正文 has not been generated;
-* only `research/cycles/cycle-01` through `research/cycles/cycle-14` exist;
-* Cycle 10–14 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
+* Cycle 1–18正文 exists and remains planned, not executed;
+* only `research/cycles/cycle-01` through `research/cycles/cycle-18` exist;
+* Cycle 15–18 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
 * ZCode source conclusions were not invented;
 * Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
-* Batch 7 files do not claim that Skill behavior, Change convergence, Adaptive Workflow, handoff superiority, knowledge ratification or any S1–S4 result has been validated;
+* Batch 8 files do not claim that an audit, Finding, ADR Candidate, implementation, acceptance result, Design Belief, Route Review or any S1–S4 result has been completed or validated;
 * all changed Markdown files have no trailing whitespace.
 
 Do not commit or push.
