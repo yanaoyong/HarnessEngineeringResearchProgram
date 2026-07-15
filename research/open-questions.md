@@ -99,6 +99,17 @@
 - Candidate Cycle: Cycle 8 / Cycle 9 cross-host abstraction
 - Status: BACKLOG
 
+### OQ-009 · 哪些四宿主 surface / Provider / Model 组合能通过 Cycle 9 target comparability gate？
+
+- Discovered In: Batch 6 / Cycle 9 experiment design
+- Why It Matters: `EXP-C09-01` 需要把 Host semantic route 与 Provider / Model outcome 分开，`EXP-C09-02` 又要求在同一目标 Host 内固定 surface、Provider、Model、permission 与 source capability revision；若只能取得不同 surface 或不同 Model 的 Run，porting method effect 无法裁决
+- Current Evidence: 只有 Cycle 3–8 与 `SRC-CROSSHOST-001..005` 的计划态来源；没有绑定四宿主版本的 Host Profile、Provider Profile、共同 task Run、source-host Project / Behavior baseline 或 `EVD-*`
+- Authority Boundary: 产品名、CLI 可安装、Agent Skills 格式、相同 Tool 名、相同模型显示名、Provider 协议兼容或最终任务成功都不能证明 target strata 可比
+- Blocks Current Research?: YES；不阻塞 Contract question map，但不满足 Gate 的 Host stratum 保持 `PLANNED · NOT EXECUTED / UNKNOWN`，不能进入 Cycle 9 portability Result
+- Priority: HIGH
+- Candidate Cycle: Cycle 9
+- Status: BACKLOG
+
 ## Template
 
 <!--

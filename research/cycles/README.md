@@ -12,8 +12,9 @@
 - [cycle-06 · Codex Execution、Safety & State](cycle-06/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-07 · ZCode Host Contract & Enterprise Reality](cycle-07/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-08 · OpenCode Host Architecture & Model Portability](cycle-08/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-09 · Four-host Harness Abstraction](cycle-09/research-note.md) — `PLANNED · NOT EXECUTED`
 
-Cycle 9–18 目录尚未创建。
+Cycle 10–18 目录尚未创建。
 
 推荐结构：
 
@@ -25,7 +26,7 @@ cycle-01/
 └── evidence/
 ```
 
-Batch 1–5 只创建 `cycle-01` 到 `cycle-08`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-09` 到 `cycle-18` 在对应内容 Batch 前不创建。
+Batch 1–6 只创建 `cycle-01` 到 `cycle-09`。计划态目录必须明确标记 `NOT EXECUTED`，不得制造实验已经开始的印象；`cycle-10` 到 `cycle-18` 在对应内容 Batch 前不创建。
 
 如果路线发生变化，仍以当前核心 Research Question 所属 Cycle 记录，并在 Research Note 与 Route Review 中说明路线变化。
 
