@@ -7,12 +7,12 @@ This repository is currently at:
 * Program version: V4.2
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: Batch 0 common protocol
-* Completed content baseline: Batch 1–4, covering Cycle 1–7
-* Current task: Generate Batch 5 only, covering Cycle 8
+* Completed content baseline: Batch 1–5, covering Cycle 1–8
+* Current task: Generate Batch 6 only, covering Cycle 9
 
-This task starts from the merged V4.2 Batch 4 baseline. Cycle 8 is new in V4.2 and has no V4.1 Week migration source.
+This task starts from the merged V4.2 Batch 5 baseline. V4.1 Week 7 remains the historical migration source for Cycle 9.
 
-Do not apply or reproduce an existing external ZIP or patch. Generate Batch 5 by reading the repository and preserving the frozen Batch 0 protocol and completed Batch 1–4 decisions except where the repository owner explicitly changes them.
+Do not apply or reproduce an existing external ZIP or patch. Generate Batch 6 by reading the repository, preserving the frozen Batch 0 protocol and completed Batch 1–5 decisions except where the repository owner explicitly changes them, and migrating the V4.1 Cross-host Harness Abstraction content directly.
 
 ## Required reading
 
@@ -111,22 +111,23 @@ It must define:
 9. Research workspace naming based on Cycle rather than Week
 10. Migration boundary from V4.1 to V4.2
 
-## Current Batch 5 scope
+## Current Batch 6 scope
 
-Batch 5 generates the OpenCode Host content only:
+Batch 6 generates the Four-host Harness Abstraction content only:
 
-1. Cycle 8 · OpenCode Host Architecture & Model Portability
-2. Cycle 8 Research Note in planned, not-executed state
-3. Planned official Contract and Source Registry entries with explicit authority boundaries
-4. Official Source anchors that remain floating until an execution-time commit is pinned
-5. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
-6. Cycle 8 workspace directories required for later implementation
-7. An explicit separation of Host, Provider, endpoint / protocol, Model and Configuration effects
-8. An explicit record that Cycle 8 is new in V4.2 and has no V4.1 historical experiment mapping
+1. Cycle 9 · Four-host Harness Abstraction
+2. Cycle 9 Research Note in planned, not-executed state
+3. Portable Semantic Contract、Host Adapter、Host-specific Capability and explicit degradation research boundaries
+4. Planned Cross-host Source Registry entries with explicit authority and floating-anchor boundaries
+5. Reuse of Cycle 3–8 Host sources without upgrading Source IDs into Evidence Claims
+6. Experiment designs using `EXP-Cxx-yy` and T01–T03 without creating results
+7. Cycle 9 workspace directories required for later implementation
+8. V4.1 Week 7 / `EXP-W07-01` historical migration mapping
+9. Explicit separation of Host、surface、Provider、endpoint / protocol、Model and Configuration effects
 
-Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 5, add only `cycle-08` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 9–18 directories.
+Workspace directories for the Cycles in the current content Batch may be prepared before experiment execution. For Batch 6, add only `cycle-09` with the planned `research-note.md`, `experiments/`, and `evidence/` structure. Do not create Cycle 10–18 directories.
 
-Batch 5 content generation does not mean that experiments were run, Contract, Source, Behavior or Project Evidence Claims were established, Model portability was proven, or Support Levels were achieved.
+Batch 6 content generation does not mean that experiments were run, Portable Semantic Contracts or Host Adapters were validated, Evidence Claims were established, four-host portability was proven, or Support Levels were achieved.
 
 ## Batch 0 required terminology
 
@@ -219,7 +220,7 @@ Required distinctions:
 
 ## Frozen Batch 0 outputs
 
-The following files are the existing Batch 0 baseline, not the current Batch 4 generation target.
+The following files are the existing Batch 0 baseline, not the current Batch 6 generation target.
 
 Expected new files:
 
@@ -259,13 +260,14 @@ The final file list may vary only when justified by the existing repository stru
 
 Do not:
 
-* generate Cycle 9–18正文;
-* implement Batch 6;
-* claim that planned Batch 1, Batch 2, Batch 3, Batch 4 or Batch 5 experiments have been executed;
+* generate Cycle 10–18正文;
+* implement Batch 7;
+* claim that planned Batch 1, Batch 2, Batch 3, Batch 4, Batch 5 or Batch 6 experiments have been executed;
 * create Run records, `EVD-*` conclusions, `ENT-*` facts, or Support Assessments before real execution;
 * rewrite all V4.1 content files;
-* create Cycle 9–18 directories;
+* create Cycle 10–18 directories;
 * implement myharness features;
+* implement or merge a complete myharness Host Adapter;
 * implement an OpenCode Adapter or Plugin;
 * promise a complete ZCode Plugin;
 * add a fifth primary Host;
@@ -307,13 +309,13 @@ Also validate:
 
 * all internal relative links;
 * all 18 Cycle names appear in the V4.2 overview;
-* Cycle 1–8正文 exists and Cycle 9–18正文 has not been generated;
-* only `research/cycles/cycle-01` through `research/cycles/cycle-08` exist;
-* Cycle 8 workspace directory contains `research-note.md`, `experiments/`, and `evidence/` preparation;
+* Cycle 1–9正文 exists and Cycle 10–18正文 has not been generated;
+* only `research/cycles/cycle-01` through `research/cycles/cycle-09` exist;
+* Cycle 9 workspace directory contains `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
 * ZCode source conclusions were not invented;
-* OpenCode Host, Provider, endpoint / protocol, Model and Configuration effects remain separated;
-* Batch 5 files do not claim that OpenCode or any other Host has already achieved S1–S4;
+* Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
+* Batch 6 files do not claim that a Portable Semantic Contract, Host Adapter, four-host portability or any S1–S4 result has been validated;
 * all changed Markdown files have no trailing whitespace.
 
 Do not commit or push.

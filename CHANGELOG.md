@@ -1,5 +1,32 @@
 # Changelog
 
+## V4.2 Batch 6 · 2026-07-15
+
+Batch 6 将 V4.1 Week 7 迁移为 Cycle 9「Four-host Harness Abstraction」正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、Adapter implementation、portability result 或 Support Assessment。
+
+### Added
+
+- 建立 `Portable Semantic Contract → Capability Requirement → Host Adapter → Bound Host / Provider / Model / Configuration → Direct Behavior / Project Artifact` 工作模型。
+- 定义 `DIRECT / ADAPTED / DEGRADED / HOST_SPECIFIC / UNSUPPORTED / UNKNOWN` 局部 Mapping Disposition，并明确它不替代 S0–S4 Support Level。
+- 设计 `EXP-C09-01` T01 Four-host Semantic Capability Trace；四个 Host 分别绑定 version / surface / Provider / Model / Configuration 与独立 Run Metadata。
+- 将 V4.1 `EXP-W07-01` 迁移为 `EXP-C09-02` T02 Naive Artifact Port vs Portable Semantic Contract；在默认 Claude source baseline 下，Codex、ZCode、OpenCode 目标 strata 分别建立 A / B Run group、Result 与 scoped Evidence，不互相替代。
+- 为 `EXP-C09-02` 预注册 checkpoint / critical-failure 裁决表、replication block 配对规则与 `SUPPORT / REJECT / INCONCLUSIVE` 条件；source Host 变更时按 `target_hosts = four_hosts - {source_host}` 重算目标。
+- 新增 Cross-host Evidence Readiness Gate，保留 Claude Code、Codex、ZCode 与 OpenCode 不同 Source Authority；未通过 Gate 的 Host 使用 `NOT EXECUTED / UNKNOWN`，不伪装为 `UNSUPPORTED`。
+- 新增 `cycle-09` 计划工作区与 `SRC-CROSSHOST-001..005`，登记 Agent Skills Overview / Specification / client implementor guide、Superpowers porting guide 与 Open Harness current repository 浮动锚点。
+
+### Changed
+
+- 更新 README、总纲、Research Infrastructure、Workspace、Cycle index 与 Atlas，使内容基线推进到 Batch 1–6 / Cycle 1–9。
+- 将 Agent Skills format compatibility、Host discovery / activation、procedure execution、Evidence 与 Completion 分开；文件、目录、Tool 名或 Plugin packaging 相同不等于 semantic portability。
+- 刷新 V4.1 OpenHarness 锚点：当前 README 主要定位为 Docker sandbox / long-lived workspace，因此旧 `.oh` primitive / provider surface 只保留为历史迁移线索，不再作为 Cycle 9 主锚点。
+- 新增四宿主 target comparability Open Question，并继续保留 Codex / OpenCode surface parity、OpenCode provenance 与 Provider / Model comparability 边界。
+
+### Validation Boundary
+
+- 内容生成不满足 Cycle 9 Exit Criteria，不创建 Route Review 结果，也不表示任一 Host 或 capability 已达到 S1–S4。
+- 不运行四个 Host，不实现或合并 myharness Adapter，不形成跨四宿主普遍可移植性、公开模型排名、企业或法律结论。
+- 不生成 Cycle 10–18 正文，不实现 Batch 7。
+
 ## V4.2 Batch 5 · 2026-07-14
 
 Batch 5 生成 OpenCode Host 的 Cycle 8 正文与计划态 Research Note。研究执行尚未开始；没有 Run、`EVD-*`、实验结果、已固定 Source Evidence、Model portability conclusion 或 Support Assessment。
