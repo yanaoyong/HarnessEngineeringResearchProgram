@@ -35,13 +35,14 @@
 - Known Limitations:
 - Staleness / Revalidation Trigger:
 
-## ZCode Source Authority Gate
+## Host-specific Source Authority
 
 - Applies?: YES / NO
-- Gate Status: NOT VERIFIED / VERIFIED / REVOKED / NOT APPLICABLE
+- Policy / Gate:
+- Status: NOT VERIFIED / VERIFIED / REVOKED / NOT APPLICABLE
 - Verification Basis:
 
-> For ZCode Runtime Source Evidence, leave the gate `NOT VERIFIED` unless every criterion in `research/source-authority.md` is satisfied.
+> Apply the current Host-specific rule in `research/source-authority.md`. For Qwen Code, distinguish verified official repository identity, pinned revision, and execution-artifact provenance.
 
 ## Derived Evidence
 

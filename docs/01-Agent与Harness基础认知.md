@@ -13,7 +13,7 @@ Batch 1 只建立两个 Foundation Cycle：
 1. Cycle 1 · Coding Agent 最小模型
 2. Cycle 2 · Harness Primitive
 
-本 Batch 将 V4.1 Week 1–2 的研究导航迁移为 V4.2 Cycle 正文，并对齐公共术语、Source Authority、T01–T03、`EXP-Cxx-yy` 与 Run Metadata。它不执行实验，不产生 Support Assessment，不进入 Claude Code、Codex、ZCode、OpenCode 的 Host 专项研究，也不实现 myharness feature 或任何 Adapter。
+本 Batch 将 V4.1 Week 1–2 的研究导航迁移为 V4.2 Cycle 正文，并对齐公共术语、Source Authority、T01–T03、`EXP-Cxx-yy` 与 Run Metadata。V4.3 当前四宿主集合为 Claude Code、Codex、Qwen Code、OpenCode；本 Batch 不进入这些 Host 的专项研究，也不实现 myharness feature 或任何 Adapter。
 
 V4.1 原文仍可在基线提交 `f2b3961cbe125f846818d11a8892fe3c34f2751f` 中复查。旧 `EXP-W01-01`、`EXP-W02-01` 仅作为历史计划 ID（Historical Plan ID）保留，不重编号为已执行 Evidence。
 
@@ -65,7 +65,7 @@ Batch 1 使用以下待验证分层，不把它写成既定事实：
 
 - SWE-bench 排名、Provider 性能或公开模型 benchmark；
 - 大型 Evaluation / Observability 平台；
-- Claude Code、Codex、ZCode 或 OpenCode 的内部架构；
+- Claude Code、Codex、Qwen Code 或 OpenCode 的内部架构；
 - 生产级 Hook、Permission system 或 myharness 实现。
 
 ### 主线研究对象与权限边界（Authority Boundary）

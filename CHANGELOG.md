@@ -1,5 +1,25 @@
 # Changelog
 
+## V4.3 Qwen Code Host-set Amendment · 2026-07-15
+
+Repository owner 将四个主要 Host 中的 ZCode 替换为 Qwen Code。该变更是研究路线优先级决策，不是由已执行 benchmark、Support Assessment 或 enterprise verification 推出的产品排名。
+
+### Changed
+
+- Program version 提升为 V4.3；保留 18 个 Cycle 的编号、顺序、Batch 边界、T01–T03、Experiment ID 与 Evidence / Support 协议。
+- Cycle 7 改为「Qwen Code Host Architecture & Enterprise Reality」；Cycle 9 与 Cycle 18 的第三个 Host stratum 同步改为 Qwen Code。
+- 新增 `docs/10-V4.3-Qwen-Code-Host-Amendment.md`，明确 V4.2 历史基线与 V4.3 当前效力。
+- 将 ZCode 的未验证 Runtime Source Gate 替换为 Qwen Code Official Source Verification：`QwenLM/qwen-code` repository identity 已核验，但 Source Evidence 仍需固定完整 commit，并为 Behavior agreement 建立 execution-artifact provenance。
+- 以 `SRC-QWENCODE-001..013` 替换未派生 `EVD-*` 的 `SRC-ZCODE-001..009`，覆盖官方 overview、settings、model providers、memory、approval、sandbox、hooks、skills、subagents、extensions、architecture、repository 与 releases。
+- 重写 Cycle 7 的 `EXP-C07-01` Contract → Source → Configuration → Behavior trace，并为 `EXP-C07-02` Provider Profile comparison 增加 Model identity / protocol / limit comparability gate。
+- 将 Source Registry 的 ZCode 专用字段改为通用 Host-specific Source Authority 字段；更新 Atlas、Open Questions、Research Workspace、四宿主矩阵与 candidate × Host family。
+
+### Boundaries
+
+- 所有 Cycle 仍为 `PLANNED · NOT EXECUTED`；本次没有运行 Qwen Code，没有创建 Run、Result、`EVD-*`、`ENT-*`、Support Assessment 或 Adapter implementation。
+- “Qwen Code 是综合首选”只记录为 owner route decision；在本计划完成绑定实验前，不升级为 Evidence Claim、公开模型排名或普遍产品结论。
+- V4.2 Changelog 与 Batch 0 Protocol 中的 ZCode 内容保留为历史记录，不进入 V4.3 当前实验矩阵。
+
 ## V4.2 Post-Batch 8 content review corrections · 2026-07-15
 
 本轮只修复 Batch 0–8 内容审查发现的协议与溯源问题，不执行研究、不创建 Result、`EVD-*`、实现或 Support Assessment。

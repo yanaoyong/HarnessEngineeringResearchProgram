@@ -1,6 +1,6 @@
 # Evidence Classification and Source Authority
 
-> Status: FROZEN IN BATCH 0
+> Status: V4.2 BATCH 0 BASELINE · AMENDED BY V4.3 HOST-SET DECISION
 
 [返回 Research Workspace](README.md) · [公共术语](../docs/09-V4.2-Glossary.md) · [Source Registry Template](templates/source-registry.template.md)
 
@@ -45,7 +45,7 @@ SUP-*
 ```text
 SRC-CLAUDE-001
 SRC-CODEX-001
-SRC-ZCODE-001
+SRC-QWENCODE-001
 SRC-OPENCODE-001
 SRC-CROSSHOST-001
 ```
@@ -61,7 +61,7 @@ SRC-CROSSHOST-001
 ```text
 EVD-BEHAVIOR-CODEX-001
 EVD-PROJECT-MYHARNESS-001
-EVD-ENTERPRISE-ZCODE-001
+EVD-ENTERPRISE-QWENCODE-001
 ```
 
 每条 `EVD-*` 记录必须包含：
@@ -112,51 +112,49 @@ Source Registry 必须记录 authority owner、source role、版本或 commit、
 - 每项行为结论必须分离 Host、Provider、endpoint type 和 Model effects。
 - Provider compatibility 不自动证明 Model portability；相同配置文件形状不自动证明行为等价。
 
-## 5. ZCode Source Authority Gate
+## 5. Qwen Code Official Source Verification
 
-ZCode 可以通过以下证据研究：
+V4.3 以 [Qwen Code Host-set Amendment](../docs/10-V4.3-Qwen-Code-Host-Amendment.md) 取代 V4.2 的 ZCode Source Authority Gate。Qwen Code 可以通过以下证据研究：
 
 - Official Contract
-- official product documentation
+- verified Official Source
 - official release information
 - Direct Behavior Evidence
+- Project Evidence
 - local configuration
 - Enterprise Fact
 
-### Gate default
+### Verified repository identity
 
-ZCode Runtime Source Authority Gate 默认是 `NOT VERIFIED`。在 Gate 通过前：
+`QwenLM/qwen-code` 由 Qwen 官方组织维护，官方文档直接链接该仓库，并公开 release / tag 与 Apache-2.0 license。该事实允许把仓库登记为 `OFFICIAL SOURCE`，但不自动产生任何 Runtime Source Evidence 或已部署 architecture conclusion。
 
-- 不得登记 ZCode Runtime Source Evidence。
-- 不得形成 ZCode source-code architecture、内部 lifecycle 或实现路径结论。
-- Source 字段必须使用 `Unsupported / Unknown` 中的 `Unknown`，而不是猜测路径。
-- 社区逆向、非官方仓库、客户端指纹和第三方 patch 只能生成 Open Question。
+### Revision and provenance gate
 
-### Gate pass criteria
+形成 Qwen Code Source Evidence 前必须同时满足：
 
-只有同时满足以下条件，Gate 才能针对一个明确 scope 标记为 `VERIFIED`：
+1. 固定 `https://github.com/QwenLM/qwen-code` 的完整 commit；
+2. 记录 authority、license / provenance、验证日期、研究问题与限定 scope；
+3. 将 claim 定位到相关 source path，并记录 search term、调用追踪深度与 stop point；
+4. 若 claim 用于解释 Direct Behavior，必须以官方 release / tag、package metadata、binary build metadata 或其他可复查官方材料，把实际执行 artifact 映射到该 commit；
+5. Source Registry 记录该来源能够支持和不能支持的判断、已知限制与重新验证触发条件。
 
-1. 仓库由 ZCode 官方组织、官方产品文档或官方 release channel 明确识别。
-2. 可以验证该仓库对应所研究的 Runtime，而非 SDK、示例、客户端壳或无关组件。
-3. 可以固定 repository URL、revision、license/provenance 与验证日期。
-4. 目标 claim 可以定位到相关 source path 和 revision。
-5. Source Registry 记录验证证据、适用 scope 和已知限制。
+只有 repository identity 已验证但 commit 未固定时，条目仍是计划态官方 Source anchor，不能派生 revision-bound `EVD-*`。只有 source commit 已固定但安装映射缺失时，Source observation 与 Behavior observation 必须分开，Source / Behavior agreement 保持 `UNKNOWN`。
 
-Gate 按 scope 生效。某个官方 SDK 通过验证，不代表 ZCode Runtime source authority 自动通过。
-
-### Gate status record
+### Status record
 
 ```text
-Host: ZCode
+Host: Qwen Code
 Scope: <runtime/component>
-Status: NOT VERIFIED / VERIFIED / REVOKED
+Repository Identity: VERIFIED / REVOKED
+Repository: https://github.com/QwenLM/qwen-code
+Pinned Revision: <full commit or NOT PINNED>
+Execution Artifact Provenance: VERIFIED / NOT VERIFIED / NOT APPLICABLE
 Authority Evidence IDs: <IDs>
-Repository and Revision: <only when verified>
 Verified On: <date>
 Limitations: <known limits>
 ```
 
-Batch 0 不识别或预设任何 ZCode 官方 Runtime source repository，因此 Gate 保持协议默认状态，不产生架构结论。
+多协议、多 Provider、相同 Model 名、配置解析成功或官方 architecture overview 都不能替代 revision pinning 与 artifact provenance，也不能单独证明 Model portability、enterprise readiness 或 S1–S4。
 
 ## 6. Claim Construction Rule
 

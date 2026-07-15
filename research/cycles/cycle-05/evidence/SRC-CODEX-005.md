@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：当前未固定 commit，也未建立 Repository Map；目录、crate、module 与调用关系可能变化
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：默认分支、release、repository ownership、target Host version 或相关 capability 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：该仓库是 Codex source，不是 ZCode Runtime source
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

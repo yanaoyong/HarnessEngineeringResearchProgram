@@ -6,7 +6,7 @@
 
 每个 Experiment Record 只绑定一个 candidate、一个 Host / surface stratum、一个 Hypothesis 与一个 Result。V4.1 `EXP-W16-01` 迁移为以下计划 family：
 
-| Cycle 16 rank | Claude Code | Codex | ZCode | OpenCode |
+| Cycle 16 rank | Claude Code | Codex | Qwen Code | OpenCode |
 |---|---|---|---|---|
 | Rank 1 | `EXP-C18-01` | `EXP-C18-02` | `EXP-C18-03` | `EXP-C18-04` |
 | Rank 2 | `EXP-C18-05` | `EXP-C18-06` | `EXP-C18-07` | `EXP-C18-08` |

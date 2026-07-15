@@ -34,11 +34,12 @@
 - 已知限制（Known Limitations）：capability 为 experimental；语法、decision vocabulary、matching 与 config layer 可变化
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：页面、experimental status、rule syntax、matching、decision 或 active config layer 变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：该来源与 ZCode Runtime 无关
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

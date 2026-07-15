@@ -30,15 +30,16 @@
 
 - 权限证据 ID（Authority Evidence IDs）：无；官方站点及其指向的项目仓库已核验
 - 本来源可支持的判断（Claim This Source May Support）：执行时绑定页面版本后，对 Agent Skills 项目公开描述的 format purpose、skill folder 与 progressive disclosure 概览形成 scoped Contract claim
-- 本来源不可支持的判断（Claim This Source Cannot Support）：Claude Code、Codex、ZCode、OpenCode 任一版本已兼容、已发现、已激活或已正确执行 Skill；跨 Host Behavior parity、Provider / Model portability 或 S1–S4
+- 本来源不可支持的判断（Claim This Source Cannot Support）：Claude Code、Codex、Qwen Code、OpenCode 任一版本已兼容、已发现、已激活或已正确执行 Skill；跨 Host Behavior parity、Provider / Model portability 或 S1–S4
 - 已知限制（Known Limitations）：概览使用“cross-product reuse”等项目定位语言；是否在具体 Host 成立必须分别经过 Host Contract 与 Direct Behavior 验证
 - 过期 / 重新验证触发条件（Staleness / Revalidation Trigger）：format identity、lifecycle terminology、support statement、navigation 或标准版本变化
 
-## ZCode 来源权限门禁（ZCode Source Authority Gate）
+## Host-specific Source Authority
 
 - 是否适用（Applies?）：`NO`
-- 门禁状态（Gate Status）：`NOT APPLICABLE`
-- 验证依据（Verification Basis）：本来源是跨产品格式 Contract，不是 ZCode Runtime Source
+- Policy / Gate：`NONE`
+- 状态（Status）：`NOT APPLICABLE`
+- 验证依据（Verification Basis）：该来源适用通用 Source Authority 规则，不需要额外 Host-specific gate
 
 ## 派生证据（Derived Evidence）
 

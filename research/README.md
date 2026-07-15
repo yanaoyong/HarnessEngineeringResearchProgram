@@ -1,6 +1,6 @@
-# V4.2 研究工作区（Research Workspace）
+# V4.3 研究工作区（Research Workspace）
 
-> Batch 0 已冻结公共协议；Batch 1–8 的 C01–C18 正文与计划态 Research Note 已生成，研究执行尚未开始。
+> V4.2 Batch 0 公共协议已由 V4.3 Qwen Code Host-set Amendment 更新；Batch 1–8 的 C01–C18 正文与计划态 Research Note 已生成，研究执行尚未开始。
 
 这里存放 Research Program 内容准备与执行产生的真实研究制品。计划态制品必须明确标记 `NOT EXECUTED`；工作区按内容 Batch 生长，不一次性预创建 18 个空目录。
 
@@ -10,6 +10,7 @@
 - [Evidence Classification and Source Authority](source-authority.md)
 - [Host Support Levels · S0–S4](support-levels.md)
 - [V4.2 Common Glossary](../docs/09-V4.2-Glossary.md)
+- [V4.3 Qwen Code Host-set Amendment](../docs/10-V4.3-Qwen-Code-Host-Amendment.md)
 - [Research Infrastructure](../docs/06-Research-Infrastructure.md)
 
 ## 原则（Principles）
@@ -88,7 +89,7 @@ research/cycles/cycle-07/
 ├── experiments/
 │   └── README.md
 └── evidence/
-    └── SRC-ZCODE-001..009.md
+    └── SRC-QWENCODE-001..013.md
 
 research/cycles/cycle-08/
 ├── research-note.md

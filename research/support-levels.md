@@ -83,4 +83,4 @@ Freshness / Revalidation Trigger:
 
 ## 5. Batch 0 Initialization Rule
 
-Host profile 和 enterprise fact sheet 模板中的 Support Level 字段保持空白或 `S0 · Not Assessed`。Batch 0 不创建 Claude Code、Codex、ZCode 或 OpenCode 的 S1–S4 achievement table。
+Host profile 和 enterprise fact sheet 模板中的 Support Level 字段保持空白或 `S0 · Not Assessed`。当前计划不预设 Claude Code、Codex、Qwen Code 或 OpenCode 的 S1–S4 achievement table。

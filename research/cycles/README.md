@@ -10,7 +10,7 @@
 - [cycle-04 · Claude Code Extension & Control Surface](cycle-04/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-05 · Codex Architecture & Customization](cycle-05/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-06 · Codex Execution、Safety & State](cycle-06/research-note.md) — `PLANNED · NOT EXECUTED`
-- [cycle-07 · ZCode Host Contract & Enterprise Reality](cycle-07/research-note.md) — `PLANNED · NOT EXECUTED`
+- [cycle-07 · Qwen Code Host Architecture & Enterprise Reality](cycle-07/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-08 · OpenCode Host Architecture & Model Portability](cycle-08/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-09 · Four-host Harness Abstraction](cycle-09/research-note.md) — `PLANNED · NOT EXECUTED`
 - [cycle-10 · Skill Behavior & Evaluation](cycle-10/research-note.md) — `PLANNED · NOT EXECUTED`

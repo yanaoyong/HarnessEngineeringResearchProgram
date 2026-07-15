@@ -1,6 +1,6 @@
 # PART VI · myharness Integration Research
 
-> V4.2 Batch 8 · Cycle 15–18 正文迁移。状态：`PLANNED · NOT EXECUTED`。
+> V4.2 Batch 8 正文由 V4.3 Host-set Amendment 继承，并将 Cycle 18 第三个 Host stratum 更新为 Qwen Code。状态：`PLANNED · NOT EXECUTED`。
 
 [← 上一卷](04-Harness-Engineering-Research-Themes.md) · [返回总览](../README.md)
 
@@ -235,7 +235,7 @@ Cycle 18 可复用 Cycle 1 `SRC-FOUNDATION-003` 的 SWE-agent ACI paper 作为 i
 
 `H-C18-<candidate>-<host> · Evidence-gated Marginal Value`：对一个 candidate、一个绑定 Host / surface stratum 和三个位于该 stratum 的固定 T03 task instances，最小信息量消融矩阵可以暴露 Current myharness 与候选 variant 在 Outcome、Process、Governance、Context 和 Cost 上的边际取舍，并支持该 candidate / Host scope 的 Decision Update；它不能证明跨 Host、Provider、Model 或项目的普遍优越性。
 
-Cycle 18 预留 `EXP-C18-01..12` candidate × Host family：Rank 1 使用 `01..04`、Rank 2 使用 `05..08`、Rank 3 使用 `09..12`，每组依次绑定 Claude Code、Codex、ZCode、OpenCode。只有 candidate 与 Host stratum 通过 readiness / authority / parity gate 时才创建对应 Experiment Record；每个记录只有一个 Hypothesis 与 Result。
+Cycle 18 预留 `EXP-C18-01..12` candidate × Host family：Rank 1 使用 `01..04`、Rank 2 使用 `05..08`、Rank 3 使用 `09..12`，每组依次绑定 Claude Code、Codex、Qwen Code、OpenCode。只有 candidate 与 Host stratum 通过 readiness / authority / parity gate 时才创建对应 Experiment Record；每个记录只有一个 Hypothesis 与 Result。
 
 每个 `EXP-C18-xx` 类型为 `ABLATION`，Stable Task 为 `T03 · Medium Change`：
 
