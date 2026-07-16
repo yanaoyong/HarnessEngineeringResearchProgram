@@ -321,6 +321,7 @@ Before reporting completion, run:
 
 ```bash
 python3 scripts/validate_content.py
+python3 scripts/test_content_validation.py
 git diff --check
 git status --short
 ```
@@ -338,4 +339,5 @@ Also validate:
 * no revision-bound Qwen Code Source claim exists unless it is pinned to a verified official revision and supported by the required artifact provenance;
 * Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
 * Batch 8 files do not claim that an audit, Finding, ADR Candidate, implementation, acceptance result, Design Belief, Route Review or any S1–S4 result has been completed or validated;
+* `research/support-assessments/` contains only its README while `research_execution` is `NOT_STARTED`;
 * all changed Markdown files have no trailing whitespace.

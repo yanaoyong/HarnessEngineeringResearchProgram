@@ -1,5 +1,21 @@
 # Changelog
 
+## V4.3 Content validation hardening · 2026-07-16
+
+本轮修复独立复审发现的两项自动校验漏检，不改变研究内容、Cycle / Batch / Experiment ID、Evidence taxonomy、Support Level 语义或执行状态。
+
+### Changed
+
+- 为每个 Cycle 增加显式 `note_experiments` 基线；Research Note 的 Experiment ID 现在必须与该基线完全一致，Cycle 18 的摘要式实验入口作为显式例外登记。
+- 新增 `research/support-assessments/` 固定入口；`research_execution = NOT_STARTED` 时只允许 README，禁止提前创建正式 Support Assessment。
+- 新增 `scripts/test_content_validation.py`，在临时 Git 副本中复现并拦截“Cycle 17 Note 遗漏实验 ID”和“研究开始前创建 Support Assessment”两项回归。
+- GitHub Actions、AGENTS、贡献指南、PR template 与 Research Infrastructure 同步运行或说明回归测试。
+
+### Boundaries
+
+- 不创建实际 Support Assessment，不声明任一 Host 达到 S1–S4。
+- 不包含 Issue Form YAML schema 或 Markdown heading-anchor 校验；两项 Low 优化留待未来按维护价值决定。
+
 ## V4.3 Navigation and public repository governance · 2026-07-16
 
 在内容完整性 CI 已建立后，本轮为公共仓库增加稳定导航和贡献治理入口；不修改研究协议、Cycle 内容、Experiment / Source ID、执行状态或证据结论。

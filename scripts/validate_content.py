@@ -305,11 +305,18 @@ def check_cycles_and_sources(validator: Validator, baseline: dict) -> None:
         )
 
         expected_experiments = set(cycle["experiments"])
+        expected_note_experiments = set(cycle["note_experiments"])
         note_experiments = set(EXPERIMENT_ID_RE.findall(note))
         planned_experiments = set(EXPERIMENT_ID_RE.findall(experiments))
         validator.require(planned_experiments == expected_experiments, f"experiments: Cycle {number_text} IDs differ from baseline")
-        validator.require(note_experiments <= expected_experiments, f"experiments: Cycle {number_text} note contains undeclared IDs")
-        validator.require(bool(note_experiments), f"experiments: Cycle {number_text} note contains no planned Experiment ID")
+        validator.require(
+            expected_note_experiments <= expected_experiments,
+            f"experiments: Cycle {number_text} note baseline contains an undeclared Experiment ID",
+        )
+        validator.require(
+            note_experiments == expected_note_experiments,
+            f"experiments: Cycle {number_text} Research Note IDs differ from baseline",
+        )
         for experiment_id in expected_experiments:
             validator.require(experiment_id.startswith(f"EXP-C{number_text}-"), f"experiments: {experiment_id} is assigned to the wrong Cycle")
             validator.require(experiment_id not in global_experiment_ids, f"experiments: duplicate baseline ID {experiment_id}")
@@ -351,6 +358,12 @@ def check_not_started_boundary(validator: Validator, baseline: dict) -> None:
     for relative_dir in ("research/adr-candidates", "research/route-reviews"):
         files = {path.name for path in (ROOT / relative_dir).iterdir() if path.is_file()}
         validator.require(files == {"README.md"}, f"state: {relative_dir} contains a ratified artifact")
+    support_assessments = ROOT / "research/support-assessments"
+    files = {path.name for path in support_assessments.iterdir() if path.is_file()}
+    validator.require(
+        files == {"README.md"},
+        "state: research/support-assessments contains an unauthorized assessment artifact",
+    )
 
     forbidden_filenames = re.compile(r"^(EVD-|ENT-|ADR-CANDIDATE-\d|FINDING-|RUN-)")
     for path in (ROOT / "research").rglob("*"):

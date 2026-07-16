@@ -23,6 +23,7 @@
 ## Validation
 
 - [ ] `python3 scripts/validate_content.py`
+- [ ] `python3 scripts/test_content_validation.py`
 - [ ] `git diff --check`
 - [ ] Internal links and Manifest were reviewed.
 
