@@ -1,5 +1,23 @@
 # Changelog
 
+## V4.3 Post-generation state and protocol normalization · 2026-07-16
+
+Batch 1–8 content generation is complete and research execution has not started. This maintenance correction removes stale generation-stage wording and binds future Experiment / Run records to the effective V4.3 protocol without changing frozen Cycle, Batch, Experiment or Evidence semantics.
+
+### Changed
+
+- 将仓库默认状态统一为“Batch 1–8 内容生成完成、当前没有活动 Content Batch、研究执行尚未开始”，移除 Batch 4 / Batch 8 的现行“当前生成”措辞。
+- 统一提交与推送规则：只有 repository owner 明确要求时才允许 commit / push，移除与该规则冲突的无条件禁止语句。
+- 将 `EXP-Wxx-yy` 明确为已完成迁移后的 historical mapping ID，不再使用“直到对应 Batch 迁移”的旧阶段表述。
+- 修正 Experiment 总述，使 `HYPOTHESIS_RESULT` 与 `OBSERVATION_ONLY` 都有一致的协议表达。
+- 将 Run Metadata schema 提升为 `v4.3-r1`，新增 Program version、V4.2 base schema、Research Program commit 与 applied amendment binding；Experiment Record 同步增加 Protocol Binding。
+- 为 Qwen Code Host-set Amendment 分配稳定 ID `V4.3-QWEN-CODE-HOST-SET`。
+
+### Boundaries
+
+- 不改变 Cycle 1–18 名称、顺序、Batch 边界、T01–T03、`EXP-Cxx-yy`、Evidence taxonomy 或 S0–S4。
+- 不删除 V4.1 / V4.2 / ZCode 历史记录，不创建 Run、Result、`EVD-*`、`ENT-*`、Support Assessment 或实现。
+
 ## V4.3 Qwen Code Host-set Amendment · 2026-07-15
 
 Repository owner 将四个主要 Host 中的 ZCode 替换为 Qwen Code。该变更是研究路线优先级决策，不是由已执行 benchmark、Support Assessment 或 enterprise verification 推出的产品排名。

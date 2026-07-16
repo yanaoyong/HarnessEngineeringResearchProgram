@@ -8,7 +8,7 @@ This repository is currently at:
 * Current structure: 18 Cycle-based research cycles
 * Frozen baseline: V4.2 Batch 0 common protocol plus the V4.3 Qwen Code Host-set Amendment
 * Completed content baseline: Batch 1–8, covering Cycle 1–18
-* Current task: Maintain the owner-approved V4.3 Qwen Code Host-set migration; no research execution is active
+* Current default state: Batch 1–8 content generation is complete; no content Batch or research execution is active
 
 The repository is based on the merged V4.2 Batch 8 baseline plus the owner-approved V4.3 replacement of ZCode with Qwen Code. V4.1 Week 1–16 have been migrated and remain historical mapping sources only.
 
@@ -179,6 +179,7 @@ The task suite is for directional comparison, not public model benchmarking.
 
 Experiment records must separate:
 
+* Program version, base protocol schema, Research Program commit, and applied amendments
 * repository commit
 * Host and Host version
 * Provider and endpoint type
@@ -203,7 +204,7 @@ EXP-C08-02
 EXP-C18-01
 ```
 
-Existing `EXP-Wxx-yy` references remain historical until their corresponding content Batch is migrated.
+All corresponding content Batches have been migrated. Existing `EXP-Wxx-yy` references remain historical mapping IDs and must not be reused for new research artifacts.
 
 ## Host support levels
 
@@ -224,7 +225,7 @@ Required distinctions:
 
 ## Frozen Batch 0 outputs
 
-The following files are the existing Batch 0 baseline, not the current Batch 8 generation target.
+The following files are the historical Batch 0 output set. The repository currently has no active content-generation Batch.
 
 Expected new files:
 
@@ -271,7 +272,7 @@ Do not:
 * create Run records, `EVD-*` conclusions, `ENT-*` facts, or Support Assessments before real execution;
 * create actual architecture Findings, ADR Candidates, implementation artifacts, Decision Updates, Design Beliefs or Route Review results during content generation;
 * create Cycle 19 or later directories;
-* rewrite all V4.1 historical material outside its Batch 8 migration scope;
+* rewrite all V4.1 historical material outside an explicitly authorized maintenance or research-execution scope;
 * implement myharness features;
 * implement or merge a complete myharness Host Adapter;
 * implement an OpenCode Adapter or Plugin;
@@ -284,7 +285,7 @@ Do not:
 ## Editing discipline
 
 * Preserve useful V4.1 content as migration baseline.
-* Clearly label V4.1 content that remains pending migration.
+* Clearly label retained V4.1 content as historical mapping material; Week 1–16 content migration is complete.
 * Use native Markdown.
 * Do not add trailing whitespace.
 * Keep internal links valid.
@@ -319,9 +320,7 @@ Also validate:
 * only `research/cycles/cycle-01` through `research/cycles/cycle-18` exist;
 * Cycle 15–18 workspace directories contain `research-note.md`, `experiments/`, and `evidence/` preparation;
 * Source anchors without a pinned commit are labeled as floating anchors to be verified at execution time;
-* Qwen Code Source claims are pinned to a verified official revision and do not exceed artifact provenance;
+* no revision-bound Qwen Code Source claim exists unless it is pinned to a verified official revision and supported by the required artifact provenance;
 * Host、surface、Provider、endpoint / protocol、Model and Configuration effects remain separated;
 * Batch 8 files do not claim that an audit, Finding, ADR Candidate, implementation, acceptance result, Design Belief, Route Review or any S1–S4 result has been completed or validated;
 * all changed Markdown files have no trailing whitespace.
-
-Do not commit or push.

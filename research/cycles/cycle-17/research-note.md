@@ -17,7 +17,7 @@
 ## 3. 范围与退出条件
 
 - 范围：Cycle 16 排名第 1–3 的合格候选，分别预留 `EXP-C17-01..03`；每个候选先构建并冻结 H0 / H1 Harness revisions，再使用共同 task-fixture baseline 做独立 T03 A0 / A1 paired experiment；V4.1 Week 15 迁移。
-- 范围外：当前生成代码、跨候选重构、自动合并 main、生产发布或最终 ADR Decision。
+- 范围外：内容生成阶段编写代码、跨候选重构、自动合并 main、生产发布或最终 ADR Decision。
 - 退出条件：每个执行候选有 3 个 paired blocks、可逆 diff、rollback evidence 与候选级 Result。
 
 当前退出条件未满足；Cycle 16 尚未产生候选。

@@ -38,4 +38,4 @@ Cycle 15 未真实完成前不得创建 Experiment Record。输入 packet 必须
 - `REJECT`：至少一个完整 Run 的多数候选无法追溯或证伪，或评分越过 evidence / reversibility gate 把候选包装为已接受决策。
 - `INCONCLUSIVE`：输入 Finding 不完整、Run 缺失、evaluator disagreement 未记录或其他 confounder 未分离。
 
-当前 Batch 不执行本实验，也不创建 `research/adr-candidates/ADR-*`。
+Batch 8 内容生成阶段不执行本实验，也不创建 `research/adr-candidates/ADR-*`。
