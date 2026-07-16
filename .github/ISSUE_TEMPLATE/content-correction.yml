@@ -1,0 +1,59 @@
+name: Content correction
+description: Report a navigation, consistency, Source Registry or current-state problem.
+title: "[Content]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for repository content problems. Do not use a public issue for credentials, private data or exploitable security details.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Navigation or broken link
+        - Current state or protocol wording
+        - Cycle or Batch content
+        - Experiment plan or ID
+        - Source Registry or authority boundary
+        - Template, validation or governance
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: File or section
+      description: Provide a repository-relative path and heading when possible.
+      placeholder: docs/00-研究计划总纲.md · 18 Cycle Overview
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed problem
+      description: Explain what is missing, stale, contradictory or broken.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected correction
+      description: Describe the desired state without upgrading plans or sources into results.
+    validations:
+      required: true
+  - type: textarea
+    id: basis
+    attributes:
+      label: Verification basis
+      description: Link the governing repository file or official source. Do not include secrets.
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundary confirmation
+      options:
+        - label: I am not reporting credentials, private data or exploitable security details publicly.
+          required: true
+        - label: I have not represented a planned experiment or Source ID as an executed result or Evidence Claim.
+          required: true

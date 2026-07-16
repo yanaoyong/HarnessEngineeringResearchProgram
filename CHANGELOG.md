@@ -1,5 +1,27 @@
 # Changelog
 
+## V4.3 Navigation and public repository governance · 2026-07-16
+
+在内容完整性 CI 已建立后，本轮为公共仓库增加稳定导航和贡献治理入口；不修改研究协议、Cycle 内容、Experiment / Source ID、执行状态或证据结论。
+
+### Added
+
+- 新增 `docs/README.md`，按任务、Batch / Cycle、协议与历史边界组织文档入口。
+- 新增 `CONTRIBUTING.md`、`GOVERNANCE.md`、`CODE_OF_CONDUCT.md` 与 `SECURITY.md`，明确贡献、决策、安全报告和行为边界。
+- 新增 CODEOWNERS、Pull Request template、Content correction 与 Research execution proposal Issue Forms，并关闭无结构 blank Issue。
+- 将公共治理文件、owner、Issue Form 必需字段与当前 `LICENSE = NOT_DECLARED` 状态纳入自动内容基线。
+
+### Changed
+
+- README 增加 Content integrity badge 和快速导航，并将 18 条重复 Research Note 链接收敛到 Batch / Cycle 表与 Cycle 索引。
+- Research Workspace 与 AGENTS 导航同步接入公共治理和文档地图。
+
+### Boundaries
+
+- 本轮不选择或授予项目许可证；仓库公开可见不等于自动获得复制、修改或再分发许可。
+- CODEOWNERS 不声称 branch protection / ruleset 已启用；平台级保护仍由 repository owner 单独配置。
+- Issue Form 是提案或问题收集入口，不授权研究执行，也不创建 Run、Result、`EVD-*`、`ENT-*` 或 Support Assessment。
+
 ## V4.3 Content integrity automation · 2026-07-16
 
 在 PR1 统一 V4.3 现行状态与协议绑定后，本轮把内容完整性要求转换为可重复运行的本地校验和 GitHub Actions 门禁；不执行研究，也不改变冻结的 Cycle、Batch、Experiment、Evidence 或 Support 语义。

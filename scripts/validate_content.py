@@ -175,6 +175,56 @@ def check_program_contract(validator: Validator, baseline: dict) -> None:
     )
 
 
+def check_public_governance(validator: Validator, baseline: dict) -> None:
+    governance = baseline["governance"]
+    maintainer = governance["maintainer"]
+    codeowners = ROOT / ".github/CODEOWNERS"
+    validator.require_contains(codeowners, f"* {maintainer}", "governance")
+    validator.require_contains(codeowners, f"/.github/ {maintainer}", "governance")
+
+    if governance["license_status"] == "NOT_DECLARED":
+        license_files = [path.name for path in ROOT.glob("LICENSE*") if path.is_file()]
+        validator.require(not license_files, f"governance: license is NOT_DECLARED but found {license_files}")
+    else:
+        validator.require(False, f"governance: unsupported license_status {governance['license_status']!r}")
+
+    validator.require_contains(ROOT / "CONTRIBUTING.md", "python3 scripts/validate_content.py", "governance")
+    validator.require_contains(ROOT / "CONTRIBUTING.md", "仓库当前没有项目级 `LICENSE`", "governance")
+    validator.require_contains(ROOT / "GOVERNANCE.md", maintainer, "governance")
+    validator.require_contains(ROOT / "CODE_OF_CONDUCT.md", "Security Policy", "governance")
+    validator.require_contains(
+        ROOT / "SECURITY.md",
+        "https://github.com/yanaoyong/HarnessEngineeringResearchProgram/security/advisories/new",
+        "governance",
+    )
+    validator.require_contains(ROOT / "README.md", "docs/README.md", "navigation")
+    validator.require_contains(ROOT / "README.md", "CONTRIBUTING.md", "navigation")
+    validator.require_contains(ROOT / "docs/README.md", "V4.3 Qwen Code Host-set Amendment", "navigation")
+
+    pull_request_template = ROOT / ".github/pull_request_template.md"
+    validator.require_contains(pull_request_template, "python3 scripts/validate_content.py", "governance")
+    validator.require_contains(pull_request_template, "Impact and boundaries", "governance")
+
+    issue_ids: set[str] = set()
+    for relative_path in governance["issue_forms"]:
+        path = ROOT / relative_path
+        validator.require(path.is_file(), f"governance: missing Issue Form {relative_path}")
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for required_key in ("name:", "description:", "body:"):
+            validator.require(re.search(rf"^{required_key}", text, re.MULTILINE) is not None, f"governance: {relative_path} is missing {required_key}")
+        ids = re.findall(r"^\s+id:\s+([a-zA-Z0-9_-]+)\s*$", text, re.MULTILINE)
+        validator.require(bool(ids), f"governance: {relative_path} defines no input IDs")
+        for item_id in ids:
+            validator.require(item_id not in issue_ids, f"governance: duplicate Issue Form ID {item_id}")
+            issue_ids.add(item_id)
+
+    issue_config = ROOT / ".github/ISSUE_TEMPLATE/config.yml"
+    validator.require_contains(issue_config, "blank_issues_enabled: false", "governance")
+    validator.require_contains(issue_config, "security/advisories/new", "governance")
+
+
 def source_id_from_entry(path: Path, validator: Validator) -> str | None:
     text = path.read_text(encoding="utf-8")
     filename_id = path.stem
@@ -326,6 +376,7 @@ def main() -> int:
         check_manifest(validator, baseline, args.write_manifest)
         check_markdown_links(validator)
         check_program_contract(validator, baseline)
+        check_public_governance(validator, baseline)
         check_cycles_and_sources(validator, baseline)
         check_not_started_boundary(validator, baseline)
 

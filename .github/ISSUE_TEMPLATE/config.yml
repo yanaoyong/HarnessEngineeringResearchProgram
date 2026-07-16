@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://github.com/yanaoyong/HarnessEngineeringResearchProgram/security/advisories/new
+    about: Report credentials, workflow injection, privacy exposure or exploitable vulnerabilities privately.
+  - name: Documentation map
+    url: https://github.com/yanaoyong/HarnessEngineeringResearchProgram/blob/main/docs/README.md
+    about: Find the current protocol, Cycle content and research workspace before opening an issue.

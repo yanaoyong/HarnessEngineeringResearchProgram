@@ -1,0 +1,8 @@
+# Default owner for repository content and governance.
+* @yanaoyong
+
+# Protect governance and validation rules with explicit ownership.
+/.github/ @yanaoyong
+/AGENTS.md @yanaoyong
+/validation/ @yanaoyong
+/scripts/ @yanaoyong
