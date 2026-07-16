@@ -29,6 +29,7 @@
 
    ```bash
    python3 scripts/validate_content.py
+   python3 scripts/test_content_validation.py
    git diff --check
    git status --short
    ```

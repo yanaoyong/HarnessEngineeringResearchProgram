@@ -26,3 +26,6 @@ jobs:
 
       - name: Validate content integrity
         run: python3 scripts/validate_content.py
+
+      - name: Run content validation regression tests
+        run: python3 scripts/test_content_validation.py

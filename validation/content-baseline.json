@@ -70,6 +70,7 @@
     "research/design-beliefs.md",
     "research/open-questions.md",
     "research/route-reviews/README.md",
+    "research/support-assessments/README.md",
     "research/task-suite.md",
     "research/source-authority.md",
     "research/support-levels.md",
@@ -83,6 +84,7 @@
     "research/templates/run-metadata.template.yaml",
     "research/templates/source-registry.template.md",
     "scripts/validate_content.py",
+    "scripts/test_content_validation.py",
     "validation/content-baseline.json"
   ],
   "manifest": {
@@ -96,6 +98,7 @@
       "batch": 1,
       "name": "Coding Agent 最小模型",
       "experiments": ["EXP-C01-01"],
+      "note_experiments": ["EXP-C01-01"],
       "sources": ["SRC-FOUNDATION-001", "SRC-FOUNDATION-002", "SRC-FOUNDATION-003"]
     },
     {
@@ -103,6 +106,7 @@
       "batch": 1,
       "name": "Harness Primitive",
       "experiments": ["EXP-C02-01", "EXP-C02-02"],
+      "note_experiments": ["EXP-C02-01", "EXP-C02-02"],
       "sources": ["SRC-FOUNDATION-004"]
     },
     {
@@ -110,6 +114,7 @@
       "batch": 2,
       "name": "Claude Code Context Lifecycle",
       "experiments": ["EXP-C03-01", "EXP-C03-02"],
+      "note_experiments": ["EXP-C03-01", "EXP-C03-02"],
       "sources": ["SRC-CLAUDE-001", "SRC-CLAUDE-002", "SRC-CLAUDE-003", "SRC-CLAUDE-004", "SRC-CLAUDE-006"]
     },
     {
@@ -117,6 +122,7 @@
       "batch": 2,
       "name": "Claude Code Extension & Control Surface",
       "experiments": ["EXP-C04-01"],
+      "note_experiments": ["EXP-C04-01"],
       "sources": ["SRC-CLAUDE-007", "SRC-CLAUDE-008", "SRC-CLAUDE-009", "SRC-CLAUDE-010"]
     },
     {
@@ -124,6 +130,7 @@
       "batch": 3,
       "name": "Codex Architecture & Customization",
       "experiments": ["EXP-C05-01", "EXP-C05-02", "EXP-C05-03", "EXP-C05-04"],
+      "note_experiments": ["EXP-C05-01", "EXP-C05-02", "EXP-C05-03", "EXP-C05-04"],
       "sources": ["SRC-CODEX-001", "SRC-CODEX-002", "SRC-CODEX-003", "SRC-CODEX-004", "SRC-CODEX-005"]
     },
     {
@@ -131,6 +138,7 @@
       "batch": 3,
       "name": "Codex Execution、Safety & State",
       "experiments": ["EXP-C06-01", "EXP-C06-02"],
+      "note_experiments": ["EXP-C06-01", "EXP-C06-02"],
       "sources": ["SRC-CODEX-006", "SRC-CODEX-007", "SRC-CODEX-008", "SRC-CODEX-009", "SRC-CODEX-010"]
     },
     {
@@ -138,6 +146,7 @@
       "batch": 4,
       "name": "Qwen Code Host Architecture & Enterprise Reality",
       "experiments": ["EXP-C07-01", "EXP-C07-02"],
+      "note_experiments": ["EXP-C07-01", "EXP-C07-02"],
       "sources": ["SRC-QWENCODE-001", "SRC-QWENCODE-002", "SRC-QWENCODE-003", "SRC-QWENCODE-004", "SRC-QWENCODE-005", "SRC-QWENCODE-006", "SRC-QWENCODE-007", "SRC-QWENCODE-008", "SRC-QWENCODE-009", "SRC-QWENCODE-010", "SRC-QWENCODE-011", "SRC-QWENCODE-012", "SRC-QWENCODE-013"]
     },
     {
@@ -145,6 +154,7 @@
       "batch": 5,
       "name": "OpenCode Host Architecture & Model Portability",
       "experiments": ["EXP-C08-01", "EXP-C08-02", "EXP-C08-03"],
+      "note_experiments": ["EXP-C08-01", "EXP-C08-02", "EXP-C08-03"],
       "sources": ["SRC-OPENCODE-001", "SRC-OPENCODE-002", "SRC-OPENCODE-003", "SRC-OPENCODE-004", "SRC-OPENCODE-005", "SRC-OPENCODE-006", "SRC-OPENCODE-007", "SRC-OPENCODE-008", "SRC-OPENCODE-009", "SRC-OPENCODE-010", "SRC-OPENCODE-011", "SRC-OPENCODE-012"]
     },
     {
@@ -152,6 +162,7 @@
       "batch": 6,
       "name": "Four-host Harness Abstraction",
       "experiments": ["EXP-C09-01", "EXP-C09-02"],
+      "note_experiments": ["EXP-C09-01", "EXP-C09-02"],
       "sources": ["SRC-CROSSHOST-001", "SRC-CROSSHOST-002", "SRC-CROSSHOST-003", "SRC-CROSSHOST-004", "SRC-CROSSHOST-005"]
     },
     {
@@ -159,6 +170,7 @@
       "batch": 7,
       "name": "Skill Behavior & Evaluation",
       "experiments": ["EXP-C10-01", "EXP-C10-02"],
+      "note_experiments": ["EXP-C10-01", "EXP-C10-02"],
       "sources": ["SRC-HARNESS-001", "SRC-HARNESS-002"]
     },
     {
@@ -166,6 +178,7 @@
       "batch": 7,
       "name": "Change Contract & Convergence",
       "experiments": ["EXP-C11-01"],
+      "note_experiments": ["EXP-C11-01"],
       "sources": ["SRC-HARNESS-005", "SRC-HARNESS-006", "SRC-HARNESS-013"]
     },
     {
@@ -173,6 +186,7 @@
       "batch": 7,
       "name": "Adaptive Workflow",
       "experiments": ["EXP-C12-01", "EXP-C12-02"],
+      "note_experiments": ["EXP-C12-01", "EXP-C12-02"],
       "sources": ["SRC-HARNESS-007", "SRC-HARNESS-014"]
     },
     {
@@ -180,6 +194,7 @@
       "batch": 7,
       "name": "Context Lifecycle & Session Handoff",
       "experiments": ["EXP-C13-01"],
+      "note_experiments": ["EXP-C13-01"],
       "sources": ["SRC-HARNESS-009"]
     },
     {
@@ -187,6 +202,7 @@
       "batch": 7,
       "name": "Knowledge Ratification & Harness Minimalism",
       "experiments": ["EXP-C14-01"],
+      "note_experiments": ["EXP-C14-01"],
       "sources": ["SRC-HARNESS-010"]
     },
     {
@@ -194,6 +210,7 @@
       "batch": 8,
       "name": "Read-only Architecture Audit",
       "experiments": ["EXP-C15-01"],
+      "note_experiments": ["EXP-C15-01"],
       "sources": []
     },
     {
@@ -201,6 +218,7 @@
       "batch": 8,
       "name": "Hypothesis & ADR Candidate",
       "experiments": ["EXP-C16-01"],
+      "note_experiments": ["EXP-C16-01"],
       "sources": []
     },
     {
@@ -208,6 +226,7 @@
       "batch": 8,
       "name": "Minimal Implementation Experiment",
       "experiments": ["EXP-C17-01", "EXP-C17-02", "EXP-C17-03"],
+      "note_experiments": ["EXP-C17-01", "EXP-C17-02", "EXP-C17-03"],
       "sources": []
     },
     {
@@ -215,6 +234,7 @@
       "batch": 8,
       "name": "Acceptance、Ablation & Design Beliefs",
       "experiments": ["EXP-C18-01", "EXP-C18-02", "EXP-C18-03", "EXP-C18-04", "EXP-C18-05", "EXP-C18-06", "EXP-C18-07", "EXP-C18-08", "EXP-C18-09", "EXP-C18-10", "EXP-C18-11", "EXP-C18-12"],
+      "note_experiments": ["EXP-C18-01"],
       "sources": []
     }
   ]
