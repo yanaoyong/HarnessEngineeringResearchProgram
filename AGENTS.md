@@ -308,9 +308,12 @@ Do not:
 Before reporting completion, run:
 
 ```bash
+python3 scripts/validate_content.py
 git diff --check
 git status --short
 ```
+
+`validation/content-baseline.json` 是当前 V4.3 内容完整性基线。只有在 repository owner 明确批准 Cycle、Batch、Source Registry、Experiment plan 或执行状态变化时，才更新该文件。内容文件清单或字节数发生预期变化后，运行 `python3 scripts/validate_content.py --write-manifest`，并审查 `MANIFEST.txt` diff；不得只为消除 CI 失败而放宽基线。
 
 Also validate:
 

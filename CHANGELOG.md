@@ -1,5 +1,21 @@
 # Changelog
 
+## V4.3 Content integrity automation · 2026-07-16
+
+在 PR1 统一 V4.3 现行状态与协议绑定后，本轮把内容完整性要求转换为可重复运行的本地校验和 GitHub Actions 门禁；不执行研究，也不改变冻结的 Cycle、Batch、Experiment、Evidence 或 Support 语义。
+
+### Added
+
+- 新增 `validation/content-baseline.json`，机器可读地登记 V4.3 protocol、Host set、Batch 状态、Cycle 1–18、计划 Experiment ID 与 Source Registry ID。
+- 新增零第三方依赖的 `scripts/validate_content.py`，校验 Manifest、内部链接、Cycle workspace、计划状态、Experiment / Source ID、Source Registry 结构、浮动锚点边界与 V4.3 protocol binding。
+- 新增 GitHub Actions `Content integrity`，在 Pull Request、`main` push 与手动触发时运行同一校验器。
+- 提供 `--write-manifest` 模式，在有意内容变更后机械重建完整文件清单与字节数。
+
+### Boundaries
+
+- 自动校验只证明 repository state 与声明基线一致，不证明 Source 正确、Experiment 已执行、Evidence Claim 已成立或 Host 达到 S1–S4。
+- 更新 Manifest 不等于更新内容基线；Cycle、Batch、Experiment、Source 或 research execution state 变化仍需明确的 owner decision 或真实研究制品。
+
 ## V4.3 Post-generation state and protocol normalization · 2026-07-16
 
 Batch 1–8 content generation is complete and research execution has not started. This maintenance correction removes stale generation-stage wording and binds future Experiment / Run records to the effective V4.3 protocol without changing frozen Cycle, Batch, Experiment or Evidence semantics.

@@ -150,6 +150,16 @@ research/cycles/cycle-15..18/
 
 `experiments/` 已为后续实现准备，但只包含计划状态说明；Cycle 1–14 的 `evidence/` 包含已登记、尚未派生 `EVD-*` 的 Source Registry entries，Cycle 15–18 的 `evidence/README.md` 只说明未来 Project / Run evidence 门禁。实验尚未执行，因此没有 Experiment Record、Run record、Finding、ADR Candidate、implementation artifact、Decision Update 或 Design Belief。执行真实研究时再按模板增加制品，不要为每个 Cycle 重新发明协议。
 
+## 自动完整性门禁（Automated Integrity Gate）
+
+[内容基线](../validation/content-baseline.json) 登记当前计划态 Cycle、Experiment 与 Source Registry 集合；[校验器](../scripts/validate_content.py) 同时检查工作区结构、内部链接、Manifest、协议绑定和未执行边界。GitHub Actions 会在 Pull Request 与 `main` push 自动执行，本地可运行：
+
+```bash
+python3 scripts/validate_content.py
+```
+
+该门禁检测 repository drift，不裁决 Source 或 Evidence 的真实性。研究执行开始时，应先创建符合协议的真实制品并更新状态决策，再有意调整基线与对应校验规则。
+
 ## V4.1 历史内容（Historical Content）
 
 V4.1 正文中的 `Week`、`week-xx/` 示例和 `EXP-Wxx-yy` 是历史迁移来源。Week 1–16 已全部迁移；旧实验 ID 只作为 historical plan mapping 保留。Cycle 7–8 是 V4.2 新增内容，没有旧 Week / 实验 ID。旧 Evidence ID 不重新编号；新制品不得继续使用 Week 命名。

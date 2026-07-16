@@ -188,3 +188,24 @@ research/cycles/cycle-01/
 ## 11. V4.1 Historical Boundary
 
 V4.1 Research Infrastructure 是本卷的历史迁移来源，不作为并行协议继续演进。Week 1–16 已全部迁移；旧 Week、实验编号和项目导航只在 migration record / historical Atlas 中保留。新产生的研究制品一律使用 V4.3 当前有效的 Cycle-based 协议，即 V4.2 Batch 0 base protocol 加已登记的 V4.3 amendment。
+
+## 12. Content Integrity Automation
+
+`validation/content-baseline.json` 以机器可读方式登记当前 Program version、协议 amendment、四个主要 Host、Batch 状态、Cycle 名称与映射、计划 Experiment ID 和 Source Registry ID。`scripts/validate_content.py` 使用 Python 标准库校验：
+
+- `MANIFEST.txt` 的路径集合与字节数；
+- Markdown 内部相对链接；
+- Cycle 1–18 的目录、Research Note、Experiment preparation 与 evidence workspace；
+- Cycle 名称、Batch、`PLANNED · NOT EXECUTED`、Experiment ID 与 Source ID 基线；
+- Source Registry 文件名、标题、身份字段、必需章节与未固定来源的 pin / revalidation boundary；
+- V4.3 protocol binding 与 amendment ID；
+- `research_execution = NOT_STARTED` 时不存在 Run、Result、`EVD-*`、`ENT-*`、Finding、ADR Candidate 或 Route Review 制品。
+
+GitHub Actions 在 Pull Request 与 `main` push 上运行同一命令。校验通过只表示 repository state 与已声明基线一致，不升级 Source Authority、不证明研究执行，也不产生 Evidence Claim 或 Support Assessment。
+
+```bash
+python3 scripts/validate_content.py
+python3 scripts/validate_content.py --write-manifest  # 仅在有意变更受管文件后
+```
+
+更新 Manifest 是机械操作；更新 `content-baseline.json` 是协议或内容状态操作，必须有可追溯的 owner decision、内容 Batch 修订或真实研究执行制品。不得通过删除校验项、扩大忽略范围或把意外文件加入基线来掩盖漂移。
