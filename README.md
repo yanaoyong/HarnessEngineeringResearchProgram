@@ -15,6 +15,7 @@
 - Batch 6：C09 正文已生成；研究执行尚未开始
 - Batch 7：C10–C14 正文已生成；研究执行尚未开始
 - Batch 8：C15–C18 正文已生成；研究执行尚未开始
+- 当前活动内容 Batch：无；Batch 1–8 内容生成已完成
 - V4.3 Amendment：ZCode 已由 Qwen Code 取代；Cycle / Batch / Experiment 编号保持不变
 - V4.1 基线（Baseline）：提交 `f2b3961cbe125f846818d11a8892fe3c34f2751f`
 

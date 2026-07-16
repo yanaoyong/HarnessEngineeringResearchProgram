@@ -1,8 +1,15 @@
-schema_version: "v4.2-batch0-r2"
+schema_version: "v4.3-r1"
 
 # Template convention:
 # null means not recorded yet.
 # false, 0, and [] may be used only after the field was explicitly assessed.
+
+protocol:
+  program_version: "V4.3"
+  base_schema_version: "v4.2-batch0-r2"
+  research_program_commit: "<research-program-full-commit-sha>"
+  amendments:
+    - "V4.3-QWEN-CODE-HOST-SET"
 
 experiment:
   id: "<EXP-CXX-YY>"

@@ -595,7 +595,7 @@ Cycle 6 只有在以下条件均满足后才能结束：
 
 ## Batch 4 边界（Boundary）
 
-Batch 4 当前生成 Cycle 7 · Qwen Code Host Architecture & Enterprise Reality；该 V4.3 owner decision 取代 V4.2 的 ZCode 研究对象，但保留 Cycle / Batch / Experiment 编号。
+Batch 4 已生成 Cycle 7 · Qwen Code Host Architecture & Enterprise Reality；该 V4.3 owner decision 取代 V4.2 的 ZCode 研究对象，但保留 Cycle / Batch / Experiment 编号。
 
 Cycle 7 是 V4.2 新增、在 V4.3 替换主要 Host 的研究单元，没有 V4.1 Week 或 `EXP-Wxx-yy` 历史迁移对象。本 Batch 只建立计划态 Contract / pinned Official Source / Behavior / local configuration / Enterprise Fact 研究边界、官方来源登记与 `EXP-C07-yy` 实验设计。它不运行 Qwen Code，不产生 `EVD-*`、Enterprise Fact、Support Assessment 或法律合规结论，不实现 Qwen Code Adapter，也不迁移 Cycle 8–18。
 

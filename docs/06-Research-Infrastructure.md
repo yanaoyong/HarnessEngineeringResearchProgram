@@ -1,4 +1,4 @@
-# PART VII · V4.2 Research Infrastructure
+# PART VII · Research Infrastructure（V4.2 Base · V4.3 Effective）
 
 > Batch 0 冻结的 Research Note、Evidence、Experiment、Run Metadata、Source Registry、Support Level、Open Questions、Route Review 与 ADR 基础设施。
 
@@ -68,13 +68,14 @@ EXP-C08-02
 EXP-C18-01
 ```
 
-Experiment 表示研究问题、Hypothesis、设计和结果；Run 表示一次具体执行。`SUPPORT / REJECT / INCONCLUSIVE` 只属于 Experiment 或预注册 stratum Result；Run 只记录 execution / acceptance outcome，不能独立裁决 Hypothesis。使用：
+Experiment 表示 Research Question，以及 Hypothesis / Result 或 Observation Contract / Outcome，并记录设计、运行与限制；Run 表示一次具体执行。`SUPPORT / REJECT / INCONCLUSIVE` 只属于 Experiment 或预注册 stratum Result；Run 只记录 execution / acceptance outcome，不能独立裁决 Hypothesis。使用：
 
 - [experiment-record.template.md](../research/templates/experiment-record.template.md)
 - [run-metadata.template.yaml](../research/templates/run-metadata.template.yaml)
 
 Run metadata 必须分离：
 
+- Program version、base protocol schema、Research Program commit 与 applied amendment；
 - repository commit
 - Host 与 Host version
 - Provider 与 endpoint type
@@ -87,9 +88,11 @@ Run metadata 必须分离：
 - human intervention
 - Harness-under-test cell、Harness revision 与 implementation artifact IDs（与 task-fixture commit 分开）
 
+`v4.3-r1` 是当前首个 V4.3 Run Metadata schema：它保留 `v4.2-batch0-r2` 字段并新增 protocol binding。当前没有真实 Run 需要迁移；未来 Run 必须分别绑定 Research Program commit 与 task-fixture `repository.commit`，不得用其中一个替代另一个。
+
 Experiment Record 还必须声明 Result cardinality。若 Host、task instance 或其他 strata 的 Result 不可互相替代，记录 Result unit、stratum key 与预注册 aggregation rule；没有合理聚合规则时只保留 stratum Result，不创建统一 Experiment Result。
 
-V4.1 正文中的 `EXP-Wxx-yy` 保持历史编号，直到对应内容 Batch 迁移。实际历史 Evidence 不重新编号。
+V4.1 正文中的 `EXP-Wxx-yy` 已随对应内容 Batch 完成迁移，只保留为 historical mapping ID。实际历史 Evidence 不重新编号，新研究制品不得复用旧 Week ID。
 
 ### Experiment types
 
@@ -184,4 +187,4 @@ research/cycles/cycle-01/
 
 ## 11. V4.1 Historical Boundary
 
-V4.1 Research Infrastructure 是本卷的历史迁移来源，不作为并行协议继续演进。Week 1–16 已全部迁移到 V4.2 内容 Batch；旧 Week、实验编号和项目导航只在 migration record / historical Atlas 中保留。新产生的研究制品一律使用 V4.2 Cycle-based 协议。
+V4.1 Research Infrastructure 是本卷的历史迁移来源，不作为并行协议继续演进。Week 1–16 已全部迁移；旧 Week、实验编号和项目导航只在 migration record / historical Atlas 中保留。新产生的研究制品一律使用 V4.3 当前有效的 Cycle-based 协议，即 V4.2 Batch 0 base protocol 加已登记的 V4.3 amendment。

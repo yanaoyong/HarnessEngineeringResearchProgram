@@ -1,5 +1,12 @@
 # EXP-CXX-YY · <Title>
 
+## Protocol Binding
+
+- Program Version: `V4.3`
+- Base Protocol Schema: `v4.2-batch0-r2`
+- Research Program Commit:
+- Applied Amendments: `V4.3-QWEN-CODE-HOST-SET`
+
 ## Cycle and Research Question
 
 ## Hypothesis
