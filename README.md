@@ -114,6 +114,22 @@ V4.1 Week 1–16 已全部迁移到 V4.2 Cycle 计划态正文。旧 `Week` / `E
 
 Qwen Code 的官方源码判断必须固定 `QwenLM/qwen-code` commit，并将实际执行 artifact 映射到对应 release / revision；OpenCode 研究同样必须固定来源，并分离 Host、Provider 与 Model effects。
 
+## 内容完整性校验（Content Integrity Validation）
+
+仓库使用 [机器可读内容基线](validation/content-baseline.json) 和 [零依赖校验器](scripts/validate_content.py) 防止 Cycle、Experiment、Source Registry、计划状态、内部链接、协议绑定与 Manifest 静默漂移。Pull Request 和 `main` push 会由 GitHub Actions 自动运行：
+
+```bash
+python3 scripts/validate_content.py
+```
+
+有意增加、删除或修改受管文件后，使用下列命令重建 `MANIFEST.txt`，再审查 Manifest 与基线 diff：
+
+```bash
+python3 scripts/validate_content.py --write-manifest
+```
+
+基线只声明“当前仓库应当是什么”，不证明来源正确、实验已经执行或研究结论成立。Cycle / Batch / Experiment / Source 集合或 `research_execution` 状态变化必须对应明确的 Program 决策或真实研究制品，不能只为让 CI 通过而修改基线。
+
 ## 使用原则
 
 - “Cycle”是研究单元，不是硬性日历门禁。
