@@ -18,6 +18,14 @@
     "active_batch": null,
     "research_execution": "NOT_STARTED"
   },
+  "governance": {
+    "maintainer": "@yanaoyong",
+    "license_status": "NOT_DECLARED",
+    "issue_forms": [
+      ".github/ISSUE_TEMPLATE/content-correction.yml",
+      ".github/ISSUE_TEMPLATE/research-execution-proposal.yml"
+    ]
+  },
   "batch_documents": {
     "1": "docs/01-Agent与Harness基础认知.md",
     "2": "docs/02-Coding-Agent-Host-Model.md",
@@ -29,12 +37,22 @@
     "8": "docs/05-myharness-Integration-Research.md"
   },
   "required_paths": [
+    ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/content-correction.yml",
+    ".github/ISSUE_TEMPLATE/research-execution-proposal.yml",
+    ".github/pull_request_template.md",
     ".github/workflows/content-integrity.yml",
     ".gitignore",
     "AGENTS.md",
     "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "GOVERNANCE.md",
     "MANIFEST.txt",
     "README.md",
+    "SECURITY.md",
+    "docs/README.md",
     "docs/00-研究计划总纲.md",
     "docs/01-Agent与Harness基础认知.md",
     "docs/02-Coding-Agent-Host-Model.md",

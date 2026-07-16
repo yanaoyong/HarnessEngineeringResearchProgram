@@ -6,6 +6,7 @@
 
 ## 协议（Protocol）
 
+- [Documentation Map](../docs/README.md)
 - [Stable Task Suite · T01–T03](task-suite.md)
 - [Evidence Classification and Source Authority](source-authority.md)
 - [Host Support Levels · S0–S4](support-levels.md)

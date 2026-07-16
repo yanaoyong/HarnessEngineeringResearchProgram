@@ -1,6 +1,19 @@
 # Harness Engineering Research Program
 
+[![Content integrity](https://github.com/yanaoyong/HarnessEngineeringResearchProgram/actions/workflows/content-integrity.yml/badge.svg)](https://github.com/yanaoyong/HarnessEngineeringResearchProgram/actions/workflows/content-integrity.yml)
+
 > 面向 `myharness` 的 Harness Engineering 研究—实践—认知升级计划。
+
+## 快速导航（Quick Navigation）
+
+| 你要做什么 | 入口 |
+|---|---|
+| 阅读计划与 Cycle 正文 | [文档导航](docs/README.md) |
+| 查看计划实验与 Source Registry | [研究工作区](research/README.md) |
+| 查询 Cycle 1–18 状态 | [Cycle 索引](research/cycles/README.md) |
+| 提交贡献 | [贡献指南](CONTRIBUTING.md) |
+| 了解维护与决策权限 | [仓库治理](GOVERNANCE.md) |
+| 私下报告安全问题 | [Security Policy](SECURITY.md) |
 
 ## 当前状态（Current Status）
 
@@ -60,44 +73,31 @@ Next Question
 
 ## V4.3 协议导航（Protocol Navigation）
 
-1. [研究计划总纲](docs/00-研究计划总纲.md)
-2. [V4.2 Batch 0 Common Protocol](docs/08-V4.2-Batch0-Protocol.md)
-3. [V4.2 Common Glossary](docs/09-V4.2-Glossary.md)
-4. [V4.3 Qwen Code Host-set Amendment](docs/10-V4.3-Qwen-Code-Host-Amendment.md)
-5. [Stable Task Suite · T01–T03](research/task-suite.md)
-6. [Evidence Classification and Source Authority](research/source-authority.md)
-7. [Host Support Levels · S0–S4](research/support-levels.md)
-8. [Research Infrastructure](docs/06-Research-Infrastructure.md)
-9. [Research Workspace](research/README.md)
+1. [Documentation Map](docs/README.md)
+2. [研究计划总纲](docs/00-研究计划总纲.md)
+3. [V4.2 Batch 0 Common Protocol](docs/08-V4.2-Batch0-Protocol.md)
+4. [V4.2 Common Glossary](docs/09-V4.2-Glossary.md)
+5. [V4.3 Qwen Code Host-set Amendment](docs/10-V4.3-Qwen-Code-Host-Amendment.md)
+6. [Stable Task Suite · T01–T03](research/task-suite.md)
+7. [Evidence Classification and Source Authority](research/source-authority.md)
+8. [Host Support Levels · S0–S4](research/support-levels.md)
+9. [Research Infrastructure](docs/06-Research-Infrastructure.md)
+10. [Research Workspace](research/README.md)
 
 ## V4.3 当前内容（Current Content）
 
-- [Batch 1 · Cycle 1–2 · Agent 与 Harness 基础认知](docs/01-Agent与Harness基础认知.md)
-- [Batch 2 · Cycle 3–4 · Claude Code Host](docs/02-Coding-Agent-Host-Model.md)
-- [Batch 3 · Cycle 5–6 · Codex Host](docs/02-Coding-Agent-Host-Model.md)
-- [Batch 4 · Cycle 7 · Qwen Code Host](docs/02-Coding-Agent-Host-Model.md)
-- [Batch 5 · Cycle 8 · OpenCode Host](docs/02-Coding-Agent-Host-Model.md)
-- [Batch 6 · Cycle 9 · Four-host Harness Abstraction](docs/03-Cross-host-Harness-Abstraction.md)
-- [Batch 7 · Cycle 10–14 · Harness Engineering Research Themes](docs/04-Harness-Engineering-Research-Themes.md)
-- [Batch 8 · Cycle 15–18 · myharness Integration Research](docs/05-myharness-Integration-Research.md)
-- [Cycle 1 Research Note](research/cycles/cycle-01/research-note.md)（planned / not executed）
-- [Cycle 2 Research Note](research/cycles/cycle-02/research-note.md)（planned / not executed）
-- [Cycle 3 Research Note](research/cycles/cycle-03/research-note.md)（planned / not executed）
-- [Cycle 4 Research Note](research/cycles/cycle-04/research-note.md)（planned / not executed）
-- [Cycle 5 Research Note](research/cycles/cycle-05/research-note.md)（planned / not executed）
-- [Cycle 6 Research Note](research/cycles/cycle-06/research-note.md)（planned / not executed）
-- [Cycle 7 Research Note](research/cycles/cycle-07/research-note.md)（planned / not executed）
-- [Cycle 8 Research Note](research/cycles/cycle-08/research-note.md)（planned / not executed）
-- [Cycle 9 Research Note](research/cycles/cycle-09/research-note.md)（planned / not executed）
-- [Cycle 10 Research Note](research/cycles/cycle-10/research-note.md)（planned / not executed）
-- [Cycle 11 Research Note](research/cycles/cycle-11/research-note.md)（planned / not executed）
-- [Cycle 12 Research Note](research/cycles/cycle-12/research-note.md)（planned / not executed）
-- [Cycle 13 Research Note](research/cycles/cycle-13/research-note.md)（planned / not executed）
-- [Cycle 14 Research Note](research/cycles/cycle-14/research-note.md)（planned / not executed）
-- [Cycle 15 Research Note](research/cycles/cycle-15/research-note.md)（planned / not executed）
-- [Cycle 16 Research Note](research/cycles/cycle-16/research-note.md)（planned / not executed）
-- [Cycle 17 Research Note](research/cycles/cycle-17/research-note.md)（planned / not executed）
-- [Cycle 18 Research Note](research/cycles/cycle-18/research-note.md)（planned / not executed）
+| Batch | Cycle | 内容入口 | Workspace |
+|---:|---:|---|---|
+| 1 | C01–C02 | [Agent 与 Harness 基础认知](docs/01-Agent与Harness基础认知.md) | [Cycle 01–02](research/cycles/README.md) |
+| 2 | C03–C04 | [Claude Code Host](docs/02-Coding-Agent-Host-Model.md) | [Cycle 03–04](research/cycles/README.md) |
+| 3 | C05–C06 | [Codex Host](docs/02-Coding-Agent-Host-Model.md) | [Cycle 05–06](research/cycles/README.md) |
+| 4 | C07 | [Qwen Code Host](docs/02-Coding-Agent-Host-Model.md) | [Cycle 07](research/cycles/cycle-07/research-note.md) |
+| 5 | C08 | [OpenCode Host](docs/02-Coding-Agent-Host-Model.md) | [Cycle 08](research/cycles/cycle-08/research-note.md) |
+| 6 | C09 | [Four-host Harness Abstraction](docs/03-Cross-host-Harness-Abstraction.md) | [Cycle 09](research/cycles/cycle-09/research-note.md) |
+| 7 | C10–C14 | [Harness Engineering Research Themes](docs/04-Harness-Engineering-Research-Themes.md) | [Cycle 10–14](research/cycles/README.md) |
+| 8 | C15–C18 | [myharness Integration Research](docs/05-myharness-Integration-Research.md) | [Cycle 15–18](research/cycles/README.md) |
+
+完整的逐 Cycle 导航、计划状态与 Research Note 入口见 [Cycle 索引](research/cycles/README.md)。
 
 ## V4.1 迁移基线（Migration Baseline）
 

@@ -19,23 +19,26 @@ Do not regenerate a completed content Batch or apply an external ZIP or patch as
 Before proposing or making changes, read:
 
 1. `README.md`
-2. `CHANGELOG.md`
-3. `docs/00-研究计划总纲.md`
-4. `docs/01-Agent与Harness基础认知.md`
-5. `docs/02-Coding-Agent-Host-Model.md`
-6. `docs/03-Cross-host-Harness-Abstraction.md`
-7. `docs/04-Harness-Engineering-Research-Themes.md`
-8. `docs/05-myharness-Integration-Research.md`
-9. `docs/06-Research-Infrastructure.md`
-10. `docs/07-Reference-Project-Atlas.md`
-11. `docs/08-V4.2-Batch0-Protocol.md`
-12. `docs/09-V4.2-Glossary.md`
-13. `docs/10-V4.3-Qwen-Code-Host-Amendment.md`
-14. `research/README.md`
-15. `research/task-suite.md`
-16. `research/source-authority.md`
-17. `research/support-levels.md`
-18. all existing files under `research/templates/`
+2. `CONTRIBUTING.md`
+3. `GOVERNANCE.md`
+4. `CHANGELOG.md`
+5. `docs/README.md`
+6. `docs/00-研究计划总纲.md`
+7. `docs/01-Agent与Harness基础认知.md`
+8. `docs/02-Coding-Agent-Host-Model.md`
+9. `docs/03-Cross-host-Harness-Abstraction.md`
+10. `docs/04-Harness-Engineering-Research-Themes.md`
+11. `docs/05-myharness-Integration-Research.md`
+12. `docs/06-Research-Infrastructure.md`
+13. `docs/07-Reference-Project-Atlas.md`
+14. `docs/08-V4.2-Batch0-Protocol.md`
+15. `docs/09-V4.2-Glossary.md`
+16. `docs/10-V4.3-Qwen-Code-Host-Amendment.md`
+17. `research/README.md`
+18. `research/task-suite.md`
+19. `research/source-authority.md`
+20. `research/support-levels.md`
+21. all existing files under `research/templates/`
 
 ## V4.3 program decision
 
@@ -291,6 +294,15 @@ Do not:
 * Keep internal links valid.
 * Do not silently redefine frozen terminology.
 * Record unresolved contradictions as Open Questions.
+
+## Public repository governance
+
+* Route content defects and research execution proposals through the structured Issue Forms when creating GitHub Issues.
+* Treat security, credential, workflow injection and privacy reports as private; follow `SECURITY.md` and never ask reporters to post secrets publicly.
+* Repository owner approval is required for governance, protocol, execution-authority and license changes.
+* The repository currently has no project-level `LICENSE`. Do not add or infer a license without an explicit owner decision.
+* `CODEOWNERS` requests review but does not prove that branch protection or a ruleset is enabled.
+* Keep `CONTRIBUTING.md`, `GOVERNANCE.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, navigation and GitHub templates aligned with the effective V4.3 protocol.
 
 ## 语言与双语术语（Language and Bilingual Terminology）
 

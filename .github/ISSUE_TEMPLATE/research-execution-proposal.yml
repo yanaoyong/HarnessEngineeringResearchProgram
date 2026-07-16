@@ -1,0 +1,66 @@
+name: Research execution proposal
+description: Propose a bounded execution of an existing V4.3 planned experiment.
+title: "[Research]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A proposal does not authorize execution and does not create a Run, Result, Evidence Claim or Support Assessment.
+  - type: input
+    id: cycle
+    attributes:
+      label: Cycle
+      description: Use the frozen Cycle ID and name.
+      placeholder: C09 · Four-host Harness Abstraction
+    validations:
+      required: true
+  - type: input
+    id: experiment
+    attributes:
+      label: Planned Experiment ID
+      placeholder: EXP-C09-01
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question and decision use
+      description: State the bounded question and which later decision could use the result.
+    validations:
+      required: true
+  - type: textarea
+    id: bindings
+    attributes:
+      label: Proposed protocol and environment binding
+      description: Include Host/surface/version, Provider/endpoint, Model, Configuration, task fixture and Harness revision as applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and source readiness
+      description: List required Contract/Source/Behavior/Project evidence, pinned revisions and known gaps.
+    validations:
+      required: true
+  - type: textarea
+    id: confounders
+    attributes:
+      label: Controlled variables and known confounders
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety, privacy and rollback boundary
+      description: Explain secret handling, external side effects, human intervention and rollback.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Proposal acknowledgement
+      options:
+        - label: I understand that this Issue is a proposal, not authorization to execute research.
+          required: true
+        - label: I will not create results, EVD/ENT claims or Support Levels without protocol-complete execution and review.
+          required: true
